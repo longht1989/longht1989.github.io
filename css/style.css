@@ -33,7 +33,7 @@ body{
 	width: 100%;
 	height: auto;
 	margin-bottom: 10px;
-	padding-right: 10px;
+	padding-left: 10px;
 }
 #site-header{
 	margin-bottom: 30px;
@@ -58,13 +58,13 @@ body{
 	padding: 0 10px;
 }
 .main-content{
-	padding-left: 33.3333%;
+	padding-right: 33.3333%;
 	position: relative;
 }
 .main-content .most-view-song{
 	position: absolute;
 	top: 0px;
-	left: 0px;
+	right: 0px;
 	width: 33.3333%;
 	padding: 10px;
 	border: 1px solid #ddd;
