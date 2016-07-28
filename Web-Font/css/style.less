@@ -35,15 +35,26 @@ ul {
 
 @font-face {
     font-family: 'header-font';
-    src: url('fonts/pridi-medium-webfont.eot');
-    src: url('fonts/pridi-medium-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/pridi-medium-webfont.woff2') format('woff2'),
-         url('fonts/pridi-medium-webfont.woff') format('woff'),
-         url('fonts/pridi-medium-webfont.ttf') format('truetype'),
-         url('fonts/pridi-medium-webfont.svg#pridimedium') format('svg');
+    src: url('fonts/hinted-NotoSerif-Bold.eot');
+    src: local('header-font'), url('fonts/hinted-NotoSerif-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/hinted-NotoSerif-Bold.woff2') format('woff2'), url('fonts/hinted-NotoSerif-Bold.woff') format('woff'), url('fonts/hinted-NotoSerif-Bold.ttf') format('truetype'), url('fonts/hinted-NotoSerif-Bold.svg#header-font') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'body-font';
+    src: url('fonts/hinted-Roboto-Regular.eot');
+    src: local('body-font'), url('fonts/hinted-Roboto-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/hinted-Roboto-Regular.woff2') format('woff2'), url('fonts/hinted-Roboto-Regular.woff') format('woff'), url('fonts/hinted-Roboto-Regular.ttf') format('truetype'), url('fonts/hinted-Roboto-Regular.svg#body-font') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'body-font';
+    src: url('fonts/hinted-Roboto-Bold.eot');
+    src: local('body-font'), url('fonts/hinted-Roboto-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/hinted-Roboto-Bold.woff2') format('woff2'), url('fonts/hinted-Roboto-Bold.woff') format('woff'), url('fonts/hinted-Roboto-Bold.ttf') format('truetype'), url('fonts/hinted-Roboto-Bold.svg#body-font') format('svg');
+    font-weight: bold;
+    font-style: normal;
 }
 
 
@@ -51,7 +62,7 @@ ul {
 
 body {
     background-color: #f7f7f7;
-    font-family: sans-serif;
+    font-family: "body-font", tahoma, sans-serif;
     font-size: 14px;
     line-height: 1.4em;
 }
@@ -68,7 +79,9 @@ body {
     margin-bottom: 20px;
     >h1 {
         text-align: center;
-        font-family: "header-font", Arial, Sans-serif;
+        font-weight: bold;
+        font-family: 'header-font', serif;
+        // font-family: 'Noto Serif', serif;
         text-transform: uppercase;
     }
     >ul {
