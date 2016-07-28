@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="site-wrap calculator">
+        <h1 class="title">Calculator</h1>
+        <div class="row two-cols clearfix">
+            <div class="col">
+                <input type="text" name="" value="" placeholder="" id="first-number">
+            </div>
+            <div class="col">
+                <input type="text" name="" value="" placeholder="" id="second-number">
+            </div>
+        </div>
+        <div class="row clearfix">
+            <input type="text" name="" value="" placeholder="" id="result" class="input-result">
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col">
+                <span class="item clear yellow" onclick="reset(this)">AC</span>
+            </div>
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col">
+                <span class="item" onclick="getValue(this)" value="5">5</span>
+            </div>
+            <div class="col">
+                <span class="item" onclick="getValue(this)">6</span>
+            </div>
+            <div class="col">
+                <span class="item" onclick="getValue(this)">7</span>
+            </div>
+            <div class="col">
+                <span class="item" onclick="getValue(this)">8</span>
+            </div>
+            <div class="col">
+                <span class="item" onclick="getValue(this)">9</span>
+            </div>
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col">
+                <span class="item" onclick="getValue(this)">0</span>
+            </div>
+            <div class="col">
+                <span class="item" onclick="getValue(this)">1</span>
+            </div>
+            <div class="col">
+                <span class="item" onclick="getValue(this)">2</span>
+            </div>
+            <div class="col">
+                <span class="item" onclick="getValue(this)">3</span>
+            </div>
+            <div class="col">
+                <span class="item" onclick="getValue(this)">4</span>
+            </div>
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col">
+                <span class="item">.</span>
+            </div>
+            <div class="col"><span class="item">&#43;</span>
+                <!-- Cộng -->
+            </div>
+            <div class="col"><span class="item">&#45;</span>
+                <!-- Trừ -->
+            </div>
+            <div class="col"><span class="item">&#42;</span>
+                <!-- Nhân -->
+            </div>
+            <div class="col"><span class="item">&#47;</span>
+                <!-- Chia -->
+            </div>
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col"><span class="item">&#37;</span>
+                <!-- Phần trăm -->
+            </div>
+            <div class="col"><span class="item">&#178;</span>
+                <!-- Bình phương -->
+            </div>
+            <div class="col"><span class="item">&#33;</span>
+                <!-- Giai thừa -->
+            </div>
+            <div class="col"><span class="item"> &radic;</span>
+                <!-- Khai căn -->
+            </div>
+            <div class="col"><span class="item  yellow">&#61;</span>
+                <!-- Kết quả -->
+            </div>
+        </div>
+        <div class="row clearfix">
+        </div>
+    </div>
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>
