@@ -2,20 +2,35 @@ function getValue(x) {
     document.getElementById("x").value += x.innerText;
 }
 
-function reset(a) {
-    document.getElementById("x").value = "";
-
-}
-/*tính tổng*/
-function sum() {
-    var x1 = Number(document.getElementById("x").value);
+function reset() {
     document.getElementById("x").value = "";
 
 }
 
 function result() {
-    var x2 = Number(document.getElementById("x").value);
-    // document.getElementById("x").value = x1 + x2;
-    alert(x2);
-    return x1 + x2;
+    document.getElementById("x").value = eval(document.getElementById("x").value);
+}
+
+function percent() {
+    var y = document.getElementById("x").value;
+    document.getElementById("x").value = eval(y / 100);
+}
+
+function radic() {
+    var y = document.getElementById("x").value;
+    document.getElementById("x").value = Math.sqrt(y);
+}
+
+function Square() {
+    var y = document.getElementById("x").value;
+    document.getElementById("x").value = y * y;
+}
+
+function factorial(a) {
+    var x = 1;
+    var a = document.getElementById("x").value;
+    for (var i = 1; i <= a; i = i + 1) {
+        x = x * i;
+    }
+    document.getElementById("x").value = x;
 }

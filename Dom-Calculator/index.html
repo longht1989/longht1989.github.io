@@ -10,7 +10,6 @@
 <body>
     <div class="site-wrap calculator">
         <h1 class="title">Calculator</h1>
-        
         <div class="row clearfix">
             <input type="text" name="" value="" placeholder="" id="x" class="input-result">
         </div>
@@ -57,30 +56,30 @@
             <div class="col">
                 <span class="item" onclick="getValue(this)">.</span>
             </div>
-            <div class="col"><span class="item" onclick="sum()">&#43;</span>
+            <div class="col"><span class="item" onclick="getValue(this)">&#43;</span>
                 <!-- Cộng -->
             </div>
-            <div class="col"><span class="item">&#45;</span>
+            <div class="col"><span class="item" onclick="getValue(this)">&#45;</span>
                 <!-- Trừ -->
             </div>
-            <div class="col"><span class="item">&#42;</span>
+            <div class="col"><span class="item" onclick="getValue(this)">&#42;</span>
                 <!-- Nhân -->
             </div>
-            <div class="col"><span class="item">&#47;</span>
+            <div class="col"><span class="item" onclick="getValue(this)">&#47;</span>
                 <!-- Chia -->
             </div>
         </div>
         <div class="row five-cols clearfix">
-            <div class="col"><span class="item">&#37;</span>
+            <div class="col"><span class="item" onclick="percent()">&#37;</span>
                 <!-- Phần trăm -->
             </div>
-            <div class="col"><span class="item">&#178;</span>
+            <div class="col"><span class="item" onclick="Square()">&#178;</span>
                 <!-- Bình phương -->
             </div>
-            <div class="col"><span class="item">&#33;</span>
+            <div class="col"><span class="item" onclick="factorial()">&#33;</span>
                 <!-- Giai thừa -->
             </div>
-            <div class="col"><span class="item"> &radic;</span>
+            <div class="col"><span class="item" onclick="radic()"> &radic;</span>
                 <!-- Khai căn -->
             </div>
             <div class="col"><span class="item  yellow" onclick="result()">&#61;</span>
