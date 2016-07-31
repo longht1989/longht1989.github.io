@@ -10,16 +10,9 @@
 <body>
     <div class="site-wrap calculator">
         <h1 class="title">Calculator</h1>
-        <div class="row two-cols clearfix">
-            <div class="col">
-                <input type="text" name="" value="" placeholder="" id="first-number">
-            </div>
-            <div class="col">
-                <input type="text" name="" value="" placeholder="" id="second-number">
-            </div>
-        </div>
+        
         <div class="row clearfix">
-            <input type="text" name="" value="" placeholder="" id="result" class="input-result">
+            <input type="text" name="" value="" placeholder="" id="x" class="input-result">
         </div>
         <div class="row five-cols clearfix">
             <div class="col">
@@ -62,9 +55,9 @@
         </div>
         <div class="row five-cols clearfix">
             <div class="col">
-                <span class="item">.</span>
+                <span class="item" onclick="getValue(this)">.</span>
             </div>
-            <div class="col"><span class="item">&#43;</span>
+            <div class="col"><span class="item" onclick="sum()">&#43;</span>
                 <!-- Cộng -->
             </div>
             <div class="col"><span class="item">&#45;</span>
@@ -90,7 +83,7 @@
             <div class="col"><span class="item"> &radic;</span>
                 <!-- Khai căn -->
             </div>
-            <div class="col"><span class="item  yellow">&#61;</span>
+            <div class="col"><span class="item  yellow" onclick="result()">&#61;</span>
                 <!-- Kết quả -->
             </div>
         </div>
