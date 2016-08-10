@@ -1,0 +1,155 @@
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+body {
+    background-color: #eee;
+    font-size: 16px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.site-wrap {
+    background-color: white;
+    padding: 15px;
+    width: 300px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ddd;
+}
+
+.calculator {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.two-cols {
+    margin-left: -10px;
+    margin-right: -10px;
+    .col {
+        float: left;
+        width: 50%;
+        padding-left: 10px;
+        padding-right: 10px;
+        input {
+            line-height: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            width: 100%;
+        }
+    }
+}
+
+.clear {
+    float: right;
+}
+
+.five-cols {
+    margin-left: -10px;
+    margin-right: -10px;
+    .col {
+        float: left;
+        width: 20%;
+        padding-left: 10px;
+        padding-right: 10px;
+        &.double {
+            width: 60%;
+        }
+    }
+}
+
+.item {
+    display: inline-block;
+    // border-radius: 100%;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #eee;
+    line-height: 36px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    &:hover {
+        background-color: #ddd;
+    }
+    &.yellow {
+        background-color: orange;
+        color: white;
+        border-color: darken(orange, 1%);
+        &:hover {
+            background-color: darken(orange, 5%);
+        }
+    }
+    &.change-theme {
+        color: white;
+        background-color: grey;
+        border-color: darken(grey, 1%);
+        &:hover {
+            background-color: darken(grey, 5%);
+        }
+    }
+}
+
+.input-result {
+    line-height: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+
+
+/* dark-theme style */
+
+.dark-theme {
+    background-color: #263238;
+    color: white;
+    transition: all 0.2s ease-out;
+    .site-wrap {
+        background-color: #78909C;
+        border-color: #56676f;
+    }
+    .item:hover {
+        background-color: #aaa;
+    }
+    .item.yellow:hover {
+        background-color: darken(orange, 5%);
+    }
+    .change-theme {
+        background-color: lightgray;
+        border-color: darken(lightgray, 2%);
+        color: #111;
+        &:hover {
+            color: #111;
+            background-color: darken(lightgray, 5%);
+        }
+    }
+}

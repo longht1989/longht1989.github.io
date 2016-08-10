@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body class="">
+    <div class="site-wrap calculator">
+        <h1 class="title">Calculator</h1>
+        <div class="row clearfix">
+            <input type="text" name="" value="" placeholder="" id="x" class="input-result">
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col">
+                <span class="item clear yellow pull-right" onclick="reset(this)">AC</span>
+            </div>
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col">
+                <span class="item number" >0</span>
+            </div>
+            <div class="col">
+                <span class="item number" >1</span>
+            </div>
+            <div class="col">
+                <span class="item number" >2</span>
+            </div>
+            <div class="col">
+                <span class="item number" >3</span>
+            </div>
+            <div class="col">
+                <span class="item number" >4</span>
+            </div>
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col">
+                <span class="item number">5</span>
+            </div>
+            <div class="col">
+                <span class="item number">6</span>
+            </div>
+            <div class="col">
+                <span class="item number">7</span>
+            </div>
+            <div class="col">
+                <span class="item number">8</span>
+            </div>
+            <div class="col">
+                <span class="item number">9</span>
+            </div>
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col">
+                <span class="item number">.</span>
+            </div>
+            <div class="col"><span class="item number">&#43;</span>
+                <!-- Cộng -->
+            </div>
+            <div class="col"><span class="item number">&#45;</span>
+                <!-- Trừ -->
+            </div>
+            <div class="col"><span class="item number">&#42;</span>
+                <!-- Nhân -->
+            </div>
+            <div class="col"><span class="item number">&#47;</span>
+                <!-- Chia -->
+            </div>
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col"><span class="item" onclick="percent()">&#37;</span>
+                <!-- Phần trăm -->
+            </div>
+            <div class="col"><span class="item" onclick="Square()">&#178;</span>
+                <!-- Bình phương -->
+            </div>
+            <div class="col"><span class="item" onclick="factorial()">&#33;</span>
+                <!-- Giai thừa -->
+            </div>
+            <div class="col"><span class="item" onclick="radic()"> &radic;</span>
+                <!-- Khai căn -->
+            </div>
+            <div class="col"><span class="item  yellow" onclick="result()">&#61;</span>
+                <!-- Kết quả -->
+            </div>
+        </div>
+        <div class="row five-cols clearfix">
+            <div class="col double pull-right">
+                <span class="item change-theme">Change theme</span>
+            </div>
+        </div>
+    </div>
+    <script src="jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>
