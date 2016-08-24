@@ -1,0 +1,99 @@
+.clearfix {
+    zoom: 1;
+    &:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+    }
+}
+
+.clearfix:after {}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+body {
+    font-size: 16px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background: url(images/bg.png) center top no-repeat;
+    background-size: cover;
+}
+
+.site-wrap {
+    width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0;
+}
+
+.content {
+    padding: 20px 0;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+
+.grid {
+    .clearfix;
+    // float: left;
+    padding: 10px;
+}
+
+.card {
+    position: relative;
+    float: left;
+    width: 120px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    margin: 10px;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    &:hover {
+        border-color: purple;
+        .back {
+            transform: scale(1.1);
+        }
+    }
+    .front {
+        -webkit-transform: rotateY(180deg);
+        -ms-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        transition: all 0.5s ease-out;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden
+    }
+    .back {
+        .front;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        transform: rotateY(0deg);
+    }
+    &.open {
+        .front {
+            transform: rotateY(0deg);
+        }
+        .back {
+            transform: rotateY(180deg);
+        }
+    }
+}
