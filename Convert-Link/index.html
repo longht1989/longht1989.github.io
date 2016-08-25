@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Convert Link</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body class="">
+    <div class="row input">
+        <p><b>Nguồn</b></p>
+        <input id="input-txt" type="text" name="" value="">
+        <button type="button" onclick="myFunction()">Convert</button>
+        <button type="button" onclick="myClear()">Clear</button>
+    </div>
+    <div class="row result">
+        <p><b>Kết quả</b></p>
+        <p id="result" type="txt" name="" value=""></p>
+        <button type="button" onclick="copyToClipboard('result')" id="copy">Copy</button>
+    </div>
+    <script src="jquery-3.1.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    function myFunction() {
+        var isValue = $("#input-txt").val();
+        // var res = str.replace("", "W3Schools");
+        // document.getElementById("demo").innerHTML = res;
+        var str = isValue.toString();
+        var res1 = str.replace('m.baomoi.com', 'baomoi.com');
+        var res2 = res1.replace('/r/', '/c/');
+        $('#result').html(res2);
+
+    }
+
+    function myClear() {
+        $("#input-txt").val('');
+    }
+
+    function copyToClipboard(elementId) {
+
+        // Create a "hidden" input
+        var aux = document.createElement("input");
+
+        // Assign it the value of the specified element
+        aux.setAttribute("value", document.getElementById(elementId).innerHTML);
+
+        // Append it to the body
+        document.body.appendChild(aux);
+
+        // Highlight its content
+        aux.select();
+
+        // Copy the highlighted text
+        document.execCommand("copy");
+
+        // Remove it from the body
+        document.body.removeChild(aux);
+
+    }
+    </script>
+</body>
+
+</html>
