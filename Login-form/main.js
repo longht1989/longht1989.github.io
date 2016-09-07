@@ -1,5 +1,5 @@
 var x = decodeURIComponent(document.URL);
-var y = $('#email').val();
+
 // function myFunction() {
 //     $('#check').html(y);
 // }
@@ -7,7 +7,10 @@ var y = $('#email').val();
 
 $(function() {
     $('#btnsubmit').click(function() {
-        // $('#check').html(y);
-        alert(y);
+        var a = $(location).attr('search');
+        alert(a);
     });
 });
+
+// var source = window.location.url;
+// var link = decodeURIComponent(source);
