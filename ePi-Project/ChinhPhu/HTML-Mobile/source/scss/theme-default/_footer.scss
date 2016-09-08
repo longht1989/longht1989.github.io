@@ -1,0 +1,91 @@
+/* ====================================
+   Footer's style
+   ==================================== */
+
+#site-footer {
+    @include clearfix;
+    background: url(../images/footer-bg.jpg) center top no-repeat;
+    color: white;
+    padding: 30px 0;
+    position: relative;
+    a {
+        color: white;
+        @include haf() {
+            color: $brand-primary;
+        }
+    }
+    .listing-cate {
+        @include clearfix;
+        margin: 0 -10px 20px;
+        vertical-align: top;
+        li {
+            float: left;
+            width: 16.66%;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 10px;
+            .cate {
+                text-transform: uppercase;
+                @include font-size(18, 25);
+                margin-top: 0;
+                margin-bottom: 5px;
+            }
+            .sub-cate {
+                font-weight: normal;
+                margin-top: 0;
+                margin-bottom: 5px;
+                font-size: 12px;
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .link-site {
+        @include clearfix;
+        text-align: center;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-size: 1.2rem;
+        li {
+            display: inline-block;
+            padding: 0 10px;
+            &::after {
+                content: '/';
+                padding-left: 10px;
+            }
+            &:last-child {
+                &::after {
+                    content: '';
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    .site-contact {
+        @include clearfix;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+        .slogan {
+            text-align: center;
+            margin-bottom: 10px;
+            h3 {
+                @include font-size(18, 25);
+                margin-top: 0;
+                margin-bottom: 5px;
+                text-transform: uppercase
+            }
+            p {
+                margin-top: 0;
+                font-size: 12px;
+                font-size: 1.2rem;
+            }
+        }
+        .footer-info {
+            font-size: 12px;
+            font-size: 1.2rem;
+        }
+        .pull-right {
+            text-align: right;
+        }
+    }
+}

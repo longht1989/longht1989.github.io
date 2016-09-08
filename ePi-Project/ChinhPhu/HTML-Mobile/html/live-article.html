@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>ePi CMS html css template</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="App_Themes/css/normalize.css">
+    <link rel="stylesheet" href="App_Themes/css/components.css">
+
+    <!-- CSS Implementing Plugins -->
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="App_Themes/css/sample.css">
+    <link rel="stylesheet" href="App_Themes/css/main.css">
+    <link rel="stylesheet" href="App_Themes/css/article.css">
+    <link rel="stylesheet" href="App_Themes/css/live-article.css">
+    <link rel="stylesheet" href="App_Themes/css/topic.css">
+    <link rel="stylesheet" href="App_Themes/css/search.css">
+    <link rel="stylesheet" href="App_Themes/css/plugin.css">
+
+    <!-- JS modernizr -->
+    <script src="Jscripts/vendor/modernizr-2.6.2.min.js"></script>
+    <script>
+    (function(w, d, u) {
+        w.readyQ = [];
+        w.bindReadyQ = [];
+
+        function p(x, y) {
+            if (x == "ready") {
+                w.bindReadyQ.push(y);
+            } else {
+                w.readyQ.push(x);
+            }
+        };
+        var a = {
+            ready: p,
+            bind: p
+        };
+        w.$ = w.jQuery = function(f) {
+            if (f === d || f === u) {
+                return a
+            } else {
+                p(f)
+            }
+        }
+    })(window, document)
+    </script>
+</head>
+
+<body>
+
+    <!--=== Header ===-->
+    <header id="site-header" class="clearfix">
+        <!-- Topbar -->
+        <div class="topbar">
+            <div class="container">
+                <!-- logo -->
+                <h1 class="logo">
+                    <a href="feature.html" class="navbar-brand">
+                        <img src="App_Themes/img/logo.png" height="137" width="246" alt="" class="img-responsive">
+                    </a>
+                </h1>
+                <!-- search -->
+                <div class="search">
+                    <input type="text" placeholder="Enter search words" />
+                    <button><i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </div>
+                <!-- Top ads -->
+                <div class="top-ads">
+                    <img src="tempdata/ads/ads-728x90-2.jpg" width="728" height="90">
+                </div>
+            </div>
+        </div>
+        <!-- End Topbar -->
+
+        <!-- Navbar -->
+        <div class="navbar navbar-default" data-spy="affix" data-offset-top="190" data-offset-bottom="200">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
+                <div class="navbar-collapse collapse" id="navbar-main">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="themes">
+                                <li><a href="../default/">Default</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="../cerulean/">Style 2015</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="site-page">Pages<span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="site-page">
+                                <li><a href="feature.html">Feature</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="article.html">Article</a>
+                                </li>
+                                <li><a href="live-article.html">Live article</a>
+                                </li>
+                                <li><a href="qa-article.html">Question Answers article</a>
+                                </li>
+                                <li><a href="list-topic.html">List topic</a>
+                                </li>
+                                <li><a href="topic-detail.html">Topic detail</a>
+                                </li>
+                                <li><a href="search.html">Search</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="site-feature">Features<span class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="site-feature">
+                                <li><a href="feature.html#story-style">Article style</a>
+                                </li>
+                                <li><a href="feature.html#story-layout">Article layout</a>
+                                </li>
+                                <li><a href="feature.html#zone-layout">Zone layout</a>
+                                </li>
+                                <li><a href="feature.html#list-style">List style and Grid</a>
+                                </li>
+                                <li><a href="feature.html#pagination-layout">Pagination layout</a>
+                                </li>
+                                <li><a href="feature.html#navbar-layout">Navbar Dropdown</a>
+                                </li>
+                                <li><a href="feature.html#button-style">Button style</a>
+                                </li>
+                                <li><a href="feature.html#form-layout">Form layout</a>
+                                </li>
+                                <li><a href="feature.html#tab-layout">Tab layout</a>
+                                </li>
+                                <li><a href="feature.html#alert-layout">Alerts layout</a>
+                                </li>
+                                <li><a href="feature.html#modal-layout">Dialogs layout</a>
+                                </li>
+                                <li><a href="feature.html#slider-layout">Slider layout</a>
+                                </li>
+                                <li><a href="feature.html#slimscroll-layout">Slimscroll layout</a>
+                                </li>
+                                <li><a href="feature.html#glyphicon-map">Glyphicon</a>
+                                </li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">About us</a>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar -->
+    </header>
+    <!--=== End Header ===-->
+
+
+    <!--=== Main Content ===-->
+    <div class="container">
+        <main>
+            <section class="main-article live clearfix">
+                <header>
+                    <div class="meta clearfix">
+                        <div class="author-time">
+                            <span class="author">Phạm Quỳnh</span>
+                            <time>Thứ Tư, ngày 1/10/2014 - 23:01</time>
+                        </div>
+                        <div class="social">
+                            <ul>
+                                <li>
+                                    <img src="Tempdata/article/facebook-like-share.jpg" height="20" width="122">
+                                </li>
+                                <li>
+                                    <img src="Tempdata/article/print.jpg" height="22" width="60">
+                                </li>
+                                <li>
+                                    <img src="Tempdata/article/email.jpg" height="22" width="57">
+                                </li>
+                                <li>
+                                    <img src="Tempdata/article/font-size.jpg" height="22" width="22">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h1>U19 Việt Nam 1-1 Trung Quốc: Mất điểm cuối trận</h1>
+                </header>
+                <article>
+                    <div id="livestream">
+                        <div class="player-content">
+                            <img src="tempdata/article/fw-player.jpg" width="770">
+                        </div>
+                        <ul class="events">
+                            <li class="comment">
+                                <div class="event-meta">
+                                    <time>1'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Hiệp 1 trận đấu giữa U19 Việt Nam và Trung Quốc bắt đầu.</p>
+                                </div>
+                            </li>
+                            <li class="video">
+                                <div class="event-meta">
+                                    <time>10'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Tình huống lên bóng đáng chú ý của U19 Việt Nam ở đầu trận.</p>
+                                    <div class="video-player">
+                                        <iframe width="450" height="285" src="http://www.youtube.com/embed/eKAWD1RUZvE"></iframe>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="picture">
+                                <div class="event-meta">
+                                    <time>14'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Tiền đạo Công Phượng khiến hàng thủ U19 Trung Quốc phải thi đấu vất vả trong 10 phút đầu hiệp 1.
+                                        <span class="author">Ảnh: Tùng Lê.</span>
+                                    </p>
+                                    <div class="full-img">
+                                        <img src="tempdata/site/img-main-article.jpg" width="400" alt="Diplomacy between the West and Russia is becoming more complex">
+                                        <span class="fig">Diplomacy between the West and Russia is becoming more complex</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="soccer-goal">
+                                <div class="event-meta">
+                                    <time>20'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Thanh Tùng có pha băng xuống bên cánh phải và dứt điểm kỹ thuật mở tỷ số cho U19 Việt Nam.</p>
+                                    <div class="full-img">
+                                        <img src="tempdata/site/img-main-article.jpg" width="770" alt="Diplomacy between the West and Russia is becoming more complex">
+                                        <span class="fig">Diplomacy between the West and Russia is becoming more complex</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="soccer-fulltime">
+                                <div class="event-meta">
+                                    <time>45'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Kết thúc hiệp 1, U19 Việt Nam tạm dẫn trước U19 Trung Quốc 1 bàn sau pha lập công của Thanh Tùng ở phút 20.</p>
+                                </div>
+                            </li>
+                            <li class="soccer-start">
+                                <div class="event-meta">
+                                    <time>46'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Hiệp 2 trận đấu giữa U19 Việt Nam và Trung Quốc ở lượt cuối bảng C tại giải U19 châu Á 2014 bắt đầu.</p>
+                                </div>
+                            </li>
+                            <li class="soccer-arbiter">
+                                <div class="event-meta">
+                                    <time>52'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>U19 Việt Nam tổ chức tấn công bên cánh phải, nhưng đáng tiếc là Văn Toàn rơi vào thế việt vị.</p>
+                                </div>
+                            </li>
+                            <li class="soccer-substitute">
+                                <div class="event-meta">
+                                    <time>58'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>U19 Việt Nam điều chỉnh đội hình khi Tuấn Tài vào thay Văn Toàn.</p>
+                                </div>
+                            </li>
+                            <li class="soccer-yellow-card">
+                                <div class="event-meta">
+                                    <time>60'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Thẻ vàng cho số 11 đội bạn</p>
+                                </div>
+                            </li>
+                            <li class="soccer-red-card">
+                                <div class="event-meta">
+                                    <time>70'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Thẻ đỏ cho số 21 đội nhà</p>
+                                </div>
+                            </li>
+                            <li class="soccer-penalty">
+                                <div class="event-meta">
+                                    <time>75'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Penalty cho đội khách</p>
+                                </div>
+                            </li>
+                            <li class="soccer-injure">
+                                <div class="event-meta">
+                                    <time>78'</time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Cầu thủ số 15 đội U19 Trung Quốc đã bị chấn thương</p>
+                                </div>
+                            </li>
+                            <li class="quotation">
+                                <div class="event-meta">
+                                    <time></time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>Trước khi trận đấu diễn ra, nhiều người hâm mộ muốn HLV Graechen loại hậu vệ trái Hồng Duy do thường xuyên mắc lỗi trong 2 trận trước.</p>
+                                </div>
+                            </li>
+                            <li class="soccer-fomation">
+                                <div class="event-meta">
+                                    <time></time>
+                                    <p class="type"></p>
+                                </div>
+                                <div class="event-content">
+                                    <p>
+                                        <b>Đội hình ra sân</b>
+                                    </p>
+                                    <p>
+                                        <b>U19 Việt Nam</b>: Minh Long, Văn Sơn, Xuân Hưng, Tiến Dũng, Hồng Duy, Thanh Tùng, Xuân Trường, Tuấn Anh, Văn Long, Công Phượng, Văn Toàn.
+                                    </p>
+                                    <p>
+                                        <b>U19 Trung Quốc</b>: Zhou Yuchen, Liu Junshuai, Gao Zhunyi, Wei Shihao, Cheng Jin, Zhang Xiuwwei, Wei Jingzong, Gui Hong, Xiang Hantian, Chen Zhechao, Chen Zepeng.
+                                    </p>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="cast">Đức Mạnh - Quý Sáng - Trương Khởi - Minh Đức</div>
+                    </div>
+                    <div class="article-tag">
+                        <h3>Key word :</h3>
+                        <div>
+                            <a href="#">đại sứ</a>
+                            <a href="#">Mỹ</a>
+                            <a href="#">doanh nghiệp Mỹ</a>
+                            <a href="#">hiệp định thương mại tự do</a>
+                            <a href="#">quan hệ</a>
+                            <a href="#">Cường dollar</a>
+                            <a href="#">lợi ích</a>
+                            <a href="#">Liên Hợp Quốc Mỹ</a>
+                            <a href="#">doanh nghiệp Mỹ</a>
+                            <a href="#">hiệp định thương mại tự do</a>
+                            <a href="#">quan hệ</a>
+                            <a href="#">Cường dollar</a>
+                            <a href="#">lợi ích</a>
+                            <a href="#">Liên Hợp Quốc</a>
+                        </div>
+                    </div>
+                    <div class="comment-zone clearfix">
+                        <div class="box-input">
+                            <h3>Bình luận</h3>
+                            <p class="name">Nội dung</p>
+                            <textarea></textarea>
+                            <ul class="note clearfix">
+                                <li>tối thiểu 10 chữ</li>
+                                <li>tiếng Việt có dấu</li>
+                                <li>không chứa liên kết</li>
+                            </ul>
+                            <ul class="note clearfix">
+                                <li class="statistic-ok">tối thiểu 10 chữ</li>
+                                <li class="statistic-ok">tiếng Việt có dấu</li>
+                                <li class="statistic-ok">không chứa liên kết</li>
+                            </ul>
+                            <p class="send-text">
+                                <button data-toggle="modal" data-target="#myModal">Gửi bình luận</button>
+                            </p>
+                        </div>
+                        <!-- Modal -->
+                        <div class="hidden modal fade modal-comment" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">
+                                            <span aria-hidden="true">&times;</span>
+                                            <span class="sr-only">Close</span>
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel">Thông tin thêm</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="clearfix">
+                                            <div class="form-group clearfix">
+                                                <label for="inputPassword3" class="col-sm-3 control-label">Tên của bạn</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group clearfix">
+                                                <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+                                                <div class="col-sm-9">
+                                                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+                                        <button type="button" class="btn btn-primary">Xác nhận</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-user-comm">
+                            <div class="box">
+                                <div class="name">Lê Kim Long</div>
+                                <time>22 PHÚT TRƯỚC</time>
+                                <div class="text">Link xem trực tiếp đây Tới lượt các anh lấy lại niềm tin của người hâm mộ cho đội bóng Olympic VN đó. Cố lên các anh em</div>
+                            </div>
+                            <div class="box">
+                                <div class="name">Lê Kim Long</div>
+                                <time>22 PHÚT TRƯỚC</time>
+                                <div class="text">Link xem trực tiếp đây Tới lượt các anh lấy lại niềm tin của người hâm mộ cho đội bóng Olympic VN đó. Cố lên các anh em</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- framework live article style  -->
+        </main>
+        <div class="sidebar">
+            <section class="poll zone">
+                <header class="clearfix">
+                    <hgroup>
+                        <h1><a href="category.html" title="Bình chọn">Bình chọn</a>
+                        </h1>
+                    </hgroup>
+                </header>
+                <div class="content">
+                    <p>
+                        Liên quan đến sự kiện giàn khoan HD 981, theo bạn Việt Nam có nên kiện Trung Quốc ra tòa án quốc tế?
+                    </p>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                         Option one is this and that&mdash;be sure to include why it's great
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Option two can be something else and selecting it will deselect option one
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                            Option three is disabled
+                        </label>
+                    </div>
+                    <div class="action">
+                        <a href="#" class="btn btn-default"><i class="glyphicon glyphicon-thumbs-up"></i>Biểu quyết</a>
+                        <a href="#" class="btn btn-info"><i class="glyphicon glyphicon-list-alt"></i>Kết quả</a>
+                    </div>
+                </div>
+            </section>
+            <!-- end of box Poll -->
+
+            <section class="video zone">
+                <header class="clearfix">
+                    <hgroup>
+                        <h1><a href="category.html" title="Bình chọn">Video</a>
+                        </h1>
+                    </hgroup>
+                </header>
+                <div class="content">
+                    <article class="story video">
+                        <figure class="cover">
+                            <a href="article.html">
+                                <img src="Tempdata/features/img-feature.jpg">
+                            </a>
+                        </figure>
+                        <header>
+                            <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                            </h1>
+                        </header>
+                    </article>
+                    <div class="two-cols min">
+                        <div>
+                            <article class="story video">
+                                <figure class="cover">
+                                    <a href="article.html">
+                                        <img src="Tempdata/features/img-feature.jpg">
+                                    </a>
+                                </figure>
+                                <header>
+                                    <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                                    </h1>
+                                </header>
+                            </article>
+                        </div>
+                        <div>
+                            <article class="story video">
+                                <figure class="cover">
+                                    <a href="article.html">
+                                        <img src="Tempdata/features/img-feature.jpg">
+                                    </a>
+                                </figure>
+                                <header>
+                                    <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                                    </h1>
+                                </header>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end of box Poll -->
+
+            <section class="picture zone">
+                <header class="clearfix">
+                    <hgroup>
+                        <h1><a href="category.html" title="Bình chọn">Ảnh</a>
+                        </h1>
+                    </hgroup>
+                </header>
+                <div class="content">
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            $('.sb-pic-slider').bxSlider({
+                                auto:true,
+                                prevSelector: '#sb-pic-prev',
+                                nextSelector: '#sb-pic-next',
+                                pager : false,
+                                slideWidth: 4000, // Chiều dài của một item 
+                                minSlides: 1, // Số item nhỏ nhất có thể hiển thị
+                                maxSlides: 1, // Số item lớn nhất có thể hiển thị
+                                moveSlides: 1, // số item mỗi lần di chuyển
+                                slideMargin: 0 // khoảng cách giữa các item
+                            });
+                        });
+                    </script>
+                    <div class="slider">
+                        <div class="control">
+                            <span id="sb-pic-prev" class="slider-prev"></span>
+                            <span id="sb-pic-next" class="slider-next"></span>
+                        </div>
+                        <ul class="sb-pic-slider">
+                            <li>
+                                <article class="story picture">
+                                    <figure class="cover">
+                                        <a href="article.html">
+                                            <img src="Tempdata/features/img-feature.jpg">
+                                        </a>
+                                    </figure>
+                                    <header>
+                                        <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                                        </h1>
+                                    </header>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story picture">
+                                    <figure class="cover">
+                                        <a href="article.html">
+                                            <img src="Tempdata/features/img-feature.jpg">
+                                        </a>
+                                    </figure>
+                                    <header>
+                                        <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                                        </h1>
+                                    </header>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story picture">
+                                    <figure class="cover">
+                                        <a href="article.html">
+                                            <img src="Tempdata/features/img-feature.jpg">
+                                        </a>
+                                    </figure>
+                                    <header>
+                                        <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                                        </h1>
+                                    </header>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story picture">
+                                    <figure class="cover">
+                                        <a href="article.html">
+                                            <img src="Tempdata/features/img-feature.jpg">
+                                        </a>
+                                    </figure>
+                                    <header>
+                                        <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                                        </h1>
+                                    </header>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story picture">
+                                    <figure class="cover">
+                                        <a href="article.html">
+                                            <img src="Tempdata/features/img-feature.jpg">
+                                        </a>
+                                    </figure>
+                                    <header>
+                                        <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                                        </h1>
+                                    </header>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story picture">
+                                    <figure class="cover">
+                                        <a href="article.html">
+                                            <img src="Tempdata/features/img-feature.jpg">
+                                        </a>
+                                    </figure>
+                                    <header>
+                                        <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                                        </h1>
+                                    </header>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story picture">
+                                    <figure class="cover">
+                                        <a href="article.html">
+                                            <img src="Tempdata/features/img-feature.jpg">
+                                        </a>
+                                    </figure>
+                                    <header>
+                                        <h1 class="title"><a href="article.html">Mekong River at risk as Laos forges ahead with dam-building spree</a>
+                                        </h1>
+                                    </header>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mostread zone">
+                <header class="clearfix">
+                    <hgroup>
+                        <h1><a href="category.html" title="Bình chọn">Xem nhiều nhất</a>
+                        </h1>
+                    </hgroup>
+                </header>
+                <ol>
+                    <li>
+                        <article class="story picture">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam mollitia consectetur neque, quibusdam deleniti.</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story live">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas unde magnam illum inventore maiores!</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story updating">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora commodi adipisci voluptate dolor iusto.</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story picture">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam mollitia consectetur neque, quibusdam deleniti.</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story live">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas unde magnam illum inventore maiores!</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story updating">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora commodi adipisci voluptate dolor iusto.</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story picture">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam mollitia consectetur neque, quibusdam deleniti.</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story live">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas unde magnam illum inventore maiores!</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story updating">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora commodi adipisci voluptate dolor iusto.</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story updating">
+                            <header>
+                                <h1 class="title"><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora commodi adipisci voluptate dolor iusto.</a>
+                                </h1>
+                            </header>
+                        </article>
+                    </li>
+                </ol>
+            </section>
+        </div>
+
+    </div>
+    <!--=== End Main Content ===-->
+    
+    <!--=== Footer ===-->
+    <footer id="site-footer">
+        <div class="container">
+            <div class="content">
+                <div class="logo">
+                    <a href="#">
+                        <img src="App_Themes/img/logo.png" alt="" class="img-responsive">
+                    </a>
+                </div>
+                <div class="copyright">
+                    Editor-in-Chief:
+                    <strong>Nguyen Quang Thong</strong>
+                    <br>248 Cong Quynh St . , Distr. 1, HCMC, Vietnam. Tel: (84-8) 39255738 - Fax: (84-8) 39255901
+                    <br>Email: admin@thanhniennews.com
+                    <br>Thanh Nien is the tribune of Vietnam’s Youth Association
+                    <br>Publication permit No. 14/GP-BC, granted by Press Department, Vietnam Ministry of Culture and Information.
+                    <br>Copyright © 2008 by Thanhniennews.com. All rights reserved. [ Privacy policy ]
+                </div>
+                <div class="powerby">
+                    <span>Powered by</span>
+                    <a href="http://www.baomoi.com/">
+                        <img src="App_Themes/img/epi-logo.jpg" width="60" height="43" a lt="epi">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--=== End Footer ===-->
+
+    <div id="source-modal" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Source Code</h4>
+                </div>
+                <div class="modal-body">
+                    <pre></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS Global Compulsory -->
+    <script src="Jscripts/vendor/jquery-1.10.2.min.js"></script>
+    <script src="Jscripts/vendor/bootstrap.min.js"></script>
+    <script>
+    (function($, d) {
+        $.each(readyQ, function(i, f) {
+            $(f)
+        });
+        $.each(bindReadyQ, function(i, f) {
+            $(d).bind("ready", f)
+        })
+    })(jQuery, document)
+    </script>
+
+
+    <!-- JS Implementing Plugins -->
+    <script src="Jscripts/ui.js"></script>
+    <script src="Jscripts/vendor/jquery-match-height-master/jquery.matchHeight-min.js"></script>
+    <script src="Jscripts/vendor/jquery.bxslider-4.1.2/jquery.bxslider.min.js"></script>
+    <script src="Jscripts/vendor/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+</body>
+
+</html>
