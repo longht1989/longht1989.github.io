@@ -1,141 +1,33 @@
-/* ====================================   Header's style   ==================================== */
+/* site header style */
 
 #site-header {
-    height: 195px;
-    margin-bottom: 20px;
-    z-index: 10;
-    .top-header {
-        position: relative;
-        &::before {
-            display: block;
-            content: '';
-            background-color: rgba(255, 255, 255, .2);
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-        }
-        height: 160px;
-        background: url(../images/header-bg.png) center 0 no-repeat;
-        .site-wrap {
-            position: relative;
-            height: inherit;
-            .logo {
-                margin-top: 0;
-                margin-bottom: 0;
-                position: absolute;
-                left: 0;
-                bottom: -45px;
-                z-index: 3;
-                @include haf() {
-                    background-color: white;
-                    img {
-                        opacity: 0.9;
-                        @include transition(all, 0.2, linear);
-                    }
-                }
-            }
-            time {
-                position: absolute;
-                right: 0;
-                bottom: 10px;
-                color: black;
-            }
-        }
+    z-index: 3;
+    position: relative;
+    margin-bottom: 24px;
+    padding: 12px 8px;
+    border-bottom: 2px solid $brand-primary;
+    .sprites-menu {
+        position: absolute;
+        top: 12px;
+        right: 8px;
     }
-    .navigation {
-        @include clearfix;
-        height: 35px;
-        background-color: $brand-primary;
-        ul {
-            padding-left: 183px;
-        }
+    .cate-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        padding: 12px 8px;
+        border-bottom: 1px solid $brand-primary;
         li {
-            float: left;
-            @include font-size(14, 35);
-            // background-color: darken($brand-primay, 5%);
-            @include haf() {
-                background-color: darken($brand-primary, 5%);
+            margin-bottom: 5px;
+            @include font-size(14, 19);
+            font-weight: bold;
+            .fa {
+                margin-right: 3px;
+                font-size: 0.8em;
             }
-            a {
-                display: block;
-                color: white;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            .sprites-search {
-                color: white;
-                margin-left: 12px;
-                margin-right: 12px;
-                cursor: pointer;
-                line-height: 35px;
-            }
-            &.search {
-                position: relative;
-                &.active {
-                    background-color: darken($brand-primary, 5%);
-                }
-                .search-box {
-                    @include clearfix;
-                    background-color: inherit;
-                    padding: 10px;
-                    width: 480px;
-                    position: absolute;
-                    right: 0;
-                    top: 100%;
-                    display: none;
-                    z-index: 2;
-                    input {
-                        width: 80%;
-                        float: left;
-                    }
-                    button {
-                        float: right;
-                    }
-                }
-            }
-        }
-    }
-}
-
-// header for category & detail page
-.category-page,
-.detail-page {
-    #site-header {
-        .top-header {
-            &::before {
-                background-color: rgba(0, 0, 0, 0.3);
-            }
-            .site-wrap {
-                time {
-                    color: white;
-                }
-            }
-            .category-title {
-                @include font-size(40, 40);
-                text-shadow: 2px 2px #000;
-                position: relative;
-                top: 60px;
-                left: 0;
-                right: 0;
-                margin: 0;
-                text-transform: uppercase;
-                text-align: center;
-                font-weight: normal;
-                a {
-                    color: white;
-                }
-            }
-            .logo {
-                img {
-                    height: 70px;
-                    width: auto;
-                }
-            }
-        }
-        .navigation ul {
-            padding-left: 133px;
+            @include lastchild();
         }
     }
 }

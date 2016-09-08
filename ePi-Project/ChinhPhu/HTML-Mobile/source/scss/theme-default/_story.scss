@@ -6,14 +6,13 @@
         margin-bottom: 7px;
     }
     .title {
-        font-size: 15px;
-        font-size: 1.5rem;
-        line-height: 1.4em;
+        @include font-size(14, 19);
         margin-top: 0;
         margin-bottom: 5px;
         font-weight: normal;
         a {
             color: #000;
+            display: block;
         }
         time {
             color: #818283;
@@ -170,171 +169,48 @@
         padding-bottom: 5px;
         margin-bottom: 10px;
         border-bottom: 1px solid #ddd;
-        &:last-child {
+        &:last-of-type {
             padding-bottom: 0;
             margin-bottom: 0;
             border-bottom: none;
         }
-        &.focus-story {
-            .title {
-                @include font-size(20, 28);
-            }
-        }
     }
-    // story in hashtag box
-    .hashtag-box & {
-        .title {
-            .sprites-note {
-                margin-right: 5px;
-            }
-        }
-    }
-    // story in epaper-box
-    .slider-listing li & {
-        width: 110px;
-    }
-    // story in listing border box
-    .listing-border-box & {
-        padding-bottom: 0;
-        border-bottom: none;
-        .thumb {
-            margin: 0;
-        }
-        >header {
-            float: right;
-            width: 220px;
-            height: 60px;
-            border: 1px solid #ddd;
-            border-left: none;
-            padding: 10px;
-            overflow: hidden;
-            @include transition(border-color, 0.2, linear);
-        }
-        .title {
-            margin-top: 0;
-        }
-        &:hover {
-            >header {
-                border-color: #aaa;
-            }
-        }
-    }
-    // story in focus zone
-    .focus-zone & {
-        margin-bottom: 0;
-        width: 245px;
-        height: 180px;
-        padding-bottom: 0;
-        margin-bottom: 2px;
-        float: left;
-        .thumb {
-            margin-bottom: 0;
-        }
-        &.first-story {
-            width: 486px;
-            height: 362px;
-            margin-right: 2px;
-            .title {
-                @include font-size(20, 26);
-            }
-        }
-    }
-    // story in most view listing
-    .most-view .most-view-listing & {
-        .title {
-            margin-bottom: 0;
-        }
-    }
-    // story in video box
-    .video-box & {
-        width: 145px;
-        float: left;
-        margin-right: 10px;
-        vertical-align: top;
-        padding-bottom: 0;
-        border-bottom: none;
-        &:nth-child(2n) {
-            margin-right: 0;
-        }
-        .thumb {
-            position: relative;
-            a::after {
-                content: "";
-                display: block;
-                position: absolute;
-                background: url(../images/ngaynay-sprites.png) no-repeat;
-                background-position: -100px 0px;
-                width: 18px;
-                height: 18px;
-                top: calc(50% - 9px);
-                left: calc(50% - 9px);
-            }
-        }
-    }
-    // story in large zone with 4 columns
-    .large-zone & {
-        width: 25%;
-        float: left;
-        vertical-align: top;
-        // margin-right: 15px;
-        padding-left: 7px;
-        padding-right: 8px;
-        padding-bottom: 0;
-        border-bottom: none;
-        &:nth-child(5) {
-            clear: left;
-        }
-        // &:nth-child(4n) {
-        //     margin-right: 0;
-        // }
-    }
-    // first story in highlight cate
-    .cate-highlight & {
-        &.first-story {
-            margin-bottom: 15px;
+    .extend-info {
+        display: none;
+        .meta {
+            margin-bottom: 4px;
+            @include clearfix;
+            @include font-size(12, 17);
             .thumb {
-                margin-bottom: 0;
+                float: left;
+                margin-right: 8px;
             }
-            .title {
-                margin-bottom: 0;
-                @include font-size(26, 36);
+            .name {
+                @include font-size(12, 17);
+                color: #333;
+                text-transform: uppercase;
+                margin-bottom: 4px;
+            }
+            .time {
+                color: #999;
             }
         }
     }
-    // top story in highlight cate 
-    .cate-highlight .top-story & {
-        width: 325px;
-        float: left;
-        margin-right: 15px;
-        &:nth-child(2n) {
-            margin-right: 0;
-        }
+    &.full-info {
         .title {
-            @include font-size(18, 24);
+            @include font-size(16, 22);
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .extend-info {
+            display: block;
         }
     }
-    // cate listing 
-    .cate-listing & {
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #eee;
-        .title {
-            @include font-size(18, 24);
-        }
-        .summary {
-            margin-bottom: 0;
-        }
-        &:last-child {
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-    }
-    .category-page &,
-    .detail-page & {
-        &.story-first {
-            .title {
-                @include font-size(18, 24);
-            }
-        }
+    .listing-box-story & {
+        background-color: #fff;
+        -webkit-box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .16);
+        box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, .16);
+        padding: 8px;
+        margin-bottom: 16px;
     }
 }

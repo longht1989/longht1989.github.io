@@ -7,33 +7,24 @@
     @include clearfix;
     text-align: center;
     display: block;
-    li {
+    @include font-size(12, 25);
+    font-weight: bold;
+    > li {
         display: inline-block;
-        > a {
-            color: #777;
-            margin-right: 15px;
-            border-radius: 3px;
-        }
-        &:last-child {
-            > a {
-                margin-right: 0;
-                border-bottom-right-radius: 3px;
-                border-top-right-radius: 3px;
-            }
-        }
-        &:first-child {
-            > a {
-                border-bottom-left-radius: 3px;
-                border-top-left-radius: 3px;
-            }
+        > a,
+        > span {
+            // color: #777;
+            border: none;
+            background: none;
+            margin-right: 8px;
         }
         &.active {
             >a {
-                background-color: $brand-primary;
+                background-color: $brand-success;
             }
             @include haf() {
                 >a {
-                    background-color: $brand-primary;
+                    background-color: $brand-success;
                 }
             }
         }

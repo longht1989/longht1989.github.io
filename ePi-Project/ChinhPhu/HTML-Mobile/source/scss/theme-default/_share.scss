@@ -1,0 +1,43 @@
+/* share css  */
+
+
+/* == HELPER CLASS == */
+
+// reset form-control
+.form-control {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    @include haf() {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border-color: $brand-primary;
+    }
+}
+
+// view more
+.view-more {
+    color: $brand-primary;
+    @include font-size(12, 17);
+    @include haf() {
+        text-decoration: underline;
+    }
+}
+
+// big heading
+.big-heading {
+	padding-left: 8px;
+	padding-right: 8px;
+    margin-bottom: 12px;
+    font-family: $font-family-roboto;
+    font-weight: bold;
+    color: $brand-success;
+    text-transform: uppercase;
+    @include font-size(18, 35);
+    [class*=sprites-] {
+        position: relative;
+        top: 3px;
+    }
+}

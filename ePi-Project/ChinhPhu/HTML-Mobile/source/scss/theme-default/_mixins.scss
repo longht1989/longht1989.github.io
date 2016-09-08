@@ -52,7 +52,6 @@
 //     }
 // }
 
-
 /* Font mixin
  * ==================================== */
 
@@ -144,4 +143,13 @@
     transition-property: $property;
     transition-duration: $duration + s;
     transition-timing-function: $function;
+}
+
+// last child style
+@mixin lastchild() {
+    &:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
 }

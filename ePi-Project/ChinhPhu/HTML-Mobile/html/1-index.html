@@ -16,9 +16,9 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="favicon.ico">
     <!-- JS Global Plugins -->
-    <script src="../build/Jscripts/ngaynay.min.js"></script>
+    <script src="../build/Jscripts/kiennghi.min.js"></script>
     <!-- CSS Customization -->
-    <link rel="stylesheet" href="../build/App_Themes/css/ngaynay.min.css">
+    <link rel="stylesheet" href="../build/App_Themes/css/kiennghi.min.css">
     <!-- JS modernizr -->
     <script>
     (function(w, d, u) {
@@ -50,18 +50,206 @@
 <body class="index-page">
     <!-- site header  -->
     <div id="site-header">
-        <h1 class="logo"></h1>
-        span.sprites-
+        <h1 class="logo">
+            <a href="1-index.html">
+                <img src="../build/App_Themes/images/slogan.png" height="52" width="251" alt="">
+            </a>
+        </h1>
+        <span class="sprites-menu"></span>
+        <ul class="cate-list">
+            <li>
+                <a href="2-category.html">
+                    <span class="fa fa-caret-right"></span>Tiếp nhận kiến nghị
+                </a>
+            </li>
+            <li>
+                <a href="2-category.html">
+                    <span class="fa fa-caret-right"></span>Tiếp nhận kiến nghị
+                </a>
+            </li>
+            <li>
+                <a href="2-category.html">
+                    <span class="fa fa-caret-right"></span>Tiếp nhận kiến nghị
+                </a>
+            </li>
+            <li>
+                <a href="2-category.html">
+                    <span class="fa fa-caret-right"></span>Tiếp nhận kiến nghị
+                </a>
+            </li>
+        </ul>
     </div>
     <!-- end site header -->
     <!-- site content  -->
     <div id="site-content">
-        
+        <!-- featured form -->
+        <section class="zone form-zone">
+            <header class="text-center">
+                <h3 class="zone-title text-uppercase">Tiếp nhận kiến nghị</h3>
+                <p class="desc">Kiến nghị của bạn sẽ được biên tập và gửi đến cơ quan có thẩm quyền để trả lời. Xin vui lòng gõ tiếng Việt có dấu</p>
+            </header>
+            <div class="zone-content">
+                <div class="form-group">
+                    <label for="exampleInputName2">Name</label>
+                    <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail2">Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+                </div>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Chọn file đính kèm</p>
+                </div>
+                <div class="form-group">
+                    <label for="contentinput">Nội dung kiến nghị</label>
+                    <textarea id="contentinput" class="form-control" rows="3"></textarea>
+                </div>
+                <div class="text-right">
+                    <button class="btn btn-default">
+                        Nhập lại
+                    </button>
+                    <button class="btn btn-success">
+                        Gửi kiến nghị
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- home tab -->
+        <div class="main-tab">
+            <ul class="nav-tab text-center" role="tablist">
+                <li role="presentation" class="active"><a href="#demo1" aria-controls="demo1" role="tab" data-toggle="tab">Lĩnh vực</a></li>
+                <li role="presentation"><a href="#demo2" aria-controls="demo2" role="tab" data-toggle="tab">Bộ ngành địa phương</a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active" id="demo1">
+                    <!-- normal zone -->
+                    <section class="zone">
+                        <header>
+                            <h3 class="zone-title"><a href="#demo-zone1" data-toggle="collapse" aria-expanded="false" aria-controls="demo-zone1">Bảo hiểm xã hội - Bảo hiểm y tế - Bảo hiểm thất nghiệp</a></h3>
+                        </header>
+                        <div id="demo-zone1" class="zone-content collapse listing-story">
+                            <article class="story">
+                                <h2 class="title">
+                                    <a>Kiến nghị về việc: Có thể thanh toán BHYT tại cơ quan bảo hiểm</a>
+                                </h2>
+                                <div class="extend-info">
+                                    <div class="meta">
+                                        <figure class="thumb">
+                                            <img src="../build/App_Themes/images/default-avatar.png" height="50" width="50" alt="">
+                                        </figure>
+                                        <h4 class="name">Doanh nghiệp vận tải</h4>
+                                        <p class="time">
+                                            <span class="sprites-clock"></span>
+                                            <time datetime="2011-01-12">January 12th, 2011</time>
+                                        </p>
+                                    </div>
+                                    <p class="summary">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, iste. Atque asperiores nisi, laborum. Similique ducimus odio ipsum, quidem nostrum.
+                                    </p>
+                                    <p class="text-right">
+                                        <a href="2-category.html" class="view-more">Xem tiếp bài viết >></a>
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="story">
+                                <h2 class="title">
+                                    <a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, ipsam, odit. Quibusdam.</a>
+                                </h2>
+                            </article>
+                            <article class="story">
+                                <h2 class="title">
+                                    <a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, culpa eius sed!</a>
+                                </h2>
+                            </article>
+                            <article class="story">
+                                <h2 class="title">
+                                    <a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem voluptatem minima, aliquam?</a>
+                                </h2>
+                            </article>
+                            <p class="text-right">
+                                <a href="2-category.html" class="view-more">Xem các kiến nghị khác >></a>
+                            </p>
+                        </div>
+                    </section>
+                    <!-- normal zone -->
+                    <section class="zone">
+                        <header>
+                            <h3 class="zone-title"><a href="#demo-zone2" data-toggle="collapse" aria-expanded="false" aria-controls="demo-zone2">Tài chính - Ngân hàng - Đầu tư</a></h3>
+                        </header>
+                        <div id="demo-zone2" class="zone-content collapse listing-story">
+                            <article class="story full-info">
+                                <h2 class="title">
+                                    <a>Kiến nghị về việc: Có thể thanh toán BHYT tại cơ quan bảo hiểm</a>
+                                </h2>
+                                <div class="extend-info">
+                                    <div class="meta">
+                                        <figure class="thumb">
+                                            <img src="../build/App_Themes/images/default-avatar.png" height="50" width="50" alt="">
+                                        </figure>
+                                        <h4 class="name">Doanh nghiệp vận tải</h4>
+                                        <p class="time">
+                                            <span class="sprites-clock"></span>
+                                            <time datetime="2011-01-12">January 12th, 2011</time>
+                                        </p>
+                                    </div>
+                                    <p class="summary">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, iste. Atque asperiores nisi, laborum. Similique ducimus odio ipsum, quidem nostrum.
+                                    </p>
+                                    <p class="text-right">
+                                        <a href="2-category.html" class="view-more">Xem tiếp bài viết >></a>
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="story">
+                                <h2 class="title">
+                                    <a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, ipsam, odit. Quibusdam.</a>
+                                </h2>
+                            </article>
+                            <article class="story">
+                                <h2 class="title">
+                                    <a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, culpa eius sed!</a>
+                                </h2>
+                            </article>
+                            <article class="story">
+                                <h2 class="title">
+                                    <a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem voluptatem minima, aliquam?</a>
+                                </h2>
+                            </article>
+                            <p class="text-right">
+                                <a href="2-category.html" class="view-more">Xem các kiến nghị khác >></a>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div role="tabpanel" class="tab-pane fade " id="demo2">...</div>
+            </div>
+        </div>
     </div>
     <!-- end site content -->
     <!-- site footer -->
     <div id="site-footer">
-        
+        <h3 class="footer-title">Văn phòng chính phủ</h3>
+        <p>
+            <span class="sprites-map-marker"></span> Số 01 Hoàng Hoa Thám, Ba Đình, Hà Nội
+        </p>
+        <p>
+            <span class="sprites-phone"></span> Điện thoại:080 43100 - 080 43569 - Fax: 080 44130Hoàng Hoa Thám, Ba Đình, Hà Nội
+        </p>
+        <p>
+            <span class="sprites-envelop"></span> <a href="mailto:vpcp@chinhphu.vn">vpcp@chinhphu.vn</a>
+        </p>
     </div>
     <!-- JS Customise Compulsory -->
     <script src="../build/plugins/jquery.bxslider/jquery.bxslider.min.js"></script>
