@@ -46,124 +46,7 @@
         @extend .meta;
         color: #555;
     }
-    // story with bold title
-    &.story-bold {
-        .title {
-            font-weight: bold;
-        }
-    }
-    // story with left thumbnail
-    &.story-left {
-        .thumb {
-            float: left;
-            margin-right: 10px;
-        }
-        >header {
-            .title {
-                margin-top: -3px;
-            }
-        }
-    }
-    // story with right thumbnail
-    &.story-right {
-        .thumb {
-            float: right;
-            margin-left: 10px;
-        }
-        >header {
-            .title {
-                margin-top: -3px;
-            }
-        }
-    }
-    // story with red bullet 
-    &.story-bullet {
-        padding-left: 10px;
-        background: url(../img/red-bullet.png) 0 6px no-repeat;
-    }
-    // story with mask 
-    &.story-mask {
-        position: relative;
-        .title {
-            position: absolute;
-            padding: 10px;
-            background: url(../images/story-mask.png) left bottom no-repeat;
-            background-size: 100%;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            margin-bottom: 0;
-            a {
-                color: white;
-                @include haf() {
-                    color: darken(white, 20%);
-                }
-            }
-        }
-    }
-    &.story-video,
-    &.story-photo {
-        .thumb {
-            position: relative;
-            .icon-wrap {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                padding: 6px 15px;
-                background-color: rgba(0, 0, 0, .7);
-            }
-        }
-    }
-    /* --- */
-    // story in lastest listing - highlight zone
-    li:first-child & {
-        .latest-listing & {
-            .title {
-                font-size: 20px;
-                a {
-                    color: black;
-                    @include haf() {
-                        color: $brand-primary;
-                    }
-                }
-            }
-        }
-    }
-    // story in highlight zone - featured zone
-    .featured-zone & {
-        width: 220px;
-        float: left;
-        margin-right: 10px;
-        &.focus-story {
-            float: none;
-            width: 100%;
-            padding: 0;
-            margin: 0 0 8px 0;
-            .title {
-                @include font-size(30, 36);
-                font-weight: bold;
-                a {
-                    color: black;
-                }
-                &:hover {
-                    a {
-                        color: $brand-primary;
-                    }
-                }
-            }
-        }
-        &:nth-child(2n) {
-            float: right;
-            margin-right: 0;
-        }
-    }
-    // story in talking box 
-    .talking-box & {
-        .thumb {
-            border-radius: 50%;
-            overflow: hidden;
-        }
-    }
+    
     // story in zone 
     .zone & {
         padding-bottom: 5px;
@@ -193,6 +76,10 @@
             }
             .time {
                 color: #999;
+                .sprites-clock{
+                    position: relative;
+                    top: 3px;
+                }
             }
         }
     }

@@ -14,11 +14,13 @@
     .cate-list {
         display: none;
         position: absolute;
-        top: 100%;
+        top: calc(100% + 2px);
         left: 0;
         right: 0;
         padding: 12px 8px;
         border-bottom: 1px solid $brand-primary;
+        background-color: #FFF;
+        z-index: 2;
         li {
             margin-bottom: 5px;
             @include font-size(14, 19);

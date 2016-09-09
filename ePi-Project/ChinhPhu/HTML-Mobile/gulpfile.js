@@ -38,13 +38,10 @@ gulp.task('scripts', function() {
             paths.js_dev + '/vendor/jquery-migrate.js',
             paths.js_dev + '/vendor/bootstrap.min.js',
             // import plugin
-            paths.plugins_dev + '/SidebarTransitions/js/classie.js',
-            // paths.plugins_dev + '/SidebarTransitions/js/sidebarEffects.js',
-            // end import plugin
             // paths.js_dev + '/custom.js'
         ])
         .pipe(concat(paths.project_name + '.js'))
-        .pipe(gulp.dest(paths.js))
+        // .pipe(gulp.dest(paths.js))
         .pipe(uglify())
         .pipe(rename({
             suffix: '.min'

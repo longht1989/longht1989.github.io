@@ -20,31 +20,6 @@
     <!-- CSS Customization -->
     <link rel="stylesheet" href="../build/App_Themes/css/kiennghi.min.css">
     <!-- JS modernizr -->
-    <script>
-    (function(w, d, u) {
-        w.readyQ = [];
-        w.bindReadyQ = [];
-
-        function p(x, y) {
-            if (x == "ready") {
-                w.bindReadyQ.push(y);
-            } else {
-                w.readyQ.push(x);
-            }
-        };
-        var a = {
-            ready: p,
-            bind: p
-        };
-        w.$ = w.jQuery = function(f) {
-            if (f === d || f === u) {
-                return a
-            } else {
-                p(f)
-            }
-        }
-    })(window, document)
-    </script>
 </head>
 
 <body class="category-page">
@@ -123,9 +98,6 @@
         <!-- home tab -->
         <div class="listing-box-story">
             <article class="story full-info">
-                <h2 class="title">
-                    <a>Kiến nghị về việc: Có thể thanh toán BHYT tại cơ quan bảo hiểm</a>
-                </h2>
                 <div class="extend-info">
                     <div class="meta">
                         <figure class="thumb">
@@ -137,15 +109,17 @@
                             <time datetime="2011-01-12">January 12th, 2011</time>
                         </p>
                     </div>
+                </div>
+                <h2 class="title">
+                    <a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid natus, optio commodi in. Quo.</a>
+                </h2>
+                <div class="extend-info">
                     <p class="summary">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, iste. Atque asperiores nisi, laborum. Similique ducimus odio ipsum, quidem nostrum.
                     </p>
                 </div>
             </article>
             <article class="story full-info">
-                <h2 class="title">
-                    <a>Kiến nghị về việc: Có thể thanh toán BHYT tại cơ quan bảo hiểm</a>
-                </h2>
                 <div class="extend-info">
                     <div class="meta">
                         <figure class="thumb">
@@ -157,6 +131,11 @@
                             <time datetime="2011-01-12">January 12th, 2011</time>
                         </p>
                     </div>
+                </div>
+                <h2 class="title">
+                    <a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid natus, optio commodi in. Quo.</a>
+                </h2>
+                <div class="extend-info">
                     <p class="summary">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, iste. Atque asperiores nisi, laborum. Similique ducimus odio ipsum, quidem nostrum.
                     </p>
@@ -190,16 +169,6 @@
     <!-- JS Customise Compulsory -->
     <script src="../build/plugins/jquery.bxslider/jquery.bxslider.min.js"></script>
     <script src="../build/Jscripts/custom.js"></script>
-    <script>
-    (function($, d) {
-        $.each(readyQ, function(i, f) {
-            $(f)
-        });
-        $.each(bindReadyQ, function(i, f) {
-            $(d).bind("ready", f)
-        })
-    })(jQuery, document)
-    </script>
     <!-- Js Dev plugin -->
     <!--[if lt IE 9]>
         <script src="Jscripts/vendor/respond.js"></script>
