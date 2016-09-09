@@ -5799,38 +5799,17 @@ h5 {
    = NEWSSPAPER                       =
    ==================================== */
 /* site-wrap */
-.site-wrap {
-  width: 980px;
-  margin-left: auto;
-  margin-right: auto; }
-  .site-wrap:before, .site-wrap:after {
-    content: " ";
-    display: table; }
-  .site-wrap:after {
-    clear: both; }
-  #site-content .site-wrap {
-    margin-bottom: 20px; }
-
-.main-content {
-  width: 665px;
-  float: left; }
-  .main-content:before, .main-content:after {
-    content: " ";
-    display: table; }
-  .main-content:after {
-    clear: both; }
-
-.sidebar {
-  width: 300px;
-  float: right; }
-
-.main-content .zone {
-  width: 325px;
-  float: left;
-  margin-right: 15px; }
-  .main-content .zone:nth-child(2n) {
-    float: right;
-    margin-right: 0; }
+/* wrap for large screen */
+@media screen and (min-width: 768px) {
+  html {
+    background-color: #f9f9f9; }
+  body {
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFF;
+    padding-left: 20px;
+    padding-right: 20px; } }
 
 /* site header style */
 #site-header {
@@ -5838,7 +5817,8 @@ h5 {
   position: relative;
   margin-bottom: 24px;
   padding: 12px 8px;
-  border-bottom: 2px solid #1667a0; }
+  border-bottom: 2px solid #1667a0;
+  background-color: white; }
   #site-header .sprites-menu {
     position: absolute;
     top: 12px;
@@ -5872,6 +5852,7 @@ h5 {
    Footer's style
    ==================================== */
 #site-footer {
+  background-color: #FFF;
   padding: 12px 8px;
   border-top: 2px solid #1667a0;
   font-size: 12px;

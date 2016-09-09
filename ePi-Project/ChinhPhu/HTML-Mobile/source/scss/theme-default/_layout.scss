@@ -1,37 +1,18 @@
 /* site-wrap */
 
-.site-wrap {
-    @include clearfix;
-    width: 980px;
-    margin-left: auto;
-    margin-right: auto;
-    #site-content & {
-        margin-bottom: 20px;
+
+/* wrap for large screen */
+
+@media screen and (min-width: 768px) {
+    html {
+        background-color: #f9f9f9;
     }
-}
-
-// main-content column
-.main-content {
-    @include clearfix;
-    width: 665px;
-    float: left;
-}
-
-// sidebar column
-.sidebar {
-    width: 300px;
-    float: right;
-}
-
-// main-content two cols
-.main-content {
-    .zone {
-        width: 325px;
-        float: left;
-        margin-right: 15px;
-        &:nth-child(2n) {
-            float: right;
-            margin-right: 0;
-        }
+    body {
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #FFF;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
