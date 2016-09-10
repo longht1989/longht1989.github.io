@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-3.1.0.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="site-wrap">
+        <h2>Thông tin đăng ký</h2>
+        <form id="form-register" action="result.html" accept-charset="utf-8">
+            <div class="row">
+                <label for="name">Họ tên</label>
+                <input class="form-input" id="name" type="text" name="name" value="">
+                <span class="invalid"></span>
+            </div>
+            <div class="row">
+                <label for="birthday">Năm sinh</label>
+                <select class="form-input" id="birthday" type="text" name="birthday" value="">
+                    <option value="">Chọn năm sinh của bạn...</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2003</option>
+                </select>
+                <span class="invalid"></span>
+            </div>
+            <div class="row">
+                <input class="form-check" id="male" type="radio" name="gender" value="Nam" checked>
+                <label class="label-inline" for="male">Nam</label>
+                <input class="form-check" id="female" type="radio" name="gender" value="Nữ">
+                <label class="label-inline" for="female">Nữ</label>
+            </div>
+            <div class="row">
+                <label for="add">Địa chỉ</label>
+                <input class="form-input" id="add" type="text" name="add" value="">
+                <span class="invalid"></span>
+            </div>
+            <div class="row">
+                <label for="tel">Điện thoại</label>
+                <input class="form-input" id="tel" type="text" name="tel" value="">
+                <span class="invalid"></span>
+            </div>
+            <div class="row">
+                <label for="email">Email</label>
+                <input class="form-input" id="email" type="email" name="email" value="">
+                <span class="invalid"></span>
+            </div>
+            <div class="row">
+                <label for="password">Mật khẩu</label>
+                <input class="form-input" id="password" type="password" name="password" value="">
+                <span class="invalid"></span>
+            </div>
+            <div class="row">
+                <input class="form-submit" type="submit" value="Đăng ký">
+                <!--  <input class="form-submit" id="btnsubmit" type="" value="Show">
+                <p id="check">check</p> -->
+            </div>
+        </form>
+    </div>
+    <script src="main.js" type="text/javascript"></script>
+</body>
+
+</html>
