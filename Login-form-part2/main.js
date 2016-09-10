@@ -1,48 +1,48 @@
 /*check valid form */
 var isValid = true;
-var validCount = 0;
+// var validCount = 0;
 $('#form-register').on('submit', function() {
     if ($('#name').val().trim() == '') {
         $('#name').next('span').text('Name is empty');
         isValid = false;
     } else {
         $('#name').next('span').text('');
-        validCount++;
+        // validCount++;
     }
     if ($('#birthday').val().trim() == '') {
         $('#birthday').next('span').text('Year is invalid');
         isValid = false;
     } else {
         $('#birthday').next('span').text('');
-        validCount++;
+        // validCount++;
     }
     if ($('#add').val().trim() == '') {
         $('#add').next('span').text('Address is empty');
         isValid = false;
     } else {
         $('#add').next('span').text('');
-        validCount++;
+        // validCount++;
     }
     if ($('#tel').val().trim() == '') {
         $('#tel').next('span').text('Telephone number is empty');
         isValid = false;
     } else {
         $('#tel').next('span').text('');
-        validCount++;
+        // validCount++;
     }
     if ($('#password').val().trim() == '') {
         $('#password').next('span').text('Password is empty');
         isValid = false;
     } else {
         $('#password').next('span').text('');
-        validCount++;
+        // validCount++;
     }
     if ($('#email').val().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/) == null) {
         $('#email').next('span').text('Email is invalid');
         isValid = false;
     } else {
         $('#email').next('span').text('');
-        validCount++;
+        // validCount++;
     }
     if (validCount >= 6) isValid = true;
     return isValid;
