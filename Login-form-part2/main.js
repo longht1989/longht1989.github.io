@@ -44,7 +44,7 @@ $('#form-register').on('submit', function() {
         $('#email').next('span').text('');
         // validCount++;
     }
-    if (validCount >= 6) isValid = true;
+    // if (validCount >= 6) isValid = true;
     return isValid;
 });
 
