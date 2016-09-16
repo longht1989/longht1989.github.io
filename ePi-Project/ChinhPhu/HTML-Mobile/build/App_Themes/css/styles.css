@@ -6300,12 +6300,18 @@ h5 {
     .main-article .article-content .zone {
       margin-left: 0;
       margin-right: 0; }
+    .main-article .article-content .article-vote-box .btn {
+      width: 100%; }
+    .main-article .article-content .article-vote-box .vote-count {
+      font-weight: bold;
+      margin-top: 3px; }
     .main-article .article-content table {
       max-width: 100% !important; }
     .main-article .article-content .comment-box {
       margin-bottom: 16px;
       padding-top: 8px;
-      border-top: 2px solid #b00600; }
+      border-top: 1px solid #ddd;
+      margin-top: 8px; }
       .main-article .article-content .comment-box .comment-box-title {
         margin-bottom: 8px;
         font-family: "Roboto", Arial, sans-serif;

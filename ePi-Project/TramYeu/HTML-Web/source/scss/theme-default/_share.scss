@@ -1,0 +1,47 @@
+/* button border  */
+
+.btn {
+    font-size: 14px;
+}
+
+.btn-border {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #555;
+    background-color: transparent;
+    color: #555;
+    @include transition(all, 0.2, ease-out);
+    @include haf() {
+        background-color: #111;
+        color: white;
+    }
+    ;
+}
+
+.form-control {
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    &:focus {
+        border-color: darken($brand-primary, 15%);
+    }
+}
+
+
+/* .big-heading */
+
+.big-heading {
+    @include clearfix;
+    @include font-size(30, 40);
+    font-family: $font-family-itim;
+    color: $brand-primary;
+    margin-bottom: 20px;
+    .fa {
+        margin-right: 7px;
+    }
+}

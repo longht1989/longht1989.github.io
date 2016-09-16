@@ -1,0 +1,132 @@
+/* ==========================================================================
+  Base styles: opinionated defaults
+  -------
+   ========================================================================== */
+
+html {
+  font-size: 62.5%;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio, canvas, img, video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+figure {
+  margin: 0;
+}
+
+
+/* ==========================================================================
+   Helper classes
+   -------
+   ========================================================================== */
+   
+/*
+ * tool class
+ */
+.pull-left, .left {
+    float: left !important;
+}
+.pull-right, .right {
+    float: right !important;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+  position: absolute;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   -------
+   ========================================================================== */
+
+/*
+ * content
+ */
+
+p, pre {
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+a:focus, input:focus {
+  outline: 0;
+}
+dl, menu, ol, ul, dd {
+  margin: 0;
+}
+menu, ol, ul {
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+  list-style: none;
+}
+table {
+  width: 100%;
+  td, th {
+    font-weight: normal;
+  }
+}
+button {
+  border: 0 none;
+  outline: 0;
+}
+
+
+/* 
+ * fix clear box  
+ */
+
+.clearfix:before,
+.clearfix:after,
+{
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+{
+  clear: both;
+}
+.clearfix {
+    *zoom: 1;
+}

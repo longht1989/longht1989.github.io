@@ -1,7 +1,7 @@
 /* ====================================   Header's style   ==================================== */
 
 #site-header {
-    height: 195px;
+    height: 230px;
     margin-bottom: 20px;
     z-index: 10;
     .top-header {
@@ -17,7 +17,7 @@
             left: 0;
         }
         height: 160px;
-        background: url(../images/header-bg.png) center 0 no-repeat;
+        // background: url(../images/header-bg.png) center 0 no-repeat;
         .site-wrap {
             position: relative;
             height: inherit;
@@ -36,6 +36,12 @@
                     }
                 }
             }
+            .qc {
+                top: 35px;
+                right: 40px;
+                position: absolute;
+                margin-bottom: 0;
+            }
             time {
                 position: absolute;
                 right: 0;
@@ -53,16 +59,37 @@
         }
         li {
             float: left;
+            position: relative;
             @include font-size(14, 35);
-            // background-color: darken($brand-primay, 5%);
+            @include transition(background-color, 0.2, ease-out);
             @include haf() {
                 background-color: darken($brand-primary, 5%);
+                .sub-cate {
+                    display: block;
+                }
             }
             a {
                 display: block;
                 color: white;
                 padding-left: 10px;
                 padding-right: 10px;
+            }
+            .sub-cate {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                padding: 10px 0;
+                min-width: 200px;
+                background-color: darken($brand-primary, 5%);
+                z-index: 3;
+                li {
+                    display: block;
+                    float: none;
+                    &:hover {
+                        background-color: darken($brand-primary, 8%);
+                    }
+                }
             }
             .sprites-search {
                 color: white;
@@ -97,15 +124,21 @@
             }
         }
     }
+    .time-global {
+        margin-top: 18px;
+        @include font-size(14, 17);
+    }
 }
 
-// header for category & detail page
+
+/* header for category & detail page */
+
 .category-page,
 .detail-page {
     #site-header {
         .top-header {
             &::before {
-                background-color: rgba(0, 0, 0, 0.3);
+                // background-color: rgba(0, 0, 0, 0.3);
             }
             .site-wrap {
                 time {
@@ -133,9 +166,15 @@
                     width: auto;
                 }
             }
+            .qc {
+                right: 65px;
+            }
         }
         .navigation ul {
             padding-left: 133px;
+            .sub-cate {
+                padding-left: 0;
+            }
         }
     }
 }

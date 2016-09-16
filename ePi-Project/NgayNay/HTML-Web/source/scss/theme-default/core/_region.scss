@@ -130,6 +130,9 @@
         &:last-child {
             border-bottom: none;
         }
+        &:first-child {
+            padding-top: 0;
+        }
     }
 }
 

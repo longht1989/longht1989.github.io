@@ -4955,13 +4955,12 @@ a {
 
 /* ====================================   Header's style   ==================================== */
 #site-header {
-  height: 195px;
+  height: 230px;
   margin-bottom: 20px;
   z-index: 10; }
   #site-header .top-header {
     position: relative;
-    height: 160px;
-    background: url(../images/header-bg.png) center 0 no-repeat; }
+    height: 160px; }
     #site-header .top-header::before {
       display: block;
       content: '';
@@ -4988,6 +4987,11 @@ a {
             transition-property: all;
             transition-duration: 0.2s;
             transition-timing-function: linear; }
+      #site-header .top-header .site-wrap .qc {
+        top: 35px;
+        right: 40px;
+        position: absolute;
+        margin-bottom: 0; }
       #site-header .top-header .site-wrap time {
         position: absolute;
         right: 0;
@@ -5005,17 +5009,37 @@ a {
       padding-left: 183px; }
     #site-header .navigation li {
       float: left;
+      position: relative;
       font-size: 14px;
       font-size: 1.4rem;
       line-height: 35px;
-      line-height: 3.5rem; }
+      line-height: 3.5rem;
+      transition-property: background-color;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-out; }
       #site-header .navigation li:hover, #site-header .navigation li:focus, #site-header .navigation li:active {
         background-color: #ac1a0b; }
+        #site-header .navigation li:hover .sub-cate, #site-header .navigation li:focus .sub-cate, #site-header .navigation li:active .sub-cate {
+          display: block; }
       #site-header .navigation li a {
         display: block;
         color: white;
         padding-left: 10px;
         padding-right: 10px; }
+      #site-header .navigation li .sub-cate {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
+        min-width: 200px;
+        background-color: #ac1a0b;
+        z-index: 3; }
+        #site-header .navigation li .sub-cate li {
+          display: block;
+          float: none; }
+          #site-header .navigation li .sub-cate li:hover {
+            background-color: #9e180a; }
       #site-header .navigation li .sprites-search {
         color: white;
         margin-left: 12px;
@@ -5045,11 +5069,14 @@ a {
             float: left; }
           #site-header .navigation li.search .search-box button {
             float: right; }
+  #site-header .time-global {
+    margin-top: 18px;
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 17px;
+    line-height: 1.7rem; }
 
-.category-page #site-header .top-header::before,
-.detail-page #site-header .top-header::before {
-  background-color: rgba(0, 0, 0, 0.3); }
-
+/* header for category & detail page */
 .category-page #site-header .top-header .site-wrap time,
 .detail-page #site-header .top-header .site-wrap time {
   color: white; }
@@ -5078,9 +5105,16 @@ a {
   height: 70px;
   width: auto; }
 
+.category-page #site-header .top-header .qc,
+.detail-page #site-header .top-header .qc {
+  right: 65px; }
+
 .category-page #site-header .navigation ul,
 .detail-page #site-header .navigation ul {
   padding-left: 133px; }
+  .category-page #site-header .navigation ul .sub-cate,
+  .detail-page #site-header .navigation ul .sub-cate {
+    padding-left: 0; }
 
 /* ====================================
    Footer's style
@@ -5275,6 +5309,8 @@ a {
     border-bottom: 1px solid #ddd; }
     .latest-listing li:last-child {
       border-bottom: none; }
+    .latest-listing li:first-child {
+      padding-top: 0; }
 
 .talking-list li {
   margin-bottom: 15px; }
@@ -5640,6 +5676,28 @@ a {
     font-size: 1.8rem;
     line-height: 24px;
     line-height: 2.4rem; }
+
+/* ====================================
+   Customize breadcrumbs
+   ==================================== */
+.breadcrumb {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 21px;
+  line-height: 2.1rem; }
+  .breadcrumb a {
+    font-weight: bold; }
+    .breadcrumb a::after {
+      display: inline;
+      content: '/';
+      padding: 0 7px; }
+    .breadcrumb a.current {
+      font-weight: normal; }
+      .breadcrumb a.current:after {
+        content: ''; }
 
 /* ====================================
    Customize Pagination

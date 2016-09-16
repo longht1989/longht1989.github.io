@@ -1,0 +1,18 @@
+/* ====================================
+   Footer's style
+   ==================================== */
+
+#site-footer {
+    padding: 20px 0;
+    background: url(../images/gradient-line.png) left top repeat-x;
+    p {
+        margin-bottom: 5px;
+    }
+    .footer-logo {
+        img {
+            @include haf() {
+                opacity: 0.9;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+/* style for user  */
+
+.user {
+    @include clearfix;
+    font-family: $font-family-itim;
+    .thumb {
+        margin-bottom: 5px;
+        img {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+        }
+    }
+    .user-name {
+        @include font-size(18, 25);
+        margin-bottom: 5px;
+    }
+    .meta,
+    .status {
+        @include font-size(16, 21);
+        color: #555;
+        margin-bottom: 5px;
+        .fa {
+            margin-right: 7px;
+            font-size: 20px;
+            &.fa-female {
+                color: #f5228a;
+            }
+            &.fa-male {
+                color: $brand-success;
+            }
+        }
+    }
+    .age {
+        color: #555;
+    }
+    .interested-count {
+        .fa {
+            color: $brand-primary;
+            font-size: 0.9em;
+        }
+    }
+    .featured-zone & {
+        .thumb {
+            img {
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                -ms-border-radius: 0;
+                -o-border-radius: 0;
+                border-radius: 0;
+            }
+        }
+    }
+}

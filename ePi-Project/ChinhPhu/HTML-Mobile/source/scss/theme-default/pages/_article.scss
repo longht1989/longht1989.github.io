@@ -109,6 +109,15 @@
             margin-left: 0;
             margin-right: 0;
         }
+        .article-vote-box {
+            .btn {
+                width: 100%;
+            }
+            .vote-count {
+                font-weight: bold;
+                margin-top: 3px;
+            }
+        }
         /* table with */
         table {
             max-width: 100% !important;
@@ -117,7 +126,8 @@
         .comment-box {
             margin-bottom: 16px;
             padding-top: 8px;
-            border-top: 2px solid $brand-success;
+            border-top: 1px solid #ddd;
+            margin-top: 8px;
             .comment-box-title {
                 margin-bottom: 8px;
                 font-family: $font-family-roboto;

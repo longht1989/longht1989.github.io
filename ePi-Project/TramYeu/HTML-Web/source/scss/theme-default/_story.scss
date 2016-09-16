@@ -1,0 +1,95 @@
+/* style for story */
+
+.story {
+    @include clearfix;
+    .thumb {}
+    .title {
+        @include font-size(16, 22);
+        font-weight: normal;
+    }
+    .cate {
+        a {
+            color: $brand-primary;
+        }
+    }
+    .summary,
+    .meta {
+        color: #555;
+        @include font-size(14, 19);
+        >span {
+            margin-right: 15px;
+        }
+        .fa {
+            margin-right: 2px;
+            font-size: 0.9em;
+        }
+    }
+    .thumb,
+    .cate,
+    .title,
+    .summary,
+    .meta {
+        margin-bottom: 5px;
+    }
+    // story with bold title
+    &.story-bold {
+        .title {
+            font-weight: bold;
+        }
+    }
+    // story cover
+    &.story-cover {
+        .title {
+            @include font-size(20, 28);
+            // margin-bottom: 8px;
+        }
+    }
+    // story with left thumbnail
+    &.story-left {
+        .thumb {
+            float: left;
+            margin-right: 10px;
+        }
+        .title {
+            margin-top: -3px;
+        }
+    }
+    // story with red bullet 
+    &.story-bullet {
+        margin-bottom: 10px;
+        @include last-child-y;
+        .title {
+            @include font-size(14, 19);
+            &::before {
+                content: '';
+                display: inline;
+                margin-right: 5px;
+                font-family: "fontawesome";
+            }
+        }
+    }
+    // story with mask 
+    &.story-mask {
+        position: relative;
+        > header {
+            position: absolute;
+            padding: 10px;
+            background: #fff;
+            left: 10px;
+            right: 10px;
+            bottom: 0;
+        }
+        &.story-cover {
+            > header {
+                padding: 20px;
+                left: 20px;
+                right: 20px;
+            }
+        }
+    }
+    .sidebar .grid-zone & {
+        .title {
+            @include font-size(14, 19);
+        }
+    }
+}

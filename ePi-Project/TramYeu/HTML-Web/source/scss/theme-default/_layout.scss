@@ -1,0 +1,29 @@
+/* site-wrap */
+
+.site-wrap {
+    @include clearfix;
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    #site-content & {
+        margin-bottom: 30px;
+    }
+}
+
+#site-content {
+    @include clearfix;
+    margin-bottom: 30px;
+}
+
+.zone {
+    margin-bottom: 30px;
+}
+
+
+/* home slider */
+
+.slider-zone {
+    .bx-wrapper {
+        max-width: 100% !important;
+    }
+}
