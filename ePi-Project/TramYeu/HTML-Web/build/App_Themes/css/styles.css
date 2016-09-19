@@ -5925,6 +5925,13 @@ h5 {
     .zone.slider-zone.album-zone .slider-control .fa.fa-angle-left, .zone.album-zone.album-zone .slider-control .fa.fa-angle-left {
       left: calc(100% - 76px); }
 
+/* .zone highlight  */
+.highlight-zone .story {
+  margin-bottom: 10px; }
+
+.highlight-zone .story-cover {
+  margin-bottom: 0; }
+
 /* .story-listing  */
 .story-listing .story {
   margin-bottom: 20px; }
