@@ -1,0 +1,100 @@
+.clearfix {
+    zoom: 1;
+    &:after {
+        clear: both;
+        content: ".";
+        display: block;
+        height: 0;
+        line-height: 0;
+        visibility: hidden;
+    }
+}
+
+.clearfix:after {}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    &:focus,
+    &:active {
+        outline: none;
+    }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin-bottom: 10px;
+}
+
+// > body
+body {
+    font-size: 16px;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    padding: 20px;
+}
+
+.site-wrap {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row {
+    .clearfix;
+    margin-bottom: 15px;
+}
+
+h2 {
+    .row;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: transparent;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    > thead > tr > th,
+    > tbody > tr > th,
+    > tfoot > tr > th,
+    > thead > tr > td,
+    > tbody > tr > td,
+    > tfoot > tr > td {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border-top: 1px solid #dddddd;
+    }
+    > thead > tr > th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #dddddd;
+    }
+    > thead:first-child > tr:first-child > th,
+    > thead:first-child > tr:first-child > td {
+        border-top: 0;
+    }
+    > tbody + tbody {
+        border-top: 2px solid #dddddd;
+    }
+    tbody > tr {
+        &:hover {
+            background-color: #eee;
+        }
+    }
+}
+
+td,
+th {
+    padding: 0;
+}
+
+th {
+    text-align: left;
+}
