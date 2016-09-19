@@ -54,3 +54,54 @@
         }
     }
 }
+
+
+/* style for user page resgister & detail & edit */
+
+.user-avatar-box {
+    @include clearfix;
+    margin-bottom: 15px;
+    .user-avatar {
+        cursor: pointer;
+    }
+}
+
+.user-detail {
+    .user-info {
+        margin-bottom: 20px;
+        .user-avatar {
+            margin-bottom: 10px;
+        }
+        .full-info {
+            font-family: $font-family-itim;
+            @include font-size(16, 21);
+            >* {
+                margin-bottom: 10px;
+            }
+            .fa {
+                margin-right: 7px;
+            }
+            .full-name {
+                @include font-size(20, 28);
+            }
+            .fa-calendar,
+            .fa-male,
+            .fa-globe,
+            .fa-thumbs-o-up {
+                color: $brand-success;
+            }
+            .fa-female,
+            .fa-heart {
+                color: $brand-primary
+            }
+            .fa-phone,
+            .fa-envelope-o {
+                color: $brand-warning;
+            }
+        }
+    }
+    .user-status {
+        margin-bottom: 15px;
+        @include font-size(16, 21);
+    }
+}

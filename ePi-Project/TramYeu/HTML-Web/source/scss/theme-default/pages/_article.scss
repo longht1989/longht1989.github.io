@@ -459,152 +459,130 @@
                 }
             }
         }
-        .article-comments {
-            > header {
-                .comments-hdr {
-                    margin: 0 0 10px;
-                    @include font-size(24, 33);
+    }
+}
+
+
+/* comment zone */
+
+.article-comments {
+    > header {
+        .comments-hdr {
+            margin: 0 0 10px;
+            @include font-size(24, 33);
+            font-family: $font-family-itim;
+            color: $brand-primary;
+        }
+    }
+    .box-user-comm {
+        margin-bottom: 10px;
+        .commentlist {}
+        .box {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            &:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+            .name {
+                margin-top: 0;
+                margin-bottom: 5px;
+                font-family: $font-family-itim;
+                @include font-size(18, 25);
+                time {
+                    @include font-size(16, 21);
                     font-family: $font-family-itim;
-                    color: $brand-primary;
+                    text-transform: none;
+                    color: #777;
+                    margin-left: 10px;
+                }
+                .like,
+                .reply {
+                    display: inline-block;
+                    margin-left: 3px;
+                    font-size: 14px;
+                    text-transform: none;
+                }
+                .like {
+                    &::before {
+                        content: '';
+                        font-family: 'fontawesome';
+                        display: inline-block;
+                        margin-right: 4px;
+                    }
+                    &.done {
+                        color: #bbb;
+                        &::before {
+                            content: '';
+                        }
+                    }
                 }
             }
-            .box-user-comm {
-                margin-bottom: 10px;
-                .commentlist {}
+            .text {
+                margin-bottom: 3px;
+                font-size: 15px;
+            }
+            .text-reply {
+                font-size: 14px;
+                color: #777;
                 .box {
-                    margin-bottom: 10px;
-                    padding-bottom: 10px;
-                    border-bottom: 1px solid #ddd;
-                    &:last-child {
-                        padding-bottom: 0;
-                        border-bottom: none;
-                    }
-                    .name {
-                        margin-top: 0;
-                        margin-bottom: 5px;
-                        font-family: $font-family-itim;
-                        @include font-size(18, 25);
-                        time {
-                            @include font-size(16, 21);
-                            font-family: $font-family-itim;
-                            text-transform: none;
-                            color: #777;
-                            margin-left: 10px;
-                        }
-                        .like,
-                        .reply {
-                            display: inline-block;
-                            margin-left: 3px;
-                            font-size: 14px;
-                            text-transform: none;
-                        }
-                        .like {
-                            &::before {
-                                content: '';
-                                font-family: 'fontawesome';
-                                display: inline-block;
-                                margin-right: 4px;
-                            }
-                            &.done {
-                                color: #bbb;
-                                &::before {
-                                    content: '';
-                                }
-                            }
-                        }
-                    }
-                    .text {
-                        margin-bottom: 3px;
-                        font-size: 15px;
-                    }
-                    .text-reply {
-                        font-size: 14px;
-                        color: #777;
-                        .box {
-                            padding-left: 15px;
-                            border-left: 2px solid #aaa;
-                        }
-                    }
-                }
-            }
-            .box-input {
-                position: relative;
-                input.form-control {
-                    width: 317px;
-                    margin-right: 10px;
-                    float: left;
-                    margin-bottom: 10px;
-                    &:nth-child(2) {
-                        float: right;
-                        margin-right: 0;
-                    }
-                }
-                textarea.form-control {
-                    width: 100%;
-                }
-                #replyfor {
-                    >span {
-                        font-weight: bold;
-                        margin-bottom: 3px;
-                    }
-                    .closereplyfor {
-                        float: right;
-                    }
-                    #replycontent {
-                        font-weight: normal;
-                    }
-                }
-                .action {
-                    @include clearfix;
-                    margin-top: 10px;
-                    >span {
-                        color: #777;
-                        font-size: 14px;
-                        font-size: 1.4rem;
-                    }
-                    .btn {
-                        margin-left: 10px;
-                    }
-                }
-            }
-            .view-more {
-                text-align: center;
-                a {}
-            }
-            .view-more-plus {
-                margin-left: 5px;
-                color: #aaa;
-                font-size: .8em;
-                @include haf() {
-                    color: $brand-primary;
+                    padding-left: 15px;
+                    border-left: 2px solid #aaa;
                 }
             }
         }
     }
+    .box-input {
+        position: relative;
+        input.form-control {
+            width: 317px;
+            margin-right: 10px;
+            float: left;
+            margin-bottom: 10px;
+            &:nth-child(2) {
+                float: right;
+                margin-right: 0;
+            }
+        }
+        textarea.form-control {
+            width: 100%;
+        }
+        #replyfor {
+            >span {
+                font-weight: bold;
+                margin-bottom: 3px;
+            }
+            .closereplyfor {
+                float: right;
+            }
+            #replycontent {
+                font-weight: normal;
+            }
+        }
+        .action {
+            @include clearfix;
+            margin-top: 10px;
+            >span {
+                color: #777;
+                font-size: 14px;
+                font-size: 1.4rem;
+            }
+            .btn {
+                margin-left: 10px;
+            }
+        }
+    }
+    .view-more {
+        text-align: center;
+        a {}
+    }
+    .view-more-plus {
+        margin-left: 5px;
+        color: #aaa;
+        font-size: .8em;
+        @include haf() {
+            color: $brand-primary;
+        }
+    }
 }
-
-// style reset boostrap button & form-control
-// .form-control {
-//     &:focus {
-//         box-shadow: none;
-//         -webkit-box-shadow: none;
-//         border-color: $brand-success;
-//     }
-// }
-
-// .btn {}
-
-// .btn-warning {
-//     background: $brand-success;
-//     border-color: darken($brand-success, 5%);
-//     @include transition(all, 0.2, linear);
-//     &:hover {
-//         background: darken($brand-success, 8%);
-//         border-color: darken($brand-success, 13%);
-//     }
-//     &:active,
-//     &:focus {
-//         background: darken($brand-success, 11%);
-//         border-color: darken($brand-success, 13%);
-//     }
-// }

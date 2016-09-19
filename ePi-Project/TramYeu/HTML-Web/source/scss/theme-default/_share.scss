@@ -44,4 +44,9 @@
     .fa {
         margin-right: 7px;
     }
+    .heading-desc {
+        @include font-size(14, 19);
+        color: #111;
+        font-family: $font-family-base;
+    }
 }
