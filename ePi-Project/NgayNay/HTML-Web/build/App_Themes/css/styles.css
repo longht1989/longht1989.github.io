@@ -4964,7 +4964,16 @@ a {
     #site-header .top-header::before {
       display: block;
       content: '';
-      background-color: rgba(105, 81, 167, 0.2);
+      background: #ac99dd;
+      /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(bottom, #8b7bb2, #c5affd);
+      /*Safari 5.1-6*/
+      background: -o-linear-gradient(top, #8b7bb2, #c5affd);
+      /*Opera 11.1-12*/
+      background: -moz-linear-gradient(top, #8b7bb2, #c5affd);
+      /*Fx 3.6-15*/
+      background: linear-gradient(to top, #8b7bb2, #c5affd);
+      /*Standard*/
       position: absolute;
       top: 0;
       right: 0;
