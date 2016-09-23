@@ -117,7 +117,7 @@
     }
     /* --- */
     // story in lastest listing - highlight zone
-    li:first-child & {
+    li:nth-child(2) & {
         .latest-listing & {
             .title {
                 font-size: 20px;

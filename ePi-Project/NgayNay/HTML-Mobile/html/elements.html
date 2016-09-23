@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>Elements | Newspaper framework</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- CSS Page -->
+    <link rel="stylesheet" type="text/css" href="../build/App_Themes/css/news.min.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" type="text/css" href="../build/plugins/font-awesome-4.6.3/css/font-awesome.min.css">
+    <script>
+    (function(w, d, u) {
+        w.readyQ = [];
+        w.bindReadyQ = [];
+
+        function p(x, y) {
+            if (x == "ready") {
+                w.bindReadyQ.push(y);
+            } else {
+                w.readyQ.push(x);
+            }
+        };
+        var a = {
+            ready: p,
+            bind: p
+        };
+        w.$ = w.jQuery = function(f) {
+            if (f === d || f === u) {
+                return a
+            } else {
+                p(f)
+            }
+        }
+    })(window, document)
+    </script>
+</head>
+
+<body class="elements-page">
+    <div class="wrapper">
+        <div class="container outer">
+            <h2 class="demo-title" id="footer-web">footer</h2>
+            <footer id="footer">
+                <a class="logo-mobile" href="homepage.html"></a>
+                <div class="cate">
+                    <ul>
+                        <li class="parent">
+                            <a href="category.html"><span>Xã hội</span></a>
+                            <ul class="child">
+                                <li><a href="#">Tin tức</a></li>
+                                <li><a href="#">Trà nóng - Trà đá</a></li>
+                                <li><a href="#">Chuyện hôm nay</a></li>
+                                <li><a href="#">Phóng sự</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Kinh tế</span></a>
+                            <ul class="child">
+                                <li><a href="#">Thị trường</a></li>
+                                <li><a href="#">Doanh nghiệp</a></li>
+                                <li><a href="#">Doanh nhân</a></li>
+                                <li><a href="#">Chứng khoán</a></li>
+                                <li><a href="#">Địa ốc</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Thế giới</span></a>
+                            <ul class="child">
+                                <li><a href="#">Phân tích - Bình luận</a></li>
+                                <li><a href="#">Người Việt năm châu</a></li>
+                                <li><a href="#">Chuyện lạ</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Pháp luật</span></a>
+                            <ul class="child">
+                                <li><a href="#">Bản tin 113</a></li>
+                                <li><a href="#">Pháp đình</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Thể thao</span></a>
+                            <ul class="child">
+                                <li><a href="#">Bóng đá</a></li>
+                                <li><a href="#">Hậu trường</a></li>
+                                <li><a href="#">Euro 2016</a></li>
+                                <li><a href="#">Dữ liệu trực tuyến</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"></i><span>Giải trí</span></a>
+                            <ul class="child">
+                                <li><a href="#">Sao</a></li>
+                                <li><a href="#">Hậu trường</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Giáo dục</span></a>
+                            <ul class="child">
+                                <li><a href="#">Tuyển sinh</a></li>
+                                <li><a href="#">Du học</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Giới trẻ</span></a>
+                            <ul class="child">
+                                <li><a href="#">Nhịp sống</a></li>
+                                <li><a href="#">Việc làm</a></li>
+                                <li><a href="#">Đoàn và tuổi trẻ</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Văn nghệ</span></a>
+                            <ul class="child">
+                                <li><a href="#">Sổ bụi</a></li>
+                                <li><a href="#">Mắt nhắm mắt mở</a></li>
+                                <li><a href="#">Câu chuyện văn hóa</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"></i><span>Khoa học</span></a>
+                            <ul class="child">
+                                <li><a href="#">Công nghệ</a></li>
+                                <li><a href="#">Vi tính</a></li>
+                                <li><a href="#">Điện thoại</a></li>
+                                <li><a href="#">Xe</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Radio</span></a>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Hoa hậu</span></a>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Người lính</span></a>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Đồ hoạ</span></a>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Khoẻ 360</span></a>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Ảnh</span></a>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Bạn đọc làm báo</span></a>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html"><span>Video</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="link">
+                    <a href="#">TOÀ SOẠN</a>
+                    <a href="#">QUẢNG CÁO</a>
+                    <a href="#">ĐẶT BÁO</a>
+                    <a href="tel:0888366116"><span>HOTLINE:</span> 088.836.6116</a>
+                    <a href="tel:0909559988"><span>HOTLINE QUẢNG CÁO:</span>0909.55.99.88</a>
+                </div>
+                <div class="copyright">
+                    <span class="xs-none">© Bản quyền thuộc báo điện tử Tiền Phong<br></span> Tổng Biên tập: <b>LÊ XUÂN SƠN</b>
+                    <p>
+                        <span>Tòa soạn: 15 Hồ Xuân Hương, Hà Nội</span>
+                        <span>Điện thoại: (84-4) 39431250</span>
+                        <span>
+                        Fax: (84-4) 39430693</span>
+                        <span>Email: online@baotienphong.com.vn</span>
+                    </p>
+                    <span class="xs-none">Giấy phép số 304/GP-BTTTT cấp ngày 30/7/2013. Cơ quan chủ quản: Trung ương Đoàn TNCS Hồ Chí Minh<br>
+                    Cấm sao chép dưới mọi hình thức nếu không có sự chấp thuận bằng văn bản<br></span>
+                    <a href="http://m.baomoi.com/" class="powerby">Powered by ePi Technologies</a>
+                </div>
+            </footer>
+            <h2 class="demo-title" id="Breadcrumbs">Breadcrumbs</h2>
+            <ol class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li class="active">Data</li>
+            </ol>
+            <h2 class="demo-title" id="Pagination">Pagination</h2>
+            <nav>
+                <ul class="pagination pagination-sm">
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <h2 class="demo-title" class="demo-title" id="region heading">Section heading</h2>
+            <h3 class="demo-title">region</h3>
+            <div class="region-heading">
+                <h2><a href="#">Real Estate</a></h2>
+                <i class="fa fa-bank"></i>
+                <ul class="sub">
+                    <li><a href="#">sub-01</a></li>
+                    <li><a href="#">sub-02</a></li>
+                    <li><a href="#">sub-03</a></li>
+                    <li><a href="#">sub-04</a></li>
+                </ul>
+            </div>
+            <h3 class="demo-title">mostread - lastets </h3>
+            <div class="mini-heading">
+                <h2><a href="#">Đọc nhiều nhất</a></h2>
+            </div>
+            <h3 class="demo-title">topic</h3>
+            <div class="topic-heading">
+                <h2><a href="#">Giải mã thời tam quốc</a></h2>
+            </div>
+            <h3 class="demo-title">miss</h3>
+            <div class="miss-heading">
+                <h2><a href="#">Hoa hậu 2016</a></h2>
+            </div>
+            <h3 class="demo-title">news99</h3>
+            <div class="news99-heading">
+                <h2><a href="#">Tin 99</a></h2>
+            </div>
+            <h3 class="demo-title">location</h3>
+            <div class="location-heading">
+                <h2><a href="#">Địa phương</a></h2>
+                <div class="location">
+                    <select name="" id="">
+                        <option>Hà Nội</option>
+                        <option>Quảng Bình</option>
+                        <option>TP HCM</option>
+                    </select>
+                </div>
+            </div>
+            <h2 class="demo-title" id="Story">Story</h2>
+            <h3 class="demo-title">List story</h3>
+            <div class="list-article">
+                <article class="story theme-summary">
+                    <a href="#" class="story-link">
+                        <figure class="thumb">
+                            <img src="../fig-image/site/4x3.png" height="75" width="100" alt="">
+                        </figure>
+                        <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                        <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                    </a>
+                    <ul class="refer">
+                        <li>
+                            <article class="story">
+                                <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="story">
+                                <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                            </article>
+                        </li>
+                    </ul>
+                </article>
+                <article class="story theme-summary">
+                    <a href="#" class="story-link">
+                        <figure class="thumb">
+                            <img src="../fig-image/site/4x3.png" height="75" width="100" alt="">
+                        </figure>
+                        <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                        <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                    </a>
+                    <ul class="refer">
+                        <li>
+                            <article class="story">
+                                <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="story">
+                                <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                            </article>
+                        </li>
+                    </ul>
+                </article>
+                <article class="story theme-summary">
+                    <a href="#" class="story-link">
+                        <figure class="thumb">
+                            <img src="../fig-image/site/4x3.png" height="75" width="100" alt="">
+                        </figure>
+                        <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                        <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                    </a>
+                    <ul class="refer">
+                        <li>
+                            <article class="story">
+                                <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="story">
+                                <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                            </article>
+                        </li>
+                    </ul>
+                </article>
+                <article class="story theme-summary">
+                    <a href="#" class="story-link">
+                        <figure class="thumb">
+                            <img src="../fig-image/site/4x3.png" height="75" width="100" alt="">
+                        </figure>
+                        <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                        <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                    </a>
+                    <ul class="refer">
+                        <li>
+                            <article class="story">
+                                <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="story">
+                                <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                            </article>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+            <h3 class="demo-title">Region</h3>
+            <h4 class="demo-title">Region : box theme 1 - has-feature</h4>
+            <div class="region has-feature theme-1">
+                <div class="collection">
+                    <article class="story theme-feature">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                        </a>
+                    </article>
+                </div>
+                <div class="collection">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Ôtô khách đâm xe tải, hơn 40 người hoảng loạn kêu cứu</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Cận cảnh fan cuồng tấn công dữ dội xe bus của M.U</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">119 Pounds, but With the Health Hallmarks of Obesity</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">119 Pounds, but With the Health Hallmarks of Obesity</h2>
+                        </a>
+                    </article>
+                </div>
+            </div>
+            <h4 class="demo-title">Region : box theme 1 - has-no-feature</h4>
+            <div class="region theme-1">
+                <div class="collection">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">119 Pounds, but With the Health Hallmarks of Obesity119 Pounds, but With the Health Hallmarks of Obesity</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Cận cảnh fan cuồng tấn công dữ dội xe bus của M.U</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">119 Pounds, but With the Health Hallmarks of Obesity</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">119 Pounds, but With the Health Hallmarks of Obesity</h2>
+                        </a>
+                    </article>
+                </div>
+            </div>
+            <h4 class="demo-title">Region : box theme 2</h4>
+            <div class="region theme-2">
+                <div class="collection">
+                    <article class="story theme-feature">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Cận cảnh fan cuồng tấn công dữ dội xe bus của M.U</h2>
+                        </a>
+                    </article>
+                </div>
+                <div class="collection">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Khai mạc Hội nghị Thượng đỉnh lãnh đạo các Ngân hàng châu Á</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Thái Lan xả gạo, thị trường của Việt Nam có thể bị xáo trộn</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Cận cảnh fan cuồng tấn công dữ dội xe bus của M.U</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Những cái tên Việt trong Hồ sơ Panama: Có thể là lách thuế</h2>
+                        </a>
+                    </article>
+                </div>
+            </div>
+            <h3 class="demo-title">top-story</h3>
+            <div class="top-story">
+                <div class="column">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Xe máy tông gãy 2 cột mốc, đâm xe đạp, 2 người tử vong</h2>
+                            <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                        </a>
+                        <ul class="refer">
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="column">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Tên lửa Trung Quốc rơi xuống đất Mỹ</h2>
+                            <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                        </a>
+                        <ul class="refer">
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                            <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                        </a>
+                        <ul class="refer">
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="column">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                            <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                        </a>
+                        <ul class="refer">
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                            <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                        </a>
+                        <ul class="refer">
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                            <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                        </a>
+                        <ul class="refer">
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                        </ul>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Bà Hillary: ‘Nước Mỹ có nữ tổng thống đầu tiên và không phải cuối cùng’</h2>
+                            <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                        </a>
+                        <ul class="refer">
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                            <li>
+                                <article class="story">
+                                    <h2 class="refer-heading"><a href="#">New York Today: Awaiting a Corpse Flower Bloom</a> <time class="timestamp" datetime="2016-07-27">6:02 AM</time></h2>
+                                </article>
+                            </li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+            <h3 class="demo-title">spotlight</h3>
+            <div class="spotlight">
+                <article class="story theme-feature">
+                    <a href="#" class="story-link">
+                        <figure class="thumb">
+                            <img src="../fig-image/site/5x3.png" alt="">
+                        </figure>
+                        <h2 class="story-heading">11 cảnh sát Mỹ thương vong trong cuộc biểu tình ở Dallas</h2>
+                        <div class="summary">Đó là quan điểm của ông Nguyễn Văn Phúc, nguyên Phó Chủ nhiệm Ủy ban Kinh tế, nguyên đại biểu Quốc hội đoàn Hà Tĩnh khi trao đổi với Tiền Phong về quan điểm khác nhau giữa ông Võ Kim Cự với Thanh tra Chính phủ về thời hạn cấp phép 70 năm cho Formosa</div>
+                    </a>
+                </article>
+            </div>
+            <h3 class="demo-title">aside box</h3>
+            <div class="aside-160">
+                <div class="collection">
+                    <article class="story theme-feature">
+                        <a href="#" class="story-link">
+                            <figure class="thumb">
+                                <img src="../fig-image/site/5x3.png" alt="">
+                            </figure>
+                            <h2 class="story-heading">Cận cảnh fan cuồng tấn công dữ dội xe bus của M.U</h2>
+                        </a>
+                    </article>
+                </div>
+                <div class="collection">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Khai mạc Hội nghị Thượng đỉnh lãnh đạo các Ngân hàng châu Á</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Thái Lan xả gạo, thị trường của Việt Nam có thể bị xáo trộn</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Cận cảnh fan cuồng tấn công dữ dội xe bus của M.U</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Những cái tên Việt trong Hồ sơ Panama: Có thể là lách thuế</h2>
+                        </a>
+                    </article>
+                </div>
+            </div>
+            <h3 class="demo-title">mostread</h3>
+            <div class="most-read">
+                <div class="collection">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Khai mạc Hội nghị Thượng đỉnh lãnh đạo các Ngân hàng châu Á</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Thái Lan xả gạo, thị trường của Việt Nam có thể bị xáo trộn</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Cận cảnh fan cuồng tấn công dữ dội xe bus của M.U</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Những cái tên Việt trong Hồ sơ Panama: Có thể là lách thuế</h2>
+                        </a>
+                    </article>
+                </div>
+            </div>
+            <h3 class="demo-title">radio story</h3>
+            <div class="radio-story">
+                <div class="collection">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Khai mạc Hội nghị Thượng đỉnh lãnh đạo các Ngân hàng châu Á</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Thái Lan xả gạo, thị trường của Việt Nam có thể bị xáo trộn</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Cận cảnh fan cuồng tấn công dữ dội xe bus của M.U</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Những cái tên Việt trong Hồ sơ Panama: Có thể là lách thuế</h2>
+                        </a>
+                    </article>
+                </div>
+            </div>
+            <h3 class="demo-title">location story</h3>
+            <div class="location-story">
+                <div class="collection">
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Khai mạc Hội nghị Thượng đỉnh lãnh đạo các Ngân hàng châu Á</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Thái Lan xả gạo, thị trường của Việt Nam có thể bị xáo trộn</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Cận cảnh fan cuồng tấn công dữ dội xe bus của M.U</h2>
+                        </a>
+                    </article>
+                    <article class="story theme-summary">
+                        <a href="#" class="story-link">
+                            <h2 class="story-heading">Những cái tên Việt trong Hồ sơ Panama: Có thể là lách thuế</h2>
+                        </a>
+                    </article>
+                </div>
+            </div>
+            <h2 class="demo-title" id="demo-title">Layout</h2>
+            <div class="abc-column">
+                <div class="highlight">
+                    <div class="spotlight">
+                        <div class="fill-up" style="height:inherit;">spotlight</div>
+                    </div>
+                    <div class="top-story">
+                        <div class="fill-up">top-story</div>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <div class="fill-up">sidebar</div>
+                </div>
+            </div>
+            <div class="abc-column">
+                <div class="a-column">
+                    <div class="fill-up">a-column</div>
+                </div>
+                <div class="bc-column">
+                    <div class="wide-column">
+                        <div class="fill-up">wide-column</div>
+                    </div>
+                    <div class="b-column">
+                        <div class="fill-up">b-column</div>
+                    </div>
+                    <div class="c-column">
+                        <div class="fill-up">c-column</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2 class="demo-title" id="header-web">header web</h2>
+    <header id="header">
+        <div class="topbar">
+            <div class="container">
+                <time>Thứ Ba, ngày 2 tháng 8 năm 2016</time>
+                <div class="stuff">
+                    <div class="search">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <p class="link">
+                        <a href="#" title="">Tòa soạn</a>
+                        <a href="/lien-he.html" title="">Quảng cáo</a>
+                        <a href="/rss.html" title="">RSS</a>
+                    </p>
+                    <p class="top-social">
+                        <a href="#" title=""><img src="http://static.taichinhdientu.vn/w/App_Themes/img/fb-mini.png" height="20" width="20" alt=""></a>
+                        <a href="#" title=""><img src="http://static.taichinhdientu.vn/w/App_Themes/img/gl-mini.png" height="20" width="20" alt=""></a>
+                        <a href="#" title=""><img src="http://static.taichinhdientu.vn/w/App_Themes/img/tw-mini.png" height="20" width="20" alt=""></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a href="#" class="logo"><img src="../build/App_Themes/img/logo-web.png"></a>
+            <div class="fyi-728x90"><img src="../fig-image/ads/ads-728x90-2.jpg"></div>
+        </div>
+        <div class="navigation">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-responsive" aria-expanded="false">
+                    <span class="icon-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </span>
+                </button>
+                <div class="clearfix"></div>
+                <ul class="nav navbar-nav collapse navbar-collapse" id="navbar-responsive">
+                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">Link</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <h2 class="demo-title" id="header-mobile">header mobile</h2>
+    <div id="st-container" class="st-container">
+        <div class="st-pusher">
+            <div class="nav-mobile st-menu st-effect-3" id="menu-4">
+                <h3 class="title">Tìm kiếm</h3>
+                <div class="action">
+                    <input type="text" class="search" value="Từ khoá" />
+                </div>
+                <nav>
+                    <ul>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-home"></i><span>Trang chủ</span></a>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-bank"></i><span>Xã hội</span></a>
+                            <a href="#sub-xh" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-xh"></a>
+                            <ul class="child collapse" id="sub-xh">
+                                <li><a href="#">Tin tức</a></li>
+                                <li><a href="#">Trà nóng - Trà đá</a></li>
+                                <li><a href="#">Chuyện hôm nay</a></li>
+                                <li><a href="#">Phóng sự</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-line-chart"></i><span>Kinh tế</span></a>
+                            <a href="#sub-kt" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-kt"></a>
+                            <ul class="child collapse" id="sub-kt">
+                                <li><a href="#">Thị trường</a></li>
+                                <li><a href="#">Doanh nghiệp</a></li>
+                                <li><a href="#">Doanh nhân</a></li>
+                                <li><a href="#">Chứng khoán</a></li>
+                                <li><a href="#">Địa ốc</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-globe"></i><span>Thế giới</span></a>
+                            <a href="#sub-tg" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-tg"></a>
+                            <ul class="child collapse" id="sub-tg">
+                                <li><a href="#">Phân tích - Bình luận</a></li>
+                                <li><a href="#">Người Việt năm châu</a></li>
+                                <li><a href="#">Chuyện lạ</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-users"></i><span>Giới trẻ</span></a>
+                            <a href="#sub-gt" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-gt"></a>
+                            <ul class="child collapse" id="sub-gt">
+                                <li><a href="#">Nhịp sống</a></li>
+                                <li><a href="#">Việc làm</a></li>
+                                <li><a href="#">Đoàn và tuổi trẻ</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-tasks"></i><span>Pháp luật</span></a>
+                            <a href="#sub-pl" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-pl"></a>
+                            <ul class="child collapse" id="sub-pl">
+                                <li><a href="#">Bản tin 113</a></li>
+                                <li><a href="#">Pháp đình</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-trophy"></i><span>Thể thao</span></a>
+                            <a href="#sub-tt" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-tt"></a>
+                            <ul class="child collapse" id="sub-tt">
+                                <li><a href="#">Bóng đá</a></li>
+                                <li><a href="#">Hậu trường</a></li>
+                                <li><a href="#">Euro 2016</a></li>
+                                <li><a href="#">Dữ liệu trực tuyến</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-microphone"></i><span>Văn nghệ</span></a>
+                            <a href="#sub-vn" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-vn"></a>
+                            <ul class="child collapse" id="sub-vn">
+                                <li><a href="#">Sổ bụi</a></li>
+                                <li><a href="#">Mắt nhắm mắt mở</a></li>
+                                <li><a href="#">Câu chuyện văn hóa</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-smile-o"></i><span>Giải trí</span></a>
+                            <a href="#sub-gtri" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-gtri"></a>
+                            <ul class="child collapse" id="sub-gtri">
+                                <li><a href="#">Sao</a></li>
+                                <li><a href="#">Hậu trường</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-mortar-board"></i><span>Giáo dục</span></a>
+                            <a href="#sub-gd" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-gd"></a>
+                            <ul class="child collapse" id="sub-gd">
+                                <li><a href="#">Tuyển sinh</a></li>
+                                <li><a href="#">Du học</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-flask"></i><span>Khoa học</span></a>
+                            <a href="#sub-kh" class="btn-action collapsed" role="button" data-toggle="collapse" aria-expanded="false" aria-controls="sub-kh"></a>
+                            <ul class="child collapse" id="sub-kh">
+                                <li><a href="http://www.tienphong.vn/cong-nghe-khoa-hoc/">Công nghệ</a></li>
+                                <li><a href="http://www.tienphong.vn/cong-nghe-vi-tinh/">Vi tính</a></li>
+                                <li><a href="http://www.tienphong.vn/cong-nghe-dien-thoai/">Điện thoại</a></li>
+                                <li><a href="http://www.tienphong.vn/xe/">Xe</a></li>
+                            </ul>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-star"></i><span>Người lính</span></a>
+                        </li>
+                        <li class="parent">
+                            <a href="category.html" class="cate-name"><i class="fa fa-headphones"></i><span>Radio</span></a>
+                        </li>
+                        <li class="parent link">
+                            <a href="category.html" class="cate-name"><i class="fa fa-phone"></i><span>Liên hệ toà soạn</span></a>
+                        </li>
+                        <li class="parent link">
+                            <a href="category.html" class="cate-name"><i class="fa fa-bullhorn"></i><span>Quảng cáo</span></a>
+                        </li>
+                        <li class="parent link">
+                            <a href="category.html" class="cate-name"><i class="fa fa-newspaper-o"></i><span>Đọc báo</span></a>
+                        </li>
+                        <li class="parent link">
+                            <a href="category.html" class="cate-name"><i class="fa fa-info-circle"></i><span>Thông tin toà soạn</span></a>
+                        </li>
+                        <li class="parent link">
+                            <a href="category.html" class="cate-name close-menu"><i class="fa fa-close"></i><span>Đóng</span></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="wrapper st-content">
+                <div class="header-mb">
+                    <div class="container">
+                        <div id="st-trigger-effects">
+                            <button class="menu-btn" data-effect="st-effect-3"><i class="fa fa-bars"></i></button>
+                        </div>
+                        <a href="homepage.html" class="logo"><h2>Tiền Phong</h2></a>
+                        <a href="#" class="hour-btn">24h</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JS Global Compulsory -->
+    <script src="../build/Jscripts/news.min.js"></script>
+    <script>
+    (function($, d) {
+        $.each(readyQ, function(i, f) {
+            $(f)
+        });
+        $.each(bindReadyQ, function(i, f) {
+            $(d).bind("ready", f)
+        })
+    })(jQuery, document)
+    </script>
+    <!--[if lt IE 9]>
+        <script src="Jscripts/vendor/respond.js"></script>
+        <script src="Jscripts/vendor/html5shiv.js"></script>
+        <script src="Jscripts/vendor/placeholder-IE-fixes.js"></script>
+    <![endif]-->
+</body>
+
+</html>

@@ -87,11 +87,18 @@
             }
             .story {
                 padding-left: 15px;
-                background: url(../images/bullet.png) 0 8px no-repeat;
+                background: url(../images/bullet.png) 0 7px no-repeat;
                 padding-bottom: 0;
                 border-bottom: none;
                 .title {
-                    @include font-size(16, 24);
+                    @include font-size(14, 19);
+                    margin-bottom: 0;
+                    a {
+                        color: lighten($brand-success, 10%);
+                        @include haf() {
+                            color: $brand-primary;
+                        }
+                    }
                 }
             }
         }

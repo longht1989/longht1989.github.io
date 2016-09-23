@@ -1,0 +1,28 @@
+/* ====================================
+   Customize Pagination
+   ==================================== */
+
+.pagination {
+    > li {
+        display: block; // Remove list-style and block-level defaults
+        float: left;
+        margin-right: 5px;
+        font-weight: bold;
+        > a,
+        > span {
+            padding: $padding-base-vertical $padding-base-horizontal;
+        }
+    }
+}
+
+// Sizing
+// --------------------------------------------------
+// Large
+.pagination-lg {
+    @include pagination-size($padding-large-vertical/1.2, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+}
+
+// Small
+.pagination-sm {
+    @include pagination-size($padding-small-vertical/1.2, $padding-small-horizontal*1.1, $font-size-small, $line-height-small, $border-radius-small);
+}

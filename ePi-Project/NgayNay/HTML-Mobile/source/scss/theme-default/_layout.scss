@@ -1,0 +1,20 @@
+/* site-wrap */
+
+#site-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@media (min-width: 768px) {
+    html {
+        background-color: #f0f0f0;
+    }
+    body {
+        background-color: white;
+        max-width: 768px;
+        @include center-block();
+    }
+    #site-footer {
+        background-color: white !important;
+    }
+}

@@ -1,0 +1,24 @@
+/* ====================================
+   Customize breadcrumbs
+   ==================================== */
+
+.breadcrumb {
+    border-bottom: 2px solid $brand-primary;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    @include font-size(16, 21);
+    a {
+        font-weight: bold;
+        &::after {
+            display: inline;
+            content: '/';
+            padding: 0 7px;
+        }
+        &.current {
+            font-weight: normal;
+            &:after {
+                content: '';
+            }
+        }
+    }
+}

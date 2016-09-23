@@ -1,0 +1,121 @@
+/* Site header */
+
+#site-header {
+    @include clearfix;
+    background-color: $brand-primary;
+    height: 50px;
+    z-index: 10;
+    position: relative;
+    margin-bottom: 20px;
+    &.affix {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        @media (min-width: 768px) {
+            left: calc(50% - 384px);
+            right: calc(50% - 384px);
+        }
+    }
+    .logo {
+        margin-top: 4px;
+        width: 100px;
+        @include center-block;
+        @include transition(opacity, 0.2, ease-out);
+        @include haf() {
+            opacity: 0.9;
+        }
+        ;
+    }
+    .header-icon {
+        position: absolute;
+        top: 0;
+        line-height: 50px;
+        padding-left: 10px;
+        padding-right: 10px;
+        color: white;
+        &.active,
+        &:active {
+            background-color: darken($brand-primary, 8%);
+        }
+    }
+    .fa-bars {
+        left: 0;
+    }
+    .fa-search {
+        right: 0;
+    }
+    .open-menu {
+        background-color: darken($brand-primary, 8%);
+        padding: 10px;
+        position: fixed;
+        top: 50px;
+        left: -100%;
+        bottom: 0;
+        overflow-y: scroll;
+        @include transition(all, 0.2, ease-out);
+        &.show {
+            left: 0;
+            right: 80%;
+            width: 80%;
+        }
+        @media (min-width: 768px) {
+            right: 100%;
+            &.show {
+                left: calc(50% - 384px);
+                right: calc(50% - 192px);
+                width: initial;
+            }
+        }
+        .fa-angle-right {
+            margin-right: 5px;
+        }
+        li {
+            margin-bottom: 10px;
+            @include font-size(12, 17);
+            @include last-y();
+            text-transform: uppercase;
+            span,
+            a {
+                color: white;
+                @include haf() {
+                    color: #ddd;
+                }
+            }
+        }
+    }
+    .search-box {
+        text-align: center;
+        @extend .open-menu;
+        left: 100%;
+        right: -100%;
+        bottom: initial;
+        &.show {
+            left: 20%;
+            .form-control,
+            .btn {
+                display: inline-block;
+            }
+        }
+        .form-control {
+            width: 60%;
+            display: none;
+            height: 35px;
+            vertical-align: bottom;
+        }
+        .btn {
+            margin-left: 1px;
+            height: 35px;
+            display: none;
+            max-width: 122px;
+        }
+        @media (min-width: 768px) {
+            left: 100%;
+            &.show {
+                left: calc(50% - 192px);
+                right: calc(50% - 384px);
+                width: initial;
+            }
+        }
+    }
+}
