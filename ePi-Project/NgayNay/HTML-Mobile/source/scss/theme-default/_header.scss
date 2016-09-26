@@ -67,14 +67,24 @@
                 width: initial;
             }
         }
-        .fa-angle-right {
+        .fa-angle-right,
+        .fa-angle-double-right {
             margin-right: 5px;
         }
         li {
             margin-bottom: 10px;
-            @include font-size(12, 17);
-            @include last-y();
             text-transform: uppercase;
+            .cate,
+            .sub-cate {
+                @include font-size(12, 17);
+                font-weight: normal;
+                margin-bottom: 7px;
+            }
+            .sub-cate{
+                padding-left: 10px;
+                margin-bottom: 5px;
+                @include last-y();
+            }
             span,
             a {
                 color: white;

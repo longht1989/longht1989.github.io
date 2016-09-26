@@ -1,4 +1,5 @@
 /* share global style */
+
 .form-control {
     &:focus {
         box-shadow: none;
@@ -6,6 +7,7 @@
         border-color: $brand-success;
     }
 }
+
 .btn-border {
     background-color: transparent;
     border: 1px solid #333;
@@ -23,4 +25,8 @@
 
 .text-right {
     text-align: right;
+}
+
+.img-responsive {
+    width: 100%;
 }

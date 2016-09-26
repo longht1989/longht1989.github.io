@@ -70,20 +70,24 @@
     }
     // story with mask 
     &.story-mask {
-        position: relative;
+        .thumb {
+            z-index: 1;
+        }
         > header {
-            position: absolute;
+            position: relative;
             padding: 10px;
             background: #fff;
-            left: 10px;
-            right: 10px;
-            bottom: 0;
+            margin-top: -25px;
+            margin-left: 10px;
+            margin-right: 10px;
+            z-index: 2;
         }
         &.story-cover {
             > header {
                 padding: 20px;
-                left: 20px;
-                right: 20px;
+                margin-top: -50px;
+                margin-right: 20px;
+                margin-left: 20px;
             }
         }
     }

@@ -6128,19 +6128,23 @@ h5 {
       margin-right: 5px;
       font-family: "fontawesome"; }
 
-.story.story-mask {
-  position: relative; }
-  .story.story-mask > header {
-    position: absolute;
-    padding: 10px;
-    background: #fff;
-    left: 10px;
-    right: 10px;
-    bottom: 0; }
-  .story.story-mask.story-cover > header {
-    padding: 20px;
-    left: 20px;
-    right: 20px; }
+.story.story-mask .thumb {
+  z-index: 1; }
+
+.story.story-mask > header {
+  position: relative;
+  padding: 10px;
+  background: #fff;
+  margin-top: -25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  z-index: 2; }
+
+.story.story-mask.story-cover > header {
+  padding: 20px;
+  margin-top: -50px;
+  margin-right: 20px;
+  margin-left: 20px; }
 
 .sidebar .grid-zone .story .title {
   font-size: 14px;

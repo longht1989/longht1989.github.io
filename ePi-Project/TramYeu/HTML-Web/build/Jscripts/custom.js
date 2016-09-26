@@ -7,14 +7,14 @@ $('.top-header .fa-search').click(function() {
 });
 
 /*script for story mask*/
-$(function() {
-    $('.story-mask').each(function() {
-        var headerheight = $(this).children('header').height();
-        $(this).children('header').css("margin-top", -headerheight / 2);
-        var storyheight = $(this).height();
-        $(this).css("height", storyheight + (headerheight / 2));
-    });
-});
+// $(function() {
+//     $('.story-mask').each(function() {
+//         var headerheight = $(this).children('header').height();
+//         $(this).children('header').css("margin-top", -headerheight / 2);
+//         var storyheight = $(this).height();
+//         $(this).css("height", storyheight + (headerheight / 2));
+//     });
+// });
 
 $(function() {
     /*home slider */
