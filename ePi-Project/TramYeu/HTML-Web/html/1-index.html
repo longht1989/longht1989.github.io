@@ -19,31 +19,7 @@
     <!-- CSS Customization -->
     <link rel="stylesheet" href="../build/App_Themes/css/tramyeu.min.css">
     <!-- JS modernizr -->
-    <script>
-    (function(w, d, u) {
-        w.readyQ = [];
-        w.bindReadyQ = [];
-
-        function p(x, y) {
-            if (x == "ready") {
-                w.bindReadyQ.push(y);
-            } else {
-                w.readyQ.push(x);
-            }
-        };
-        var a = {
-            ready: p,
-            bind: p
-        };
-        w.$ = w.jQuery = function(f) {
-            if (f === d || f === u) {
-                return a
-            } else {
-                p(f)
-            }
-        }
-    })(window, document)
-    </script>
+    <script src="../build/Jscripts/tramyeu.min.js"></script>
 </head>
 
 <body class="index-page">
@@ -604,18 +580,7 @@
         </div>
     </div>
     <!-- JS Global Compulsory -->
-    <script src="../build/Jscripts/tramyeu.min.js"></script>
     <script src="../build/Jscripts/custom.js"></script>
-    <script>
-    (function($, d) {
-        $.each(readyQ, function(i, f) {
-            $(f)
-        });
-        $.each(bindReadyQ, function(i, f) {
-            $(d).bind("ready", f)
-        })
-    })(jQuery, document)
-    </script>
     <!-- Js Dev plugin -->
     <!--[if lt IE 9]>
         <script src="Jscripts/vendor/respond.js"></script>

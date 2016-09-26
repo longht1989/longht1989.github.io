@@ -122,46 +122,6 @@
             }
         }
     }
-    // zone in sidebar 
-    &.sidebar-zone {
-        &>header {
-            .zone-title {
-                border-bottom: 2px solid #d8d8d8;
-                margin-bottom: 10px;
-            }
-        }
-    }
-    &.epaper-box {
-        .zone-content {
-            padding: 0 35px;
-            position: relative;
-            .slider-control {
-                >span {
-                    position: absolute;
-                    top: 45px;
-                    width: 20px;
-                    height: 52px;
-                    @include transition(all, 0.2, linear);
-                    a {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                    }
-                    @include haf() {
-                        opacity: 0.5;
-                    }
-                }
-                .slider-prev {
-                    left: 0px;
-                    background: url(../images/arrow-left.jpg) left top no-repeat;
-                }
-                .slider-next {
-                    right: 0px;
-                    background: url(../images/arrow-right.jpg) left top no-repeat;
-                }
-            }
-        }
-    }
     // voting box
     &.voting-box {
         .question {
@@ -179,10 +139,7 @@
     }
 }
 
-
-/* index - highlight zone */
-
-// stories listing in highlight zone
+// stories listing 
 .stories-listing {
     li {
         padding-top: 10px;
@@ -199,14 +156,6 @@
     }
 }
 
-// featured-zone in highlight zone
-.featured-zone {
-    .highlight-zone & {
-        width: 450px;
-        float: right;
-    }
-}
-
 //ads style
 .qc {
     @include clearfix;
@@ -215,132 +164,4 @@
     &.qc-center {
         text-align: center;
     }
-}
-
-// focus zone with 5 big articles
-.focus-zone {
-    position: relative;
-    >header {
-        position: absolute;
-        top: 10px;
-        left: -15px;
-        display: inline-block;
-        z-index: 10;
-        .zone-title {
-            background-color: $brand-primary;
-            padding-right: 10px;
-            font-weight: normal;
-            font-size: 18px;
-            font-size: 1.8rem;
-            @include transition(background-color, 0.2, linear);
-            a {
-                color: white;
-            }
-            @include haf() {
-                background-color: darken($brand-primary, 5%);
-            }
-        }
-    }
-}
-
-//social share box
-.social-share-box {
-    @include clearfix;
-    margin-left: -10px;
-    margin-right: -10px;
-    .item {
-        display: block;
-        float: left;
-        width: 33%;
-        padding: 10px;
-        a {
-            display: block;
-            background-color: #f2f2f2;
-            padding: 10px;
-            text-align: center;
-            @include transition(all, 0.2, linear);
-            >span {
-                display: block;
-                color: #092c4f;
-            }
-            .fa {
-                font-size: 20px;
-                margin-bottom: 8px;
-            }
-            .fa-facebook {
-                color: #516eab;
-            }
-            .fa-google-plus {
-                color: #e14e42;
-            }
-            .fa-twitter {
-                color: #28c5f6;
-            }
-            .count {
-                font-weight: bold;
-                margin-bottom: 5px;
-            }
-            &:hover {
-                opacity: 0.7;
-            }
-        }
-    }
-}
-
-// .most-view
-.most-view {
-    .most-view-listing {
-        li {
-            margin-bottom: 15px;
-            padding-left: 50px;
-            position: relative;
-            min-height: 40px;
-            .rank {
-                width: 50px;
-                text-align: center;
-                position: absolute;
-                top: 0;
-                left: 0;
-                @include font-size(30, 40);
-                font-weight: bold;
-                color: #ddd;
-            }
-        }
-    }
-}
-
-// .video-box
-.video-box {
-    .icon-wrap {
-        display: none;
-    }
-}
-
-// large zone
-.large-zone {
-    > header {
-        .zone-title {
-            background: #fff url(../images/zone-title-deco.png) 0px 15px repeat-x;
-            @include font-size(25, 40);
-            padding-left: 0;
-            @include haf() {
-                background-color: transparent;
-            }
-            a {
-                display: inline-block;
-                background-color: white;
-                padding-right: 10px;
-            }
-        }
-    }
-    .zone-content {
-        margin-left: -7px;
-        margin-right: -8px;
-        font-size: 0;
-    }
-}
-
-// clearfix for each row 
-.row {
-    @include clearfix;
 }

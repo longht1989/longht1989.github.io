@@ -3,55 +3,6 @@
  * ==================================== */
 
 
-/* Media queries
- * ==================================== */
-
-// @mixin breakpoint($min: 0, $max: 0) {
-//     $type: type-of($min);
-//     @if $type==string {
-//         @if $min==xs {
-//             @media (max-width: $grid-float-breakpoint-max) {
-//                 @content;
-//             } // Mobile Devices
-//         }
-//         @else if $min==sm {
-//             @media (min-width: $grid-float-breakpoint) {
-//                 @content;
-//             } // Tablet Devices
-//         }
-//         @else if $min==md {
-//             @media (min-width: $screen-md) {
-//                 @content;
-//             } // Desktops
-//         }
-//         @else if $min==lg {
-//             @media (min-width: $screen-lg) {
-//                 @content;
-//             } // Widescreen Desktops
-//         }
-//         // Otherwise pass a warning to the compiler as to the appropriate options
-//         @else {
-//             @warn "The breakpoint mixin supports the following attributes: xs, sm, md, lg";
-//         }
-//     }
-//     @else if $type==number {
-//         // Allow for custom parameters for min and max size
-//         $query: "all" !default;
-//         @if $min !=0 and $max !=0 {
-//             $query: "(min-width: #{$min}) and (max-width: #{$max})";
-//         } // set both min and max
-//         @else if $min !=0 and $max==0 {
-//             $query: "(min-width: #{$min})";
-//         } // set just min
-//         @else if $min==0 and $max !=0 {
-//             $query: "(max-width: #{$max})";
-//         } // set just max
-//         @media #{$query} {
-//             @content;
-//         }
-//     }
-// }
-
 /* Font mixin
  * ==================================== */
 
@@ -82,32 +33,6 @@
     @include font-family($font-family, $font-weight, $font-style);
 }
 
-
-/* Tìm hiểu các mixin ở dưới đây sau  */
-
-// @mixin text-size-adjust ($value: 100%) {
-//     -moz-text-size-adjust: $value;
-//     -webkit-text-size-adjust: $value;
-//     -ms-text-size-adjust: $value;
-// }
-// // optional hyphenation
-// @mixin hyphens ($mode: auto) {
-//     word-wrap: break-word;
-//     -webkit-hyphens: $mode;
-//     -moz-hyphens: $mode;
-//     -ms-hyphens: $mode;
-//     hyphens: $mode;
-// }
-// // font-smoothing on osx
-// @mixin font-smoothing ($value: on) {
-//     @if $value == on {
-//         -webkit-font-smoothing: antialiased;
-//         -moz-osx-font-smoothing: grayscale;
-//     } @else {
-//         -webkit-font-smoothing: auto;
-//         -moz-osx-font-smoothing: auto;
-//     }
-// }
 
 /* Layout mixin
  * ==================================== */
@@ -145,6 +70,7 @@
     transition-timing-function: $function;
 }
 
+// vertical last child 
 @mixin last-y() {
     &:last-child,
     &:last-of-type {

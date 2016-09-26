@@ -66,11 +66,11 @@
         <!-- article content -->
         <section class="main-article clearfix">
             <header class="article-hdr">
-                <h1 class="article-title">Triều Tiên bác bỏ đề xuất đoàn tụ các gia đình ly tán</h1>
+                <h1 class="article-title cms-title">Triều Tiên bác bỏ đề xuất đoàn tụ các gia đình ly tán</h1>
                 <div class="meta clearfix">
                     <div class="meta-info">
-                        <span class="author">Quốc Bảo</span>
-                        <time>1/10/2014 - 23:01</time>
+                        <span class="author cms-author">Quốc Bảo</span>
+                        <time class="cms-date">1/10/2014 - 23:01</time>
                         <span class="comment-count">10</span>
                     </div>
                     <div class="meta-share">
@@ -79,13 +79,15 @@
                         <span class="facebook-mess">FB Mess</span>
                     </div>
                 </div>
-                <div class="article-avatar">
-                    <p>
-                        <img src="../fig-image/16x10.png" height="" width="" alt="ratio16x10" class="img-responsive">
-                    </p>
-                    <p class="text-muted text-center"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero natus in molestiae error laborum ab, quam quis quod officia voluptatum?</i></p>
+                <div class="cms-body">
+                    <div class="article-avatar">
+                        <p>
+                            <img src="../fig-image/16x10.png" height="" width="" alt="ratio16x10" class="img-responsive cms-photo">
+                        </p>
+                        <p class="text-muted text-center cms-photo-caption"><i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero natus in molestiae error laborum ab, quam quis quod officia voluptatum?</i></p>
+                    </div>
                 </div>
-                <div class="summary">
+                <div class="summary cms-desc">
                     Construction of a giant controversial dam in Laos has been well underway since it began in late 2012. <a href="#">Laos</a> is also set to push ahead with a second hydropower dam on the Mekong River this year in the face of growing concerns among its neighbors.
                 </div>
                 <!-- most view zone -->
@@ -132,10 +134,10 @@
             </header>
             <article class="article-content">
                 <!-- main content -->
-                <div class="content">
-                    <div class="full-img">
+                <div class="content cms-body">
+                    <div class="full-img cms-photo" data-photo-original-src="">
                         <img src="../fig-image/16x10.png" alt="Diplomacy between the West and Russia is becoming more complex">
-                        <span class="fig">Diplomacy between the West and Russia is becoming more complex</span>
+                        <span class="fig cms-photo-caption">Diplomacy between the West and Russia is becoming more complex</span>
                     </div>
                     <p>
                         The obvious route for increasing diplomatic pressure - the UN Security Council - is blocked because Russia is a permanent member and can veto any proposed action. Other organs of the UN, such as the General Assembly, could pass non-binding resolutions, but Russia could simply ignore them.
@@ -143,7 +145,7 @@
                     <p>
                         Where it has been able to, the West has made tentative moves towards isolating Russia, cancelling a G8 meeting earlier this year and suspending
                     </p>
-                    <article class="story story-left related-inline-story">
+                    <article class="story story-left related-inline-story cms-relate">
                         <figure class="thumb">
                             <a href="#"><img src="../fig-image/16x10.png" class="img-responsive" alt="ratio16x10"></a>
                         </figure>
@@ -177,7 +179,7 @@
                         </p>
                         <span class="fig">Nato has already boosted its presence in Central Europe and the Baltic states</span>
                     </div>
-                    <div class="video-player">
+                    <div class="video-player cms-video">
                         <img src="../fig-image/16x10.png" alt="">
                     </div>
                     <p>
@@ -187,26 +189,26 @@
                     <p>
                         The obvious route for increasing diplomatic pressure - the UN Security Council - is blocked because Russia is a permanent member and can veto any proposed action. Other organs of the UN, such as the General Assembly, could pass non-binding resolutions, but Russia could simply ignore them.
                     </p>
-                    <div class="quotes pull-left">
+                    <div class="quotes cms-quote pull-left">
                         This was unusually blunt language from America's top diplomat. John Kerry countered what he called "President Putin's fantasy about what is playing out on the ground", laying out the case in prosecutorial style that Russia is co-ordinating the unrest in eastern Ukraine.
                         <span class="author">Nguyen Tan Dung, Vietnam's prime minister</span>
                     </div>
                     <p>
                         Where it has been able to, the West has made tentative moves towards isolating Russia, cancelling a G8 meeting earlier this year and suspending
                     </p>
-                    <div class="quotes pull-right">
+                    <div class="quotes cms-quote pull-right">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, rerum.
                         <span class="author">Nguyen Tan Dung, Vietnam's prime minister</span>
                     </div>
                     <div class="clearfix"></div>
-                    <div class="quotes">
+                    <div class="quotes cms-quote">
                         This was unusually blunt language from America's top diplomat. John Kerry countered what he called "President Putin's fantasy about what is playing out on the ground", laying out the case in prosecutorial style that Russia is co-ordinating the unrest in eastern Ukraine.
                         <span class="author">Nguyen Tan Dung, Vietnam's prime minister</span>
                     </div>
                     <p>
                         There is always a question mark over punitive measures. Are they a help or a hindrance? As a broad principle, Western nations publicly preach the benefits of engagement over isolation and regard the cold-shoulder as an extreme measure.
                     </p>
-                    <blockquote class="quotes pull-left">
+                    <blockquote class="quotes cms-quote pull-left">
                         <p>"Luật ban hành cần phải quan tâm tới chất lượng và số lượng nhằm mục tiêu quan trọng là thành lập mới 2 triệu doanh nghiệp. Bên cạnh đó, cần tạo ra nhận thức xã hội, phong trào khởi nghiệp mạnh mẽ, Bộ trưởng Bùi Quang Vinh nhấn mạnh."</p>
                     </blockquote>
                     <p>
@@ -453,8 +455,8 @@
         <p>Powered by <a href="http://baomoi.com">ePi Technologies</a></p>
     </div>
     <!-- JS Global Compulsory -->
-    <script src="../build/Jscripts/custom.js"></script>
     <script src="../build/plugins/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <script src="../build/Jscripts/custom.js"></script>
     <!-- Js Dev plugin -->
     <!--[if lt IE 9]>
         <script src="Jscripts/vendor/respond.js"></script>

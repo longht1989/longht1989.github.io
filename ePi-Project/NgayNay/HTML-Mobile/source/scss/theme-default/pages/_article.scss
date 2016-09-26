@@ -581,29 +581,3 @@
         }
     }
 }
-
-// style reset boostrap button & form-control
-.form-control {
-    &:focus {
-        box-shadow: none;
-        -webkit-box-shadow: none;
-        border-color: $brand-success;
-    }
-}
-
-.btn {}
-
-.btn-warning {
-    background: $brand-success;
-    border-color: darken($brand-success, 5%);
-    @include transition(all, 0.2, linear);
-    &:hover {
-        background: darken($brand-success, 8%);
-        border-color: darken($brand-success, 13%);
-    }
-    &:active,
-    &:focus {
-        background: darken($brand-success, 11%);
-        border-color: darken($brand-success, 13%);
-    }
-}
