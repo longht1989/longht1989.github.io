@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>Category</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="App_Themes/css/normalize.css">
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="App_Themes/css/bootstrap.min.css">
+    <link rel="stylesheet" href="App_Themes/css/font-awesome.min.css">
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="App_Themes/css/main.css">
+    <!-- JS modernizr -->
+    <script src="Jscripts/vendor/modernizr-2.8.3.min.js"></script>
+    <script>
+    (function(w, d, u) {
+        w.readyQ = [];
+        w.bindReadyQ = [];
+
+        function p(x, y) {
+            if (x == "ready") {
+                w.bindReadyQ.push(y);
+            } else {
+                w.readyQ.push(x);
+            }
+        };
+        var a = {
+            ready: p,
+            bind: p
+        };
+        w.$ = w.jQuery = function(f) {
+            if (f === d || f === u) {
+                return a
+            } else {
+                p(f)
+            }
+        }
+    })(window, document)
+    </script>
+</head>
+
+<body class="category-page">
+      <!-- == site header == -->
+    <header id="site-header" class="">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-nav" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <img src="App_Themes/img/logo.jpg" height="50" width="" alt="">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="header-nav">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="category.html">Tin tức</a>
+                            <ul class="sub-menu list-unstyled">
+                                <li><a href="category.html" title="">Tin Cơ quan TCT</a></li>
+                                <li><a href="category.html" title="">Tin đơn vị</a></li>
+                                <li><a href="category.html" title="">Tin Đảng bộ</a></li>
+                                <li><a href="category.html" title="">Tin Đoàn thể</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="category.html">Sự kiện</a></li>
+                        <li><a href="category.html">Thông tin quy chế</a></li>
+                        <li><a href="category.html">Hướng dẫn nhân viên</a></li>
+                        <li><a href="category.html">Thông tin nhân sự</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </form>
+                </div>
+                <!-- /.navbar-collapse -->
+                <!-- /.container-fluid -->
+            </nav>
+        </div>
+    </header>
+    <!-- /header -->
+    <!-- == main content == -->
+    <main>
+        <!-- cover slider -->
+        <div class="cover">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="Tempdata/2.jpg" height="" width="" alt="...">
+                        <div class="carousel-caption">
+                            <h3>First item</h3>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="Tempdata/2.jpg" alt="">
+                        <div class="carousel-caption">
+                            <h3>Second item</h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <!-- article listing -->
+            <div class="index-top-zone">
+                <div class="row">
+                    <h3 class="text-uppercase text-center">
+                        <b>Thông tin nổi bật</b>
+                    </h3>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="zone" data-mh="my-group">
+                            <div class="zone-avatar">
+                                <a href="article.html" title="">
+                                    <img src="Tempdata/2.jpg" height="" width="" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum aute</p>
+                            <p class="view-more text-center">
+                                <a href="article.html" title="">Thông tin chi tiết <span class="fa fa-arrow-circle-right"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="zone" data-mh="my-group">
+                            <div class="zone-avatar">
+                                <a href="article.html" title="">
+                                    <img src="Tempdata/2.jpg" height="" width="" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum autem deserunt! Nostrum, voluptates reprehenderit dolores totam veniam quaerat sint praesentium perspiciatis perferendis corrupti?</p>
+                            <p class="view-more text-center">
+                                <a href="article.html" title="">Thông tin chi tiết <span class="fa fa-arrow-circle-right"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="zone" data-mh="my-group">
+                            <div class="zone-avatar">
+                                <a href="article.html" title="">
+                                    <img src="Tempdata/2.jpg" height="" width="" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum autem deserunt! Nostrum, voluptates reprehenderit dolores totam veniam quaerat sint praesentium perspiciatis perferendis corrupti?</p>
+                            <p class="view-more text-center">
+                                <a href="article.html" title="">Thông tin chi tiết <span class="fa fa-arrow-circle-right"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="zone" data-mh="my-group">
+                            <div class="zone-avatar">
+                                <a href="article.html" title="">
+                                    <img src="Tempdata/2.jpg" height="" width="" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum aute</p>
+                            <p class="view-more text-center">
+                                <a href="article.html" title="">Thông tin chi tiết <span class="fa fa-arrow-circle-right"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="zone" data-mh="my-group">
+                            <div class="zone-avatar">
+                                <a href="article.html" title="">
+                                    <img src="Tempdata/2.jpg" height="" width="" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum autem deserunt! Nostrum, voluptates reprehenderit dolores totam veniam quaerat sint praesentium perspiciatis perferendis corrupti?</p>
+                            <p class="view-more text-center">
+                                <a href="article.html" title="">Thông tin chi tiết <span class="fa fa-arrow-circle-right"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div class="zone" data-mh="my-group">
+                            <div class="zone-avatar">
+                                <a href="article.html" title="">
+                                    <img src="Tempdata/2.jpg" height="" width="" alt="" class="img-responsive">
+                                </a>
+                            </div>
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <p class="summary">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum autem deserunt! Nostrum, voluptates reprehenderit dolores totam veniam quaerat sint praesentium perspiciatis perferendis corrupti?</p>
+                            <p class="view-more text-center">
+                                <a href="article.html" title="">Thông tin chi tiết <span class="fa fa-arrow-circle-right"></span></a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="zone zone-skin2" data-mh="my-group">
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-3">
+                                    <div class="zone-avatar">
+                                        <a href="article.html" title="">
+                                            <img src="Tempdata/2.jpg" height="" width="" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-9">
+                                    <p class="summary text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum autem deserunt! Nostrum, voluptates reprehenderit dolores totam veniam quaerat sint praesentium perspiciatis perferendis corrupti?</p>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled related-stories">
+                                <li>
+                                    <h5><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h5>
+                                </li>
+                                <li>
+                                    <h5><a href="article.html">Laboriosam commodi rem magnam minima, dolorum rerum! Rem.</a></h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="zone zone-skin2" data-mh="my-group">
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-3">
+                                    <div class="zone-avatar">
+                                        <a href="article.html" title="">
+                                            <img src="Tempdata/2.jpg" height="" width="" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-9">
+                                    <p class="summary text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum autem deserunt! Nostrum, voluptates reprehenderit dolores totam veniam quaerat sint praesentium perspiciatis perferendis corrupti?</p>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled related-stories">
+                                <li>
+                                    <h5><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h5>
+                                </li>
+                                <li>
+                                    <h5><a href="article.html">Perferendis doloribus dolor accusantium fugit iste est harum.</a></h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="zone zone-skin2" data-mh="my-group">
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-3">
+                                    <div class="zone-avatar">
+                                        <a href="article.html" title="">
+                                            <img src="Tempdata/2.jpg" height="" width="" alt="" class="img-responsive">
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-9">
+                                    <p class="summary text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum aute</p>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled related-stories">
+                                <li>
+                                    <h5><a href="article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</a></h5>
+                                </li>
+                                <li>
+                                    <h5><a href="article.html">Ipsa ex, delectus. Amet porro, quod ea non.</a></h5>
+                                </li>
+                            </ul>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="zone zone-skin2" data-mh="my-group">
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <p class="summary text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum autem deserunt! Nostrum, voluptates reprehenderit dolores totam veniam quaerat sint praesentium perspiciatis perferendis corrupti?</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="zone zone-skin2" data-mh="my-group">
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <p class="summary text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum autem deserunt! Nostrum, voluptates reprehenderit dolores totam veniam quaerat sint praesentium perspiciatis perferendis corrupti?</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="zone zone-skin2" data-mh="my-group">
+                            <h4>
+                                <a href="article.html">PV-Power giao ban trực tuyến điều hành sản xuất quý I năm 2016</a>
+                            </h4>
+                            <p class="summary text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis sapiente, aperiam eius perferendis minus recusandae ipsum aute</p>
+                        </div>
+                    </div>
+                    <!-- pagination -->
+                    <nav class="text-center">
+                        <ul class="pagination">
+                            <li class="disabled">
+                                <a href="article.html" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a href="article.html">1</a></li>
+                            <li><a href="article.html">2</a></li>
+                            <li><a href="article.html">3</a></li>
+                            <li><a href="article.html">4</a></li>
+                            <li><a href="article.html">5</a></li>
+                            <li>
+                                <a href="article.html" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- end main content -->
+    <!-- site footer -->
+    <footer id="site-footer">
+        <div class="container">
+            <p>Tổng Công ty Điện lực Dầu Khí Việt Nam</p>
+            <p>Tòa nhà VPI, 173 Trung Kính, Cầu Giấy, Hà nội, Việt Nam</p>
+            <p>Số điện thoại liên hệ: (84)(4) 2221 0228</p>
+            <p>Email: <a href="mailto:info@pv-power.vn">info@pv-power.vn</a></p>
+        </div>
+    </footer>
+    <!-- end site footer -->
+    <!-- JS Global Compulsory -->
+    <script src="Jscripts/vendor/jquery-1.12.4.min.js"></script>
+    <script src="Jscripts/vendor/bootstrap.min.js"></script>
+    <script>
+    (function($, d) {
+        $.each(readyQ, function(i, f) {
+            $(f)
+        });
+        $.each(bindReadyQ, function(i, f) {
+            $(d).bind("ready", f)
+        })
+    })(jQuery, document)
+    </script>
+    <!-- JS Implementing Plugins -->
+    <script src="Jscripts/ui.js"></script>
+    <script src="Jscripts/vendor/jquery.matchHeight-min.js"></script>
+    <script src="Jscripts/vendor/jquery.bxslider-4.1.2/jquery.bxslider.min.js"></script>
+    <script src="Jscripts/vendor/jQuery-slimScroll-1.3.0/jquery.slimscroll.min.js"></script>
+</body>
+
+</html>
