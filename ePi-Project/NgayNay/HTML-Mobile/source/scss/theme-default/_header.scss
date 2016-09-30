@@ -70,6 +70,12 @@
         .fa-angle-right,
         .fa-angle-double-right {
             margin-right: 5px;
+            padding: 0 5px;
+            &.collapsed {
+                &:before {
+                    content: '';
+                }
+            }
         }
         li {
             margin-bottom: 10px;
@@ -80,7 +86,7 @@
                 font-weight: normal;
                 margin-bottom: 7px;
             }
-            .sub-cate{
+            .sub-cate {
                 padding-left: 10px;
                 margin-bottom: 5px;
                 @include last-y();
