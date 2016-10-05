@@ -75,6 +75,7 @@
             float: right;
             background-color: darken($brand-primary, 2%);
             padding: 0 5px;
+            @include font-size(16, 19);
             &.collapsed {
                 &:before {
                     content: '';
@@ -82,11 +83,13 @@
             }
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            padding: 8px 0;
             text-transform: uppercase;
+            border-bottom: 1px solid rgba(134, 20, 9, 0.5);
             .cate,
             .sub-cate {
-                @include font-size(12, 17);
+                @include font-size(14, 19);
                 font-weight: normal;
                 margin-bottom: 7px;
             }
