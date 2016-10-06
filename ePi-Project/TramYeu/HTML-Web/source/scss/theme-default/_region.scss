@@ -136,6 +136,13 @@
             }
         }
     }
+    @include respond-to-xs {
+        min-height: 228px;
+        background-color: #000;
+        .quote-content {
+            @include font-size(16, 21);
+        }
+    }
 }
 
 
@@ -155,6 +162,9 @@
                     color: #ccc;
                 }
             }
+        }
+        @include respond-to-xs {
+            background-size: cover;
         }
     }
     .zone-content {

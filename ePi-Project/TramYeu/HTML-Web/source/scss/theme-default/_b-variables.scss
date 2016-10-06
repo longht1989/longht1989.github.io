@@ -351,14 +351,14 @@ $container-tablet:             (720px + $grid-gutter-width) !default;
 $container-sm:                 $container-tablet !default;
 
 // Medium screen / desktop
-$container-desktop:            (980px + $grid-gutter-width) !default;
+$container-desktop:            (1024px + $grid-gutter-width) !default;
 //** For `$screen-md-min` and up.
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
-$container-large-desktop:      (1140px + $grid-gutter-width) !default;
+$container-large-desktop:      (1024px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
-$container-lg:                 $container-large-desktop !default;
+$container-lg:                 $container-desktop !default;
 
 
 //== Navbar
@@ -378,10 +378,10 @@ $navbar-default-bg:                #A50A02 !default;
 $navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
-$navbar-default-link-color:                #fff !default;
-$navbar-default-link-hover-color:          #fff !default;
+$navbar-default-link-color:                #111 !default;
+$navbar-default-link-hover-color:          $brand-primary !default;
 $navbar-default-link-hover-bg:             darken($navbar-default-bg, 6.5%) !default;
-$navbar-default-link-active-color:         #555 !default;
+$navbar-default-link-active-color:         $brand-primary !default;
 $navbar-default-link-active-bg:            darken($navbar-default-bg, 6.5%) !default;
 $navbar-default-link-disabled-color:       #ccc !default;
 $navbar-default-link-disabled-bg:          transparent !default;

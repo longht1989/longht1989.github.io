@@ -27,3 +27,9 @@
         max-width: 100% !important;
     }
 }
+
+.main-content {
+    @include respond-to-xs {
+        margin-bottom: 20px;
+    }
+}

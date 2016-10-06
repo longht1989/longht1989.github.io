@@ -14,7 +14,7 @@
 
 .main-article {
     position: relative;
-    padding: 0 10px;
+    // padding: 0 10px;
     .article-hdr {
         // header article 
         .article-title {
@@ -111,6 +111,12 @@
                     margin-right: 5px;
                 }
             }
+        }
+    }
+    .article-avatar {
+        margin-bottom: 10px;
+        img {
+            margin-bottom: 5px;
         }
     }
     .article-content {

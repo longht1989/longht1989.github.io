@@ -52,6 +52,42 @@
     }
 }
 
+@mixin respond-to-xs() {
+    @media (max-width: $screen-xs-max) {
+        @content;
+    }
+}
+
+@mixin respond-to-sm() {
+    @media (min-width: $screen-sm-min) {
+        @content;
+    }
+}
+
+@mixin respond-to-sm-only() {
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @content;
+    }
+}
+
+@mixin respond-to-md() {
+    @media (min-width: $screen-md-min) {
+        @content;
+    }
+}
+
+@mixin respond-to-md-only() {
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        @content;
+    }
+}
+
+@mixin respond-to-lg() {
+    @media (min-width: $screen-lg-min) {
+        @content;
+    }
+}
+
 
 /* Font mixin
  * ==================================== */

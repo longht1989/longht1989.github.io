@@ -7,11 +7,18 @@
     background: url(../images/gradient-line.png) left top repeat-x;
     p {
         margin-bottom: 5px;
+        @include respond-to-xs {
+            text-align: center;
+        }
     }
     .footer-logo {
         img {
             @include haf() {
                 opacity: 0.9;
+            }
+            @include respond-to-xs {
+                @include center-block();
+                margin-bottom: 10px;
             }
         }
     }

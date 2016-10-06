@@ -7,36 +7,36 @@
 // Provide a static navbar from which we expand to create full-width, fixed, and
 // other navbar variations.
 .navigation {
-    background-color: #A50A02;
+    // background-color: #A50A02;
     >.container{
         background-color: inherit;
     }
 }
 
 .navbar-nav {
-    font-family: "proxima-nova", $font-family-sans-serif;
+    font-family: $font-family-itim;
     font-weight: bold;
     margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
     > li > a {
-        color: #fff;
+        color: #111;
         line-height: $line-height-computed;
         padding : 4px 10px 5px;
         &:hover,
         &:focus {
             text-decoration: none;
-            background-color: darken($navbar-default-bg, 6.5%);
+            background-color: white;
         }
     }
     .open > a {
         &,
         &:hover,
         &:focus {
-            background-color: darken($navbar-default-bg, 6.5%);
+            background-color: white;
             border-color: $link-color;
         }
     }
     .dropdown-menu {
-        border-top: 2px solid darken($navbar-default-bg, 6.5%);
+        border-top: 2px solid white;
         border-bottom: 2px solid $gray-light;
     }
     @media (max-width: $grid-float-breakpoint-max) {
@@ -47,7 +47,7 @@
                 &:hover,
                 &:focus {
                     color: $navbar-default-link-hover-color;
-                    background-color: $navbar-default-link-hover-bg;
+                    background-color: white;
                 }
             }
             > .active > a {

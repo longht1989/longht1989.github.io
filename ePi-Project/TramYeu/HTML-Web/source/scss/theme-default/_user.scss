@@ -50,6 +50,9 @@
                 -ms-border-radius: 0;
                 -o-border-radius: 0;
                 border-radius: 0;
+                @include respond-to-xs {
+                    @include center-block();
+                }
             }
         }
     }
