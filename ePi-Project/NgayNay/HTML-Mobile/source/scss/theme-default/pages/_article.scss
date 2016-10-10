@@ -99,6 +99,12 @@
                 .title {
                     @include font-size(14, 19);
                     margin-bottom: 0;
+                    a {
+                        color: $brand-success;
+                        @include haf() {
+                            color: $brand-primary;
+                        }
+                    }
                 }
             }
         }
@@ -156,7 +162,6 @@
                 margin-right: auto;
             }
             .fig {
-                font-size: 14px;
                 color: #555;
                 font-style: italic;
                 text-align: center;
