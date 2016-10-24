@@ -1,0 +1,79 @@
+[class*='sprites-'] {
+    cursor: pointer;
+    display: inline-block;
+    background: url(../img/zalo-sprites.png) no-repeat;
+    background-size: 250px 250px;
+}
+
+.sprites {
+    &-logo-full {
+        width: 140px;
+        height: 22px;
+        background-position: 0px 0px;
+    }
+    &-logo-mini {
+        width: 25px;
+        height: 25px;
+        background-position: 0px 0px;
+    }
+    &-close {
+        width: 16px;
+        height: 16px;
+        background-position: -175px 0px;
+    }
+    &-zalo-logo {
+        width: 20px;
+        height: 23px;
+        background-position: -150px 0px;
+    }
+    &-file-word{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px 0px;
+    }
+    &-file-excel{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px -25px;
+    }
+    &-file-powerpoint{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px -50px;
+    }
+    &-file-pdf{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px -75px;
+    }
+    &-file-rar{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px -100px;
+    }
+    &-file-audio{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px -125px;
+    }
+    &-file-video{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px -150px;
+    }
+    &-file-text{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px -175px;
+    }
+    &-file-psd{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px -200px;
+    }
+    &-file-ai{
+    	width: 20px;
+    	height: 24px;
+    	background-position: -25px -225px;
+    }
+}

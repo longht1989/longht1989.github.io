@@ -1,0 +1,49 @@
+/* button border  */
+
+.btn {
+    border: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    @include transition(background, 0.2, ease-out);
+    .fa {
+        margin-right: 5px;
+    }
+}
+
+.btn-lg {
+    font-size: 16px;
+    line-height: 40px;
+    height: 40px;
+    padding: 0px 22px;
+    font-weight: bold;
+}
+
+.btn-reset {
+    background: none;
+    border: none;
+}
+
+.btn-border {
+    border: 1px solid #555;
+    background-color: transparent;
+    color: #555;
+    @include transition(all, 0.2, ease-out);
+    @include haf() {
+        background-color: #111;
+        color: white;
+    }
+}
+
+.form-control {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    &:focus {
+        border-color: darken($brand-primary, 15%);
+    }
+}

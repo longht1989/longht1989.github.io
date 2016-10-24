@@ -1,0 +1,86 @@
+#site-header {
+    @include clearfix();
+    background-color: $brand-primary;
+    height: 50px;
+    .logo {
+        line-height: 30px;
+        padding: 10px 20px;
+        a {
+            vertical-align: bottom;
+            position: relative;
+            top: -4px;
+        }
+        [class*='sprites-'] {
+            @include transition(opacity, 0.2, ease-out);
+            @include haf() {
+                opacity: 0.8;
+            }
+        }
+    }
+    /* header menu  */
+    .menu {
+        background-color: #f1f4f6;
+        .fa-bars {
+            float: left;
+            line-height: 50px;
+            background-color: #FFF;
+            padding: 0 15px;
+            @include font-size(18, 50);
+            color: $brand-primary;
+        }
+        .user {
+            @include clearfix();
+            float: right;
+            font-size: 13px;
+            position: relative;
+            padding-right: 20px;
+            &-avatar {
+                float: left;
+                line-height: 50px;
+                margin-right: 10px;
+            }
+            &-name {
+                cursor: pointer;
+                font-size: 13px;
+                float: left;
+                line-height: 50px;
+                .fa-caret-down {
+                    color: $brand-primary;
+                }
+            }
+            &-action {
+                display: none;
+                padding: 15px;
+                position: absolute;
+                top: 100%;
+                right: 10px;
+                left: -10px;
+                background-color: #FFF;
+                -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .15);
+                box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .15);
+                li {
+                    margin-bottom: 10px;
+                    @include last-child-y();
+                    a {
+                        display: block;
+                    }
+                    [class*='icon-'] {
+                        margin-right: 10px;
+                        color: $brand-primary;
+                    }
+                }
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: -8px;
+                    right: 10%;
+                    width: 0;
+                    height: 0;
+                    border-bottom: 8px solid #fff;
+                    border-left: 7px solid transparent;
+                    border-right: 7px solid transparent;
+                }
+            }
+        }
+    }
+}

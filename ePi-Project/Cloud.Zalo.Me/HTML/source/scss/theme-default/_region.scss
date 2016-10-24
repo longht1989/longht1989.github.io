@@ -1,0 +1,197 @@
+/* ====================================
+   All region in project
+   ==================================== */
+
+
+/* login box in landing page */
+
+.login-box {
+    margin-top: 70px;
+    max-width: 90%;
+    @include center-block;
+    @include respond-to-sm() {
+        max-width: 600px;
+    }
+    .login-box-hdr {
+        background-color: $brand-primary;
+        line-height: 50px;
+        height: 50px;
+        position: relative;
+        color: white;
+        font-weight: normal;
+        text-align: center;
+        font-size: 22px;
+        [class*='icon-'] {
+            margin-right: 5px;
+            font-size: 24px;
+            vertical-align: text-bottom;
+        }
+        .sprites-close {
+            position: absolute;
+            top: 17px;
+            right: 10px;
+            @include transition(opacity, 0.2, ease-out);
+            @include haf() {
+                opacity: 0.8;
+            }
+        }
+    }
+    .login-box-content {
+        padding: 35px 0 55px;
+        background-color: white;
+        text-align: center;
+        -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .15);
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .15);
+    }
+    .note {
+        margin-bottom: 10px;
+    }
+    .sprites-zalo-logo {
+        vertical-align: text-top;
+        margin-right: 10px;
+    }
+}
+
+
+/* nav bar */
+
+.nav-bar {
+    #site-content & {}
+    li {
+        @include font-size(13, 45);
+        padding: 0 20px;
+        position: relative;
+        a {
+            display: block;
+            color: #f1f4f6;
+        }
+        &.active,
+        &:hover {
+            background-color: #181f24;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 10px;
+                width: 2px;
+                height: 22px;
+                background-color: #aedaf7;
+            }
+        }
+    }
+    [class*='icon-'] {
+        margin-right: 10px;
+        font-size: 15px;
+    }
+}
+
+
+/* toolbar */
+
+.toolbar {
+    @include clearfix();
+    height: 45px;
+    // margin-bottom: 10px;
+    .breadcrumb {
+        float: left;
+    }
+    .action {
+        float: right;
+        width: 40%;
+    }
+    .btn-group {
+        width: 30%;
+        float: left;
+        text-align: right;
+        padding-right: 15px;
+        position: relative;
+        [class*='icon-'] {
+            color: $brand-primary;
+            @include font-size(18, 36);
+            @include haf() {
+                color: darken($brand-primary, 15%);
+            }
+        }
+        &:after {
+            content: '';
+            width: 1px;
+            height: 30px;
+            position: absolute;
+            top: 3px;
+            right: 0;
+            background-color: #ededed;
+        }
+    }
+    .search-bar {
+        width: 70%;
+        float: left;
+        .form-control {
+            font-size: 11px;
+            width: 80%;
+            float: left;
+            border: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .btn-search {
+            @include font-size(14, 36);
+            color: $gray;
+            float: right;
+        }
+    }
+}
+
+
+/* listing file zone  */
+
+// listing item header 
+.list-header {
+    @include clearfix();
+    background-color: #f1f4f6;
+    min-height: 40px;
+}
+
+// item action bar
+.file-full-action {
+    @extend .list-header;
+    >* {
+        width: initial;
+        margin-right: 20px;
+        float: left;
+        @include font-size(13, 40);
+    }
+    [class*='icon-'] {
+        margin-right: 5px;
+        color: $brand-primary;
+        font-size: 15px;
+    }
+}
+
+// column in listing
+.list-name,
+.file-name,
+.list-date,
+.file-date,
+.list-action,
+.file-action,
+.list-size,
+.file-size {
+    padding-left: 10px;
+    padding-right: 10px;
+    @include font-size(13, 40);
+}
+
+/* file-listing zone */
+.file-listing-zone{
+    li{
+        @include clearfix();
+        @include haf(){
+            background-color: #f1f4f6;
+        }
+    }
+}
+.file-name{
+    .thumb{
+        float: left;
+    }
+}

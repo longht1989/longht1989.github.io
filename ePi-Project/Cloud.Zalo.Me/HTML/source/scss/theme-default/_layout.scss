@@ -1,0 +1,55 @@
+/* site-wrap */
+
+body {
+    background: url(../img/body-bg.png) top 50px center no-repeat #f1f4f6;
+    background-size: 480px 90px;
+    @include respond-to-md() {
+        background-size: 959px 179px;
+    }
+}
+
+.nav-bar {
+    float: left;
+    width: 14%;
+}
+
+.menu,
+#content {
+    float: left;
+    width: 86%;
+}
+
+#content {
+    background: #fff;
+    padding: 15px 20px;
+}
+
+#site-content {
+    @include clearfix();
+    .nav-bar {
+        background-color: #232c32;
+    }
+}
+
+
+/* column width  */
+
+.list-name,
+.file-name {
+    width: 55%;
+    float: left;
+}
+
+.list-date,
+.file-date,
+.list-action,
+.file-action {
+    width: 17%;
+    float: left;
+}
+
+.list-size,
+.file-size {
+    width: 11%;
+    float: left;
+}
