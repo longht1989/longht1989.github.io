@@ -63,7 +63,7 @@
         position: relative;
         a {
             display: block;
-            color: #f1f4f6;
+            color: $brand-primary;
         }
         &.active,
         &:hover {
@@ -76,6 +76,9 @@
                 width: 2px;
                 height: 22px;
                 background-color: #aedaf7;
+            }
+            a {
+                color: #f1f4f6;
             }
         }
     }
@@ -149,6 +152,7 @@
     @include clearfix();
     background-color: #f1f4f6;
     min-height: 40px;
+    border-bottom: 1px solid #eee;
 }
 
 // item action bar
@@ -181,17 +185,75 @@
     @include font-size(13, 40);
 }
 
+
 /* file-listing zone */
-.file-listing-zone{
-    li{
+
+.file-listing-zone {
+    > li {
         @include clearfix();
-        @include haf(){
+        border-bottom: 1px solid #ededed;
+        position: relative;
+        @include haf() {
+            cursor: pointer;
             background-color: #f1f4f6;
+            .btn-default {
+                background-color: $brand-primary;
+                color: white;
+                @include haf() {
+                    background-color: darken($brand-primary, 8%);
+                }
+            }
+        }
+    }
+    .inline-action {
+        width: 175px;
+        position: absolute;
+        background: white;
+        top: 90%;
+        z-index: 2;
+        -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .15);
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, .15);
+        li {
+            padding: 0 10px;
+            @include font-size(13, 35);
+            @include transition(all, 0.2, ease-out);
+            [class*='icon-'] {
+                color: $brand-primary;
+                font-size: 15px;
+                margin-right: 10px;
+                @include transition(all, 0.2, ease-out);
+            }
+            @include haf() {
+                background-color: $brand-primary;
+                a {
+                    color: white;
+                    display: block;
+                    @include haf() {}
+                }
+                [class*='icon-'] {
+                    color: white;
+                }
+            }
         }
     }
 }
-.file-name{
-    .thumb{
+
+.file-name {
+    .thumb {
         float: left;
+        text-align: center;
+        min-width: 30px;
+        margin-right: 10px;
     }
+    [class*='icon-'] {
+        color: $brand-primary;
+        font-size: 15px;
+    }
+    [class*='sprites-'] {
+        vertical-align: text-top;
+    }
+}
+
+.file-action {
+    text-align: right;
 }

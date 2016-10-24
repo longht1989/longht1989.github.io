@@ -7,18 +7,31 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     border-radius: 20px;
-    @include transition(background, 0.2, ease-out);
+    @include transition(all, 0.2, ease-out);
     .fa {
         margin-right: 5px;
     }
 }
-
+.btn-default{
+    background-color: #f1f4f6;
+    color: $brand-primary;
+    @include haf(){
+        background-color: $brand-primary;
+        color: white;
+    }
+}
 .btn-lg {
     font-size: 16px;
     line-height: 40px;
     height: 40px;
     padding: 0px 22px;
     font-weight: bold;
+}
+.btn-sm {
+    font-size: 12px;
+    line-height: 25px;
+    height: 25px;
+    padding: 0px 19px;
 }
 
 .btn-reset {
