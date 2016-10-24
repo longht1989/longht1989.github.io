@@ -6093,12 +6093,26 @@ h5 {
   @media (max-width: 767px) {
     .quote-zone {
       min-height: 228px;
-      background-color: #000; }
+      background-color: #111; }
       .quote-zone .quote-content {
         font-size: 16px;
         font-size: 1.6rem;
         line-height: 21px;
         line-height: 2.1rem; } }
+  .quote-zone.no-img .quote-content {
+    position: static;
+    margin-top: 0 !important;
+    background-color: #111;
+    padding: 54px; }
+    .quote-zone.no-img .quote-content .quote-text::before {
+      top: 25px;
+      left: 15px; }
+    .quote-zone.no-img .quote-content .quote-text::after {
+      bottom: 25px;
+      right: 15px; }
+  @media (max-width: 767px) {
+    .quote-zone.no-img {
+      min-height: initial; } }
 
 /* featured zone */
 .featured-zone > header {
@@ -6223,6 +6237,9 @@ h5 {
   font-size: 2rem;
   line-height: 28px;
   line-height: 2.8rem; }
+
+.story.story-cover .thumb > [id^=video_] {
+  width: 100% !important; }
 
 .story.story-left .thumb {
   float: left;

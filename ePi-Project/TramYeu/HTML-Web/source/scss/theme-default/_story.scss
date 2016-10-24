@@ -43,6 +43,12 @@
             @include font-size(20, 28);
             // margin-bottom: 8px;
         }
+        //story include video
+        .thumb {
+            > [id^=video_] {
+                width: 100% !important;
+            }
+        }
     }
     // story with left thumbnail
     &.story-left {

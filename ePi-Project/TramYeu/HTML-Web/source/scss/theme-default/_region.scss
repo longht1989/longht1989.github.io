@@ -138,9 +138,30 @@
     }
     @include respond-to-xs {
         min-height: 228px;
-        background-color: #000;
+        background-color: #111;
         .quote-content {
             @include font-size(16, 21);
+        }
+    }
+    &.no-img {
+        .quote-content {
+            position: static;
+            margin-top: 0 !important;
+            background-color: #111;
+            padding: 54px;
+            .quote-text {
+                &::before {
+                    top: 25px;
+                    left: 15px;
+                }
+                &::after {
+                    bottom: 25px;
+                    right: 15px;
+                }
+            }
+        }
+        @include respond-to-xs {
+            min-height: initial;
         }
     }
 }
