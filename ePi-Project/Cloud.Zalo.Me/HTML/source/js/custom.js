@@ -1,35 +1,33 @@
 /* ====================================
    Onload functions
    ==================================== */
-$(".search > span").click(function() {
-    $(".search-box").toggle();
-    $(".search").toggleClass("active");
+/*toggle large nav-bar*/
+$('#nav-bar-toggle').click(function() {
+    $('.nav-bar').toggleClass('nav-sm');
+    $('.content').toggleClass('content-lg');
+});
+/*show user action*/
+$('.user').click(function() {
+    $('.user-action').fadeToggle('fast');
+
+});
+/*tool tip show*/
+$(function() {
+    $('[data-toggle="tooltip"]').tooltip()
 })
 
-/* show hide mobile search & menu open */
-
-$('#site-header .fa-bars').click(function() {
-    $(this).toggleClass('active');
-    $('#site-header .menu-open').toggleClass('show');
-    $('#site-header .search-open').removeClass('show');
-    $('#site-header .fa-search').removeClass('active');
-});
-$('#site-header .fa-search').click(function() {
-    $(this).toggleClass('active');
-    $('#site-header .search-open').toggleClass('show');
-    $('#site-header .fa-bars').removeClass('active');
-    $('#site-header .menu-open').removeClass('show');
+/* show & hide inline action */
+$(".file-listing-zone > li").click(function(event) {
+    // $(".file-listing-zone .inline-action").hide();
+    $(this).children('.inline-action').css({ display: "block", position: "fixed", top: event.pageY, left: event.pageX });
 });
 
-/*demo slider*/
-$(function() {
-    /*demo slider */
-    $('#slider-demo').bxSlider({
-        maxSlides: 1,
-        minSlides: 1,
-        nextText: '',
-        prevText: '',
-        nextSelector: '#home-slider-next',
-        prevSelector: '#home-slider-prev'
-    });
+$(document).mouseup(function(e) {
+    var container = $(".inline-action");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+    }
 });

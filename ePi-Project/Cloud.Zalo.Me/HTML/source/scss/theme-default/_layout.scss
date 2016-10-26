@@ -11,23 +11,46 @@ body {
 .nav-bar {
     float: left;
     width: 14%;
+    @include transition(width, 0.2, ease-out);
+    &.nav-sm {
+        width: 5%;
+    }
 }
 
-.menu,
-#content {
+.content {
     float: left;
     width: 86%;
-}
-
-#content {
-    background: #fff;
-    padding: 15px 20px;
+    @include transition(width, 0.2, ease-out);
+    &.content-lg {
+        width: 95%;
+        text-align: center;
+    }
 }
 
 #site-content {
     @include clearfix();
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
     .nav-bar {
         background-color: #232c32;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+    }
+    .content {
+        background: #fff;
+        padding: 15px 20px;
+        margin-left: 14%;
+        height: 100%;
+        overflow-y: auto;
+        &.content-lg{
+            margin-left: 5%;
+        }
     }
 }
 

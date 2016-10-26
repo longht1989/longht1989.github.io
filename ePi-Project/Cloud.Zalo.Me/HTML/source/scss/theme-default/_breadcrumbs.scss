@@ -10,7 +10,7 @@
     border-radius: $border-radius-base;
     // font-family: $font-family-serif;
     > li {
-        text-transform: uppercase;
+        // text-transform: uppercase;
         display: inline-block;
         font-size: 13px;
         a {
@@ -29,7 +29,7 @@
     }
     > .active {
         a {
-            color: darken($brand-primary, 15%)
+            color: $gray;
         }
     }
 }
