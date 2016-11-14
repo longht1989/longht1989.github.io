@@ -1,0 +1,95 @@
+/* style for story */
+
+.story {
+    @include clearfix;
+    .thumb {}
+    .title {
+        @include font-size(16, 22);
+        font-weight: normal;
+        @include respond-to-sm() {
+            @include font-size(15, 21);
+        }
+        .fa {
+            margin-left: 3px;
+            font-size: .8em;
+        }
+    }
+    .cate {
+        a {
+            color: $brand-primary;
+        }
+    }
+    .summary,
+    .meta {
+        color: $gray-light;
+        @include font-size(12, 18);
+        >span {
+            margin-right: 15px;
+        }
+        .fa {
+            margin-right: 5px;
+            font-size: 0.9em;
+        }
+        .mega-menu & {
+            color: #aaa;
+        }
+    }
+    .thumb,
+    .cate,
+    .title,
+    .summary,
+    .meta {
+        margin-bottom: 8px;
+    }
+    // story with bold title
+    &.story-bold {
+        .title {
+            font-weight: bold;
+        }
+    }
+    // story cover
+    &.story-cover {
+        .title {
+            @include font-size(16, 22);
+            font-weight: bold;
+        }
+        .highlight-zone & {
+            .title {
+                @include font-size(20, 28);
+            }
+        }
+    }
+    // story with left thumbnail
+    &.story-left {
+        .thumb {
+            float: left;
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        .title {}
+    }
+    // story with red bullet 
+    &.story-bullet {
+        margin-bottom: 8px;
+        @include last-child-y;
+        .title {
+            &::before {
+                content: '';
+                display: inline;
+                margin-right: 5px;
+                font-family: "fontawesome";
+            }
+        }
+    }
+    .zone-slider & {
+        .title {
+            margin-bottom: 0;
+        }
+    }
+    .event-zone & {
+        .summary {
+            max-height: 5.7rem;
+            overflow: hidden;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+/* ====================================
+   Footer's style
+   ==================================== */
+
+#site-footer {
+    .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-top: 2px solid #ddd;
+    }
+    .footer-logo {
+        margin-bottom: 15px;
+        @include respond-to-md() {
+            margin-bottom: 0;
+        }
+        img {
+            @include haf() {
+                opacity: 0.9;
+            }
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .footer-info {
+        color: #555;
+        margin-bottom: 5px;
+        text-align: center;
+        @include respond-to-md() {
+            margin-bottom: 0;
+            text-align: left;
+        }
+        p {
+            margin-bottom: 5px;
+        }
+    }
+    .footer-social {
+        @extend .footer-info;
+        margin-bottom: 0;
+        @include respond-to-md() {
+            text-align: right;
+        }
+        .fa {
+            font-size: 20px;
+            margin-left: 10px;
+            color: #555;
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
+}

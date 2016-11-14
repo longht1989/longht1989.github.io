@@ -1,0 +1,269 @@
+/* ====================================   Header's style   ==================================== */
+
+#site-header {
+    margin-bottom: 20px;
+    @include clearfix();
+    z-index: 2;
+}
+
+
+/* mobile site header  */
+
+#m-site-header {
+    border-bottom: 2px solid $brand-primary;
+    padding: 10px 0;
+    height: 50px;
+    @include respond-to-sm {
+        display: none;
+    }
+    position: relative;
+    .logo {
+        @extend .text-center;
+        height: 30px;
+        a {
+            line-height: 30px;
+            img {
+                vertical-align: top;
+            }
+        }
+    }
+    .header-icon {
+        position: absolute;
+        top: 10px;
+        @include font-size(18, 30);
+        padding-left: 10px;
+        padding-right: 10px;
+        color: $link-color;
+        &.active,
+        &:active {
+            color: $gray-light;
+        }
+    }
+    .fa-bars {
+        right: 0;
+    }
+    .fa-search {
+        left: 0;
+    }
+    .menu-open {
+        background-color: darken($brand-primary, 8%);
+        padding: 10px;
+        position: fixed;
+        top: 50px;
+        left: 100%;
+        right: -100%;
+        overflow-y: auto;
+        z-index: 2;
+        @include transition(all, 0.2, ease-out);
+        &.show {
+            left: 20%;
+            right: 0;
+            width: 80%;
+        }
+        .fa-angle-right,
+        .fa-angle-double-right {
+            margin-right: 5px;
+        }
+        .fa-caret-right {
+            float: right;
+            background-color: darken($brand-primary, 2%);
+            padding: 0 5px;
+            @include font-size(16, 19);
+            &.collapsed {
+                &:before {
+                    content: '';
+                }
+            }
+        }
+        li {
+            margin-bottom: 15px;
+            padding: 8px 0;
+            text-transform: uppercase;
+            font-weight: bold;
+            // border-bottom: 1px solid rgba(134, 20, 9, 0.5);
+            .cate,
+            .sub-cate {
+                @include font-size(14, 19);
+                font-weight: normal;
+                margin-bottom: 7px;
+            }
+            .sub-cate {
+                padding-left: 10px;
+                margin-bottom: 5px;
+                @include last-child-y();
+            }
+            span,
+            a {
+                color: white;
+                @include haf() {
+                    color: #ddd;
+                }
+            }
+        }
+    }
+    .search-open {
+        text-align: center;
+        @extend .menu-open;
+        left: -100%;
+        right: 100%;
+        bottom: initial;
+        min-height: 55px;
+        &.show {
+            left: 0;
+            right: 20%;
+            .form-control,
+            .btn {
+                display: inline-block;
+            }
+        }
+        .form-control {
+            width: 60%;
+            display: none;
+            height: 35px;
+            vertical-align: bottom;
+        }
+        .btn {
+            margin-left: 1px;
+            height: 35px;
+            display: none;
+            max-width: 122px;
+        }
+    }
+}
+
+
+/* desktop site header  */
+
+#desktop-site-header {
+    border-bottom: 2px solid $brand-primary;
+    @include respond-to-xs() {
+        display: none;
+    }
+    .top-bar {
+        @include clearfix();
+        background-color: #f0f0f0;
+        @include font-size(12, 30);
+        .linked-sites {
+            font-family: $font-family-tinos;
+            li {
+                float: left;
+                margin-left: 20px;
+            }
+        }
+    }
+    .site-header-content {
+        padding: 20px 0;
+        @include clearfix();
+        .logo {
+            float: left;
+            img {
+                height: 60px;
+                width: auto;
+            }
+        }
+        .qc-header {
+            width: 580px;
+            float: right;
+            text-align: center;
+        }
+    }
+}
+
+.navigation {
+    // background: $brand-primary;
+    position: relative;
+    > ul {
+        @include clearfix();
+        > li {
+            @include font-size(14, 35);
+            float: left;
+            @include transition(all, 0.2, ease-out);
+            &:first-child {
+                a {
+                    padding-left: 0;
+                }
+            }
+            &:hover,
+            &.active {
+                > a {
+                    color: $brand-primary;
+                }
+            }
+            > a {
+                display: block;
+                padding: 0 10px;
+                font-weight: bold;
+            }
+            // style for menu & search button in navigation
+            &.pull-right {
+                .fa-bars,
+                .fa-search {
+                    background-color: #f0f0f0;
+                    padding: 0 15px;
+                    cursor: pointer;
+                    line-height: 35px;
+                    &:hover {
+                        color: $brand-primary;
+                    }
+                }
+                .search-btn,
+                .menu-btn {
+                    float: left;
+                    margin-left: 1px;
+                    position: relative;
+                    &.active {
+                        .fa {
+                            color: $brand-primary;
+                        }
+                    }
+                }
+                .search-open,
+                .menu-open {
+                    background-color: #f0f0f0;
+                    opacity: 0;
+                    @include transition(padding-top, 0.5, ease-out);
+                    overflow: hidden;
+                    padding: 0 15px;
+                    position: absolute;
+                    right: 0;
+                    top: calc(100% + 2px);
+                    min-width: 500px;
+                    z-index: -2;
+                    &.show {
+                        display: block;
+                        opacity: 1;
+                        z-index: 2;
+                        padding: 20px 15px;
+                        max-height: 1000px;
+                        .form-control,
+                        .btn {
+                            display: inline-block;
+                            float: left;
+                            width: 360px;
+                            height: 35px;
+                        }
+                        .btn {
+                            width: 100px;
+                        }
+                    }
+                }
+                .menu-open {
+                    &.show {
+                        padding: 10px 0;
+                    }
+                    li {
+                        padding: 0 15px;
+                        @include transition(all, 0.2, ease-out);
+                        &:hover {
+                            background-color: #ddd;
+                        }
+                    }
+                    a {
+                        font-weight: bold;
+                        display: block
+                    }
+                }
+            }
+        }
+    }
+}

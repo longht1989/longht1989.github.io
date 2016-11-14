@@ -1,0 +1,110 @@
+/* style for user  */
+
+.user {
+    @include clearfix;
+    font-family: $font-family-itim;
+    .thumb {
+        margin-bottom: 5px;
+        img {
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            border-radius: 50%;
+        }
+    }
+    .user-name {
+        @include font-size(18, 25);
+        margin-bottom: 5px;
+    }
+    .meta,
+    .status {
+        @include font-size(16, 21);
+        color: #555;
+        margin-bottom: 5px;
+        .fa {
+            margin-right: 7px;
+            font-size: 20px;
+            &.fa-female {
+                color: #f5228a;
+            }
+            &.fa-male {
+                color: $brand-success;
+            }
+        }
+    }
+    .age {
+        color: #555;
+    }
+    .interested-count {
+        .fa {
+            color: $brand-primary;
+            font-size: 0.9em;
+        }
+    }
+    .featured-zone & {
+        .thumb {
+            img {
+                -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                -ms-border-radius: 0;
+                -o-border-radius: 0;
+                border-radius: 0;
+                @include respond-to-xs {
+                    @include center-block();
+                }
+            }
+        }
+    }
+}
+
+
+/* style for user page resgister & detail & edit */
+
+.user-avatar-box {
+    @include clearfix;
+    margin-bottom: 15px;
+    .user-avatar {
+        cursor: pointer;
+    }
+}
+
+.user-detail {
+    .user-info {
+        margin-bottom: 20px;
+        .user-avatar {
+            margin-bottom: 10px;
+        }
+        .full-info {
+            font-family: $font-family-itim;
+            @include font-size(16, 21);
+            >* {
+                margin-bottom: 10px;
+            }
+            .fa {
+                margin-right: 7px;
+            }
+            .full-name {
+                @include font-size(20, 28);
+            }
+            .fa-calendar,
+            .fa-male,
+            .fa-globe,
+            .fa-thumbs-o-up {
+                color: $brand-success;
+            }
+            .fa-female,
+            .fa-heart {
+                color: $brand-primary
+            }
+            .fa-phone,
+            .fa-envelope-o {
+                color: $brand-warning;
+            }
+        }
+    }
+    .user-status {
+        margin-bottom: 15px;
+        @include font-size(16, 21);
+    }
+}

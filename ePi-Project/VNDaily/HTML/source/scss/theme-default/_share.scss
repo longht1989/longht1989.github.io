@@ -1,0 +1,35 @@
+/* button border  */
+
+.btn {
+    font-size: 14px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    .fa {
+        margin-right: 5px;
+    }
+}
+
+.btn-border {
+    border: 1px solid #555;
+    background-color: transparent;
+    color: #555;
+    @include transition(all, 0.2, ease-out);
+    @include haf() {
+        background-color: #111;
+        color: white;
+    }
+}
+
+.form-control {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px;
+    &:focus {
+        border-color: darken($brand-primary, 15%);
+    }
+}
