@@ -8,15 +8,15 @@
 .zone {
     margin-bottom: 20px;
     > header {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         .zone-title {
             font-family: $font-family-special;
-            @include font-size(24, 30);
+            @include font-size(22, 26);
             text-transform: uppercase;
             a {
                 position: relative;
                 display: block;
-                padding-top: 12px;
+                padding-top: 10px;
                 @include transition(all, 0.2, ease-out);
                 border-top: 2px solid #ddd;
                 &::before {
@@ -127,148 +127,16 @@
 }
 
 
-/* .story-listing  */
-
-.story-listing {
-    .story {
-        margin-bottom: 20px;
-    }
-}
-
-
-/* quote zone */
-
-.quote-zone {
-    position: relative;
-    font-family: $font-family-itim;
-    color: white;
-    @include font-size(24, 28);
-    .quote-img {
-        position: relative;
-        &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: #000;
-            opacity: 0.6;
-        }
-    }
-    .quote-content {
-        position: absolute;
-        top: 50%;
-        left: 20px;
-        right: 20px;
-        padding-left: 54px;
-        padding-right: 54px;
-        .quote-text {
-            margin-bottom: 10px;
-            // position: absolute;
-            // top: 50%;
-            &::before {
-                content: '';
-                display: inline;
-                font-family: "fontawesome";
-                font-size: 44px;
-                position: absolute;
-                top: -0px;
-                left: -0px;
-            }
-            &::after {
-                content: '';
-                display: inline;
-                font-family: "fontawesome";
-                font-size: 44px;
-                position: absolute;
-                bottom: -0px;
-                right: -0px;
-            }
-        }
-    }
-    @include respond-to-xs {
-        min-height: 228px;
-        background-color: #111;
-        .quote-content {
-            @include font-size(16, 21);
-        }
-    }
-    &.no-img {
-        .quote-content {
-            position: static;
-            margin-top: 0 !important;
-            background-color: #111;
-            padding: 54px;
-            .quote-text {
-                &::before {
-                    top: 25px;
-                    left: 15px;
-                }
-                &::after {
-                    bottom: 25px;
-                    right: 15px;
-                }
-            }
-        }
-        @include respond-to-xs {
-            min-height: initial;
-        }
-    }
-}
-
-
 /* featured zone */
 
 .featured-zone {
-    >header {
-        text-align: center;
-        background: #ff7648;
-        background: url(../images/gradient-deco.png) 0 0 no-repeat;
-        margin-bottom: 0;
-        .zone-title {
-            line-height: 40px;
-            a {
-                color: white;
-                @include haf() {
-                    color: #ccc;
-                }
-            }
-        }
-        @include respond-to-xs {
-            background-size: cover;
-        }
-    }
-    .zone-content {
-        padding: 20px;
-        border-bottom: 1px solid #ee7f4c;
-        border-left: 1px solid #ff7547;
-        border-right: 1px solid #ff193d;
-    }
-}
-
-
-/* .top-user */
-
-.top-user {
-    .user {
-        margin-bottom: 10px;
-        &:last-child {
-            @include last-child-y();
+    .story-listing {
+        @include respond-to-xs() {
+        margin-top: 10px;
         }
     }
 }
 
-
-/* sidebar grid zone */
-
-.grid-zone {
-    .row {
-        margin-bottom: 10px;
-        @include last-child-y();
-    }
-}
 
 
 /* .box-slider */
@@ -314,9 +182,7 @@
 }
 
 .qc {
+    @include clearfix();
     margin-bottom: 20px;
-    &.qc-center,
-    &.middle-qc {
-        text-align: center;
-    }
+    text-align: center;
 }

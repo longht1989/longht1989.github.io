@@ -2,7 +2,9 @@
 
 .story {
     @include clearfix;
-    .thumb {}
+    .thumb {
+        margin-bottom: 8px;
+    }
     .title {
         @include font-size(16, 22);
         font-weight: normal;
@@ -34,12 +36,18 @@
             color: #aaa;
         }
     }
-    .thumb,
     .cate,
     .title,
     .summary,
     .meta {
-        margin-bottom: 8px;
+        margin-bottom: 5px;
+    }
+    .related-story {
+        .title {
+            font-size: 14px !important;
+            line-height: 1.9rem !important;
+            font-weight: normal !important;
+        }
     }
     // story with bold title
     &.story-bold {
@@ -59,16 +67,26 @@
             }
         }
     }
-    // story with left thumbnail
-    &.story-left {
+    // story video
+    &.story-video {
         .thumb {
-            float: left;
-            margin-right: 10px;
-            margin-top: 3px;
+            position: relative;
+            &::after {
+                position: absolute;
+                top: 7px;
+                left: 7px;
+                content: '';
+                display: block;
+                font-size: 24px;
+                line-height: 1em;
+                font-family: "fontawesome";
+                color: white;
+                opacity: .5;
+                text-shadow: 1px 1px 2px #000;
+            }
         }
-        .title {}
     }
-    // story with red bullet 
+    // story with bullet 
     &.story-bullet {
         margin-bottom: 8px;
         @include last-child-y;
@@ -81,15 +99,48 @@
             }
         }
     }
-    .zone-slider & {
-        .title {
-            margin-bottom: 0;
+    /* story in zone  */
+    // latest zone
+    .latest-zone & {
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+        @include last-child-y();
+    }
+    // ranking zone
+    .story-listing &,
+    .ranking-zone & {
+        margin-bottom: 10px;
+        @include last-child-y();
+    }
+    .ranking-zone & {
+        position: relative;
+        .ranking {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            font-family: $font-family-special;
+            @include font-size(44, 25);
+            color: #ddd;
+            opacity: 0.6;
+            z-index: -1;
+            @include respond-to-sm() {
+                // right: 10px;
+            }
         }
     }
-    .event-zone & {
-        .summary {
-            max-height: 5.7rem;
-            overflow: hidden;
+    // normal zone
+    .normal-zone & {
+        padding-bottom: 5px;
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 10px;
+        @include last-child-y();
+    }
+    // red title
+    .red-title & {
+        margin-bottom: 10px;
+        @include respond-to-md() {
+            margin-bottom: 0;
         }
     }
 }
