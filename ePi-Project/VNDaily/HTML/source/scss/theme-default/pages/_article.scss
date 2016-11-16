@@ -1,27 +1,40 @@
 /* article style */
 
-// article breadcrumb
-.detail-page {
-    .breadcrumb {
-        .cate {
-            a {
-                color: $brand-success;
-                border-top-color: $brand-success;
-            }
+// article wrap
+.article-wrap {
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    @include last-child-y();
+    &::after {
+        display: inline-block;
+        content: 'Kéo xuống để xem tiếp';
+        position: absolute;
+        bottom: -10px;
+        left: calc(50% - 75px);
+        text-align: center;
+        color: #ccc;
+        font-size: 14px;
+        padding: 3px 8px;
+        background-color: white;
+    }
+    &:last-child {
+        &::after {
+            content: '';
         }
     }
 }
 
+// normal detail
 .main-article {
     position: relative;
-    // padding: 0 10px;
     .article-hdr {
         // header article 
         .article-title {
-            @include font-size(26, 36);
-            margin-bottom: 8px;
+            @include font-size(24, 32);
+            margin-bottom: 10px;
             font-weight: bold;
-            margin-top: -3px;
         }
         .meta {
             margin-bottom: 5px;
@@ -38,26 +51,12 @@
                 .author {
                     text-transform: uppercase;
                     color: $brand-primary;
-                    &::after {
-                        display: inline;
-                        content: ' - ';
-                    }
                 }
-                time {
-                    &::after {
-                        display: inline;
-                        content: ' - ';
-                    }
-                }
-                .comment-count::after {
-                    margin-left: 3px;
-                    display: inline;
-                    content: '';
-                    font-family: 'fontawesome';
-                }
+                time {}
             }
             .meta-share {
                 >* {
+                    font-size: 20px;
                     display: inline-block;
                     float: left;
                     margin-left: 5px;
@@ -66,32 +65,11 @@
             }
         }
         .summary {
-            font-size: 16px;
-            font-size: 1.6rem;
-            line-height: 1.42857143em;
+            @include font-size(14, 19);
             margin-bottom: 10px;
-            font-weight: bold;
+            color: #777;
             a {
                 color: $brand-primary;
-            }
-        }
-        .related-listing {
-            width: 100%;
-            margin-right: 0;
-            .zone-title {
-                background: none;
-                margin-bottom: 10px;
-                padding-left: 0;
-                @include font-size(18, 24);
-            }
-            .story {
-                padding-left: 15px;
-                background: url(../images/bullet.png) 0 8px no-repeat;
-                padding-bottom: 0;
-                border-bottom: none;
-                .title {
-                    @include font-size(16, 24);
-                }
             }
         }
     }
@@ -122,7 +100,7 @@
     .article-content {
         //main article content
         .content {
-            @include font-size(16, 21);
+            @include font-size(14, 19);
             p,
             div,
             h3,
@@ -253,10 +231,7 @@
             }
         }
         /* video player */
-        .video-player {
-            margin-left: -10px;
-            margin-right: -10px;
-        }
+        .video-player {}
         /* table with */
         table {
             max-width: 100% !important;
@@ -370,7 +345,7 @@
         .box-relate,
         .notification {
             padding: 10px;
-            background: #ffd7d3;
+            background: lighten($brand-primary, 47%);
             border: 1px dashed #333;
             border-radius: 3px;
             &.pull-left,
@@ -436,35 +411,6 @@
                 }
             }
         }
-        /* -------------- */
-        .social-share {
-            background-color: #f7f7f7;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-            .share-title {
-                color: #144583;
-                margin-top: 0;
-                margin-bottom: 10px;
-            }
-            .social-listing {
-                margin-bottom: 0;
-                .fb-send {
-                    margin-bottom: 0;
-                    background: linear-gradient(#0084ff, #006fff);
-                    border-radius: 5px;
-                    position: relative;
-                    top: -6px;
-                    >span {
-                        position: relative;
-                        top: 2px;
-                        margin-top: 2px;
-                        vertical-align: baseline !important;
-                        display: inline-block;
-                    }
-                }
-            }
-        }
     }
 }
 
@@ -473,15 +419,13 @@
 
 .article-comments {
     > header {
-        .comments-hdr {
-            margin: 0 0 10px;
-            @include font-size(24, 33);
-            font-family: $font-family-itim;
-            color: $brand-primary;
+        .fa {
+            margin-right: 10px;
         }
     }
     .box-user-comm {
         margin-bottom: 10px;
+        margin-top: 15px;
         .commentlist {}
         .box {
             margin-bottom: 10px;
@@ -494,14 +438,14 @@
             .name {
                 margin-top: 0;
                 margin-bottom: 5px;
-                font-family: $font-family-itim;
-                @include font-size(18, 25);
+                font-weight: bold;
+                @include font-size(16, 21);
                 time {
-                    @include font-size(16, 21);
-                    font-family: $font-family-itim;
+                    @include font-size(14, 21);
                     text-transform: none;
                     color: #777;
                     margin-left: 10px;
+                    font-weight: normal;
                 }
                 .like,
                 .reply {
@@ -541,18 +485,18 @@
     }
     .box-input {
         position: relative;
-        input.form-control {
-            width: 317px;
-            margin-right: 10px;
-            float: left;
+        .form-control {
             margin-bottom: 10px;
             &:nth-child(2) {
                 float: right;
                 margin-right: 0;
             }
         }
-        textarea.form-control {
-            width: 100%;
+        .note {
+            font-size: 12px;
+            margin-bottom: 5px;
+            color: #777;
+            font-style: italic;
         }
         #replyfor {
             >span {
@@ -581,7 +525,11 @@
     }
     .view-more {
         text-align: center;
-        a {}
+        .btn-sm {
+            font-size: 12px;
+            color: #aaa;
+            border-color: #ddd;
+        }
     }
     .view-more-plus {
         margin-left: 5px;
@@ -590,5 +538,69 @@
         @include haf() {
             color: $brand-primary;
         }
+    }
+}
+
+// detail  photo
+.article-photo {
+    .slide-show {
+        position: relative;
+    }
+    // slider with caption
+    .slider-caption {
+        li {
+            position: relative;
+            .caption {
+                margin-bottom: 0 !important;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, .5);
+                color: white;
+                @include respond-to-xs() {
+                    position: static;
+                    background-color: #f0f0f0;
+                    color: #111;
+                }
+            }
+        }
+    }
+    .slider-control {
+        .fa {
+            width: 30px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, .4);
+            min-width: 33px;
+            color: white;
+            top: calc(50% - 25px);
+            a {
+                display: block;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+            }
+            &.fa-angle-left {
+                position: absolute;
+                left: 0;
+            }
+            &.fa-angle-right {
+                position: absolute;
+                right: 0;
+            }
+            &:focus,
+            &:active {
+                margin-top: 1px;
+            }
+        }
+    }
+    .article-comments,
+    .sidebar {
+        margin-top: 20px;
     }
 }

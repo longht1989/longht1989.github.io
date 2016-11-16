@@ -1,11 +1,6 @@
 /* ====================================
    Onload functions
    ==================================== */
-$(".search > span").click(function() {
-    $(".search-box").toggle();
-    $(".search").toggleClass("active");
-})
-
 /* show hide mobile search & menu open */
 
 $('#m-site-header .fa-bars').click(function() {
@@ -42,22 +37,39 @@ $('#desktop-site-header .fa-bars').click(function() {
 /*demo slider*/
 
 $(function() {
+
+    if (ismobile) {
+        $('#slider-demo').bxSlider({
+            maxSlides: 2,
+            minSlides: 2,
+            slideWidth: 383,
+            slideMargin: 20,
+            nextText: '',
+            prevText: '',
+            nextSelector: '#demo-slider-next',
+            prevSelector: '#demo-slider-prev'
+        });
+    }
+    // >> desktop
+    else {
+        $('#slider-demo').bxSlider({
+            maxSlides: 4,
+            minSlides: 4,
+            slideWidth: 230,
+            slideMargin: 20,
+            nextText: '',
+            prevText: '',
+            nextSelector: '#demo-slider-next',
+            prevSelector: '#demo-slider-prev'
+        });
+    }
     /*demo slider */
-    $('#slider-demo').bxSlider({
-        maxSlides: 1,
-        minSlides: 1,
-        nextText: '',
-        prevText: '',
-        nextSelector: '#demo-slider-next',
-        prevSelector: '#demo-slider-prev'
-    });
-    /*demo slider 02 */
     $('#slider-demo-02').bxSlider({
-        maxSlides: 1,
-        minSlides: 1,
+        pager: false,
         nextText: '',
         prevText: '',
         nextSelector: '#demo-slider-02-next',
-        prevSelector: '#demo-slider-02-prev'
+        prevSelector: '#demo-slider-02-prev',
+        adaptiveHeight: true
     });
 });

@@ -7,536 +7,463 @@
 <!--<![endif]-->
 
 <head>
-    <title>NgayNay-Category</title>
+    <title>Viet Nam Daily - Category</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.ico">
-    <!-- CSS Implementing Plugins -->
+    <link rel="shortcut icon" href="../App_Themes/img/favicon.ico">
     <!-- CSS Customization -->
-    <link rel="stylesheet" href="../build/App_Themes/css/ngaynay.min.css">
-    <!-- JS modernizr -->
-    <script>
-    (function(w, d, u) {
-        w.readyQ = [];
-        w.bindReadyQ = [];
-
-        function p(x, y) {
-            if (x == "ready") {
-                w.bindReadyQ.push(y);
-            } else {
-                w.readyQ.push(x);
-            }
-        };
-        var a = {
-            ready: p,
-            bind: p
-        };
-        w.$ = w.jQuery = function(f) {
-            if (f === d || f === u) {
-                return a
-            } else {
-                p(f)
-            }
-        }
-    })(window, document)
+    <link rel="stylesheet" href="../App_Themes/css/vndaily.min.css">
+    <!-- JS modernizr + Jquery + Components JS-->
+    <script src="../Jscripts/vndaily.min.js"></script>
+    <script type="text/javascript">
+    var ismobile = $(window).width() < 768;
+    var istablet = $(window).width() < 1024 && $(window).width() >= 768;
     </script>
 </head>
 
-<body class="category-page">
-    <!-- site header  -->
-    <div id="site-header">
-        <div class="top-header">
-            <div class="site-wrap">
-                <h2 class="logo">
-                    <a href="#">
-                        <img src="../build/App_Themes/images/logo.png" height="100" width="173" alt="Báo điện tử Ngày Nay" title="Báo điện tử Ngày Nay">
+<body>
+    <!-- site header -->
+    <header id="site-header">
+        <!-- mobile header -->
+        <div id="m-site-header">
+            <div class="container">
+                <h1 class="logo">
+                    <a href="1-index.html">
+                        <img src="../App_Themes/img/logo.png" height="30" width="185" alt="Việt Nam Daily" title="Việt Nam Daily">
                     </a>
-                </h2>
-                <div class="qc">
-                    <a href="#">
-                        <img src="../fig-image/ads-728x90.jpg" height="90" width="728" alt="">
-                    </a>
+                </h1>
+                <div class="search-zone">
+                    <span class="fa fa-search header-icon"></span>
+                    <div class="search-open">
+                        <input type="text" class="form-control" placeholder="Nội dung tìm kiếm">
+                        <button class="btn btn-primary">Tìm kiếm</button>
+                    </div>
+                </div>
+                <div class="menu-zone">
+                    <span class="fa fa-bars header-icon"></span>
+                    <div class="menu-open">
+                        <ul class="category-listing">
+                            <li>
+                                <a href="2-category.html">Lorem ipsum.</a>
+                            </li>
+                            <li>
+                                <a href="2-category.html">Lorem ipsum.</a>
+                            </li>
+                            <li>
+                                <a href="2-category.html">Lorem ipsum.</a>
+                            </li>
+                            <li>
+                                <a href="2-category.html">Lorem ipsum.</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-        <nav class="navigation">
-            <div class="site-wrap">
-                <ul>
-                    <li>
-                        <a href="1-index.html">
-                            <span class="sprites-home"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Xã hội</a>
-                        <ul class="sub-cate">
-                            <li><a href="2-category.html">Sub menu</a></li>
-                            <li><a href="2-category.html">Sub menu</a></li>
-                            <li><a href="2-category.html">Sub menu</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Thế giới</a>
-                        <ul class="sub-cate">
-                            <li><a href="2-category.html">Sub menu</a></li>
-                            <li><a href="2-category.html">Sub menu</a></li>
-                            <li><a href="2-category.html">Sub menu</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Kinh tế</a>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Pháp luật</a>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Môi trường</a>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Sức khỏe</a>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Du lịch</a>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Giải trí</a>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Địa ốc</a>
-                    </li>
-                    <li>
-                        <a href="2-category.html">Video</a>
-                    </li>
-                    <li class="search">
-                        <span class="sprites-search"></span>
-                        <div class="search-box">
-                            <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
-                            <button class="btn btn-default" type="button">Tìm kiếm</button>
+        <!-- desktop header -->
+        <div id="desktop-site-header">
+            <div class="top-bar">
+                <div class="container">
+                    <div class="pull-left">
+                        <time datetime="2011-01-12">January 12th, 2011</time>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <!-- site header content -->
+                <div class="site-header-content">
+                    <h1 class="logo">
+                        <a href="1-index.html"><img src="../App_Themes/img/logo.png" height="60" width="370" alt="Báo Sài Gòn Giải phóng" title="Báo Sài Gòn Giải phóng"></a>
+                    </h1>
+                    <div class="qc-header hidden-sm pull-right">
+                        <a href="#"><img src="/fig-image/ads468x60.png" alt=""></a>
+                    </div>
+                </div>
+                <!-- navigation -->
+                <nav class="navigation">
+                    <ul>
+                        <li>
+                            <a href="2-category.html">Tiền - Thị trường</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Bất động sản</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Luxury - Shopping</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Shop tin</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Hitech - Xe</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Du lịch - Khách sạn - Ăn uống</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Thế giới nghiêng</a>
+                        </li>
+                        <li class="pull-right">
+                            <div class="menu-btn">
+                                <span class="fa fa-bars"></span>
+                                <div class="menu-open">
+                                    <ul>
+                                        <li>
+                                            <a href="2-category.html">Vũ khí</a>
+                                        </li>
+                                        <li>
+                                            <a href="2-category.html">Thể thao</a>
+                                        </li>
+                                        <li>
+                                            <a href="2-category.html">Hot Sao - Hot Teen</a>
+                                        </li>
+                                        <li>
+                                            <a href="2-category.html">Adam - Eva - Chat</a>
+                                        </li>
+                                        <li>
+                                            <a href="2-category.html">Hài VL</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="search-btn">
+                                <span class="fa fa-search"></span>
+                                <div class="search-open">
+                                    <input type="text" class="form-control" placeholder="Nội dung tìm kiếm">
+                                    <button class="btn btn-primary">Tìm kiếm</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- site content -->
+    <div id="site-content" class="container">
+        <!-- web above the fold -->
+        <!-- breadcrumb -->
+        <div class="row">
+            <div class="col-xs-12">
+                <ol class="breadcrumb">
+                    <li><a href="#"><span class="fa fa-home"></span></a></li>
+                    <li><a href="#">Tiền - Thị trường</a></li>
+                    <li class="active">Data</li>
+                </ol>
+            </div>
+            <!-- highlight zone -->
+            <div class="col-xs-12 col-sm-8 col-md-5 zone highlight-zone">
+                <!-- story cover  -->
+                <article class="story story-cover">
+                    <figure class="thumb">
+                        <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                    </figure>
+                    <header>
+                        <h2 class="title"><a href="3-detail.html">Bên trong phòng thí nghiệm dành cho thiên tài công nghệ</a></h2>
+                        <div class="meta">
+                            <span class="fa fa-clock-o"></span>
+                            <time datetime="2011-01-12">January 12th, 2011</time>
                         </div>
+                        <div class="summary">Nếu như không có được phương thức hợp lý khi tiêu hủy hàng triệu chiếc Note7 bị thu hồi, đây có thể sẽ trở thành "thảm kịch" đối với môi trường, và sẽ lại khiến Samsung đối mặt với những vấn đề về mặt pháp lý trong tương lai.</div>
+                    </header>
+                    <ul class="related-story">
+                        <li>
+                            <article class="story story-bullet">
+                                <h2 class="title"><a href="3-detail.html">Techfest 2016: Gần 3.000 lượt người tham gia, 220 lượt kết nối đầu tư</a></h2>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="story story-bullet">
+                                <h2 class="title"><a href="3-detail.html">Triều cường đang lên, TP HCM có nguy cơ ngập úng</a></h2>
+                            </article>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+            <!-- latest story -->
+            <div class="col-xs-12 col-sm-4 col-md-3 zone story-listing">
+                <!-- story cover & story photo-->
+                <article class="story story-cover story-photo">
+                    <figure class="thumb">
+                        <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                    </figure>
+                    <header>
+                        <h2 class="title"><a href="3-detail.html">Đường hoa Nguyễn Huệ 2017: Thành phố mang tên Bác - Khát vọng ngời sáng <span class="fa fa-camera"></span></a></h2>
+                        <div class="meta">
+                            <span class="fa fa-clock-o"></span>
+                            <time datetime="2011-01-12">January 12th, 2011</time>
+                        </div>
+                    </header>
+                </article>
+                <article class="story story-cover story-photo">
+                    <figure class="thumb">
+                        <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                    </figure>
+                    <header>
+                        <h2 class="title"><a href="3-detail.html">Đường hoa Nguyễn Huệ 2017: Thành phố mang tên Bác - Khát vọng ngời sáng <span class="fa fa-camera"></span></a></h2>
+                        <div class="meta">
+                            <span class="fa fa-clock-o"></span>
+                            <time datetime="2011-01-12">January 12th, 2011</time>
+                        </div>
+                    </header>
+                </article>
+            </div>
+            <!-- top ads -->
+            <div class="hidden-xs hidden-sm col-md-4 zone sidebar">
+                <div class="qc">
+                    <a href="#"><img src="/fig-image/ads-300x250-01.jpg" alt=""></a>
+                </div>
+                <div class="qc">
+                    <a href="#"><img src="/fig-image/ads-300x250-01.jpg" alt=""></a>
+                </div>
+            </div>
+            <!-- middle ads -->
+            <div class="hidden-xs col-sm-12 zone qc">
+                <a href="#"><img src="/fig-image/ads-728x90.jpg" alt=""></a>
+            </div>
+        </div>
+        <!-- category slider zone -->
+        <section class="zone zone-slider">
+            <header>
+                <h3 class="zone-title"><a href="2-category.html">TOP TIN BÀI HoT NHẤT 24h</a></h3>
+            </header>
+            <div class="zone-content">
+                <ul id="slider-demo">
+                    <li>
+                        <article class="story">
+                            <figure class="thumb">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header>
+                                <h2 class="title"><a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi, aliquam maxime aut.</a></h2>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story">
+                            <figure class="thumb">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header>
+                                <h2 class="title"><a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eligendi incidunt sapiente.</a></h2>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story">
+                            <figure class="thumb">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header>
+                                <h2 class="title"><a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt eos quod at.</a></h2>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story">
+                            <figure class="thumb">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header>
+                                <h2 class="title"><a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor quidem, unde error!</a></h2>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story">
+                            <figure class="thumb">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header>
+                                <h2 class="title"><a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, suscipit sunt aut.</a></h2>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story">
+                            <figure class="thumb">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header>
+                                <h2 class="title"><a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum aspernatur nostrum, dignissimos.</a></h2>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story">
+                            <figure class="thumb">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header>
+                                <h2 class="title"><a href="3-detail.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iste, perspiciatis earum!</a></h2>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story">
+                            <figure class="thumb">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header>
+                                <h2 class="title"><a href="3-detail.html">Đường hoa Nguyễn Huệ 2017: Thành phố mang tên Bác - Khát vọng ngời sáng</a></h2>
+                            </header>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="story">
+                            <figure class="thumb">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header>
+                                <h2 class="title"><a href="3-detail.html">Đường hoa Nguyễn Huệ 2017: Thành phố mang tên Bác - Khát vọng ngời sáng</a></h2>
+                            </header>
+                        </article>
                     </li>
                 </ul>
+                <div class="slider-control">
+                    <span class="fa fa-angle-left" id="demo-slider-prev"></span>
+                    <span class="fa fa-angle-right" id="demo-slider-next"></span>
+                </div>
             </div>
-        </nav>
-        <div class="site-wrap time-global">
-            <time datetime="2011-01-12">Hôm nay, ngày 14 tháng 09 năm 2016</time>
-        </div>
-    </div>
-    <!-- end site header -->
-    <!-- site content  -->
-    <div id="site-content">
-        <div class="site-wrap">
-            <!-- breadcrumb -->
-            <div class="breadcrumb">
-                <a class="" href="/" title="Trang chủ">Trang chủ</a>
-                <a class="current" href="/quan-su/163.antd" title="Quân sự">Quân sự</a>
-            </div>
-            <!-- highlight zone  -->
-            <div class="main-content">
-                <div class="cate-highlight">
-                    <article class="story story-mask first-story">
-                        <figure class="thumb">
-                            <a href="3-article.html">
-                                <img src="../fig-image/16x10.png" height="415" width="665" alt="ratio16x10">
-                            </a>
-                        </figure>
-                        <header>
-                            <h2 class="title">
-                            <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                        </h2>
-                        </header>
-                    </article>
-                    <div class="top-story">
-                        <article class="story">
-                            <figure class="thumb">
-                                <a href="3-article.html">
-                                    <img src="../fig-image/16x10.png" height="200" width="325" alt="ratio16x10">
-                                </a>
+        </section>
+        <!-- category-listing -->
+        <div class="row">
+            <div class="col-xs-12 col-md-8">
+                <!-- category listing story-->
+                <ul class="zone category-listing-story">
+                    <li>
+                        <article class="story story-cover row">
+                            <figure class="thumb col-xs-12 col-sm-3">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
                             </figure>
-                            <header>
-                                <h2 class="title">
-                                <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                            </h2>
+                            <header class="col-xs-12 col-sm-9">
+                                <h2 class="title"><a href="3-detail.html">Trump tuyên bố nhận lương Tổng thống 1 USD/năm</a></h2>
+                                <div class="meta">
+                                    <span class="fa fa-clock-o"></span>
+                                    <time datetime="2011-01-12">January 12th, 2011</time>
+                                </div>
+                                <div class="summary">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut nisi id adipisci reiciendis, delectus perspiciatis vel fuga, veniam rerum at, eligendi alias ab. Eum quos omnis alias, quam eligendi ratione?
+                                </div>
+                                <ul class="related-story">
+                                    <li>
+                                        <article class="story story-bullet">
+                                            <h2 class="title"><a href="3-detail.html">Techfest 2016: Gần 3.000 lượt người tham gia, 220 lượt kết nối đầu tư</a></h2>
+                                        </article>
+                                    </li>
+                                </ul>
                             </header>
                         </article>
-                        <article class="story">
-                            <figure class="thumb">
-                                <a href="3-article.html">
-                                    <img src="../fig-image/16x10.png" height="200" width="325" alt="ratio16x10">
-                                </a>
+                    </li>
+                    <li>
+                        <article class="story story-cover row">
+                            <figure class="thumb col-xs-12 col-sm-3">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
                             </figure>
-                            <header>
-                                <h2 class="title">
-                                <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                            </h2>
+                            <header class="col-xs-12 col-sm-9">
+                                <h2 class="title"><a href="3-detail.html">Trump tuyên bố nhận lương Tổng thống 1 USD/năm</a></h2>
+                                <div class="meta">
+                                    <span class="fa fa-clock-o"></span>
+                                    <time datetime="2011-01-12">January 12th, 2011</time>
+                                </div>
+                                <div class="summary">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut nisi id adipisci reiciendis, delectus perspiciatis vel fuga, veniam rerum at, eligendi alias ab. Eum quos omnis alias, quam eligendi ratione?
+                                </div>
+                                <ul class="related-story">
+                                    <li>
+                                        <article class="story story-bullet">
+                                            <h2 class="title"><a href="3-detail.html">Techfest 2016: Gần 3.000 lượt người tham gia, 220 lượt kết nối đầu tư</a></h2>
+                                        </article>
+                                    </li>
+                                </ul>
                             </header>
                         </article>
-                    </div>
-                </div>
-                <div class="cate-listing">
-                    <article class="story story-left">
-                        <figure class="thumb">
-                            <a href="3-article.html">
-                                <img src="../fig-image/16x10.png" height="137" width="220" alt="ratio16x10">
-                            </a>
-                        </figure>
-                        <header>
-                            <h2 class="title">
-                                <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                            </h2>
-                            <p class="meta">
-                                <time datetime="2011-01-12">January 12th, 2011</time>
-                            </p>
-                            <div class="summary">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et illo, aperiam iusto non corrupti vel blanditiis. Nihil animi, rerum tempora!
-                            </div>
-                        </header>
-                    </article>
-                    <article class="story story-left">
-                        <figure class="thumb">
-                            <a href="3-article.html">
-                                <img src="../fig-image/16x10.png" height="137" width="220" alt="ratio16x10">
-                            </a>
-                        </figure>
-                        <header>
-                            <h2 class="title">
-                                <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                            </h2>
-                            <p class="meta">
-                                <time datetime="2011-01-12">January 12th, 2011</time>
-                            </p>
-                            <div class="summary">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et illo, aperiam iusto non corrupti vel blanditiis. Nihil animi, rerum tempora!
-                            </div>
-                        </header>
-                    </article>
-                    <article class="story story-left">
-                        <figure class="thumb">
-                            <a href="3-article.html">
-                                <img src="../fig-image/16x10.png" height="137" width="220" alt="ratio16x10">
-                            </a>
-                        </figure>
-                        <header>
-                            <h2 class="title">
-                                <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                            </h2>
-                            <p class="meta">
-                                <time datetime="2011-01-12">January 12th, 2011</time>
-                            </p>
-                            <div class="summary">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et illo, aperiam iusto non corrupti vel blanditiis. Nihil animi, rerum tempora!
-                            </div>
-                        </header>
-                    </article>
-                    <div class="qc qc-center">
-                        <a href="#">
-                            <img src="../fig-image/ads468x60.png" height="60" width="468" alt="">
-                        </a>
-                    </div>
-                    <article class="story story-left">
-                        <figure class="thumb">
-                            <a href="3-article.html">
-                                <img src="../fig-image/16x10.png" height="137" width="220" alt="ratio16x10">
-                            </a>
-                        </figure>
-                        <header>
-                            <h2 class="title">
-                                <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                            </h2>
-                            <p class="meta">
-                                <time datetime="2011-01-12">January 12th, 2011</time>
-                            </p>
-                            <div class="summary">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et illo, aperiam iusto non corrupti vel blanditiis. Nihil animi, rerum tempora!
-                            </div>
-                        </header>
-                    </article>
-                    <article class="story story-left">
-                        <figure class="thumb">
-                            <a href="3-article.html">
-                                <img src="../fig-image/16x10.png" height="137" width="220" alt="ratio16x10">
-                            </a>
-                        </figure>
-                        <header>
-                            <h2 class="title">
-                                <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                            </h2>
-                            <p class="meta">
-                                <time datetime="2011-01-12">January 12th, 2011</time>
-                            </p>
-                            <div class="summary">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et illo, aperiam iusto non corrupti vel blanditiis. Nihil animi, rerum tempora!
-                            </div>
-                        </header>
-                    </article>
-                    <article class="story story-left">
-                        <figure class="thumb">
-                            <a href="3-article.html">
-                                <img src="../fig-image/16x10.png" height="137" width="220" alt="ratio16x10">
-                            </a>
-                        </figure>
-                        <header>
-                            <h2 class="title">
-                                <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                            </h2>
-                            <p class="meta">
-                                <time datetime="2011-01-12">January 12th, 2011</time>
-                            </p>
-                            <div class="summary">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et illo, aperiam iusto non corrupti vel blanditiis. Nihil animi, rerum tempora!
-                            </div>
-                        </header>
-                    </article>
-                </div>
+                    </li>
+                    <li>
+                        <article class="story story-cover row">
+                            <figure class="thumb col-xs-12 col-sm-3">
+                                <a href="3-detail.html"><img src="/fig-image/16x9.png" class="img-responsive" data-url-mob="/fig-image/16x9.png?747x420" alt=""></a>
+                            </figure>
+                            <header class="col-xs-12 col-sm-9">
+                                <h2 class="title"><a href="3-detail.html">Trump tuyên bố nhận lương Tổng thống 1 USD/năm</a></h2>
+                                <div class="meta">
+                                    <span class="fa fa-clock-o"></span>
+                                    <time datetime="2011-01-12">January 12th, 2011</time>
+                                </div>
+                                <div class="summary">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut nisi id adipisci reiciendis, delectus perspiciatis vel fuga, veniam rerum at, eligendi alias ab. Eum quos omnis alias, quam eligendi ratione?
+                                </div>
+                                <ul class="related-story">
+                                    <li>
+                                        <article class="story story-bullet">
+                                            <h2 class="title"><a href="3-detail.html">Techfest 2016: Gần 3.000 lượt người tham gia, 220 lượt kết nối đầu tư</a></h2>
+                                        </article>
+                                    </li>
+                                </ul>
+                            </header>
+                        </article>
+                    </li>
+                </ul>
+                <!-- pagination -->
                 <ul class="pagination">
-                    <li><a href="#">&lt;</a></li>
+                    <li>
+                        <a href="#" aria-label="Previous">
+                            <span class="fa fa-angle-left"></span>
+                        </a>
+                    </li>
                     <li class="active"><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li><a href="#">3</a></li>
                     <li><a href="#">4</a></li>
                     <li><a href="#">5</a></li>
-                    <li><a href="#">&gt;</a></li>
+                    <li>
+                        <a href="#" aria-label="Next">
+                            <span class="fa fa-angle-right"></span>
+                        </a>
+                    </li>
                 </ul>
             </div>
-            <!-- top sidebar  -->
-            <div class="sidebar">
-                <!-- top qc sidebar -->
+            <div class="hidden-xs hidden-sm col-md-4 zone sidebar">
                 <div class="qc">
-                    <a href="#">
-                        <img src="../fig-image/ads/ads-300x250-1.jpg" height="250" width="300" alt="">
-                    </a>
+                    <a href="#"><img src="/fig-image/ads-300x250-01.jpg" alt=""></a>
                 </div>
-                <!-- hash tag box -->
-                <section class="zone hashtag-box">
-                    <header>
-                        <h3 class="zone-title">
-                            <a href="#">Khủng bố ở Nice</a>
-                        </h3>
-                    </header>
-                    <div class="zone-content">
-                        <article class="story story-note">
-                            <header>
-                                <h2 class="title">
-                                    <span class="sprites-note"></span>
-                                    <a href="3-article.html">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, similique!
-                                    </a>
-                                </h2>
-                            </header>
-                        </article>
-                        <article class="story story-note">
-                            <header>
-                                <h2 class="title">
-                                    <span class="sprites-note"></span>
-                                    <a href="3-article.html">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem, quasi!
-                                    </a>
-                                </h2>
-                            </header>
-                        </article>
-                        <article class="story story-note">
-                            <header>
-                                <h2 class="title">
-                                    <span class="sprites-note"></span>
-                                    <a href="3-article.html">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, recusandae?
-                                    </a>
-                                </h2>
-                            </header>
-                        </article>
-                        <article class="story story-note">
-                            <header>
-                                <h2 class="title">
-                                    <span class="sprites-note"></span>
-                                    <a href="3-article.html">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, sed!
-                                    </a>
-                                </h2>
-                            </header>
-                        </article>
-                        <article class="story story-note">
-                            <header>
-                                <h2 class="title">
-                                    <span class="sprites-note"></span>
-                                    <a href="3-article.html">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, error!
-                                    </a>
-                                </h2>
-                            </header>
-                        </article>
-                    </div>
-                </section>
-                <!-- sub-cate zone  -->
-                <section class="zone sidebar-zone">
-                    <header>
-                        <h3 class="zone-title">
-                            <a href="2-category.html">Nhật ký lữ hành</a>
-                        </h3>
-                    </header>
-                    <div class="zone-content">
-                        <article class="story story-first">
-                            <figure class="thumb">
-                                <a href="3-article.html">
-                                    <img src="../fig-image/16x10.png" height="187" width="300" alt="ratio16x10">
-                                </a>
-                            </figure>
-                            <header>
-                                <h2 class="title">
-                                    <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                                </h2>
-                            </header>
-                        </article>
-                        <article class="story">
-                            <header>
-                                <h2 class="title">
-                                    <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                                </h2>
-                            </header>
-                        </article>
-                        <article class="story">
-                            <header>
-                                <h2 class="title">
-                                    <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                                </h2>
-                            </header>
-                        </article>
-                        <article class="story">
-                            <header>
-                                <h2 class="title">
-                                    <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                                </h2>
-                            </header>
-                        </article>
-                        <article class="story">
-                            <header>
-                                <h2 class="title">
-                                    <a href="3-article.html">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit assumenda cumque, dolorem!</a>
-                                </h2>
-                            </header>
-                        </article>
-                    </div>
-                </section>
-            </div>
-            <div class="qc qc-center">
-                <a href="#">
-                    <img src="../fig-image/ads/ads-728x90.jpg" height="90" width="728" alt="">
-                </a>
+                <div class="qc">
+                    <a href="#"><img src="/fig-image/ads-300x250-01.jpg" alt=""></a>
+                </div>
             </div>
         </div>
     </div>
-    <!-- end site content -->
     <!-- site footer -->
-    <div id="site-footer">
-        <div class="site-wrap">
-            <!-- listing cate in footer -->
-            <ul class="listing-cate">
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Chính trị</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Giáo dục</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Cộng đồng</a></h4>
-                </li>
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Cộng đồng</a></h4>
-                </li>
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Chính trị</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Cộng đồng</a></h4>
-                </li>
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Chính trị</a></h4>
-                </li>
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Chính trị</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Giáo dục</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Cộng đồng</a></h4>
-                </li>
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Chính trị</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Giáo dục</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Cộng đồng</a></h4>
-                </li>
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Chính trị</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Giáo dục</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Cộng đồng</a></h4>
-                </li>
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Chính trị</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Giáo dục</a></h4>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Cộng đồng</a></h4>
-                </li>
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Cộng đồng</a></h4>
-                </li>
-                <li>
-                    <h3 class="cate"><a href="2-category.html" title="">Xã Hội</a></h3>
-                    <h4 class="sub-cate"><a href="2-category.html" title="">Cộng đồng</a></h4>
-                </li>
-            </ul>
-            <!-- linked site -->
-            <ul class="link-site">
-                <li><a href="#" title="">Tin tức</a></li>
-                <li><a href="#" title="">An ninh hình sự</a></li>
-                <li><a href="#" title="">Đọc báo</a></li>
-                <li><a href="#" title="">Tin tức 24h</a></li>
-                <li><a href="#" title="">Tin mới</a></li>
-                <li><a href="#" title="">Tin nhanh</a></li>
-                <li><a href="#" title="">Báo gia đình - pháp luật</a></li>
-            </ul>
-            <div class="site-contact">
-                <div class="slogan">
-                    <h3>Tạp chí điện tử ngày nay online</h3>
-                    <p>Cơ quan ngôn luận của Liên hiệp các tổ chức Unesco Việt Nam</p>
+    <footer id="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-3 footer-logo">
+                    <a href="1-index.html"><img src="../App_Themes/img/footer-logo.png" class="img-responsive" alt="Việt Nam Daily"></a>
                 </div>
-                <div class="footer-info pull-left">
-                    <p>Tổng biên tập: <b>Nguyễn Xuân Thắng</b></p>
-                    <p>Phó tổng biên tập phụ trách online: <b>Nguyễn Hùng Sơn</b></p>
-                    <p>Cơ quan chủ quản: Liên hiệp các hội Unesco Việt Nam</p>
-                    <p>Giấy phép hoạt động báo chí do Bộ Thông tin & Truyền thông cấp số 88/GP-BTTT, ngày 10/03/2014</p>
-                    <p>Tòa soạn: P903 Khách sạn Thể thao, làng sinh viên Hacinco, Thanh Xuân, Hà Nội</p>
+                <div class="col-xs-12 col-md-7 footer-info">
+                    <p>© Copyright 2016 <b><a href="1-index.html">Vietnam Daily</a></b>, All rights reserved</p>
+                    <p>® <b><a href="1-index.html">Vietnam Daily</a></b> giữ bản quyền nội dung trên website này.</p>
                 </div>
-                <div class="footer-info pull-right">
-                    <p>
-                        Thông tin tòa soạn | <a href="#">Rss</a>
-                    </p>
-                    <p>Hotline: 096.234.1234</p>
-                    <p>Email: <a href="mailto:son@unet.vn">son@unet.vn</a></p>
-                    <p>Liên hệ quảng cáo</p>
-                    <p>Điện thoại: 096.234.111 | <a href="#"><b>Báo giá</b></a> </p>
+                <div class="col-xs-12 col-md-2 footer-social text-right">
+                    <p>Liên hệ với chúng tôi</p>
+                    <div>
+                        <a href="#" class="fa fa-facebook-square"></a>
+                        <a href="#" class="fa fa-google-plus-square"></a>
+                        <a href="#" class="fa fa-envelope-square"></a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- JS Global Compulsory -->
-    <script src="../build/Jscripts/ngaynay.min.js"></script>
-    <script src="../build/plugins/jquery.bxslider/jquery.bxslider.min.js"></script>
-    <script>
-    (function($, d) {
-        $.each(readyQ, function(i, f) {
-            $(f)
-        });
-        $.each(bindReadyQ, function(i, f) {
-            $(d).bind("ready", f)
-        })
-    })(jQuery, document)
-    </script>
+    </footer>
+    <!-- JS Global Customise -->
+    <script src="../Jscripts/custom.js"></script>
     <!-- Js Dev plugin -->
     <!--[if lt IE 9]>
-        <script src="Jscripts/vendor/respond.js"></script>
-        <script src="Jscripts/vendor/html5shiv.js"></script>
-        <script src="Jscripts/vendor/placeholder-IE-fixes.js"></script>
+        <script src="../Jscripts/vendor/respond.js"></script>
     <![endif]-->
 </body>
 
