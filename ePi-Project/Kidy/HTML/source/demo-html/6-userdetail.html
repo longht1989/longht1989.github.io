@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>TramYeu-Edit Profile</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- CSS Implementing Plugins -->
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../build/App_Themes/css/tramyeu.min.css">
+    <!-- JS modernizr -->
+    <script>
+    (function(w, d, u) {
+        w.readyQ = [];
+        w.bindReadyQ = [];
+
+        function p(x, y) {
+            if (x == "ready") {
+                w.bindReadyQ.push(y);
+            } else {
+                w.readyQ.push(x);
+            }
+        };
+        var a = {
+            ready: p,
+            bind: p
+        };
+        w.$ = w.jQuery = function(f) {
+            if (f === d || f === u) {
+                return a
+            } else {
+                p(f)
+            }
+        }
+    })(window, document)
+    </script>
+</head>
+
+<body class="user-page">
+    <div class="container">
+        <!-- site header  -->
+        <div id="site-header">
+            <div class="top-header">
+                <div class="pull-left">
+                    <a href="#" class="fa fa-facebook-square"></a>
+                    <a href="#" class="fa fa-google-plus-square"></a>
+                    <a class="fa fa-search"></a>
+                    <div class="search-box" style="display:none;">
+                        <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
+                        <button class="btn btn-primary" type="button">Tìm kiếm</button>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <a href="#" class="signin">
+                        <span class="fa fa-sign-in"></span> Đăng nhập
+                    </a>
+                    <a href="#" class="btn btn-border">
+                        <span class="fa fa-user"></span> Đăng ký
+                    </a>
+                </div>
+            </div>
+            <div class="logo">
+                <a href="1-index.html">
+                    <img src="../build/App_Themes/images/logo.png" height="208" width="197" alt="">
+                </a>
+            </div>
+            <!--  <nav class="navigation">
+                <ul>
+                    <li class="active"><a href="1-index.html">Trang chủ</a></li>
+                    <li>
+                        <a href="2-category.html">Hello Cupid</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Tìm gấu</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Góc trái tim</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Xế và Ôm</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Confession</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Xem - Ăn chơi</a>
+                    </li>
+                </ul>
+            </nav> -->
+            <nav class="navbar navbar-default navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="1-index.html">Trang chủ</a></li>
+                        <li>
+                            <a href="2-category.html">Hello Cupid</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Tìm gấu</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Góc trái tim</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Xế và Ôm</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Confession</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Xem - Ăn chơi</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <!-- end site header -->
+        <!-- site content  -->
+        <div id="site-content">
+            <!-- site main content -->
+            <div class="row">
+                <div class="main-content col-xs-12 col-sm-8">
+                    <!-- site heading -->
+                    <h3 class="big-heading">
+                        <span class="fa fa-user-plus"></span>Thông tin thành viên
+                    </h3>
+                    <!-- user detail -->
+                    <div class="user-detail">
+                        <div class="row user-info">
+                            <div class="col-xs-12 col-sm-4">
+                                <div class="user-avatar">
+                                    <img src="../fig-image/1x1.png" class="user-avatar img-responsive img-circle center-block" width="212" height="212" alt="Avatar">
+                                    <p class="text-center">
+                                        <button class="btn btn-border">
+                                            <span class="fa fa-heart"></span> Quan tâm
+                                        </button>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-8 full-info">
+                                <h2 class="fullname">Taylor Swift</h2>
+                                <div class="birthday"> <span class="fa fa-calendar"></span> 20-10-1990</div>
+                                <div class="gender"> <span class="fa fa-female"></span> Nữ</div>
+                                <div class="interested"> <span class="fa fa-thumbs-o-up"></span> Nữ & Nam</div>
+                                <div class="phone"> <span class="fa fa-phone"></span> 0982.019.990</div>
+                                <div class="facebook"> <span class="fa fa-globe"></span> <a href="https://www.facebook.com/TramYeu.vn/">https://www.facebook.com/TramYeu.vn/</a></div>
+                                <div class="email"> <span class="fa fa-envelope-o"></span> <a href="mailto:test@gmail.com">demo@gmail.com</a></div>
+                                <div class="like-count"> <span class="fa fa-heart"></span> 92</div>
+                            </div>
+                        </div>
+                        <div class="user-status">
+                            <p><b>Đôi lời chia sẻ</b></p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ad architecto est error. Temporibus necessitatibus dignissimos, doloribus perferendis reiciendis tempora natus, eum optio sequi, consequuntur repellendus minima asperiores odit eaque.</p>
+                        </div>
+                        <div class="user-status">
+                            <p><b>Xế - Ôm</b></p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi provident repellendus eum dignissimos voluptates voluptate rem excepturi quam dolores quaerat perspiciatis commodi harum voluptatem iusto eaque cupiditate ipsum maxime, sed!</p>
+                        </div>
+                    </div>
+                    <section id="comment-1" class="commentbox" data-type="1" style="display: block;">
+                        <header>
+                            <h1><i class="fa fa-comments"></i> Bình luận</h1></header>
+                        <div class="form">
+                            <textarea></textarea>
+                            <p class="note"><span class="length">tối thiểu 10 chữ</span> <span class="vietnamese">tiếng Việt có dấu</span> <span class="link">không chứa liên kết</span> </p><a href="#" class="btnSubmit disabled">Gửi bình luận</a></div>
+                        <ul class="comments">
+                            <li id="4">
+                                <p class="meta"><img src="http://tramyeu.laodong.com.vn/30x30/Uploaded/Members/2016_09_25/abc.jpg" width="30" height="30" class="avatar"><span class="author">Đấu Nguyễn</span> <span class="time"> 07:38 ngày 29/09/2016</span></p>
+                                <div class="comment-content">
+                                    <p>Bất kỳ VĐV nào cũng muốn đánh đổi mọi thứ để có được vinh quang như Michael Phelps.</p>
+                                </div>
+                                <div class="comment-actions"><a class="btnLike" href="#like"><span></span> Thích</a><a class="btnDislike" href="#dislike"><span></span> Không thích</a><a class="btnReply" href="#reply">Trả lời</a></div>
+                                <ul class="replies">
+                                    <li id="6">
+                                        <p class="meta"><img src="http://tramyeu.laodong.com.vn/30x30/assets/images/avatar.png" width="30" height="30" class="avatar"><span class="author">Đấu Nguyễn</span> <span class="time"> 07:44 ngày 29/09/2016</span></p>
+                                        <div class="comment-content">
+                                            <p>Thì trước tiến cũng phải ok trước thì mới tính tiếp được chớ</p>
+                                        </div>
+                                        <div class="comment-actions"><a class="btnLike" href="#like"><span></span> Thích</a><a class="btnDislike" href="#dislike"><span></span> Không thích</a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="5">
+                                <p class="meta"><img src="http://tramyeu.laodong.com.vn/30x30/assets/images/avatar.png" width="30" height="30" class="avatar"><span class="author">Đấu Nguyễn</span> <span class="time"> 07:43 ngày 29/09/2016</span></p>
+                                <div class="comment-content">
+                                    <p>Hey, test xem vdv nào có muốn đánh đổi mọi thứ ko?</p>
+                                </div>
+                                <div class="comment-actions"><a class="btnLike" href="#like"><span></span> Thích</a><a class="btnDislike" href="#dislike"><span></span> Không thích</a><a class="btnReply" href="#reply">Trả lời</a></div>
+                            </li>
+                        </ul><a href="#" nextpage="1" style="display:none;" class="btnMore">Xem thêm</a></section>
+                    <section class="article-comments clearfix">
+                        <header>
+                            <h3 class="comments-hdr"><span class="fa fa-comments-o"></span> Lời nhắn</h3>
+                        </header>
+                        <div class="box-input clearfix" id="commentbox">
+                            <div class="input-group">
+                                <textarea class="form-control" placeholder="Lời nhắn của bạn" id="cmContent" rows="5"></textarea>
+                            </div>
+                            <div class="action">
+                                <span>* Vui lòng nhập bình luận tiếng Việt có dấu</span>
+                                <div class="pull-right">
+                                    <button class="btn btn-border" id="btnComment" data-toggle="modal" data-target="#myModal">Gửi</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- modal login  -->
+                        <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">Đăng nhập</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label for="username">Tên đăng nhập</label>
+                                            <input type="text" class="form-control" id="username" placeholder="User name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="InputPassword1">Password</label>
+                                            <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#">Đăng ký &nbsp;</a>
+                                        <button type="button" class="btn btn-border">Đăng nhập</button>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal-dialog -->
+                        </div>
+                        <!-- /.modal -->
+                        <div class="box-user-comm">
+                            <div id="commentlist" class="commentlist">
+                                <div class="box">
+                                    <div class="name">Vinh Kiet
+                                        <time datetime="2011-01-12">January 12th, 2011</time>
+                                    </div>
+                                    <div class="text ">Ở nước Việt mà đăng những tin tức kiểu này thì giấy báo đâu cho thấu hở trời?
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <div class="name">Nguyễn Nhân
+                                        <time datetime="2011-01-12">January 12th, 2011</time>
+                                    </div>
+                                    <div class="text ">Trộm cướp diễn ra như cơm bũa ! Rồi suốt ngày nghe bàn thành lập đội săn bắt cướp này nọ để rình và bắt,chờ chuyện xảy ra mới hành động ah?, thế cơ quan chính quyền CA để làm gì? Tại sao không tuyển dụng nhân lực CA-CS số lượng nhiều hơn và áp dụng hình thức là mỗi khu phố đều có CA-CS mang quân dụng tuần tra 24/24 như các nước phát triển điển hình ở Âu-Mỹ? Như thế thì thằng nào dám lộng hành !</div>
+                                </div>
+                                <div class="box">
+                                    <div class="name">duong minh Ngoc
+                                        <time datetime="2011-01-12">January 12th, 2011</time>
+                                    </div>
+                                    <div class="text ">Cần cải tổ bộ máy cán bộ từ huyện trở lên, cùng là con người mà sao phân biệt quá. HĐND tỉnh, huyện thì chế độ ăn 150-200 ngàn, quần áo cấp thì 1,5-2 triệu đồng, HĐND xã thì tiền ăn 70-100 ngàn, quần áo trong nhiệm kỳ thì giá 1 triệu đồng, thử xem con người với con người như thế đã bình đẳng chưa? Đây có phải là lương cơ bản đâu mà phân biệt vậy?</div>
+                                </div>
+                            </div>
+                            <p class="view-more text-center">
+                                <a href="#" class="btn btn-border">Xem thêm</a>
+                            </p>
+                        </div>
+                    </section>
+                </div>
+                <div class="sidebar col-xs-12 col-sm-4">
+                    <!-- box tim gau -->
+                    <section class="zone featured-zone">
+                        <header>
+                            <h3 class="zone-title">
+                                <a href="2-category.html">Tìm gấu</a>
+                            </h3>
+                        </header>
+                        <div class="zone-content">
+                            <article class="user text-center">
+                                <figure class="thumb">
+                                    <a href="3-detail.html"> <img src="../fig-image/1x1.png" class="img-responsive" width="285" height="285" alt="ratio1x1"></a>
+                                </figure>
+                                <header>
+                                    <p class="status">Chúng ta giáp mặt những người khác hàng ngày. Chúng ta có thể không biết nhau… nhưng chúng ta có thể trở thành bạn tốt một ngày nào đó</p>
+                                    <h2 class="user-name"><a href="">Augusta Love</a> <span class="age"> - 18 tuổi</span></h2>
+                                </header>
+                            </article>
+                        </div>
+                    </section>
+                    <!-- fanpage -->
+                    <section class="zone fanpage">
+                        <img src="../fig-image/fb-fanpage.png" height="130" width="328" class="img-responsive" alt="">
+                    </section>
+                    <!-- zone top user -->
+                    <section class="zone top-user">
+                        <header>
+                            <h3 class="zone-title">
+                                <a href="2-category.html">Top quan tâm</a>
+                            </h3>
+                        </header>
+                        <div class="zone-content">
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                        </div>
+                    </section>
+                    <!-- other zone with listing bullet-story-->
+                    <section class="zone">
+                        <header>
+                            <h3 class="zone-title">
+                                <a href="2-category.html">Top quan tâm</a>
+                            </h3>
+                        </header>
+                        <div class="zone-content">
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                        </div>
+                    </section>
+                    <!-- top view zone -->
+                    <section class="zone top-view grid-zone">
+                        <header>
+                            <h3 class="zone-title">
+                                <a href="2-category.html">Top quan tâm</a>
+                            </h3>
+                        </header>
+                        <div class="zone-content">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <article class="story">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="154" height="87" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laborum, ipsam ad?</a></h2>
+                                    </article>
+                                </div>
+                                <div class="col-xs-6">
+                                    <article class="story">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="154" height="87" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, enim iusto eaque!</a></h2>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <article class="story">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="154" height="87" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum error modi rerum!</a></h2>
+                                    </article>
+                                </div>
+                                <div class="col-xs-6">
+                                    <article class="story">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="154" height="87" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio nam nobis reprehenderit?</a></h2>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- album zone -->
+                    <section class="zone album-zone">
+                        <header>
+                            <h3 class="zone-title"><a href="2-category.html">Album ảnh</a></h3>
+                        </header>
+                        <div class="zone-content">
+                            <ul class="slider-album">
+                                <li>
+                                    <article class="story story-bold">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="328" height="185" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ipsa, recusandae libero.</a></h2>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="story story-bold">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="328" height="185" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, deserunt officia nostrum!</a></h2>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="story story-bold">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="328" height="185" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perferendis esse nesciunt.</a></h2>
+                                    </article>
+                                </li>
+                            </ul>
+                            <div class="slider-control">
+                                <span class="fa fa-angle-left" id="album-slider-prev"></span>
+                                <span class="fa fa-angle-right" id="album-slider-next"></span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- end site content -->
+        <!-- site footer -->
+        <div id="site-footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-2 col-md-1 footer-logo">
+                    <a href="#">
+                        <img src="../build/App_Themes/images/logo.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-11">
+                    <p><b>Trạm Yêu</b> là dự án thuộc Diễn đàn CLB Kết bạn của <b>Báo Lao Động</b></p>
+                    <p>Cơ quan của Tổng Liên đoàn Lao động Việt Nam.</p>
+                    <p><b>Địa chỉ:</b> Số 51 Hàng Bồ, Hà Nội, Việt Nam</p>
+                    <p><b>Điện thoại:</b> 04.39232756 • <b>Fax:</b> 3.923.2737</p>
+                    <p><b>Email:</b> ketban@laodong.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JS Global Compulsory -->
+    <script src="../build/Jscripts/tramyeu.min.js"></script>
+    <script src="../build/Jscripts/custom.js"></script>
+    <script>
+    (function($, d) {
+        $.each(readyQ, function(i, f) {
+            $(f)
+        });
+        $.each(bindReadyQ, function(i, f) {
+            $(d).bind("ready", f)
+        })
+    })(jQuery, document)
+    </script>
+    <!-- Js Dev plugin -->
+    <!--[if lt IE 9]>
+        <script src="Jscripts/vendor/respond.js"></script>
+        <script src="Jscripts/vendor/html5shiv.js"></script>
+        <script src="Jscripts/vendor/placeholder-IE-fixes.js"></script>
+    <![endif]-->
+</body>
+
+</html>

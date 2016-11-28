@@ -1,0 +1,75 @@
+/* search box */
+
+.search-box {
+    .landing & {
+        margin: 100px 0;
+    }
+    &__header {
+        @include clearfix;
+        margin-bottom: 20px;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    &__tab {
+        float: left;
+        position: relative;
+        padding: 0 10px;
+        a {
+            opacity: 0.7;
+            font-size: 19px;
+            text-transform: uppercase;
+            .landing & {
+                color: white;
+            }
+        }
+        &.active {
+            a {
+                opacity: 1;
+            }
+            &::after {
+                content: '';
+                display: block;
+                width: 30px;
+                height: 15px;
+                position: absolute;
+                bottom: -20px;
+                left: calc(50% - 15px);
+                background: url(../img/input-bar-arrow.png) left top no-repeat;
+            }
+        }
+    }
+    .form-control {
+        @include respond-to-xs() {
+            margin-bottom: 20px;
+        }
+        font-size: 14px;
+    }
+    &__input-bar {
+        background-color: rgba(0, 0, 0, .35);
+        margin-bottom: 20px;
+        font-size: 18px !important;
+        @include haf() {
+            border-color: #ccc;
+            color: white;
+        }
+    }
+    &__note {
+        color: white;
+        font-size: 14px;
+        margin: 10px 0;
+        @include respond-to-xs() {
+            margin-top: 0;
+        }
+    }
+    &__btn {
+        text-align: center;
+        .btn {
+            min-width: 125px;
+            @include font-size(18, 20);
+        }
+        .fa-search {
+            @include font-size(24, 20);
+            margin-right: 20px;
+        }
+    }
+}

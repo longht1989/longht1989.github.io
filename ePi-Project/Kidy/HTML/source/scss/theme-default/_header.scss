@@ -1,0 +1,119 @@
+/* ====================================   Header's style   ==================================== */
+
+#site-header {
+    margin-bottom: 20px;
+    .top-header {
+        @include clearfix;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        .pull-left {
+            @include respond-to-xs {
+                margin-bottom: 10px;
+            }
+            .fa {
+                @include font-size(24, 35);
+                margin-right: 10px;
+                float: left;
+                color: #555;
+                @include haf() {
+                    color: $brand-primary;
+                }
+            }
+            .fa-search {
+                @include font-size(12, 22);
+                background-color: #555;
+                color: white;
+                position: relative;
+                top: 6px;
+                padding: 0 5px;
+                -webkit-border-radius: 3px;
+                -moz-border-radius: 3px;
+                -ms-border-radius: 3px;
+                -o-border-radius: 3px;
+                border-radius: 3px;
+                cursor: pointer;
+                @include transition(all, 0.2, ease-out);
+                &.active {
+                    background-color: $brand-primary;
+                    color: white;
+                }
+                @include haf() {
+                    background-color: $brand-primary;
+                    color: white;
+                }
+            }
+            .search-box {
+                float: left;
+                .form-control {
+                    width: 200px;
+                    float: left;
+                }
+                .btn {
+                    float: left;
+                    line-height: 20px;
+                    margin-left: 1px;
+                }
+            }
+        }
+        .pull-right {
+            .fa {
+                margin-right: 5px;
+            }
+            a {
+                font-size: 14px;
+                margin-left: 10px;
+                &.signin {
+                    color: #555;
+                    @include haf() {
+                        color: $brand-primary;
+                    }
+                }
+            }
+            @include respond-to-xs() {
+                margin-bottom: 10px;
+                a {
+                    margin-left: 3px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    .logo {
+        text-align: center;
+        margin-bottom: 30px;
+        img {
+            @include transition(opacity, 0.2, ease-out);
+            @include haf() {
+                opacity: 0.9;
+            }
+        }
+    }
+}
+
+.navigation {
+    font-family: $font-family-itim;
+    @include font-size(18, 35);
+    text-align: center;
+    padding-top: 10px;
+    background: url(../images/gradient-line.png) left top repeat-x;
+    li {
+        display: inline-block;
+        // padding-left: 15px;
+        // padding-right: 15px;
+        a {
+            display: block;
+        }
+        &.active {
+            a {
+                color: $brand-primary;
+            }
+        }
+    }
+}
+
+.landing {
+    background: url(../img/header-bg.png) center top no-repeat;
+    background-size: 1440px 522px;
+}

@@ -1,0 +1,178 @@
+/* style for story */
+
+.story {
+    @include clearfix;
+    .thumb {}
+    .title {
+        @include font-size(16, 22);
+        font-weight: normal;
+    }
+    .cate {
+        a {
+            color: $brand-primary;
+        }
+    }
+    .summary,
+    .meta {
+        color: #555;
+        @include font-size(14, 19);
+        >span {
+            margin-right: 15px;
+        }
+        .fa {
+            margin-right: 2px;
+            font-size: 0.9em;
+        }
+    }
+    .thumb,
+    .cate,
+    .title,
+    .summary,
+    .meta {
+        margin-bottom: 5px;
+    }
+    // story with bold title
+    &.story-bold {
+        .title {
+            font-weight: bold;
+        }
+    }
+    // story cover
+    &.story-cover {
+        .title {
+            @include font-size(20, 28);
+            // margin-bottom: 8px;
+        }
+        //story include video
+        .thumb {
+            > [id^=video_] {
+                width: 100% !important;
+            }
+        }
+    }
+    // story with left thumbnail
+    &.story-left {
+        .thumb {
+            float: left;
+            margin-right: 10px;
+        }
+        .title {
+            margin-top: -3px;
+        }
+    }
+    // story with red bullet 
+    &.story-bullet {
+        margin-bottom: 10px;
+        @include last-child-y;
+        .title {
+            @include font-size(14, 19);
+            &::before {
+                content: '';
+                display: inline;
+                margin-right: 5px;
+                font-family: "fontawesome";
+            }
+        }
+    }
+    // story with mask 
+    &.story-mask {
+        .thumb {
+            z-index: 1;
+        }
+        > header {
+            position: relative;
+            padding: 10px;
+            background: #fff;
+            margin-top: -25px;
+            margin-left: 10px;
+            margin-right: 10px;
+            z-index: 2;
+        }
+        &.story-cover {
+            > header {
+                padding: 20px;
+                margin-top: -50px;
+                margin-right: 20px;
+                margin-left: 20px;
+            }
+        }
+    }
+    .sidebar .grid-zone & {
+        .title {
+            @include font-size(14, 19);
+        }
+    }
+}
+
+.item {
+    border: 1px solid #eee;
+    margin-bottom: 20px;
+    @include transition(all, 0.2, ease-out);
+    @include respond-to-md() {
+        margin-bottom: 0;
+    }
+    &:hover {
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .16);
+    }
+    &__info {
+        position: relative;
+        padding: 25px 15px 20px;
+    }
+    &__thumb {}
+    &__title {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    &__summary {
+        margin-top: 10px;
+        font-size: 13px;
+        p {
+            margin-bottom: 5px;
+        }
+    }
+    &__rating {
+        .fa-star {
+            color: #cecece;
+            &.active {
+                color: $brand-info;
+            }
+        }
+    }
+    &__viewmore {
+        position: absolute;
+        top: -15px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        .btn {
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .16);
+        }
+    }
+    &--sponsor {
+        .item__link {
+            &::after {
+                content: '- Tài trợ';
+                margin-left: 5px;
+                display: inline;
+                color: $brand-info;
+                font-size: 13px;
+                font-weight: normal;
+            }
+        }
+    }
+    &--green {
+        .fa-check-circle {
+            color: $brand-danger;
+        }
+    }
+    &--blue {
+        .fa-check-circle {
+            color: $brand-primary;
+        }
+    }
+    &--yellow {
+        .fa-check-circle {
+            color: $brand-info;
+        }
+    }
+}

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>TramYeu-Register</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- CSS Implementing Plugins -->
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../build/App_Themes/css/tramyeu.min.css">
+    <!-- JS modernizr -->
+    <script>
+    (function(w, d, u) {
+        w.readyQ = [];
+        w.bindReadyQ = [];
+
+        function p(x, y) {
+            if (x == "ready") {
+                w.bindReadyQ.push(y);
+            } else {
+                w.readyQ.push(x);
+            }
+        };
+        var a = {
+            ready: p,
+            bind: p
+        };
+        w.$ = w.jQuery = function(f) {
+            if (f === d || f === u) {
+                return a
+            } else {
+                p(f)
+            }
+        }
+    })(window, document)
+    </script>
+</head>
+
+<body class="user-page">
+    <div class="container">
+        <!-- site header  -->
+        <div id="site-header">
+            <div class="top-header">
+                <div class="pull-left">
+                    <a href="#" class="fa fa-facebook-square"></a>
+                    <a href="#" class="fa fa-google-plus-square"></a>
+                    <a class="fa fa-search"></a>
+                    <div class="search-box" style="display:none;">
+                        <input type="text" class="form-control" placeholder="Nhập từ khóa tìm kiếm">
+                        <button class="btn btn-primary" type="button">Tìm kiếm</button>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <a href="#" class="signin">
+                        <span class="fa fa-sign-in"></span> Đăng nhập
+                    </a>
+                    <a href="#" class="btn btn-border">
+                        <span class="fa fa-user"></span> Đăng ký
+                    </a>
+                </div>
+            </div>
+            <div class="logo">
+                <a href="1-index.html">
+                    <img src="../build/App_Themes/images/logo.png" height="208" width="197" alt="">
+                </a>
+            </div>
+            <!--  <nav class="navigation">
+                <ul>
+                    <li class="active"><a href="1-index.html">Trang chủ</a></li>
+                    <li>
+                        <a href="2-category.html">Hello Cupid</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Tìm gấu</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Góc trái tim</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Xế và Ôm</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Confession</a>
+                    </li>
+                    <li>
+                        <a href="2-category.html">Xem - Ăn chơi</a>
+                    </li>
+                </ul>
+            </nav> -->
+            <nav class="navbar navbar-default navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="1-index.html">Trang chủ</a></li>
+                        <li>
+                            <a href="2-category.html">Hello Cupid</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Tìm gấu</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Góc trái tim</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Xế và Ôm</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Confession</a>
+                        </li>
+                        <li>
+                            <a href="2-category.html">Xem - Ăn chơi</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <!-- end site header -->
+        <!-- site content  -->
+        <div id="site-content">
+            <!-- site main content -->
+            <div class="row">
+                <div class="main-content col-xs-12 col-sm-8">
+                    <!-- site heading -->
+                    <h3 class="big-heading">
+                        <span class="fa fa-user-plus"></span>Đăng ký thành viên
+                    </h3>
+                    <!-- register form -->
+                    <div class="user-form-group">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-offset-3 col-sm-6 text-center user-avatar-box">
+                                <label for="useravatarupload" class="user-avatar">
+                                    <img src="../fig-image/avatar-upload.png" class="img-responsive" alt="">
+                                </label>
+                                <br>
+                                <label for="useravatarupload" class="btn btn-border"> <span class="fa fa-upload"></span> Tải ảnh lên
+                                </label>
+                                <input id="useravatarupload" type="file" class="hidden">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="username">Tên đăng nhập</label>
+                                    <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="password">Mật khẩu</label>
+                                    <span class="pull-right toggle-password"><input id="passwordshow" type="checkbox" name="" value=""><label for="passwordshow">&nbsp;Hiện</label></span>
+                                    <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="fullname">Họ tên đầy đủ</label>
+                                    <input type="text" class="form-control" id="fullname" placeholder="Họ tên đầy đủ">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="facebook">Facebook</label>
+                                    <input type="text" class="form-control" id="facebook" placeholder="Địa chỉ Facebook">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="birthday">Ngày sinh</label>
+                                    <input type="date" class="form-control" id="birthday" placeholder="Ngày sinh">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="facebook">Số điện thoại</label>
+                                    <input type="text" class="form-control" id="phone" placeholder="Số điện thoại">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="fullname">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <p><b>Giới tính</b></p>
+                                        <div>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="gender" id="male" value="male"> Nam
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" name="gender" id="famale" value="female"> Nữ
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <p><b>Quan tâm</b></p>
+                                        <div>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="interested" id="male" value="male"> Nam
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" name="interested" id="famale" value="female"> Nữ
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="form-group">
+                                    <label for="status">Đôi lời chia sẻ</label>
+                                    <textarea type="text" class="form-control" id="status" placeholder="Bạn nghĩ gì..." rows="7"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-border">Đăng ký</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar col-xs-12 col-sm-4">
+                    <!-- box tim gau -->
+                    <section class="zone featured-zone">
+                        <header>
+                            <h3 class="zone-title">
+                                <a href="2-category.html">Tìm gấu</a>
+                            </h3>
+                        </header>
+                        <div class="zone-content">
+                            <article class="user text-center">
+                                <figure class="thumb">
+                                    <a href="3-detail.html"> <img src="../fig-image/1x1.png" class="img-responsive" width="285" height="285" alt="ratio1x1"></a>
+                                </figure>
+                                <header>
+                                    <p class="status">Chúng ta giáp mặt những người khác hàng ngày. Chúng ta có thể không biết nhau… nhưng chúng ta có thể trở thành bạn tốt một ngày nào đó</p>
+                                    <h2 class="user-name"><a href="">Augusta Love</a> <span class="age"> - 18 tuổi</span></h2>
+                                </header>
+                            </article>
+                        </div>
+                    </section>
+                    <!-- fanpage -->
+                    <section class="zone fanpage">
+                        <img src="../fig-image/fb-fanpage.png" height="130" width="328" class="img-responsive" alt="">
+                    </section>
+                    <!-- zone top user -->
+                    <section class="zone top-user">
+                        <header>
+                            <h3 class="zone-title">
+                                <a href="2-category.html">Top quan tâm</a>
+                            </h3>
+                        </header>
+                        <div class="zone-content">
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                            <article class="user row">
+                                <figure class="thumb col-xs-4">
+                                    <a href="2-category.html"><img src="../fig-image/1x1.png" class="img-cirlce img-responsive" width="154" height="154" alt="ratio1x1"></a>
+                                </figure>
+                                <header class="col-xs-8">
+                                    <h2 class="user-name"><a href="2-category.html">John Doe</a></h2>
+                                    <p class="meta">
+                                        <span class="interested-count"><i class="fa fa-heart"></i>103</span>
+                                    </p>
+                                </header>
+                            </article>
+                        </div>
+                    </section>
+                    <!-- other zone with listing bullet-story-->
+                    <section class="zone">
+                        <header>
+                            <h3 class="zone-title">
+                                <a href="2-category.html">Top quan tâm</a>
+                            </h3>
+                        </header>
+                        <div class="zone-content">
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                            <article class="story story-bullet">
+                                <header>
+                                    <h2 class="title"><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet, dignissimos provident.</a></h2>
+                                </header>
+                            </article>
+                        </div>
+                    </section>
+                    <!-- top view zone -->
+                    <section class="zone top-view grid-zone">
+                        <header>
+                            <h3 class="zone-title">
+                                <a href="2-category.html">Top quan tâm</a>
+                            </h3>
+                        </header>
+                        <div class="zone-content">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <article class="story">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="154" height="87" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus laborum, ipsam ad?</a></h2>
+                                    </article>
+                                </div>
+                                <div class="col-xs-6">
+                                    <article class="story">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="154" height="87" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, enim iusto eaque!</a></h2>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <article class="story">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="154" height="87" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum error modi rerum!</a></h2>
+                                    </article>
+                                </div>
+                                <div class="col-xs-6">
+                                    <article class="story">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="154" height="87" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio nam nobis reprehenderit?</a></h2>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- album zone -->
+                    <section class="zone album-zone">
+                        <header>
+                            <h3 class="zone-title"><a href="2-category.html">Album ảnh</a></h3>
+                        </header>
+                        <div class="zone-content">
+                            <ul class="slider-album">
+                                <li>
+                                    <article class="story story-bold">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="328" height="185" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ipsa, recusandae libero.</a></h2>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="story story-bold">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="328" height="185" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, deserunt officia nostrum!</a></h2>
+                                    </article>
+                                </li>
+                                <li>
+                                    <article class="story story-bold">
+                                        <figure class="thumb">
+                                            <a href="#" title=""><img class="img-responsive" src="../fig-image/16x9.png" width="328" height="185" alt="ratio16x9"></a>
+                                        </figure>
+                                        <h2 class="title"><a href="#" title="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione perferendis esse nesciunt.</a></h2>
+                                    </article>
+                                </li>
+                            </ul>
+                            <div class="slider-control">
+                                <span class="fa fa-angle-left" id="album-slider-prev"></span>
+                                <span class="fa fa-angle-right" id="album-slider-next"></span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- end site content -->
+        <!-- site footer -->
+        <div id="site-footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-2 col-md-1 footer-logo">
+                    <a href="#">
+                        <img src="../build/App_Themes/images/logo.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-10 col-md-11">
+                    <p><b>Trạm Yêu</b> là dự án thuộc Diễn đàn CLB Kết bạn của <b>Báo Lao Động</b></p>
+                    <p>Cơ quan của Tổng Liên đoàn Lao động Việt Nam.</p>
+                    <p><b>Địa chỉ:</b> Số 51 Hàng Bồ, Hà Nội, Việt Nam</p>
+                    <p><b>Điện thoại:</b> 04.39232756 • <b>Fax:</b> 3.923.2737</p>
+                    <p><b>Email:</b> ketban@laodong.com.vn</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JS Global Compulsory -->
+    <script src="../build/Jscripts/tramyeu.min.js"></script>
+    <script src="../build/Jscripts/custom.js"></script>
+    <script>
+    (function($, d) {
+        $.each(readyQ, function(i, f) {
+            $(f)
+        });
+        $.each(bindReadyQ, function(i, f) {
+            $(d).bind("ready", f)
+        })
+    })(jQuery, document)
+    </script>
+    <!-- Js Dev plugin -->
+    <!--[if lt IE 9]>
+        <script src="Jscripts/vendor/respond.js"></script>
+        <script src="Jscripts/vendor/html5shiv.js"></script>
+        <script src="Jscripts/vendor/placeholder-IE-fixes.js"></script>
+    <![endif]-->
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+/* ====================================
+   Customize Pagination
+   ==================================== */
+
+.pagination {
+    margin-top: 0;
+    @include clearfix;
+    text-align: center;
+    display: block;
+    li {
+        display: inline-block;
+        > a {
+            color: #777;
+            margin-right: 15px;
+            border-radius: 3px;
+        }
+        &:last-child {
+            > a {
+                margin-right: 0;
+                border-bottom-right-radius: 3px;
+                border-top-right-radius: 3px;
+            }
+        }
+        &:first-child {
+            > a {
+                border-bottom-left-radius: 3px;
+                border-top-left-radius: 3px;
+            }
+        }
+        &.active {
+            >a {
+                background-color: $brand-primary;
+            }
+            @include haf() {
+                >a {
+                    background-color: $brand-primary;
+                }
+            }
+        }
+    }
+    .category-page & {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
