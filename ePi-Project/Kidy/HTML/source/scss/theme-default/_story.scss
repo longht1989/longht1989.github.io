@@ -148,18 +148,7 @@
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .16);
         }
     }
-    &--sponsor {
-        .item__link {
-            &::after {
-                content: '- Tài trợ';
-                margin-left: 5px;
-                display: inline;
-                color: $brand-info;
-                font-size: 13px;
-                font-weight: normal;
-            }
-        }
-    }
+
     &--green {
         .fa-check-circle {
             color: $brand-danger;
@@ -173,6 +162,20 @@
     &--yellow {
         .fa-check-circle {
             color: $brand-info;
+        }
+    }
+}
+@include Block(item) {
+    @include Modifier(sponsor) {
+        @include Element(link) {
+            &::after {
+                content: '- Tài trợ';
+                margin-left: 5px;
+                display: inline;
+                color: $brand-info;
+                font-size: 13px;
+                font-weight: normal;
+            }
         }
     }
 }

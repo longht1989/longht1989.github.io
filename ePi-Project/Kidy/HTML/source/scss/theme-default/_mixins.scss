@@ -176,7 +176,7 @@
 }
 
 // transition
-@mixin transition($property, $duration, $function) {
+@mixin transition($property: all, $duration: 0.2, $function: ease-out) {
     transition-property: $property;
     transition-duration: $duration + s;
     transition-timing-function: $function;
