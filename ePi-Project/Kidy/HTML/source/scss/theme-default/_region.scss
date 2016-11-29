@@ -270,6 +270,7 @@
 }
 
 @include Block(zone) {
+    margin-bottom: 70px;
     @include Element(header) {
         text-align: center;
         margin-bottom: 20px;
@@ -287,5 +288,8 @@
         font-weight: bold;
         @include font-size(18, 20);
         text-transform: uppercase;
+    }
+    @include Modifier(is-last) {
+        margin-bottom: 0;
     }
 }

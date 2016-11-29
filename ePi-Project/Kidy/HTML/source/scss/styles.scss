@@ -30,7 +30,7 @@
 @import "theme-default/share";
 
 /* ====================================
-   = NEWSSPAPER                       =
+   = Main Style                       =
    ==================================== */
 
 @import "theme-default/layout";
@@ -38,7 +38,7 @@
 @import "theme-default/footer";
 @import "theme-default/region";
 @import "theme-default/story";
-@import "theme-default/user";
+// @import "theme-default/user";
 @import "theme-default/breadcrumbs";
 @import "theme-default/pagination";
 @import "theme-default/comment";
@@ -48,6 +48,6 @@
    = PAGES                            =
    ==================================== */
 
-@import "theme-default/pages/category";
+// @import "theme-default/pages/category";
 @import "theme-default/pages/article";
-@import "theme-default/pages/live";
+// @import "theme-default/pages/live";

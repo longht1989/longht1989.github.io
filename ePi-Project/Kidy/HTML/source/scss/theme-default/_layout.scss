@@ -10,9 +10,9 @@
     }
 }
 
-#site-content {
+.site-content {
     @include clearfix;
-    margin-bottom: 30px;
+    margin: 70px 0;
 }
 
 .zone {

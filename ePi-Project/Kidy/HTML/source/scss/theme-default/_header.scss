@@ -163,8 +163,8 @@
             padding: 0;
             margin: 0 5px;
             @include font-size(17, 35);
-            -webkit-box-shadow: 0px 0px 5px 0px rgba(245, 164, 34, .6);
-            box-shadow: 0px 0px 5px 0px rgba(245, 164, 34, .6);
+            -webkit-box-shadow: 0px 0px 10px 3px rgba(245, 164, 34, .6);
+            box-shadow: 0px 0px 10px 3px rgba(245, 164, 34, .6);
             .fa {
                 margin-right: 0;
             }
@@ -187,7 +187,8 @@
 
 .cover {
     background: url(../img/header-bg.png) center top no-repeat;
-    background-size: 1440px 522px;
+    // background-size: 1440px 522px;
+    background-size: cover;
     @include breakpoint(xs) {
         background-size: cover;
     }
