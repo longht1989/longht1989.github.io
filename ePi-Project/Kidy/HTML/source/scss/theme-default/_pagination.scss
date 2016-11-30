@@ -2,44 +2,48 @@
    Customize Pagination
    ==================================== */
 
+.pagination-wrap {
+    @include clearfix();
+    background-color: white;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
 .pagination {
-    margin-top: 0;
+    margin: 0;
     @include clearfix;
-    text-align: center;
     display: block;
     li {
-        display: inline-block;
+        display: inline;
         > a {
-            color: #777;
-            margin-right: 15px;
-            border-radius: 3px;
+            margin-right: 0px;
+            border-radius: 0px;
+            border: none;
+            &.active,
+            &:hover {
+                background-color: $brand-primary;
+                color: white;
+            }
         }
         &:last-child {
             > a {
                 margin-right: 0;
-                border-bottom-right-radius: 3px;
-                border-top-right-radius: 3px;
             }
         }
         &:first-child {
-            > a {
-                border-bottom-left-radius: 3px;
-                border-top-left-radius: 3px;
-            }
+            > a {}
         }
-        &.active {
+        &.active,
+        &:hover {
             >a {
                 background-color: $brand-primary;
-            }
-            @include haf() {
-                >a {
+                color: white;
+                &.active,
+                &:hover {
                     background-color: $brand-primary;
+                    color: white;
                 }
             }
         }
-    }
-    .category-page & {
-        margin-left: auto;
-        margin-right: auto;
     }
 }

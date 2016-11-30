@@ -24,10 +24,13 @@
    COMPONENT, BOOTSTARP REPLACE
    ==================================== */
 
-// @import "theme-default/component/push-menu";
 // @import "theme-default/b-navbar";
 @import "theme-default/b-scaffolding";
 @import "theme-default/share";
+@import "theme-default/component/jquery-ui";
+@import "theme-default/component/search-box";
+@import "theme-default/component/filter";
+
 
 /* ====================================
    = Main Style                       =
@@ -42,7 +45,6 @@
 @import "theme-default/breadcrumbs";
 @import "theme-default/pagination";
 @import "theme-default/comment";
-@import "theme-default/component";
 
 /* ====================================
    = PAGES                            =

@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <!-- site header -->
+    <!-- site header with cover-->
     <div class="site-header">
         <div class="cover">
             <div class="container">
@@ -89,8 +89,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="card card--top"></div>
-                                    <div class="card card--bottom"></div>
                                     <div class="search-box__note">VD Tìm trường ở khu Thành Công: Thành Công, Ba Đình, Hà Nội</div>
                                     <button class="search-box__btn btn btn-primary btn-round btn-lg"><span class="fa fa-search"></span>Tìm</button>
                                 </div>
@@ -125,8 +123,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="card card--top"></div>
-                                    <div class="card card--bottom"></div>
                                     <div class="search-box__note">VD Tìm trường ở khu Thành Công: Thành Công, Ba Đình, Hà Nội</div>
                                     <button class="search-box__btn btn btn-primary btn-round btn-lg"><span class="fa fa-search"></span>Tìm</button>
                                 </div>
@@ -161,14 +157,40 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="card card--top"></div>
-                                    <div class="card card--bottom"></div>
                                     <div class="search-box__note">VD Tìm trường ở khu Thành Công: Thành Công, Ba Đình, Hà Nội</div>
                                     <button class="search-box__btn btn btn-primary btn-round btn-lg"><span class="fa fa-search"></span>Tìm</button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- site header normal -->
+    <div class="site-header site-header--detail" data-spy="affix" data-offset-top="95" data-offset-bottom="200">
+        <div class="container">
+            <div class="site-header__top-bar">
+                <h1 class="logo">
+                        <a href="#"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a>
+                    </h1>
+                <div class="site-header__btn-group">
+                    <div class="btn btn-info">
+                        <span class="fa fa-user"></span>
+                        <span class="badge">4</span>
+                    </div>
+                    <div class="btn btn-info">
+                        <span class="fa fa-envelope"></span>
+                    </div>
+                </div>
+                <div class="clearfix visible-xs"></div>
+                <ul class="site-header__related-links">
+                    <li><a href=""><span class="fa fa-map"></span>Tìm trường</a></li>
+                    <li><a href=""><span class="fa fa-child"></span>GIÁO DỤC SỚM</a></li>
+                </ul>
+                <div class="site-header__quick-search">
+                    <span class="fa fa-map"></span>
+                    <input id="quick-search" type="text" class="" placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)">
                 </div>
             </div>
         </div>
@@ -186,103 +208,368 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="item item--green">
-                        <div class="item__thumb">
-                            <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="item__info">
-                            <div class="item__title"><a href="3-detail.html" class="item__link">Estelle Newton</a></div>
-                            <div class="item__rating">
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span></div>
-                            <div class="item__summary">
-                                <p>Học phí: 3.000.000 vnđ / tháng</p>
-                                <p>Sĩ số: 20 / lớp</p>
-                                <p>Công lập <span class="fa fa-check-circle"></span></p>
+            <div class="zone">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="item item--green">
+                            <div class="item__thumb">
+                                <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt=""></a>
                             </div>
-                            <div class="item__viewmore">
-                                <a href="3-detail.html" class="btn btn-info btn-round">Xem chi tiết</a>
+                            <div class="item__info">
+                                <div class="item__title"><a href="3-detail.html" class="item__link">Estelle Newton</a></div>
+                                <div class="item__rating">
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span></div>
+                                <div class="item__summary">
+                                    <p>Học phí: 3.000.000 vnđ / tháng</p>
+                                    <p>Sĩ số: 20 / lớp</p>
+                                    <p>Công lập <span class="fa fa-check-circle"></span></p>
+                                </div>
+                                <div class="item__viewmore">
+                                    <a href="3-detail.html" class="btn btn-info btn-round">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="item item--sponsor item--blue">
+                            <div class="item__thumb">
+                                <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt=""></a>
+                            </div>
+                            <div class="item__info">
+                                <div class="item__title"><a href="3-detail.html" class="item__link">Estelle Newton</a></div>
+                                <div class="item__rating">
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span></div>
+                                <div class="item__summary">
+                                    <p>Học phí: 3.000.000 vnđ / tháng</p>
+                                    <p>Sĩ số: 20 / lớp</p>
+                                    <p>Công lập <span class="fa fa-check-circle"></span></p>
+                                </div>
+                                <div class="item__viewmore">
+                                    <a href="3-detail.html" class="btn btn-info btn-round">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="item item--yellow">
+                            <div class="item__thumb">
+                                <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt=""></a>
+                            </div>
+                            <div class="item__info">
+                                <div class="item__title"><a href="3-detail.html" class="item__link">Estelle Newton</a></div>
+                                <div class="item__rating">
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span></div>
+                                <div class="item__summary">
+                                    <p>Học phí: 3.000.000 vnđ / tháng</p>
+                                    <p>Sĩ số: 20 / lớp</p>
+                                    <p>Công lập <span class="fa fa-check-circle"></span></p>
+                                </div>
+                                <div class="item__viewmore">
+                                    <a href="3-detail.html" class="btn btn-info btn-round">Xem chi tiết</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="item item--green">
+                            <div class="item__thumb">
+                                <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt=""></a>
+                            </div>
+                            <div class="item__info">
+                                <div class="item__title"><a href="3-detail.html" class="item__link">Estelle Newton</a></div>
+                                <div class="item__rating">
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star active"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span></div>
+                                <div class="item__summary">
+                                    <p>Học phí: 3.000.000 vnđ / tháng</p>
+                                    <p>Sĩ số: 20 / lớp</p>
+                                    <p>Công lập <span class="fa fa-check-circle"></span></p>
+                                </div>
+                                <div class="item__viewmore">
+                                    <a href="3-detail.html" class="btn btn-info btn-round">Xem chi tiết</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="item item--sponsor item--blue">
-                        <div class="item__thumb">
-                            <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="item__info">
-                            <div class="item__title"><a href="3-detail.html" class="item__link">Estelle Newton</a></div>
-                            <div class="item__rating">
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span></div>
-                            <div class="item__summary">
-                                <p>Học phí: 3.000.000 vnđ / tháng</p>
-                                <p>Sĩ số: 20 / lớp</p>
-                                <p>Công lập <span class="fa fa-check-circle"></span></p>
+            </div>
+            <div class="zone">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="item item--horizontal">
+                            <div class="item__thumb">
+                                <a href="#"><img src="fig-image/1x1.png" class="img-responsive" alt=""></a>
+                                <ul class="item__related-img">
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                </ul>
+                                <div class="item__markup">
+                                    <span class="fa fa-heart-o"></span>
+                                </div>
                             </div>
-                            <div class="item__viewmore">
-                                <a href="3-detail.html" class="btn btn-info btn-round">Xem chi tiết</a>
+                            <div class="item__info">
+                                <div class="item__title">
+                                    <a href="3-detail.html" class="item__link">Estelle Newton</a>
+                                    <div class="item__rating">
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="item__meta">
+                                    <a class="item__meta-link" href="#"><span class="fa fa-map-marker"></span>Xem trên bản đồ</a>
+                                    <a href="#" class="item__meta-link"><span class="fa fa-home"></span>Địa chỉ</a>
+                                    <a href="#" class="item__meta-link"><span class="fa fa-info-circle"></span>Xem chi tiết</a>
+                                </div>
+                                <ul class="item__ulti">
+                                    <li><span class="fa fa-wifi" data-toggle="tooltip" data-placement="bottom" title="Wifi"></span></li>
+                                    <li><span class="fa fa-car" data-toggle="tooltip" data-placement="bottom" title="Có chỗ đậu xe ô tô"></span></li>
+                                    <li><span class="fa fa-cc-mastercard" data-toggle="tooltip" data-placement="bottom" title="Visa/Master card"></span></li>
+                                    <li><span class="fa fa-shopping-basket" data-toggle="tooltip" data-placement="bottom" title="Demo"></span></li>
+                                    <li><span class="fa fa-tripadvisor" data-toggle="tooltip" data-placement="bottom" title="Demo"></span></li>
+                                </ul>
+                                <div class="item__review">
+                                    <span class="item__score">Đánh giá <b>8.5</b></span>
+                                    <span class="item__comments">Nhận xét <b>85</b></span>
+                                </div>
+                            </div>
+                            <div class="item__addition">
+                                <p class="item__price">2.000.000 đ</p>
+                                <p class="item__meta">Chưa bao gồm chi phí ăn</p>
+                                <a href="3-detail.html" class="btn btn-primary btn-round">Xem chi tiết</a>
+                            </div>
+                        </div>
+                        <div class="item item--horizontal">
+                            <div class="item__thumb">
+                                <a href="#"><img src="fig-image/1x1.png" class="img-responsive" alt=""></a>
+                                <ul class="item__related-img">
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                </ul>
+                                <div class="item__markup is-marked">
+                                    <span class="fa fa-heart"></span>
+                                </div>
+                            </div>
+                            <div class="item__info">
+                                <div class="item__title">
+                                    <a href="3-detail.html" class="item__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, optio, aliquam? Quaerat. </a>
+                                    <div class="item__rating">
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="item__meta">
+                                    <a class="item__meta-link" href="#"><span class="fa fa-map-marker"></span>Xem trên bản đồ</a>
+                                    <a href="#" class="item__meta-link"><span class="fa fa-home"></span>Địa chỉ</a>
+                                    <a href="#" class="item__meta-link"><span class="fa fa-info-circle"></span>Xem chi tiết</a>
+                                </div>
+                                <ul class="item__ulti">
+                                    <li><span class="fa fa-wifi"></span></li>
+                                    <li><span class="fa fa-car"></span></li>
+                                    <li><span class="fa fa-cc-mastercard"></span></li>
+                                    <li><span class="fa fa-shopping-basket"></span></li>
+                                    <li><span class="fa fa-tripadvisor"></span></li>
+                                </ul>
+                                <div class="item__review">
+                                    <span class="item__score">Đánh giá <b>8.5</b></span>
+                                    <span class="item__comments">Nhận xét <b>85</b></span>
+                                </div>
+                            </div>
+                            <div class="item__addition">
+                                <p class="item__price">2.000.000 đ</p>
+                                <p class="item__meta">Chưa bao gồm chi phí ăn</p>
+                                <a href="3-detail.html" class="btn btn-primary btn-round">Xem chi tiết</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="item item--yellow">
-                        <div class="item__thumb">
-                            <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="item__info">
-                            <div class="item__title"><a href="3-detail.html" class="item__link">Estelle Newton</a></div>
-                            <div class="item__rating">
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span></div>
-                            <div class="item__summary">
-                                <p>Học phí: 3.000.000 vnđ / tháng</p>
-                                <p>Sĩ số: 20 / lớp</p>
-                                <p>Công lập <span class="fa fa-check-circle"></span></p>
+            </div>
+            <!-- filter zone -->
+            <div class="filter">
+                <!-- filter location -->
+                <div class="filter__location">
+                    <div class="gg-map">
+                        <img src="fig-image/map.png" width="100%" height="150" alt="">
+                    </div>
+                    <button class="btn btn-default btn-round"><span class="fa fa-search-plus"></span>Xem bản đồ</button>
+                </div>
+                <!-- filter block  -->
+                <div class="filter__block">
+                    <h3 class="filter__title">Khoảng cách</h3>
+                    <div class="filter__content">
+                        <div id="filter-distance"></div>
+                    </div>
+                </div>
+                <div class="filter__block">
+                    <h3 class="filter__title">Giá tiền</h3>
+                    <div class="filter__content">
+                        <div id="filter-price"></div>
+                    </div>
+                </div>
+                <div class="filter__block">
+                    <h3 class="filter__title">Sĩ số học sinh mỗi lớp</h3>
+                    <div class="filter__content">
+                        <div id="filter-number"></div>
+                    </div>
+                </div>
+                <!-- block with check box -->
+                <div class="filter__block">
+                    <h3 class="filter__title">Đánh giá</h3>
+                    <div class="filter__content">
+                        <div class="filter__row">
+                            <div class="check-box">
+                                <input id="check5" type="checkbox" name="check" value="check5">
+                                <label for="check5">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </label>
                             </div>
-                            <div class="item__viewmore">
-                                <a href="3-detail.html" class="btn btn-info btn-round">Xem chi tiết</a>
+                        </div>
+                        <div class="filter__row">
+                            <div class="check-box">
+                                <input id="check4" type="checkbox" name="check" value="check4">
+                                <label for="check4">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filter__row">
+                            <div class="check-box">
+                                <input id="check3" type="checkbox" name="check" value="check3">
+                                <label for="check3">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filter__row">
+                            <div class="check-box">
+                                <input id="check2" type="checkbox" name="check" value="check2">
+                                <label for="check2">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="filter__row">
+                            <div class="check-box">
+                                <input id="check1" type="checkbox" name="check" value="check1">
+                                <label for="check1">
+                                    <span class="fa fa-star"></span>
+                                </label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-3">
-                    <div class="item item--green">
-                        <div class="item__thumb">
-                            <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="item__info">
-                            <div class="item__title"><a href="3-detail.html" class="item__link">Estelle Newton</a></div>
-                            <div class="item__rating">
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star active"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span></div>
-                            <div class="item__summary">
-                                <p>Học phí: 3.000.000 vnđ / tháng</p>
-                                <p>Sĩ số: 20 / lớp</p>
-                                <p>Công lập <span class="fa fa-check-circle"></span></p>
+                <!-- block with radio box -->
+                <div class="filter__block">
+                    <h3 class="filter__title">Phân hệ</h3>
+                    <div class="filter__content">
+                        <div class="filter__row">
+                            <div class="radio-box">
+                                <input id="stateschool" type="radio" name="gender" value="stateschool">
+                                <label for="stateschool">Trường Công</label>
                             </div>
-                            <div class="item__viewmore">
-                                <a href="3-detail.html" class="btn btn-info btn-round">Xem chi tiết</a>
+                        </div>
+                        <div class="filter__row">
+                            <div class="radio-box">
+                                <input id="semi-stateschool" type="radio" name="gender" value="semi-stateschool" checked>
+                                <label for="semi-stateschool">Trường Bán Công</label>
+                            </div>
+                        </div>
+                        <div class="filter__row">
+                            <div class="radio-box">
+                                <input id="privateschool" type="radio" name="gender" value="privateschool">
+                                <label for="privateschool">Trường Dân lập</label>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- block with check box -->
+                <div class="filter__block">
+                    <h3 class="filter__title">Tiện ích</h3>
+                    <div class="filter__content">
+                        <div class="filter__row">
+                            <div class="check-box">
+                                <input id="demo01" type="checkbox" name="check" value="demo01">
+                                <label for="demo01">Sân chơi</label>
+                            </div>
+                        </div>
+                        <div class="filter__row">
+                            <div class="check-box">
+                                <input id="demo02" type="checkbox" name="check" value="demo02">
+                                <label for="demo02">Xe đưa đón</label>
+                            </div>
+                        </div>
+                        <div class="filter__row">
+                            <div class="check-box">
+                                <input id="demo03" type="checkbox" name="check" value="demo03">
+                                <label for="demo03">Giáo dục sớm</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- filter result -->
+            <div class="filter-result">
+                <div class="filter-result__col">
+                    <h3 class="filter-result__title">Yên Hòa, Cầu Giấy, Hà Nội</h3>
+                    <p class="filter-result__text">32 trường / tổng 653</p>
+                </div>
+                <div class="filter-result__col">
+                    <h3 class="filter-result__title">Phân hệ</h3>
+                    <p class="filter-result__text">Công lập</p>
+                </div>
+                <div class="filter-result__col">
+                    <h3 class="filter-result__title">Học phí</h3>
+                    <p class="filter-result__text">2.000.000 - 3.000.000</p>
+                </div>
+                <div class="filter-result__col">
+                    <h3 class="filter-result__title">Bể bơi</h3>
+                    <p class="filter-result__text text-center is-green"><span class="fa fa-check-circle"></span></p>
+                </div>
+                <div class="filter-result__col pull-right"><a href="#quick-search">Thay đổi</a></div>
+            </div>
+            <!-- pagination -->
+            <div class="pagination-wrap">
+                <ul class="pagination pull-right">
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                </ul>
             </div>
         </div>
     </div>

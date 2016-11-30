@@ -106,6 +106,7 @@
 
 .item {
     border: 1px solid #eee;
+    background-color: white;
     margin-bottom: 20px;
     @include transition(all, 0.2, ease-out);
     @include respond-to-md() {
@@ -167,6 +168,7 @@
 }
 
 @include Block(item) {
+    @include clearfix();
     @include Modifier(sponsor) {
         @include Element(link) {
             &::after {
@@ -187,5 +189,139 @@
     }
     @include Modifier(has-shadow) {
         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, .16);
+    }
+    @include Modifier(horizontal) {
+        margin-bottom: 30px;
+        position: relative;
+        @include Element(thumb) {
+            float: left;
+            width: 25%;
+            position: relative;
+        }
+        @include Element(related-img) {
+            position: absolute;
+            left: 5px;
+            bottom: 5px;
+            li {
+                width: 40px;
+                height: 40px;
+                overflow: hidden;
+                float: left;
+                margin-right: 5px;
+                border: 1px solid #fff;
+            }
+        }
+        @include Element(markup) {
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, .5);
+            text-align: center;
+            color: white;
+            @include font-size(14, 26);
+            &.is-marked {
+                color: #d9534f;
+            }
+        }
+        @include Element(title) {
+            margin-bottom: 7px;
+        }
+        @include Element(rating) {
+            display: inline;
+            margin-left: 10px;
+        }
+        @include Element(meta) {
+            color: #7c7c7c;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        @include Element(ulti) {
+            margin-bottom: 15px;
+            @include clearfix();
+            li {
+                float: left;
+                margin-right: 10px;
+                border-radius: 3px;
+                border: 1px solid #ddd;
+                font-size: 14px;
+                color: #7c7c7c;
+            }
+            .fa {
+                padding: 12px;
+            }
+        }
+        @include Element(meta-link) {
+            margin-right: 15px;
+            color: #7c7c7c;
+            .fa {
+                margin-right: 5px;
+            }
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+        @include Element(info) {
+            float: left;
+            width: 55%;
+            padding: 15px;
+        }
+        @include Element(review) {
+            @include clearfix();
+        }
+        @include Element(score) {
+            display: inline-block;
+            background-color: #f7f7f7;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 10px;
+            b {
+                margin-left: 5px;
+                font-size: 24px;
+                color: $brand-info;
+            }
+        }
+        @include Element(comments) {
+            display: inline-block;
+            background-color: #f7f7f7;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 10px;
+            b {
+                margin-left: 5px;
+                font-size: 24px;
+                color: $brand-primary;
+            }
+        }
+        @include Element(addition) {
+            text-align: center;
+            width: 20%;
+            float: left;
+            padding: 25px 15px;
+            &::after {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 80%;
+                width: 1px;
+                background-color: #ddd;
+            }
+            .btn {
+                font-size: 16px;
+            }
+        }
+        @include Element(price) {
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #d9534f;
+            font-weight: bold;
+        }
     }
 }

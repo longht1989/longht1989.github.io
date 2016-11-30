@@ -1,0 +1,107 @@
+/* filter component */
+
+@include Block(filter) {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    @include Element(location) {
+        position: relative;
+        .btn-default {
+            position: absolute;
+            bottom: -15px;
+            left: calc(50% - 60px);
+            border: 1px solid #ddd;
+        }
+    }
+    @include Element(block) {
+        padding: 25px 0px;
+        margin: 0 15px;
+        border-bottom: 1px solid #ddd;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    @include Element(title) {
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .fa-star {
+        color: $brand-info;
+        font-size: 18px;
+    }
+    @include Element(row) {
+        font-size: 13px;
+        color: #6d6d6d;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* filter-result */
+
+@include Block(filter-result) {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    @include clearfix();
+    position: relative;
+    @include Element(col) {
+        float: left;
+        max-width: 30%;
+        padding: 20px;
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: #ddd;
+        }
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+        &.pull-right {
+            position: absolute;
+            top: calc(50% - 8px);
+            right: 15px;
+            padding: 0;
+            >a {
+                color: $brand-primary;
+            }
+        }
+    }
+    @include Element(title) {
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    @include Element(text) {
+        color: #666;
+        font-size: 13px;
+        line-height: 18px;
+        .fa-check-circle {
+            font-size: 18px;
+        }
+        &.is-green {
+            .fa-check-circle {
+                color: $brand-warning;
+            }
+        }
+        &.is-blue {
+            .fa-check-circle {
+                color: $brand-primary;
+            }
+        }
+        &.is-yellow {
+            .fa-check-circle {
+                color: $brand-info;
+            }
+        }
+    }
+}
