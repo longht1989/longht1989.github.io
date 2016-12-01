@@ -264,10 +264,11 @@ a.ui-button:focus {
 a.ui-button:active,
 .ui-button:active,
 .ui-button.ui-state-active:hover {
-    border: 1px solid #003eff;
-    background: #007fff;
+    border: 1px solid darken($brand-primary, 10%);
+    background: lighten($brand-primary, 10%);
     font-weight: normal;
-    color: #fff
+    color: #fff;
+    outline: none;
 }
 
 .ui-icon-background,
@@ -1125,4 +1126,15 @@ a.ui-button:active,
 .ui-widget-shadow {
     -webkit-box-shadow: 0 0 5px #666;
     box-shadow: 0 0 5px #666
+}
+
+.ui-slider-handle {
+    text-align: center;
+}
+
+.under-value {
+    position: relative;
+    top: 20px;
+    font-size: 13px;
+    font-family: $font-family-base;
 }

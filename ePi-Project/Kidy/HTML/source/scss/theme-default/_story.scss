@@ -229,10 +229,12 @@
         }
         @include Element(title) {
             margin-bottom: 7px;
+            a {
+                margin-right: 10px;
+            }
         }
         @include Element(rating) {
-            display: inline;
-            margin-left: 10px;
+            display: inline-block;
         }
         @include Element(meta) {
             color: #7c7c7c;
