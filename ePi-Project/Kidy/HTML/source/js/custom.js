@@ -2,17 +2,23 @@
    Onload functions
    ==================================== */
 $(function() {
-    // equal height for item index page
+    /*matchHeight*/
+    // matchHeight for item index page
     $('.zone__content.l-grid .item').matchHeight();
+    // matchHeight for col in filter result
+    $('.filter-result__col').matchHeight();
+    // matchHeight for utility
+    $('.detail__utility').matchHeight();
+
     // tooltip for item horizontal
     $('[data-toggle="tooltip"]').tooltip();
     //markup item--horizontal toggle
-    $('.item--horizontal').each(function(){
-    	$(this).find('.item__markup').click(function(){
-    		$(this).toggleClass('is-marked');
-    		$(this).children('.fa').toggleClass('fa-heart-o');
-    		$(this).children('.fa').toggleClass('fa-heart');
-    	});
+    $('.item--horizontal').each(function() {
+        $(this).find('.item__markup').click(function() {
+            $(this).toggleClass('is-marked');
+            $(this).children('.fa').toggleClass('fa-heart-o');
+            $(this).children('.fa').toggleClass('fa-heart');
+        });
     });
     // jquery ui slider range with fixed minimum 
     $("#filter-distance").slider({
@@ -56,3 +62,4 @@ $(function() {
         }
     });
 });
+
