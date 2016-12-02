@@ -1,12 +1,12 @@
 // -- Config ------------//
 $backgroundBarColor: #d0d0d0;
-$successBarColor: #2ecc71;
-$warningBarColor: #f39c12;
-$dangerBarColor: #e74c3c;
+$successBarColor: $brand-primary;
+$warningBarColor: $brand-info;
+$dangerBarColor: $brand-success;
 $overlayColor: #fff;
 $backColor: #f2f2f2;
 $barHeight: 16px;
-$elementSize: 50px;
+$elementSize: 44px;
 
 $step: 1; // step of % (100/$step = number of created classes)
 $loops: round(100 / $step);
@@ -42,11 +42,14 @@ $half: round($loops / 2);
     }
     // Loop for creating modifier classes
     @for $i from 0 through $loops {
-        $barColor: $successBarColor;
-        @if $i <=66 {
+        $barColor: $brand-danger;
+        @if $i <=75 {
+            $barColor: $successBarColor;
+        }
+        @if $i <=50 {
             $barColor: $warningBarColor;
         }
-        @if $i <=33 {
+        @if $i <=25 {
             $barColor: $dangerBarColor;
         }
         @include Modifier(#{$i*$step}) {

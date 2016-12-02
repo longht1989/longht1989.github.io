@@ -1,3 +1,11 @@
+a.a-link {
+    color: $brand-primary;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
 /* button border  */
 
 .btn {

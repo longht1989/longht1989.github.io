@@ -62,4 +62,30 @@ $(function() {
         }
     });
 });
-
+// 
+$('.bxslider').bxSlider({
+    buildPager: function(slideIndex) {
+        switch (slideIndex) {
+            case 0:
+                return '<img src="fig-image/1x1.png">';
+            case 1:
+                return '<img src="fig-image/1x1.png">';
+            case 2:
+                return '<img src="fig-image/1x1.png">';
+            case 3:
+                return '<img src="fig-image/1x1.png">';
+        }
+    },
+    nextText: '',
+    prevText: '',
+    nextSelector: '#bxslider-next',
+    prevSelector: '#bxslider-prev',
+    onSliderLoad: function() {
+        var positionTop = $('.bx-viewport').height();
+            $('.bxslider-control .fa').css('top', positionTop / 2);
+        $(window).resize(function() {
+            var positionTop = $('.bx-viewport').height();
+            $('.bxslider-control .fa').css('top', positionTop / 2);
+        });
+    }
+});

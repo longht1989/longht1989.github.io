@@ -638,39 +638,47 @@
                                             <li><img src="fig-image/16x9.png" class="img-responsive" /></li>
                                             <li><img src="fig-image/16x9.png" class="img-responsive" /></li>
                                         </ul>
+                                        <div class="bxslider-control">
+                                            <span class="fa fa-angle-left" id="bxslider-prev"></span>
+                                            <span class="fa fa-angle-right" id="bxslider-next"></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="detail-map">
-                                    <div>
+                                    <div class="detail__content-wrap">
                                         <img src="fig-image/bigmap.png" class="img-responsive" alt="">
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="detail-review">
-                                    <ul class="review-listing">
-                                        <li>
-                                            <div class="detail-review__score">9.6</div>
-                                            <div class="detail-review__content">
-                                                <h4 class="detail-review__customer">Jason Staham <time datetime="2011-01-12">January 12th, 2011</time></h4>
-                                                <div class="detail-review__text">Vậy nên tôi lắng nghe người đàn ông tin tưởng vào luật lệ này giải thích rằng chính phủ nên giảm bớt số điều luật thì hơn. Theo Chris, việc phá thai "chỉ nên thuộc về quyền quyết định của người phụ nữ, vì đó là cơ thể cô ấy."</div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="detail-review__score">9.6</div>
-                                            <div class="detail-review__content">
-                                                <h4 class="detail-review__customer">Jason Staham <time datetime="2011-01-12">January 12th, 2011</time></h4>
-                                                <div class="detail-review__text">Vậy nên tôi lắng nghe người đàn ông tin tưởng vào luật lệ này giải thích rằng chính phủ nên giảm bớt số điều luật thì hơn. Theo Chris, việc phá thai "chỉ nên thuộc về quyền quyết định của người phụ nữ, vì đó là cơ thể cô ấy."</div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="detail-review__score">9.6</div>
-                                            <div class="detail-review__content">
-                                                <h4 class="detail-review__customer">Jason Staham <time datetime="2011-01-12">January 12th, 2011</time></h4>
-                                                <div class="detail-review__text">Vậy nên tôi lắng nghe người đàn ông tin tưởng vào luật lệ này giải thích rằng chính phủ nên giảm bớt số điều luật thì hơn. Theo Chris, việc phá thai "chỉ nên thuộc về quyền quyết định của người phụ nữ, vì đó là cơ thể cô ấy."</div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                    <div class="detail__content-wrap">
+                                        <ul class="detail-review__listing">
+                                            <li>
+                                                <div class="detail-review__score">9.6</div>
+                                                <div class="detail-review__content">
+                                                    <h4 class="detail-review__customer">Jason Staham <time datetime="2011-01-12">January 12th, 2011</time></h4>
+                                                    <div class="detail-review__text">Vậy nên tôi lắng nghe người đàn ông tin tưởng vào luật lệ này giải thích rằng chính phủ nên giảm bớt số điều luật thì hơn. Theo Chris, việc phá thai "chỉ nên thuộc về quyền quyết định của người phụ nữ, vì đó là cơ thể cô ấy."</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="detail-review__score">9.6</div>
+                                                <div class="detail-review__content">
+                                                    <h4 class="detail-review__customer">Jason Staham <time datetime="2011-01-12">January 12th, 2011</time></h4>
+                                                    <div class="detail-review__text">Vậy nên tôi lắng nghe người đàn ông tin tưởng vào luật lệ này giải thích rằng chính phủ nên giảm bớt số điều luật thì hơn. Theo Chris, việc phá thai "chỉ nên thuộc về quyền quyết định của người phụ nữ, vì đó là cơ thể cô ấy."</div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="detail-review__score">9.6</div>
+                                                <div class="detail-review__content">
+                                                    <h4 class="detail-review__customer">Jason Staham <time datetime="2011-01-12">January 12th, 2011</time></h4>
+                                                    <div class="detail-review__text">Vậy nên tôi lắng nghe người đàn ông tin tưởng vào luật lệ này giải thích rằng chính phủ nên giảm bớt số điều luật thì hơn. Theo Chris, việc phá thai "chỉ nên thuộc về quyền quyết định của người phụ nữ, vì đó là cơ thể cô ấy."</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane" id="detail-comment">... comment</div>
+                                <div role="tabpanel" class="tab-pane" id="detail-comment">
+                                    <div class="detail__content-wrap">... comment</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -729,21 +737,25 @@
                                             <div class="circularProgress circularProgress--50 ">
                                                 <div class="circularProgress__overlay">5.0</div>
                                             </div>
+                                            <div class="detail__utility-title">Tiện ích</div>
                                         </li>
                                         <li class="detail__utility">
                                             <div class="circularProgress circularProgress--90 ">
                                                 <div class="circularProgress__overlay">9.0</div>
                                             </div>
+                                            <div class="detail__utility-title">Học phí</div>
                                         </li>
                                         <li class="detail__utility">
-                                            <div class="circularProgress circularProgress--10 ">
-                                                <div class="circularProgress__overlay">1.0</div>
+                                            <div class="circularProgress circularProgress--25 ">
+                                                <div class="circularProgress__overlay">2.5</div>
                                             </div>
+                                            <div class="detail__utility-title">Giảng dạy</div>
                                         </li>
                                         <li class="detail__utility">
                                             <div class="circularProgress circularProgress--75 ">
                                                 <div class="circularProgress__overlay">7.5</div>
                                             </div>
+                                            <div class="detail__utility-title">Ngoại khóa</div>
                                         </li>
                                     </ul>
                                 </div>

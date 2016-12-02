@@ -37,9 +37,11 @@
     }
     @include Element(price) {
         font-size: 14px;
+        margin-bottom: 5px;
         @include breakpoint(sm) {
             float: right;
             text-align: right;
+            margin-bottom: 0;
         }
         b {
             color: #ce4f4b;
@@ -150,15 +152,145 @@
         @include clearfix();
     }
     @include Element(utility) {
+        @include clearfix();
         width: 50%;
         float: left;
         padding-right: 5px;
-        margin-bottom: 5px;
+        margin-bottom: 10px;
         color: #666;
         font-size: 13px;
         &:nth-child(2n) {
             padding-right: 0;
             padding-left: 5px;
+        }
+        .circularProgress {
+            float: left;
+        }
+        @include breakpoint(xs) {
+            width: 100%;
+            padding: 0;
+            &:nth-child(2n) {
+                padding: 0;
+            }
+        }
+    }
+    @include Element(utility-title) {
+        padding-left: 20px;
+        margin-top: 10px;
+        margin-left: 7px;
+        float: left;
+        position: relative;
+        &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 15px;
+            height: 1px;
+            background-color: #ddd;
+        }
+    }
+    @include Element(slider) {
+        margin-bottom: 20px;
+        position: relative;
+        .bx-wrapper .bx-pager {
+            bottom: -95px;
+        }
+        .bx-wrapper .bx-pager a {
+            display: block;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            opacity: .8;
+            @include transition();
+            img {
+                width: 100%;
+                height: auto;
+            }
+            @include breakpoint(xs) {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        .bx-wrapper .bx-pager a:hover,
+        .bx-wrapper .bx-pager a.active {
+            opacity: 1;
+        }
+        .bx-wrapper {}
+        .bx-pager {
+            margin-top: 10px;
+            @include clearfix();
+            &-item {
+                float: left;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+        }
+        .bxslider-control {
+            .fa {
+                font-size: 36px;
+                color: white;
+                position: relative;
+                a {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                }
+                &.fa-angle-left {
+                    position: absolute;
+                    left: 15px;
+                    top: 50%;
+                    margin-top: -18px;
+                }
+                &.fa-angle-right {
+                    position: absolute;
+                    right: 15px;
+                    top: 50%;
+                    margin-top: -18px;
+                }
+            }
+        }
+    }
+}
+
+@include Block(detail-review) {
+    @include Element(listing) {
+        li {
+            padding: 15px;
+            background-color: #fff;
+            @include clearfix();
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+    }
+    @include Element(score) {
+        float: left;
+        color: #cf4f4b;
+        font-size: 20px;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        margin-right: 10px;
+        border-radius: 50%;
+        border: 1px solid #ddd;
+    }
+    @include Element(content) {
+        overflow: hidden;
+    }
+    @include Element(customer) {
+        font-weight: bold;
+        font-size: 14px;
+        margin-bottom: 5px;
+        time {
+            font-weight: normal;
+            margin-left: 10px;
+            color: #8c8c8c;
+            font-style: italic;
         }
     }
 }
