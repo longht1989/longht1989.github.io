@@ -34,6 +34,7 @@
         margin-left: 10px;
         border-radius: 10px;
         background-color: #e2e2e2;
+        white-space: nowrap;
     }
     @include Element(price) {
         font-size: 14px;
