@@ -20,47 +20,42 @@ $(function() {
             $(this).children('.fa').toggleClass('fa-heart');
         });
     });
+
     // jquery ui slider range with fixed minimum 
     $("#filter-distance").slider({
         range: "min",
-        value: 20,
+        value: 5,
         min: 1,
-        max: 700,
+        max: 20,
         slide: function(event, ui) {
-            $("#amount").val("$" + ui.value);
-        },
-        create: function(event, ui) {
-            var v = $(this).slider('value');
-            // $(this).find('.ui-slider-handle').text(v); //'<span class="under-value">'v'<s/pan>'
-            $(this).find('.ui-slider-handle').append('<span class="under-value"></span>'); //'<span class="under-value">'v'<s/pan>'
-            $(this).find('.ui-slider-handle .under-value').text(v); //'<span class="under-value">'v'<s/pan>'
+            $(".amount-distance").val(ui.value + ' km');
         }
     });
-    // jquery ui slider range 
+    $(".amount-distance").val($("#filter-distance").slider("value") + ' km');
+
+    // jquery ui slider range for price
     $("#filter-price").slider({
         range: true,
         min: 0,
-        max: 500,
-        values: [15, 200],
+        max: 50,
+        values: [5, 30],
         slide: function(event, ui) {
-            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-        },
-        create: function(event, ui) {
-            var v = $(this).slider('value');
-            // $(this).find('.ui-slider-handle').text(v); //'<span class="under-value">'v'<s/pan>'
-            $(this).find('.ui-slider-handle').append('<span class="under-value"></span>'); //'<span class="under-value">'v'<s/pan>'
-            $(this).find('.ui-slider-handle .under-value').text(v); //'<span class="under-value">'v'<s/pan>'
+            $(".amount-price").val(ui.values[0] + " triệu - " + ui.values[1] + " triệu");
         }
     });
+    $(".amount-price").val($("#filter-price").slider("values", 0) + " triệu - " + $("#filter-price").slider("values", 1) + " triệu");
+
+    // jquery ui slider range for number
     $("#filter-number").slider({
         range: true,
         min: 0,
-        max: 500,
-        values: [15, 200],
+        max: 30,
+        values: [10, 20],
         slide: function(event, ui) {
-            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+            $(".amount-number").val(ui.values[0] + " bé - " + ui.values[1] + " bé");
         }
     });
+    $(".amount-number").val($("#filter-number").slider("values", 0) + " bé - " + $("#filter-number").slider("values", 1) + " bé");
 });
 // 
 $('.bxslider').bxSlider({
@@ -82,7 +77,7 @@ $('.bxslider').bxSlider({
     prevSelector: '#bxslider-prev',
     onSliderLoad: function() {
         var positionTop = $('.bx-viewport').height();
-            $('.bxslider-control .fa').css('top', positionTop / 2);
+        $('.bxslider-control .fa').css('top', positionTop / 2);
         $(window).resize(function() {
             var positionTop = $('.bx-viewport').height();
             $('.bxslider-control .fa').css('top', positionTop / 2);

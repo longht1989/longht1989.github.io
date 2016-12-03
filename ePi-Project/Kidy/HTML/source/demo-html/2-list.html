@@ -67,19 +67,22 @@
                         </div>
                         <!-- filter block  -->
                         <div class="filter__block">
-                            <h3 class="filter__title">Khoảng cách: <span class="amount" ></span></h3>
+                            <h3 class="filter__title">Khoảng cách: </h3>
+                            <input type="text" class="filter__amount amount-distance" readonly>
                             <div class="filter__content">
                                 <div id="filter-distance"></div>
                             </div>
                         </div>
                         <div class="filter__block">
                             <h3 class="filter__title">Giá tiền</h3>
+                            <input type="text" class="filter__amount amount-price" readonly>
                             <div class="filter__content">
                                 <div id="filter-price"></div>
                             </div>
                         </div>
                         <div class="filter__block">
                             <h3 class="filter__title">Sĩ số học sinh mỗi lớp</h3>
+                            <input type="text" class="filter__amount amount-number" readonly>
                             <div class="filter__content">
                                 <div id="filter-number"></div>
                             </div>
@@ -207,9 +210,35 @@
                         </div>
                         <div class="filter-result__col">
                             <h3 class="filter-result__title">Bể bơi</h3>
-                            <p class="filter-result__text text-center is-green"><span class="fa fa-check-circle"></span></p>
+                            <p class="filter-result__text is-green"><span class="fa fa-check-circle"></span></p>
+                            <p class="filter-result__text is-blue"><span class="fa fa-check-circle"></span></p>
+                            <p class="filter-result__text is-yellow"><span class="fa fa-check-circle"></span></p>
                         </div>
-                        <div class="filter-result__col pull-right"><a href="#quick-search">Thay đổi</a></div>
+                        <div class="filter-result__col pull-right">
+                            <a class="visible-md visible-lg" href="#quick-search">Thay đổi</a>
+                            <a class="visible-xs visible-sm" data-toggle="modal" data-target="#myModal">Thay đổi</a>
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title" id="myModalLabel">Tìm kiếm</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="site-header__quick-search">
+                                                <span class="fa fa-map"></span>
+                                                <input id="quick-search" type="text" class="" placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Tìm kiếm</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- sorting bar -->
                     <div class="sorting-bar">

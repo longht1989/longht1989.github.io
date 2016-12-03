@@ -75,16 +75,16 @@
     }
     &__quick-search {
         display: none;
+        height: 45px;
+        overflow: hidden;
+        border: 1px solid #c9c9c9;
+        @include font-size(18, 43);
+        border-radius: 4px;
         @include breakpoint(md) {
             display: block;
             float: right;
             min-width: 400px;
             margin-right: 20px;
-            height: 45px;
-            overflow: hidden;
-            border: 1px solid #c9c9c9;
-            @include font-size(18, 43);
-            border-radius: 4px;
         }
         .fa {
             padding: 0 10px;
@@ -95,6 +95,10 @@
             @include haf() {
                 outline: none;
             }
+        }
+        // display in modal
+        .modal & {
+            display: block;
         }
     }
 }

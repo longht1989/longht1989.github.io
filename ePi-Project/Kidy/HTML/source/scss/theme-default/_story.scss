@@ -197,18 +197,27 @@
             float: left;
             width: 25%;
             position: relative;
+            @include breakpoint(xs) {
+                width: 100%;
+                float: none;
+            }
         }
         @include Element(related-img) {
             position: absolute;
             left: 5px;
             bottom: 5px;
             li {
-                width: 40px;
-                height: 40px;
                 overflow: hidden;
                 float: left;
                 margin-right: 5px;
+                // margin-bottom: 5px;
                 border: 1px solid #fff;
+                width: 20px;
+                height: 20px;
+                @include breakpoint(md) {
+                    width: 40px;
+                    height: 40px;
+                }
             }
         }
         @include Element(markup) {
@@ -270,6 +279,12 @@
             float: left;
             width: 55%;
             padding: 15px;
+            @include respond-to-sm-only() {
+                width: 75%;
+            }
+            @include breakpoint(xs) {
+                width: 100%;
+            }
         }
         @include Element(review) {
             @include clearfix();
@@ -317,6 +332,27 @@
             }
             .btn {
                 font-size: 16px;
+            }
+            @include respond-to-sm-only() {
+                width: 100%;
+                clear: both;
+                position: relative;
+                &::after {
+                    left: 0;
+                    bottom: initial;
+                    height: 1px;
+                    width: 100%;
+                }
+            }
+            @include breakpoint(xs) {
+                width: 100%;
+                position: relative;
+                &::after {
+                    left: 0;
+                    bottom: initial;
+                    height: 1px;
+                    width: 100%;
+                }
             }
         }
         @include Element(price) {

@@ -352,14 +352,14 @@ $container-tablet:             (720px + $grid-gutter-width) !default;
 $container-sm:                 $container-tablet !default;
 
 // Medium screen / desktop
-$container-desktop:            (1024px + $grid-gutter-width) !default;
+$container-desktop:            (994px + $grid-gutter-width) !default;
 //** For `$screen-md-min` and up.
 $container-md:                 $container-desktop !default;
 
 // Large screen / wide desktop
-$container-large-desktop:      (1024px + $grid-gutter-width) !default;
+$container-large-desktop:      (1140px + $grid-gutter-width) !default;
 //** For `$screen-lg-min` and up.
-$container-lg:                 $container-desktop !default;
+$container-lg:                 $container-large-desktop !default;
 
 
 //== Navbar

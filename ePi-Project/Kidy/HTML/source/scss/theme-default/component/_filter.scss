@@ -22,9 +22,19 @@
         }
     }
     @include Element(title) {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
         font-size: 18px;
         font-weight: bold;
+    }
+    @include Element(amount) {
+        width: 100%;
+        display: block;
+        margin-top: -10px;
+        margin-bottom: 15px;
+        background: none;
+        border: none;
+        font-size: 13px;
+        color: $brand-primary;
     }
     .fa-star {
         color: $brand-info;
@@ -48,7 +58,7 @@
     position: relative;
     @include Element(col) {
         float: left;
-        max-width: 30%;
+        max-width: 25%;
         padding: 20px;
         position: relative;
         &::after {
@@ -75,6 +85,31 @@
                 color: $brand-primary;
             }
         }
+        @include respond-to-sm-only() {
+            width: 25%;
+            &.pull-right {
+                width: initial;
+                right: 0;
+                top: calc(100% + 5px);
+            }
+        }
+        @include breakpoint(xs) {
+            max-width: 100%;
+            float: none;
+            &::after {
+                top: inital;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: 1px;
+                width: 100%;
+            }
+            &.pull-right {
+                width: initial;
+                right: 0;
+                top: calc(100% + 5px);
+            }
+        }
     }
     @include Element(title) {
         margin-bottom: 5px;
@@ -90,7 +125,7 @@
         }
         &.is-green {
             .fa-check-circle {
-                color: $brand-warning;
+                color: $brand-danger;
             }
         }
         &.is-blue {
