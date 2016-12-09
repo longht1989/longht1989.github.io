@@ -85,14 +85,13 @@
                         <!-- detail content -->
                         <div class="detail__content">
                             <ul class="detail__nav-tab" role="tablist">
-                                <li role="presentation" class="detail__tab active"><a href="#detail-overview" aria-controls="detail-overview" role="tab" data-toggle="tab">Tổng quan</a></li>
+                                <li role="presentation" class="detail__tab"><a href="#detail-overview" aria-controls="detail-overview" role="tab" data-toggle="tab">Tổng quan</a></li>
                                 <li class="detail__tab" role="presentation"><a href="#detail-map" aria-controls="detail-map" role="tab" data-toggle="tab">Bản đồ</a></li>
-                                <li class="detail__tab" role="presentation"><a href="#detail-review" aria-controls="detail-review" role="tab" data-toggle="tab">Đánh giá</a></li>
-                                <li class="detail__tab" role="presentation"><a href="#detail-comment" aria-controls="detail-comment" role="tab" data-toggle="tab">Nhận xét</a></li>
+                                <li class="detail__tab active" role="presentation"><a href="#detail-review" aria-controls="detail-review" role="tab" data-toggle="tab">Đánh giá & Nhận xét</a></li>
                             </ul>
                             <!-- tab pane -->
                             <div class="detail__tab-content tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="detail-overview">
+                                <div role="tabpanel" class="tab-pane" id="detail-overview">
                                     <div class="detail__content-wrap">
                                         <div class="detail__general-content">
                                             <h4>Thông tin chung</h4>
@@ -131,7 +130,7 @@
                                         <img src="fig-image/bigmap.png" class="img-responsive" alt="">
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane" id="detail-review">
+                                <div role="tabpanel" class="tab-pane active" id="detail-review">
                                     <div class="detail__content-wrap">
                                         <ul class="detail-review__listing">
                                             <li>
@@ -166,10 +165,42 @@
                                                 <li><a href="#">5</a></li>
                                             </ul>
                                         </div>
+                                        <!-- input comment block -->
+                                        <div class="detail__block detail__review">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-8">
+                                                    <h3 class="detail__block__title">
+                                                        Nhận xét
+                                                       <div class="login-box pull-right dropdown">
+                                                            <span id="dLabel" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login <span class="fa fa-caret-down"></span>
+                                                            </span>
+                                                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                                                <li><a href="#">Code for Facebook login here</a></li>
+                                                                <li><a href="#">Code for Google plus login here</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </h3>
+                                                    <div class="detail__block__content">
+                                                        <textarea class="form-control" rows="5" placeholder="Gõ tiếng việt có dấu với VNI/UNI"></textarea>
+                                                        <button class="btn btn-primary btn-round">Gửi đi</button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-4">
+                                                    <h3 class="detail__block__title">Đánh giá  <input type="text" class="filter__amount amount-score" readonly></h3>
+                                                    <div class="detail__block__content">
+                                                        <div class="filter__block">
+                                                           
+                                                            <div class="filter__content">
+                                                                <div id="filter-score"></div>
+                                                            </div>
+                                                            <p class="note">Thang điểm đánh giá từ 1-10</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="detail-comment">
-                                    <div class="detail__content-wrap">... comment</div>
                                 </div>
                             </div>
                         </div>

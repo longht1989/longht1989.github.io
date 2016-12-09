@@ -56,6 +56,19 @@ $(function() {
         }
     });
     $(".amount-number").val($("#filter-number").slider("values", 0) + " bé - " + $("#filter-number").slider("values", 1) + " bé");
+
+    // jquery ui slider range with fixed minimum 
+    $("#filter-score").slider({
+        range: "min",
+        value: 7.5,
+        min: 1,
+        max: 10,
+        step: 0.5,
+        slide: function(event, ui) {
+            $(".amount-score").val(ui.value + ' điểm');
+        }
+    });
+    $(".amount-score").val($("#filter-score").slider("value") + ' điểm');
 });
 // 
 $('.bxslider').bxSlider({
