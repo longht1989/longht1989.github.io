@@ -107,7 +107,7 @@
 .item {
     border: 1px solid #eee;
     background-color: white;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     @include transition(all, 0.2, ease-out);
     @include respond-to-md() {
         margin-bottom: 0;
@@ -360,6 +360,69 @@
             font-size: 18px;
             color: #d9534f;
             font-weight: bold;
+        }
+    }
+    @include Modifier(img-shadow) {
+        position: relative;
+        .item__thumb {
+            position: relative;
+            z-index: 10;
+        }
+        .img-shadow {
+            position: absolute;
+            left: 2.5%;
+            right: 2.5%;
+            bottom: -16px;
+            height: 48px;
+            z-index: 1;
+            background-size: 105.26316% 10000%;
+            background-position: bottom;
+            -webkit-filter: blur(15px);
+            filter: blur(15px);
+            @include transition(bottom, 0.2, ease);
+        }
+        &:hover {
+            -webkikt-box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, .16);
+            box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, .16);
+            .img-shadow {
+                bottom: 0;
+                left: 5%;
+                right: 5%;
+            }
+        }
+    }
+    @include Modifier(blurred-title) {
+        position: relative;
+        .item__title {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            z-index: 11;
+            font-weight: normal;
+            text-align: center;
+            text-transform: uppercase;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.4);
+            @include transition(background-color, 0.2, ease);
+            a {
+                padding: 10px;
+                // color: white;
+                display: block;
+                &:hover {
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+    &.item--blurred-title {
+        &:hover {
+            .item__title {
+                background-color: rgba(255, 255, 255, 0.9);
+            }
+            a {
+                color: $brand-primary;
+            }
         }
     }
 }

@@ -2,10 +2,27 @@
 
 .search-box {
     .cover & {
-        margin: 40px 0 90px;
-        @include breakpoint(sm) {
-            margin: 90px 0;
+        margin: 40px 0 60px;
+        @include breakpoint(md) {
+            margin: 0;
         }
+        padding: 30px 20px;
+        border-radius: 5px;
+        background-color: rgba(0, 0, 0, .5);
+        background-image:url(../img/blurred-header-bg.png);
+        background-repeat:no-repeat;
+        background-size:cover;
+        background-attachment: fixed;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../img/blurred-header-bg.png);
+    }
+    &__title {
+        text-align: center;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: uppercase;
     }
     &__header {
         @include clearfix;
@@ -24,8 +41,7 @@
         }
         a {
             opacity: 0.7;
-            font-size: 19px;
-            text-transform: uppercase;
+            font-size: 14px;
             @include transition();
             .cover & {
                 color: white;
@@ -35,8 +51,7 @@
             }
         }
         &::after {
-            @include transition;
-            opacity: 0;
+            left: 0;
             content: '';
             display: block;
         }
@@ -47,13 +62,14 @@
             &::after {
                 content: '';
                 display: block;
-                opacity: 1;
-                width: 30px;
+                width: 20px;
                 height: 15px;
                 position: absolute;
-                bottom: -22px;
+                bottom: -20px;
                 left: calc(50% - 15px);
-                background: url(../img/input-bar-arrow.png) left top no-repeat;
+                border-bottom: 8px solid #fff;
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
             }
         }
         @include breakpoint(xs) {
@@ -77,22 +93,34 @@
         }
         font-size: 14px;
     }
+    &__bar-wrap {
+        position: relative;
+        .fa {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $brand-primary;
+        }
+    }
     &__input-bar {
         background-color: white;
-        margin-bottom: 20px;
-        font-size: 18px !important;
-        border: 2px solid #44c0ff;
+        margin-bottom: 15px;
+        border: 1px solid #fff;
         webkit-box-shadow: none;
         box-shadow: none;
+        position: relative;
         @include haf() {
+            border: 1px solid #fff;
             color: black;
-            border-color: #44c0ff;
         }
     }
     &__note {
         color: white;
         font-size: 14px;
         margin: 10px 0;
+        text-align: center;
+        opacity: 0.5;
         @include respond-to-xs() {
             margin-top: 0;
         }

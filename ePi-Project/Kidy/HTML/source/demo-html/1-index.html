@@ -28,141 +28,77 @@
         <div class="cover">
             <div class="container">
                 <div class="site-header__top-bar">
-                    <h1 class="logo">
+                    <nav class="navbar">
+                        <h1 class="logo">
                         <a href="#"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a>
                     </h1>
-                    <div class="site-header__btn-group">
-                        <div class="btn btn-info">
-                            <span class="fa fa-user"></span>
-                            <span class="badge">4</span>
-                        </div>
-                        <div class="btn btn-info">
-                            <span class="fa fa-envelope"></span>
-                        </div>
-                    </div>
-                    <div class="clearfix visible-xs"></div>
-                    <ul class="site-header__related-links">
-                        <li><a href=""><span class="fa fa-map"></span>Tìm trường</a></li>
-                        <li><a href=""><span class="fa fa-child"></span>GIÁO DỤC SỚM</a></li>
-                    </ul>
+                        <ul class="site-header__related-links">
+                            <li class="visible-md visible-lg"><a href=""><span class="fa fa-home"></span></a></li>
+                            <li class="visible-md visible-lg"><a href="">Cho con</a></li>
+                            <li class="visible-md visible-lg"><a href="">Tìm trường</a></li>
+                            <li class="visible-md visible-lg"><a href="">Dịch vụ</a></li>
+                            <li class="visible-md visible-lg"><a href="">Tài liệu giáo dục sớm</a></li>
+                            <li class="site-header__btn-group">
+                                <div class="btn btn-info collapsed" role="button" data-toggle="collapse" href="#addition-related-links" aria-expanded="false" aria-controls="addition-related-links">
+                                    <span class="fa fa-bars"></span>
+                                    <!-- <span class="badge">4</span> -->
+                                </div>
+                                <div class="site-header__related-addition collapse" id="addition-related-links">
+                                    <ul>
+                                        <li class="visible-xs visible-sm"><a href=""><span class="fa fa-home"></span></a></li>
+                                        <li class="visible-xs visible-sm"><a href="">Cho con</a></li>
+                                        <li class="visible-xs visible-sm"><a href="">Tìm trường</a></li>
+                                        <li class="visible-xs visible-sm"><a href="">Dịch vụ</a></li>
+                                        <li class="visible-xs visible-sm"><a href="">Tài liệu giáo dục sớm</a></li>
+                                        <li><a href="">Lorem ipsum dolor.</a></li>
+                                        <li><a href="">Lorem ipsum dolor.</a></li>
+                                        <li><a href="">Lorem ipsum dolor.</a></li>
+                                        <li><a href="">Lorem ipsum dolor.</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12 col-md-offset-3 col-md-6">
-                        <!-- search box -->
-                        <div class="search-box">
+                    <!-- header slogan -->
+                    <div class="col-xs-12 col-md-8">
+                        <div class="site-header__slogan" data-mh="site-header-group">
+                            <h2>
+                                Tìm trường <strong>MẦM NON</strong> và<br>
+                                theo dõi <strong>BIỂU ĐỒ PHÁT TRIỂN</strong> của trẻ <br>
+                                <small>Tất cả đều miễn phí chỉ có tại Kidy.vn</small>
+                            </h2>
+                            <div class="cta-group">
+                                <button class="btn btn-border btn-round"><span class="fa fa-pencil-square-o"></span> Đăng ký</button>
+                                <button class="btn btn-border btn-round"><span class="fa fa-sign-in"></span> Đăng nhập</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- header new search -->
+                    <div class="col-xs-12 col-md-4">
+                        <div class="search-box" data-mh="site-header-group">
+                            <h3 class="search-box__title">Tìm trường</h3>
                             <!-- Nav tabs -->
                             <ul class="search-box__header" role="tablist">
-                                <li role="presentation" class="search-box__tab active"><a href="#school" aria-controls="school" role="tab" data-toggle="tab">TÌM TRƯỜNG</a></li>
-                                <li class="search-box__tab" role="presentation"><a href="#early" aria-controls="early" role="tab" data-toggle="tab">GIÁO DỤC SỚM</a></li>
-                                <li class="search-box__tab" role="presentation"><a href="#smart-toy" aria-controls="smart-toy" role="tab" data-toggle="tab">ĐỒ CHƠI THÔNG MINH</a></li>
+                                <li role="presentation" class="search-box__tab active"><a href="#school" aria-controls="school" role="tab" data-toggle="tab">Tìm trường</a></li>
+                                <li class="search-box__tab" role="presentation"><a href="#early-document" aria-controls="early" role="tab" data-toggle="tab">Tài liệu giáo dục sớm</a></li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="search-box__content tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="school">
-                                    <input placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)" type="text" class="form-control input-lg search-box__input-bar">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4">
-                                            <select class="form-control input-lg">
-                                                <option>Khoảng cách</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-4">
-                                            <select class="form-control input-lg">
-                                                <option>Phân hệ</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-4">
-                                            <select class="form-control input-lg">
-                                                <option>Học phí</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
+                                    <div class="search-box__bar-wrap">
+                                        <input placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)" type="text" class="form-control search-box__input-bar">
+                                        <span class="fa fa-map-marker"></span>
                                     </div>
-                                    <div class="card card--top"></div>
-                                    <div class="card card--bottom"></div>
                                     <div class="search-box__note">VD Tìm trường ở khu Thành Công: Thành Công, Ba Đình, Hà Nội</div>
                                     <button class="search-box__btn btn btn-primary btn-round btn-lg"><span class="fa fa-search"></span>Tìm</button>
                                 </div>
-                                <div role="tabpanel" class="tab-pane" id="early">
-                                    <input placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)" type="text" class="form-control input-lg search-box__input-bar">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4">
-                                            <select class="form-control input-lg">
-                                                <option>Khoảng cách</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-4">
-                                            <select class="form-control input-lg">
-                                                <option>Phân hệ</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-4">
-                                            <select class="form-control input-lg">
-                                                <option>Học phí</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
+                                <div role="tabpanel" class="tab-pane" id="early-document">
+                                    <div class="search-box__bar-wrap">
+                                        <input placeholder="Tên tài liệu muốn tìm" type="text" class="form-control search-box__input-bar">
+                                        <span class="fa fa-file-text-o"></span>
                                     </div>
-                                    <div class="card card--top"></div>
-                                    <div class="card card--bottom"></div>
-                                    <div class="search-box__note">VD Tìm trường ở khu Thành Công: Thành Công, Ba Đình, Hà Nội</div>
-                                    <button class="search-box__btn btn btn-primary btn-round btn-lg"><span class="fa fa-search"></span>Tìm</button>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="smart-toy">
-                                    <input placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)" type="text" class="form-control input-lg search-box__input-bar">
-                                    <div class="row">
-                                        <div class="col-xs-12 col-sm-4">
-                                            <select class="form-control input-lg">
-                                                <option>Khoảng cách</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-4">
-                                            <select class="form-control input-lg">
-                                                <option>Phân hệ</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-12 col-sm-4">
-                                            <select class="form-control input-lg">
-                                                <option>Học phí</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="card card--top"></div>
-                                    <div class="card card--bottom"></div>
                                     <div class="search-box__note">VD Tìm trường ở khu Thành Công: Thành Công, Ba Đình, Hà Nội</div>
                                     <button class="search-box__btn btn btn-primary btn-round btn-lg"><span class="fa fa-search"></span>Tìm</button>
                                 </div>
@@ -181,24 +117,33 @@
                 <div class="zone__content l-grid">
                     <div class="row">
                         <div class="col-xs-12 col-sm-4">
-                            <div class="item item--has-shadow">
+                            <div class="item item--img-shadow item--blurred-title">
                                 <div class="item__thumb">
-                                    <a href="3-detail.html"><img src="fig-image/1x1.png" class="img-responsive" alt=""></a>
+                                    <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt="ratio16x9"></a>
                                 </div>
+                                <h3 class="item__title">
+                                    <a href="3-detail.html">Giáo dục sớm tại gia đình</a>
+                                </h3>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4">
-                            <div class="item item--has-shadow">
+                            <div class="item item--img-shadow item--blurred-title">
                                 <div class="item__thumb">
-                                    <a href="3-detail.html"><img src="fig-image/1x1.png" class="img-responsive" alt=""></a>
+                                    <a href="3-detail.html"><img src="fig-image/16x9-1.png" class="img-responsive" alt="ratio16x9"></a>
                                 </div>
+                                <h3 class="item__title">
+                                    <a href="3-detail.html">Đồ chơi thông minh</a>
+                                </h3>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-4">
-                            <div class="item item--has-shadow">
+                            <div class="item item--img-shadow item--blurred-title">
                                 <div class="item__thumb">
-                                    <a href="3-detail.html"><img src="fig-image/1x1.png" class="img-responsive" alt=""></a>
+                                    <a href="3-detail.html"><img src="fig-image/16x9.png" class="img-responsive" alt="ratio16x9"></a>
                                 </div>
+                                <h3 class="item__title">
+                                    <a href="3-detail.html">Tư vấn từ xa</a>
+                                </h3>
                             </div>
                         </div>
                     </div>

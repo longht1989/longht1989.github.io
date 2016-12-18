@@ -69,8 +69,22 @@ $(function() {
         }
     });
     $(".amount-score").val($("#filter-score").slider("value") + ' điểm');
+
+    // create image shadow
+    $('.item--img-shadow').each(function() {
+        var imgshadow = $(this).find('.img-responsive').attr("src");
+        $(this).append($('<div class="img-shadow"></div>'));
+        $(this).find('.img-shadow').css("background-image", "url(" + imgshadow + ")");
+    });
+    // create background blurred title
+    $('.item--blurred-title').each(function() {
+        var imgshadow = $(this).find('.img-responsive').attr("src");
+        $(this).css("background-image", "url(" + imgshadow + ")");
+    });
+
 });
-// 
+
+// slider for detail 
 $('.bxslider').bxSlider({
     buildPager: function(slideIndex) {
         switch (slideIndex) {
