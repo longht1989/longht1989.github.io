@@ -18,6 +18,9 @@
     &__related-links {
         @include clearfix();
         @include font-size(18, 35);
+        @include breakpoint(xs) {
+            float: right;
+        }
         @include breakpoint(sm) {
             display: block;
             float: right;
@@ -58,10 +61,15 @@
             display: block;
             float: none;
             margin-left: 0;
+            a {
+                color: white;
+                &:hover {
+                    color: #ccc;
+                }
+            }
         }
     }
-    &__btn-group {
-        float: right !important;
+    &__btn-wrap {
         @include breakpoint(sm) {}
         .btn {
             width: 35px;
@@ -72,8 +80,6 @@
             padding: 0;
             margin: 0 5px;
             @include font-size(17, 35);
-            -webkit-box-shadow: 0px 0px 10px 3px rgba(245, 164, 34, .6);
-            box-shadow: 0px 0px 10px 3px rgba(245, 164, 34, .6);
             .fa {
                 margin-right: 0;
             }
@@ -93,27 +99,76 @@
         }
         .btn-info {
             @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+            -webkit-box-shadow: 0px 0px 10px 3px rgba(245, 164, 34, .6);
+            box-shadow: 0px 0px 10px 3px rgba(245, 164, 34, .6);
+        }
+        .btn-default {
+            -webkit-box-shadow: 0 0 10px 3px rgba(222, 222, 222, 0.6);
+            box-shadow: 0 0 10px 3px rgba(222, 222, 222, 0.6);
+        }
+    }
+    // wrap menu button
+    .wrap-menu {
+        margin-left: 10px;
+    }
+    // wrap search button
+    .wrap-search {
+        position: relative;
+        @include breakpoint(0px, 480px) {
+            position: static;
+            .site-header__quick-search.in {
+                left: 0;
+                right: 0;
+                top: 100%;
+                padding: 10px 20px;
+                border-radius: 5px;
+                background: rgba(0, 0, 0, 0.9);
+                height: 55px !important;
+            }
         }
     }
     &__quick-search {
-        display: none;
-        height: 45px;
+        display: block;
+        right: calc(100% + 20px);
+        position: absolute;
+        top: 0;
         overflow: hidden;
         border: 1px solid #c9c9c9;
-        @include font-size(18, 43);
         border-radius: 4px;
+        height: 35px !important;
+        width: 0;
+        min-width: 0;
+        @include transition();
+        border-color: transparent;
+        // style for collapse
+        &.in {
+            background-color: #FFF;
+            width: 100%;
+            min-width: 300px;
+            border-color: #c9c9c9;
+            @include breakpoint(sm) {
+                min-width: 420px;
+            }
+            @include breakpoint(md) {
+                min-width: 690px;
+            }
+            > input {
+                display: block;
+            }
+        }
         @include breakpoint(md) {
-            display: block;
-            float: right;
-            min-width: 400px;
-            margin-right: 20px;
         }
         .fa {
             padding: 0 10px;
         }
         > input {
             border: none;
-            width: 80%;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: 35px;
+            width: 100%;
+            display: none;
+            @include font-size(16, 35);
             @include haf() {
                 outline: none;
             }
@@ -141,6 +196,10 @@
         h2 {
             font-size: 24px;
             line-height: 1.5em;
+            text-align: center;
+            @include breakpoint(sm) {
+                text-align: left;
+            }
             @include breakpoint(md) {
                 font-size: 32px;
             }
@@ -179,6 +238,9 @@
                 border-color: $brand-primary;
             }
         }
+    }
+    .navbar {
+        margin-bottom: 0;
     }
 }
 

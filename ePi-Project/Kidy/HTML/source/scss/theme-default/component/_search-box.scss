@@ -34,11 +34,6 @@
         float: left;
         position: relative;
         padding: 0 10px;
-        @include breakpoint(xs) {
-            float: none;
-            width: 100%;
-            margin-bottom: 10px;
-        }
         a {
             opacity: 0.7;
             font-size: 14px;
@@ -70,20 +65,6 @@
                 border-bottom: 8px solid #fff;
                 border-left: 10px solid transparent;
                 border-right: 10px solid transparent;
-            }
-        }
-        @include breakpoint(xs) {
-            float: none;
-            width: 100%;
-            // padding: 0;
-            margin-bottom: 10px;
-            a {
-                display: block;
-            }
-            &.active {
-                &::after {
-                    display: none;
-                }
             }
         }
     }

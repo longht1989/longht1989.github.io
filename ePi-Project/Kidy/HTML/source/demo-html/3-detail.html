@@ -27,27 +27,44 @@
     <div class="site-header site-header--detail" data-spy="affix" data-offset-top="95" data-offset-bottom="200">
         <div class="container">
             <div class="site-header__top-bar">
-                <h1 class="logo">
+                <nav class="navbar">
+                    <h1 class="logo">
                         <a href="#"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a>
                     </h1>
-                <div class="site-header__btn-group">
-                    <div class="btn btn-info">
-                        <span class="fa fa-user"></span>
-                        <span class="badge">4</span>
-                    </div>
-                    <div class="btn btn-info">
-                        <span class="fa fa-envelope"></span>
-                    </div>
-                </div>
-                <div class="clearfix visible-xs"></div>
-                <ul class="site-header__related-links">
-                    <li><a href=""><span class="fa fa-map"></span>Tìm trường</a></li>
-                    <li><a href=""><span class="fa fa-child"></span>GIÁO DỤC SỚM</a></li>
-                </ul>
-                <div class="site-header__quick-search">
-                    <span class="fa fa-map"></span>
-                    <input id="quick-search" type="text" class="" placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)">
-                </div>
+                    <ul class="site-header__related-links">
+                        <li class="visible-md visible-lg"><a href="">Trang chủ</a></li>
+                        <li class="visible-md visible-lg"><a href="">Cho con</a></li>
+                        <li class="visible-md visible-lg"><a href="">Tìm trường</a></li>
+                        <li class="visible-md visible-lg"><a href="">Dịch vụ</a></li>
+                        <li class="visible-md visible-lg"><a href="">Tài liệu giáo dục sớm</a></li>
+                        <li class="site-header__btn-wrap wrap-search">
+                            <div class="btn btn-default"  href="#qs-input">
+                                <span class="fa fa-search"></span>
+                            </div>
+                            <div class="site-header__quick-search" id="quick-search">
+                                <input id="qs-input" type="text" class="" placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)">
+                            </div>
+                        </li>
+                        <li class="site-header__btn-wrap wrap-menu">
+                            <div class="btn btn-info collapsed" role="button" data-toggle="collapse" href="#addition-related-links" aria-expanded="false" aria-controls="addition-related-links">
+                                <span class="fa fa-bars"></span>
+                            </div>
+                            <div class="site-header__related-addition collapse" id="addition-related-links">
+                                <ul>
+                                    <li class="visible-xs visible-sm"><a href="">Trang chủ</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Cho con</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Tìm trường</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Dịch vụ</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Tài liệu giáo dục sớm</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>

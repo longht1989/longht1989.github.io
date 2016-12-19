@@ -76,12 +76,11 @@ $(function() {
         $(this).append($('<div class="img-shadow"></div>'));
         $(this).find('.img-shadow').css("background-image", "url(" + imgshadow + ")");
     });
-    // create background blurred title
-    $('.item--blurred-title').each(function() {
-        var imgshadow = $(this).find('.img-responsive').attr("src");
-        $(this).css("background-image", "url(" + imgshadow + ")");
-    });
 
+    //toggle quick search in site header
+    $('.wrap-search .btn').click(function(){
+        $(this).next('#quick-search').toggleClass('in');
+    });
 });
 
 // slider for detail 
