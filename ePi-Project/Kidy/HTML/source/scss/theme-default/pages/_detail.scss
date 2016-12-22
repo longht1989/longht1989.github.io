@@ -79,10 +79,14 @@
     }
     @include Element(main-content) {
         @include clearfix();
-        @include breakpoint(sm) {
-            width: 70%;
-            float: left;
-            padding-right: 10px;
+        max-height: 205px;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 40px;
+        @include transition(max-height, 5, linear);
+        &.show {
+            padding-bottom: 0;
+            max-height: 5000px;
         }
         p,
         h3,
@@ -96,17 +100,28 @@
         h5 {
             font-weight: bold;
         }
+        .view-more {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            text-align: center;
+            height: 60px;
+            line-height: 20px;
+            padding-top: 45px;
+            margin-bottom: 0;
+            background-image: linear-gradient(to bottom, transparent, #f0f0f0);
+            cursor: pointer;
+            &:hover {
+                color: $brand-primary;
+            }
+        }
     }
     @include Element(general-content) {
         margin-bottom: 20px;
-        @include breakpoint(sm) {
-            width: 30%;
-            float: right;
-            padding-left: 10px;
-        }
         .fa-circle {
             font-size: 6px;
-            margin-right: 5px;
+            margin-right: 8px;
             color: #b0b0b0;
             vertical-align: middle;
         }
@@ -257,7 +272,7 @@
         }
     }
     @include Element(review) {
-        .detail__block__title{
+        .detail__block__title {
             margin-bottom: 25px;
         }
         .login-box {
@@ -279,13 +294,13 @@
         .filter__block {
             margin: 0;
             padding: 0;
-            .note{
+            .note {
                 font-size: 12px;
                 color: #a7b4ba;
                 margin-top: 5px;
             }
         }
-        .filter__amount{
+        .filter__amount {
             display: inline;
             margin: 0 0 0 10px;
             max-width: 60px;

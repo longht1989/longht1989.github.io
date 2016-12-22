@@ -364,6 +364,7 @@
     }
     @include Modifier(img-shadow) {
         position: relative;
+        border:none;
         @include breakpoint(xs) {
             margin-bottom: 60px;
         }

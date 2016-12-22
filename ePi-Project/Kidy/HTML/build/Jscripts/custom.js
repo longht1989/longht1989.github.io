@@ -1,3 +1,4 @@
+
 /* ====================================
    Onload functions
    ==================================== */
@@ -78,12 +79,20 @@ $(function() {
     });
 
     //toggle quick search in site header
-    $('.wrap-search .btn').click(function(){
+    $('.wrap-search .btn').click(function() {
         $(this).next('#quick-search').toggleClass('in');
+    });
+
+    // expand main__content in detail page
+    $('.detail__main-content .view-more').click(function() {
+        $(this).parent('.detail__main-content').addClass('show');
+        $(this).hide();
     });
 });
 
-// slider for detail 
+/*  ===
+    slider for detail
+    === */
 $('.bxslider').bxSlider({
     buildPager: function(slideIndex) {
         switch (slideIndex) {
@@ -97,8 +106,9 @@ $('.bxslider').bxSlider({
                 return '<img src="fig-image/1x1.png">';
         }
     },
-    nextText: '',
+    // adaptiveHeight: true,
     prevText: '',
+    nextText: '',
     nextSelector: '#bxslider-next',
     prevSelector: '#bxslider-prev',
     onSliderLoad: function() {

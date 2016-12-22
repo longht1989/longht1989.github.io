@@ -38,7 +38,7 @@
                         <li class="visible-md visible-lg"><a href="">Dịch vụ</a></li>
                         <li class="visible-md visible-lg"><a href="">Tài liệu giáo dục sớm</a></li>
                         <li class="site-header__btn-wrap wrap-search">
-                            <div class="btn btn-default"  href="#qs-input">
+                            <div class="btn btn-default" href="#qs-input">
                                 <span class="fa fa-search"></span>
                             </div>
                             <div class="site-header__quick-search" id="quick-search">
@@ -102,31 +102,21 @@
                         <!-- detail content -->
                         <div class="detail__content">
                             <ul class="detail__nav-tab" role="tablist">
-                                <li role="presentation" class="detail__tab"><a href="#detail-overview" aria-controls="detail-overview" role="tab" data-toggle="tab">Tổng quan</a></li>
+                                <li class="detail__tab active" role="presentation"><a href="#detail-overview" aria-controls="detail-overview" role="tab" data-toggle="tab">Tổng quan</a></li>
                                 <li class="detail__tab" role="presentation"><a href="#detail-map" aria-controls="detail-map" role="tab" data-toggle="tab">Bản đồ</a></li>
-                                <li class="detail__tab active" role="presentation"><a href="#detail-review" aria-controls="detail-review" role="tab" data-toggle="tab">Đánh giá & Nhận xét</a></li>
+                                <li class="detail__tab" role="presentation"><a href="#detail-review" aria-controls="detail-review" role="tab" data-toggle="tab">Đánh giá & Nhận xét</a></li>
                             </ul>
                             <!-- tab pane -->
                             <div class="detail__tab-content tab-content">
-                                <div role="tabpanel" class="tab-pane" id="detail-overview">
+                                <div class="tab-pane active" role="tabpanel" id="detail-overview">
                                     <div class="detail__content-wrap">
-                                        <div class="detail__general-content">
-                                            <h4>Thông tin chung</h4>
-                                            <ul>
-                                                <li><span class="fa fa-circle"></span>Email: <a href="mailto:truonghoami@gmail.com">truonghoami@gmail.com</a></li>
-                                                <li><span class="fa fa-circle"></span>Diện tích: <b>Diện tích: 1200 m2</b></li>
-                                                <li><span class="fa fa-circle"></span>Tổng số học sinh/1 giáo viên:<b> 5</b></li>
-                                                <li><span class="fa fa-circle"></span>Diện tích trung bình 1 phòng: <b>32 m2</b></li>
-                                                <li><span class="fa fa-circle"></span>Tổng số trẻ / 1 lớp: <b>24</b></li>
-                                                <li><span class="fa fa-circle"></span>Loại giáo dục sớm: XXX</li>
-                                            </ul>
-                                        </div>
                                         <div class="detail__main-content">
                                             <h4>Giới thiệu</h4>
                                             <p>Khoa học đã chứng minh rằng chiều cao, cân nặng và bộ não có phát triển tốt hay không, phần lớn được quyết định trong những năm đầu đời khi trẻ ở độ tuổi mầm non. Vì vậy việc chọn trường luôn là một mối quan tâm hàng đầu của các bậc Cha Mẹ.</p>
                                             <p>Khoa học đã chứng minh rằng chiều cao, cân nặng và bộ não có phát triển tốt hay không, phần lớn được quyết định trong những năm đầu đời khi trẻ ở độ tuổi mầm non.</p>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in in voluptate velit esse cillum dolore eu fugiat nulla Excepteur sint occaecat cupidatat nonproident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis quasi esse beatae accusantium molestiae nisi deleniti et eligendi. Quisquam quibusdam, aliquam. Iure eaque voluptatum eligendi architecto ducimus libero quia mollitia placeat earum blanditiis vitae iusto ea, quis totam cupiditate doloremque incidunt vero quae nisi, eveniet similique provident voluptate nobis laborum. Maiores beatae labore qui aspernatur, quaerat accusamus facilis repudiandae voluptatum soluta. Animi autem et in, atque magni dicta aliquam molestias minus saepe, inventore accusantium quae iste? Suscipit architecto a, unde dignissimos, repudiandae nesciunt quaerat modi error tempora at iste facilis. Ducimus iure blanditiis nihil natus distinctio obcaecati, deleniti accusantium quidem.</p>
+                                            <p class="view-more"><span class="fa fa-angle-double-down"></span></p>
                                         </div>
                                     </div>
                                     <div class="detail__slider">
@@ -142,12 +132,12 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane" id="detail-map">
+                                <div class="tab-pane" role="tabpanel" id="detail-map">
                                     <div class="detail__content-wrap">
-                                        <img src="fig-image/bigmap.png" class="img-responsive" alt="">
+                                        <img src="fig-image/map.png" class="img-responsive" alt="">
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane active" id="detail-review">
+                                <div class="tab-pane" role="tabpanel" id="detail-review">
                                     <div class="detail__content-wrap">
                                         <ul class="detail-review__listing">
                                             <li>
@@ -207,7 +197,6 @@
                                                     <h3 class="detail__block__title">Đánh giá  <input type="text" class="filter__amount amount-score" readonly></h3>
                                                     <div class="detail__block__content">
                                                         <div class="filter__block">
-                                                           
                                                             <div class="filter__content">
                                                                 <div id="filter-score"></div>
                                                             </div>
@@ -242,6 +231,20 @@
                                                 <br>Tel: +84 04 83332432
                                             </p>
                                         </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- addition block -->
+                            <div class="detail__block detail__general-content">
+                                <h3 class="detail__block__title">Thông tin chung</h3>
+                                <div class="detail__block__content">
+                                    <ul>
+                                        <li><span class="fa fa-circle"></span>Email: <a href="mailto:truonghoami@gmail.com">truonghoami@gmail.com</a></li>
+                                        <li><span class="fa fa-circle"></span>Diện tích: <b>Diện tích: 1200 m2</b></li>
+                                        <li><span class="fa fa-circle"></span>Tổng số học sinh/1 giáo viên:<b> 5</b></li>
+                                        <li><span class="fa fa-circle"></span>Diện tích trung bình 1 phòng: <b>32 m2</b></li>
+                                        <li><span class="fa fa-circle"></span>Tổng số trẻ / 1 lớp: <b>24</b></li>
+                                        <li><span class="fa fa-circle"></span>Loại giáo dục sớm: XXX</li>
                                     </ul>
                                 </div>
                             </div>
