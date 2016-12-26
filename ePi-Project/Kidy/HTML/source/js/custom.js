@@ -88,6 +88,11 @@ $(function() {
         $(this).parent('.detail__main-content').addClass('show');
         $(this).hide();
     });
+
+    // show suggestion in search-box cover page
+    $('.search-box__input-bar').click(function(){
+        $(this).siblings('.search-box__suggestion').toggleClass('show');
+    });
 });
 
 /*  ===

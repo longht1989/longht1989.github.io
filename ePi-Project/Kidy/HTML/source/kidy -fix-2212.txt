@@ -1,0 +1,7 @@
+﻿- Thêm box search ở phần search ( giống kiddi.vn) = o
+- Nút thay đổi ở trang list.html:  =?
+- Ảnh ở item: fix ratio = o
+- Thêm page spinner loading = o
+- Trang list.html dữ liệu khi ko có hiển thị như nào ? =?
+- Bản đồ trong detail: xử lý lại. =?
+- Các chi nhánh: thêm tên chi nhánh ( có link ) = o

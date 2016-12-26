@@ -155,6 +155,10 @@
         }
         @include Element(content) {
             li {
+                h5 {
+                    display: block;
+                    margin-bottom: 5px;
+                }
                 margin-bottom: 10px;
                 .fa-home {
                     float: left;
