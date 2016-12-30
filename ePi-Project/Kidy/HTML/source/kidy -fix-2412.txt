@@ -5,8 +5,6 @@
 - làm loading full page=o
 - fix full size image slider trong detail = o
 - thêm button ( bad UX ) = o
-
-
 - Nút thay đổi ở trang list.html:  =o
 - animation cho box bản đồ trang listing =o
 
