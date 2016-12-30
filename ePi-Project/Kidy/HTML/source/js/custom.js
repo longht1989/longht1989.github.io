@@ -1,4 +1,3 @@
-
 /* ====================================
    Onload functions
    ==================================== */
@@ -90,8 +89,38 @@ $(function() {
     });
 
     // show suggestion in search-box cover page
-    $('.search-box__input-bar').click(function(){
+    $('.search-box__input-bar').click(function() {
         $(this).siblings('.search-box__suggestion').toggleClass('show');
+    });
+
+    // toggle filter change
+    $('#filter-change-btn').click(function() {
+        $('.filter-result').hide();
+        $('.filter-change').fadeIn();
+    });
+    $('.filter-change .btn-cancel').click(function() {
+        $('.filter-result').fadeIn();
+        $('.filter-change').hide();
+    });
+
+    //show big map
+    $('.filter__location .btn').click(function() {
+        // show big map
+        $('.big-map').show();
+        $('.big-map').animate({
+            width: "100%",
+            height: "100%",
+            display: 'block'
+        },'slow');
+        // hide box filter
+        $('.filter__location').slideUp();
+    });
+    $('.big-map .btn-close').click(function() {
+        // hide big map
+        $('.big-map').slideUp('slow');
+        $('.big-map').css({ "width": "0", "height": "0" });
+        // show box filter
+        $('.filter__location').slideDown();
     });
 });
 
@@ -111,7 +140,7 @@ $('.bxslider').bxSlider({
                 return '<img src="fig-image/1x1.png">';
         }
     },
-    // adaptiveHeight: true,
+    adaptiveHeight: true,
     prevText: '',
     nextText: '',
     nextSelector: '#bxslider-next',

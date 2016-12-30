@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-    <title>Kidy - Loading List</title>
+    <title>Kidy - List</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,25 @@
 </head>
 
 <body>
+    <!-- loading box -->
+    <div class="loading-box">
+        <div class="loading-box__wrap">
+            <p class="text-muted">
+                <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+            </p>
+            <br>
+            <p>Xin vui lòng chờ trong giây lát, hệ thống đang xử lý...</p>
+        </div>
+        <div class="loading-box__wrap">
+            <p class="text-muted">
+                <span class="fa fa-hourglass-end fa-3x fa-fw"></span>
+            </p>
+            <br>
+            <p>Thời gian truy cập đã kết thúc.</p>
+            <br>
+            <a class="btn btn-primary" href="#">Click vào đây để tìm kiếm hoặc xem lại</a>
+        </div>
+    </div>
     <!-- site header normal -->
     <div class="site-header site-header--detail" data-spy="affix" data-offset-top="95" data-offset-bottom="200">
         <div class="container">
@@ -263,9 +282,122 @@
                             <li class="sorting-bar__filter"><a href="#">Đánh giá <span class="fa fa-angle-up"></span></a></li>
                         </ul>
                     </div>
-                    <!-- loading box -->
-                    <div class="loading-box">
-                        <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+                    <!-- listing item horizontal -->
+                    <div class="l-list">
+                        <div class="item item--horizontal">
+                            <div class="item__thumb">
+                                <a href="#"><img src="fig-image/1x1.png" class="img-responsive" alt=""></a>
+                                <ul class="item__related-img">
+                                    <li>
+                                        <img src="fig-image/1x1.png" class="img-responsive" alt="">
+                                        <span class="enlarge"><!--span contains the popup image-->
+                                            <img src="fig-image/1x1.png" alt="Blackpool sunset" /> <!--popup image-->
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <img src="fig-image/16x10.png" class="img-responsive" alt="">
+                                        <span class="enlarge"><!--span contains the popup image-->
+                                            <img src="fig-image/16x10.png" alt="Blackpool sunset" /> <!--popup image-->
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <img src="fig-image/16x9.png" class="img-responsive" alt="">
+                                        <span class="enlarge"><!--span contains the popup image-->
+                                            <img src="fig-image/16x9.png" alt="Blackpool sunset" /> <!--popup image-->
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <img src="fig-image/4x3.png" class="img-responsive" alt="">
+                                        <span class="enlarge"><!--span contains the popup image-->
+                                            <img src="fig-image/4x3.png" alt="Blackpool sunset" /> <!--popup image-->
+                                        </span>
+                                    </li>
+                                </ul>
+                                <div class="item__markup">
+                                    <span class="fa fa-heart-o"></span>
+                                </div>
+                            </div>
+                            <div class="item__info">
+                                <div class="item__title">
+                                    <a href="3-detail.html" class="item__link">Estelle Newton</a>
+                                    <div class="item__rating">
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="item__meta">
+                                    <a class="item__meta-link" href="#"><span class="fa fa-map-marker"></span>Xem trên bản đồ</a>
+                                    <a href="#" class="item__meta-link"><span class="fa fa-home"></span>Địa chỉ</a>
+                                    <a href="#" class="item__meta-link"><span class="fa fa-info-circle"></span>Xem chi tiết</a>
+                                </div>
+                                <ul class="item__ulti">
+                                    <li><span class="fa fa-wifi" data-toggle="tooltip" data-placement="bottom" title="Wifi"></span></li>
+                                    <li><span class="fa fa-car" data-toggle="tooltip" data-placement="bottom" title="Có chỗ đậu xe ô tô"></span></li>
+                                    <li><span class="fa fa-cc-mastercard" data-toggle="tooltip" data-placement="bottom" title="Visa/Master card"></span></li>
+                                    <li><span class="fa fa-shopping-basket" data-toggle="tooltip" data-placement="bottom" title="Demo"></span></li>
+                                    <li><span class="fa fa-tripadvisor" data-toggle="tooltip" data-placement="bottom" title="Demo"></span></li>
+                                </ul>
+                                <div class="item__review">
+                                    <span class="item__score">Đánh giá <b>8.5</b></span>
+                                    <span class="item__comments">Nhận xét <b>85</b></span>
+                                </div>
+                            </div>
+                            <div class="item__addition">
+                                <p class="item__price">2.000.000 đ</p>
+                                <p class="item__meta">Chưa bao gồm chi phí ăn</p>
+                                <a href="3-detail.html" class="btn btn-primary btn-round">Xem chi tiết</a>
+                            </div>
+                        </div>
+                        <div class="item item--horizontal">
+                            <div class="item__thumb">
+                                <a href="#"><img src="fig-image/1x1.png" class="img-responsive" alt=""></a>
+                                <ul class="item__related-img">
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                    <li><img src="fig-image/1x1.png" class="img-responsive" alt=""></li>
+                                </ul>
+                                <div class="item__markup is-marked">
+                                    <span class="fa fa-heart"></span>
+                                </div>
+                            </div>
+                            <div class="item__info">
+                                <div class="item__title">
+                                    <a href="3-detail.html" class="item__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, optio, aliquam? Quaerat. </a>
+                                    <div class="item__rating">
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star active"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                </div>
+                                <div class="item__meta">
+                                    <a class="item__meta-link" href="#"><span class="fa fa-map-marker"></span>Xem trên bản đồ</a>
+                                    <a href="#" class="item__meta-link"><span class="fa fa-home"></span>Địa chỉ</a>
+                                    <a href="#" class="item__meta-link"><span class="fa fa-info-circle"></span>Xem chi tiết</a>
+                                </div>
+                                <ul class="item__ulti">
+                                    <li><span class="fa fa-wifi"></span></li>
+                                    <li><span class="fa fa-car"></span></li>
+                                    <li><span class="fa fa-cc-mastercard"></span></li>
+                                    <li><span class="fa fa-shopping-basket"></span></li>
+                                    <li><span class="fa fa-tripadvisor"></span></li>
+                                </ul>
+                                <div class="item__review">
+                                    <span class="item__score">Đánh giá <b>8.5</b></span>
+                                    <span class="item__comments">Nhận xét <b>85</b></span>
+                                </div>
+                            </div>
+                            <div class="item__addition">
+                                <p class="item__price">2.000.000 đ</p>
+                                <p class="item__meta">Chưa bao gồm chi phí ăn</p>
+                                <a href="3-detail.html" class="btn btn-primary btn-round">Xem chi tiết</a>
+                            </div>
+                        </div>
                     </div>
                     <!-- pagination -->
                     <div class="pagination-wrap">

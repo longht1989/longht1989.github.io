@@ -214,6 +214,13 @@
     @include Element(slider) {
         margin-bottom: 20px;
         position: relative;
+        .bx-viewport {
+            img {
+                max-width: initial;
+                width: 100%;
+                height: auto;
+            }
+        }
         .bx-wrapper .bx-pager {
             bottom: -95px;
         }

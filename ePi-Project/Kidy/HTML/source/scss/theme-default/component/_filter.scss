@@ -140,3 +140,24 @@
         }
     }
 }
+
+
+/* filter change */
+
+.filter-change {
+    @include clearfix();
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+    padding: 20px;
+    display: none;
+    .form-control {
+        margin-bottom: 10px;
+    }
+    .btn-group {
+        text-align: right;
+    }
+    .btn {
+        margin-left: 10px;
+    }
+}
