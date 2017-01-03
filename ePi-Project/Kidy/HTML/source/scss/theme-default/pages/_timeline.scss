@@ -1,0 +1,27 @@
+.timeline {
+    &-cover {
+        min-height: 335px;
+        background-image: url(../img/header-bg.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        position: relative;
+        margin-bottom: 20px;
+    }
+    &__personal-wrap {
+        position: absolute;
+        bottom: 25px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+    &__personal {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../img/blurred-header-bg.png);
+        display: inline-block;
+        color: white;
+        padding: 10px 15px;
+    }
+}

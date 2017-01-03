@@ -36,3 +36,18 @@
         margin-bottom: 20px;
     }
 }
+
+
+.main-content{
+    @include breakpoint(md){
+        width: 694px;
+        float: left;
+    }
+}
+
+.sidebar{
+    @include breakpoint(md){
+        width: 300px;
+        float: right;
+    }
+}

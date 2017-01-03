@@ -41,7 +41,7 @@ gulp.task('scripts', function() {
                 paths.js_dev + '/vendor/bootstrap.min.js',
                 paths.js_dev + '/vendor/jquery.bxslider.min.js',
                 paths.js_dev + '/vendor/jquery.matchHeight-min.js',
-                paths.js_dev + '/vendor/jquery-ui.min.js', // jquery ui for sliderbar
+                paths.js_dev + '/vendor/jquery-ui.min.js' // jquery ui for sliderbar
             // end import plugin
         ])
         .pipe(concat(paths.project_name + '.js'))

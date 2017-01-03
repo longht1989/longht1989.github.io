@@ -225,3 +225,32 @@ a.a-link {
         margin-bottom: 10px;
     }
 }
+
+
+/* bread crumb */
+
+.breadcrumb {
+    padding: 0;
+    margin-bottom: $line-height-computed;
+    list-style: none;
+    background-color: none;
+    border-radius: $border-radius-base;
+    font-weight: bold;
+    > li {
+        display: inline-block;
+        + li:before {
+            // [converter] Workaround for https://github.com/sass/libsass/issues/1115
+            $nbsp: "\00a0";
+            content: "#{$breadcrumb-separator}#{$nbsp}"; // Unicode space added since inline-block means non-collapsing white-space
+            padding: 0 5px;
+            color: $breadcrumb-color;
+        }
+    }
+    > .active {
+        color: #000;
+        font-size: 18px;
+        &::before {
+            font-size: 14px;
+        }
+    }
+}
