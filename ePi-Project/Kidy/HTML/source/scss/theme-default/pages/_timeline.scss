@@ -24,4 +24,117 @@
         color: white;
         padding: 10px 15px;
     }
+    &__aside {
+        margin-bottom: 20px;
+        @include breakpoint(sm) {
+            margin-bottom: 0;
+            width: 25%;
+            float: left;
+        }
+    }
+    &__tree {
+        margin-bottom: 20px;
+        padding-left: 20%;
+        @include breakpoint(sm) {
+            margin-bottom: 0;
+            width: calc(75% - 20px);
+            float: right;
+        }
+    }
+    &__listing {
+        border-radius: 8px;
+        padding: 20px 0;
+        background-color: white;
+    }
+    &__event {
+        // margin: 0 15px;
+        padding: 10px 15px;
+        border-bottom: 1px solid #e9e9e9;
+        @include last-child-y();
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            width: 3px;
+            position: absolute;
+            top: 0;
+            bottom: -1px;
+            left: -35px;
+            background-color: white;
+        }
+    }
+    &__marked {
+        position: absolute;
+        right: 100%;
+        width: 25%;
+        margin-right: 35px;
+        &::after {
+            content: '';
+            display: inline-block;
+            float: right;
+            position: absolute;
+            top: 2px;
+            right: -8px;
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            background-color: white;
+        }
+    }
+}
+
+.personal {
+    &__box {
+        padding: 20px 15px;
+        border-radius: 8px;
+        background: #fff;
+        border: 1px solid #ddd;
+    }
+    &__utilities {
+        li {
+            margin-bottom: 20px;
+            @include last-child-y();
+            .fa {
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+.event {
+    &__header-wrap {
+        margin-bottom: 10px;
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+            overflow: hidden;
+        }
+    }
+    &__header {
+        font-size: 12px;
+        h5 {
+            font-weight: bold;
+        }
+        time {
+            color: #999;
+        }
+    }
+    &__content {
+        margin-bottom: 10px;
+        max-height: 115px;
+        overflow: hidden;
+    }
+    &__meta {
+        text-align: right;
+        font-size: 12px;
+        a {
+            color: #999;
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+    }
 }

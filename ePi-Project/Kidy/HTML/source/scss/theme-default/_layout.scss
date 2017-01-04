@@ -13,7 +13,7 @@
 .site-content {
     @include clearfix;
     padding: 70px 0;
-    &--index{
+    &--index {
         background-color: #fff;
     }
 }
@@ -32,21 +32,21 @@
 }
 
 .main-content {
+    @include clearfix();
     @include respond-to-xs {
         margin-bottom: 20px;
     }
 }
 
-
-.main-content{
-    @include breakpoint(md){
-        width: 694px;
+.main-content {
+    @include breakpoint(md) {
+        width: calc(100% - 320px);
         float: left;
     }
 }
 
-.sidebar{
-    @include breakpoint(md){
+.sidebar {
+    @include breakpoint(md) {
         width: 300px;
         float: right;
     }
