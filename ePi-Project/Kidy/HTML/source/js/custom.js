@@ -107,11 +107,11 @@ $(function() {
     $('.filter__location .btn').click(function() {
         // show big map
         $('.big-map').show();
-        $('.big-map').animate({
-            width: "100%",
-            height: "100%",
-            display: 'block'
-        },'slow');
+        // $('.big-map').animate({
+        //     width: "100%",
+        //     height: "100%",
+        //     display: 'block'
+        // },'slow');
         // hide box filter
         $('.filter__location').slideUp();
     });
@@ -122,6 +122,13 @@ $(function() {
         // show box filter
         $('.filter__location').slideDown();
     });
+
+    // slimscroll for gds__detail realted listing 
+    if ($('#gds__related-listing').height() > 1000) {
+        $('#gds__related-listing .gds__related-listing__content').slimScroll({
+            height: '1000px'
+        });
+    };
 });
 
 /*  ===
