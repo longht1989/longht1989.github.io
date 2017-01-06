@@ -56,12 +56,14 @@
         margin-bottom: 20px;
         &__title {
             font-size: 14px;
-            color: $brand-primary;
             font-weight: bold;
             text-transform: uppercase;
             padding-bottom: 5px;
             border-bottom: 1px solid #eee;
             margin-bottom: 20px;
+            a {
+                color: $brand-primary;
+            }
         }
         .item {
             border: none;
@@ -121,11 +123,6 @@
                 left: 50%;
                 transform: translate(-50%, -50%);
             }
-        }
-        .slimScrollDiv {
-            margin-left: -10px;
-            margin-right: -10px;
-            padding: 0 10px;
         }
     }
 }
