@@ -126,7 +126,10 @@ $(function() {
     // slimscroll for gds__detail realted listing 
     if ($('#gds__related-listing').height() > 1000) {
         $('#gds__related-listing .gds__related-listing__content').slimScroll({
-            height: '1000px'
+            height: '1000px',
+            railOpacity: 0.2,
+            size: '5px',
+            wheelStep: 5
         });
     };
 });
@@ -160,4 +163,20 @@ $('.bxslider').bxSlider({
             $('.bxslider-control .fa').css('top', positionTop / 2);
         });
     }
+});
+
+/*  ===
+    slider for gds detail
+    === */
+$('.l-slider .slider').bxSlider({
+    minSlides: 2,
+    maxSlides: 4,
+    slideWidth: 270,
+    slideMargin: 20,
+    pager: false,
+    adaptiveHeight: true,
+    prevText: '',
+    nextText: '',
+    nextSelector: '#bxslider-next',
+    prevSelector: '#bxslider-prev'
 });
