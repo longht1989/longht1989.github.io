@@ -58,11 +58,15 @@
                 }
                 &.fa-angle-left {
                     left: 0px;
-                    transform: translate( -50%, -50%);
+                    @include breakpoint(md) {
+                        transform: translate( -50%, -50%);
+                    }
                 }
                 &.fa-angle-right {
                     right: 0px;
-                    transform: translate( 50%, -50%);
+                    @include breakpoint(md) {
+                        transform: translate( 50%, -50%);
+                    }
                 }
             }
         }

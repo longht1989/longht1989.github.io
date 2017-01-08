@@ -254,3 +254,11 @@ a.a-link {
         }
     }
 }
+
+.register-btn {
+    margin-bottom: 20px;
+    @include breakpoint(md) {
+        margin-bottom: 0;
+        text-align: right;
+    }
+}
