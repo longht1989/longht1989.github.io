@@ -1,0 +1,237 @@
+/* style forkid page */
+
+.forkid {
+    &__navtab {
+        background-color: $brand-info;
+        @include clearfix();
+        border-bottom: 1px solid #dfdfdf;
+        font-size: 14px;
+        margin-bottom: 20px;
+        .main-nav {
+            @include breakpoint(sm) {
+                float: left;
+            }
+        }
+        .toolbar {
+            @include breakpoint(sm) {
+                float: right;
+                position: relative;
+                padding-left: 10px;
+                background: linear-gradient(to right, #d30056, transparent);
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    bottom: 0;
+                    height: 100%;
+                    width: 10px;
+                    border: 10px solid #d30056;
+                    border-top-width: 25px;
+                    border-bottom-width: 25px;
+                    border-left-width: 5px;
+                    border-left-color: $brand-info;
+                    border-top-color: $brand-info;
+                    border-bottom-color: $brand-info;
+                }
+                .forkid__navbar-item {
+                    font-weight: normal;
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+    &__navbar-item {
+        @include breakpoint(sm) {
+            float: left;
+            line-height: 50px;
+            font-weight: bold;
+            @include transition();
+            a {
+                display: block;
+                padding: 0 17px;
+                color: white;
+            }
+            &.active,
+            &:hover {
+                background-color: white;
+                a {
+                    color: black;
+                }
+            }
+        }
+    }
+    &__kid-listing {
+        @include clearfix();
+        li {
+            border-radius: 8px;
+            padding: 20px 15px;
+            margin-bottom: 15px;
+            -webkikt-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .16);
+            box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .16);
+            @include transition();
+            &.active,
+            &:hover {
+                background-color: white;
+            }
+            @include breakpoint(xs) {
+                float: left;
+                width: 20%;
+                margin-right: 5%;
+            }
+            @include breakpoint(sm) {
+                float: left;
+                width: 20%;
+                margin-right: 5%;
+            }
+        }
+    }
+    &__box {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        padding: 20px;
+        background-color: white;
+        .row {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.kid {
+    cursor: pointer;
+    text-align: center;
+    &__avatar {
+        margin-bottom: 5px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    &__name {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 3px;
+    }
+    &__age {
+        font-size: 12px;
+        color: #777;
+    }
+    &__info {
+        @include breakpoint(xs) {
+            margin-bottom: 20px;
+        }
+        &__header {
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #efefef;
+        }
+        &__listing {
+            li {
+                margin-bottom: 20px;
+                font-size: 12px;
+                span,
+                b {
+                    width: 50%;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    &__chart {}
+}
+
+.teacher {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    text-align: center;
+    overflow: hidden;
+    &__avatar {
+        background-color: #f4f8fe;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+        img {
+            display: inline-block;
+            border-radius: 50%;
+            width: 50%;
+        }
+    }
+    &__name {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 3px;
+        padding: 10px 10px 0;
+    }
+    &__desc {
+        padding: 0 10px;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: #777;
+        max-height: 4.2em;
+        overflow: hidden;
+    }
+    &__listing {
+        margin-bottom: 20px;
+        @include clearfix();
+        @include breakpoint(1024px) {
+            margin-bottom: 0;
+        }
+        &__header {
+            @include clearfix();
+            margin-bottom: 20px;
+            h3 {
+                font-weight: bold;
+                padding: 0 10px 5px 0;
+                border-bottom: 1px solid #eee;
+                font-size: 14px;
+                text-transform: uppercase;
+                color: $brand-primary;
+            }
+            .a-link {
+                font-size: 12px;
+            }
+        }
+        li {
+            float: left;
+            width: 30%;
+            vertical-align: top;
+            margin: 0 1.6%;
+        }
+    }
+}
+
+.tip {
+    &__header {
+        @include clearfix();
+        margin-bottom: 20px;
+        h3 {
+            font-weight: bold;
+            padding: 0 10px 5px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: $brand-primary;
+        }
+        .a-link {
+            font-size: 12px;
+        }
+    }
+    &__listing {
+        li {
+            float: left;
+            width: 50%;
+            vertical-align: top;
+            margin-bottom: 10px;
+            &::before {
+                content: '';
+                font-family: 'fontawesome';
+                font-size: 4px;
+                color: #999;
+                margin-right: 8px;
+                vertical-align: middle;
+            }
+        }
+    }
+}
