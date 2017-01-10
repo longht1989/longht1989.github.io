@@ -7,17 +7,27 @@
         border-bottom: 1px solid #dfdfdf;
         font-size: 14px;
         margin-bottom: 20px;
+        margin-top: 20px;
+        @include breakpoint(sm) {
+            margin-top: 0;
+        }
         .main-nav {
             @include breakpoint(sm) {
                 float: left;
             }
         }
         .toolbar {
+            position: relative;
+            padding-left: 10px;
+            background: linear-gradient(to right, #d30056, transparent);
+            .forkid__navbar-item {
+                font-weight: normal;
+                &:hover {
+                    background-color: transparent;
+                }
+            }
             @include breakpoint(sm) {
                 float: right;
-                position: relative;
-                padding-left: 10px;
-                background: linear-gradient(to right, #d30056, transparent);
                 &::before {
                     content: '';
                     display: block;
@@ -35,33 +45,27 @@
                     border-top-color: $brand-info;
                     border-bottom-color: $brand-info;
                 }
-                .forkid__navbar-item {
-                    font-weight: normal;
-                    &:hover {
-                        background-color: transparent;
-                    }
-                }
             }
         }
     }
     &__navbar-item {
+        line-height: 50px;
+        font-weight: bold;
+        @include transition();
+        a {
+            display: block;
+            padding: 0 17px;
+            color: white;
+        }
+        &.active,
+        &:hover {
+            background-color: white;
+            a {
+                color: black;
+            }
+        }
         @include breakpoint(sm) {
             float: left;
-            line-height: 50px;
-            font-weight: bold;
-            @include transition();
-            a {
-                display: block;
-                padding: 0 17px;
-                color: white;
-            }
-            &.active,
-            &:hover {
-                background-color: white;
-                a {
-                    color: black;
-                }
-            }
         }
     }
     &__kid-listing {
@@ -70,6 +74,10 @@
             border-radius: 8px;
             padding: 20px 15px;
             margin-bottom: 15px;
+            float: left;
+            width: 48%;
+            margin: 0 1% 10px;
+            vertical-align: top;
             -webkikt-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .16);
             box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, .16);
             @include transition();
@@ -77,15 +85,10 @@
             &:hover {
                 background-color: white;
             }
-            @include breakpoint(xs) {
-                float: left;
-                width: 20%;
-                margin-right: 5%;
-            }
-            @include breakpoint(sm) {
-                float: left;
-                width: 20%;
-                margin-right: 5%;
+            @include breakpoint(md) {
+                float: none;
+                width: initial;
+                margin-right: 0;
             }
         }
     }
@@ -96,6 +99,18 @@
         background-color: white;
         .row {
             margin-bottom: 20px;
+        }
+    }
+    &__timeline {
+        &__header {
+            @include clearfix();
+            margin-bottom: 20px;
+            font-weight: bold;
+            padding: 0 10px 5px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 14px;
+            text-transform: uppercase;
+            color: $brand-primary;
         }
     }
 }

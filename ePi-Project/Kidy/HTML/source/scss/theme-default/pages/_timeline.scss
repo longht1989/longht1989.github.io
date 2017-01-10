@@ -45,6 +45,9 @@
         border-radius: 8px;
         padding: 20px 0;
         background-color: white;
+        .forkid__timeline & {
+            padding: 0;
+        }
     }
     &__event {
         // margin: 0 15px;
@@ -61,6 +64,12 @@
             bottom: -1px;
             left: -35px;
             background-color: white;
+        }
+        .forkid__timeline & {
+            padding: 10px 0;
+            &::before {
+                display: none;
+            }
         }
     }
     &__marked {
