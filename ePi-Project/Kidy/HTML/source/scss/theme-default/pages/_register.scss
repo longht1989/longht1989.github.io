@@ -31,6 +31,15 @@
                 @include last-child-y();
             }
         }
+        &--forkid {
+            .register__box__header {
+                padding: 20px;
+                text-align: left;
+                text-transform: uppercase;
+                color: $brand-primary;
+                border-bottom: 1px solid #ddd;
+            }
+        }
     }
 }
 
