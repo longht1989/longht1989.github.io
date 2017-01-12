@@ -70,8 +70,53 @@
                                 <small>Tất cả đều miễn phí chỉ có tại Kidy.vn</small>
                             </h2>
                             <div class="cta-group">
-                                <button class="btn btn-border btn-round"><span class="fa fa-pencil-square-o"></span> Đăng ký</button>
+                                <button class="btn btn-border btn-round" data-toggle="modal" data-target="#registeremail"><span class="fa fa-pencil-square-o"></span> Đăng ký</button>
                                 <button class="btn btn-border btn-round"><span class="fa fa-sign-in"></span> Đăng nhập</button>
+                            </div>
+                        </div>
+                        <!-- register form -->
+                        <!-- Modal Register with Email-->
+                        <div class="modal fade" id="registeremail" tabindex="-1" role="dialog" aria-labelledby="registeremailLabel">
+                            <div class="modal-dialog register__box" role="document">
+                                <h3 class="register__box__header">Điền thông tin email của bạn để đăng nhập hoặc tạo tài khoản trên Kidy.vn</h3>
+                                <div class="register__box__content">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nhập email của bạn">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password của bạn">
+                                    </div>
+                                    <p class="note text-center">
+                                        <a href="#" class="a-link" data-toggle="modal" data-target="#registersocial" data-dismiss="modal" aria-label="Close">Hoặc đăng nhập bằng Facebook hay Google</a>
+                                    </p>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary btn-round"><span class="fa fa-sign-in"></span>Đăng nhập</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal Register with Social -->
+                        <div class="modal fade" id="registersocial" tabindex="-1" role="dialog" aria-labelledby="registersocialLabel">
+                            <div class="modal-dialog register__box" role="document">
+                                <h3 class="register__box__header">Điền thông tin email của bạn để đăng nhập hoặc tạo tài khoản trên Kidy.vn</h3>
+                                <div class="register__box__content">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nhập email của bạn">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password của bạn">
+                                    </div>
+                                    <p class="note text-center">
+                                        <a href="#" class="a-link">Hoặc đăng ký bằng Email</a>
+                                    </p>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary btn-round"><span class="fa fa-sign-in"></span>Đăng nhập</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -219,7 +264,7 @@
                 <div class="zone__content">
                     <div class="row">
                         <div class="col-xs-12 col-sm-6 col-md-3">
-                        <!-- item with fixed ratio16x9 -->
+                            <!-- item with fixed ratio16x9 -->
                             <div class="item item--green item--16x9">
                                 <div class="item__thumb" style="background-image: url(fig-image/landscape.jpg)">
                                     <a href="3-detail.html"></a>
@@ -244,7 +289,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3">
-                        <!-- item with fixed ratio16x9 -->
+                            <!-- item with fixed ratio16x9 -->
                             <div class="item item--sponsor item--blue item--16x9">
                                 <div class="item__thumb" style="background-image: url(fig-image/16x10.png)">
                                     <a href="3-detail.html"></a>
@@ -269,7 +314,7 @@
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-6 col-md-3">
-                        <!-- item with fixed ratio16x9 -->
+                            <!-- item with fixed ratio16x9 -->
                             <div class="item item--yellow item--16x9">
                                 <div class="item__thumb" style="background-image: url(fig-image/4x3.png)">
                                     <a href="3-detail.html"></a>
