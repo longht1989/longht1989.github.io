@@ -87,8 +87,8 @@
             <!-- for kid nab tab -->
             <div class="forkid__navtab">
                 <ul class="main-nav" role="tablist">
-                    <li role="presentation" class="forkid__navbar-item active"><a href="#chart" aria-controls="chart" role="tab" data-toggle="tab">Biểu đồ của con</a></li>
-                    <li class="forkid__navbar-item" role="presentation"><a href="#exam" aria-controls="exam" role="tab" data-toggle="tab">Bài học & Bài test</a></li>
+                    <li role="presentation" class="forkid__navbar-item "><a href="#chart" aria-controls="chart" role="tab" data-toggle="tab">Biểu đồ của con</a></li>
+                    <li class="forkid__navbar-item active" role="presentation"><a href="#exam" aria-controls="exam" role="tab" data-toggle="tab">Bài học & Bài test</a></li>
                     <li class="forkid__navbar-item" role="presentation"><a href="#media" aria-controls="media" role="tab" data-toggle="tab">Media</a></li>
                 </ul>
                 <ul class="toolbar">
@@ -321,13 +321,14 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="kidExam01">
                                     <div class="forkid__box">
+                                        <!-- exam detail -->
                                         <h4 class="forkid__box__header">đặc điểm phát triển của trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</h4>
                                         <div class="forkid__box__content">
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laboriosam harum omnis temporibus quisquam, iure, ullam deleniti, sunt quos labore beatae dicta sequi fugiat ea. Ipsa, quo incidunt. Rem, error.</p>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolorem voluptate, quam quo aliquid officiis? Voluptate iure vitae laudantium voluptatibus quisquam sint labore fugiat dolores porro eveniet. Rem nemo, quia.</p>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                            <br>
                                         </div>
+                                        <!-- exam listing -->
                                         <h4 class="forkid__box__header">
                                             <ul class="pull-left nav nav-tabs" role="tablist">
                                                 <li role="presentation" class="active"><a href="#kidlesson" aria-controls="kidlesson" role="tab" data-toggle="tab">Danh sách bài học</a></li>
@@ -390,8 +391,120 @@
                                                     <span class="fa fa-angle-right" id="forkid-lesson-next"></span>
                                                 </div>
                                             </div>
-                                            <div id="kidtest" class="tab-pane lesson__slider" role="tabpanel" >
+                                            <div id="kidtest" class="tab-pane lesson__slider" role="tabpanel">
                                                 lesson__listing has-test
+                                            </div>
+                                        </div>
+                                        <!-- exam question -->
+                                        <h4 class="forkid__box__header">bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</h4>
+                                        <div class="forkid__box__content">
+                                            <!-- destkop table -->
+                                            <div class="lesson__table__nav">
+                                                <ul role="tablist">
+                                                    <li class="active" role="presentation">
+                                                        <a href="#language" aria-controls="language" role="tab" data-toggle="tab">Ngôn ngữ và giao tiếp</a>
+                                                    </li>
+                                                    <li class="" role="presentation">
+                                                        <a href="#BasicAction" aria-controls="BasicAction" role="tab" data-toggle="tab">Vận động thô</a>
+                                                    </li>
+                                                    <li class="" role="presentation">
+                                                        <a href="#AdvanceAction" aria-controls="AdvanceAction" role="tab" data-toggle="tab">Vận động tinh</a>
+                                                    </li>
+                                                    <li class="" role="presentation">
+                                                        <a href="#Awareness" aria-controls="Awareness" role="tab" data-toggle="tab">Nhận thức</a>
+                                                    </li>
+                                                    <li class="" role="presentation">
+                                                        <a href="#SocialeMotional" aria-controls="SocialeMotional" role="tab" data-toggle="tab">Tình cảm xã hội</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <table class="table tab-content lesson__table">
+                                                <tbody class="tab-pane active" role="tabpanel" id="language">
+                                                    <tr>
+                                                        <th rowspan="2">STT</th>
+                                                        <th rowspan="2">Câu hỏi</th>
+                                                        <th colspan="3">Câu trả lời <span class="text-warning">(15 điểm)</span></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="score score--high">Có (10đ)</th>
+                                                        <th class="score score--medium">Thi thoảng (5đ)</th>
+                                                        <th class="score score--low">Không (0đ)</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Khi bạn chỉ tay vào một bức tranh quả bóng (hoặc con mèo, cái mũ...) và hỏi bé "Cái gì đây?", bé có trả nói được tên của ít nhất một thứ không?</td>
+                                                        <td class="score score--high">
+                                                            <div class="radio-box">
+                                                                <input id="check1" type="radio" name="check" value="check1" checked>
+                                                                <label for="check1"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="score score--medium">
+                                                            <div class="radio-box">
+                                                                <input id="check2" type="radio" name="check" value="check2">
+                                                                <label for="check2"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="score score--low">
+                                                            <div class="radio-box">
+                                                                <input id="check3" type="radio" name="check" value="check3">
+                                                                <label for="check3"></label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody class="tab-pane" role="tabpanel" id="BasicAction">
+                                                    <tr>
+                                                        <td>BasicAction</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody class="tab-pane" role="tabpanel" id="AdvanceAction">
+                                                    <tr>
+                                                        <td>AdvanceAction</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody class="tab-pane" role="tabpanel" id="Awareness">
+                                                    <tr>
+                                                        <td>Awareness</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody class="tab-pane" role="tabpanel" id="SocialeMotional">
+                                                    <tr>
+                                                        <td>SocialeMotional</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="lesson__table__total">
+                                                <h4>Tổng điểm</h4>
+                                                <div class="lesson__table__score">135</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="forkid__timeline">
+                                                    <h4 class="forkid__timeline__header">bài tập gợi ý</h4>
+                                                    <div class="forkid__timeline__content">
+                                                        <ul class="timeline__listing">
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="forkid__timeline">
+                                                    <h4 class="forkid__timeline__header">ĐẶc điểm tâm lý của trẻ</h4>
+                                                    <div class="forkid__timeline__content">
+                                                        <ul class="timeline__listing">
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
