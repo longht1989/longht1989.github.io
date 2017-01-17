@@ -36,9 +36,12 @@
         margin-bottom: 20px;
         padding-left: 20%;
         @include breakpoint(sm) {
-            margin-bottom: 0;
+            // margin-bottom: 0;
             width: calc(75% - 20px);
             float: right;
+        }
+        @include breakpoint(xs) {
+            padding-left: 0;
         }
     }
     &__listing {
@@ -64,12 +67,19 @@
             bottom: -1px;
             left: -35px;
             background-color: white;
+            @include breakpoint(xs) {
+                display: none;
+            }
         }
         .forkid__timeline & {
             padding: 10px 0;
             &::before {
                 display: none;
             }
+        }
+        &.is-origin {
+            // position: absolute;
+            // bottom: 0;
         }
     }
     &__marked {
@@ -88,6 +98,14 @@
             width: 14px;
             border-radius: 50%;
             background-color: white;
+        }
+        .is-origin & {
+            &::after {
+                background-color: $brand-info;
+            }
+        }
+        @include breakpoint(xs) {
+            display: none;
         }
     }
 }
@@ -135,6 +153,17 @@
         margin-bottom: 10px;
         max-height: 115px;
         overflow: hidden;
+        // padding-bottom: 15px;
+        position: relative;
+        .text-muted {
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            bottom: 0px;
+            padding-left: 10px;
+            background: white;
+            font-size: 12px;
+        }
     }
     &__meta {
         text-align: right;

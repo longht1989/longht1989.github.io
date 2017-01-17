@@ -125,6 +125,11 @@ $(function() {
         $('.filter__location').slideDown();
     });
 
+    // show full content in timeline event
+    $('.timeline__event .event__content .text-muted').click(function() {
+        $(this).hide();
+        $(this).parent('.event__content').css('max-height', 'initial');
+    });
 });
 
 /*  ===

@@ -463,3 +463,43 @@
         }
     }
 }
+
+.gallery {
+    @include clearfix();
+    &__item {
+        margin-bottom: 20px;
+        @include breakpoint(md) {
+            float: left;
+            vertical-align: top;
+            width: 20%;
+            margin: 0 1% 2%;
+            height: 314px;
+            overflow: hidden;
+            &.landscape {
+                width: 54%;
+            }
+        }
+        &.has-video {
+            position: relative;
+            &::before {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, .2);
+                content: '';
+            }
+            &::after {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                content: '';
+                font-family: 'fontawesome';
+                color: white;
+                font-size: 5em;
+            }
+        }
+    }
+}
