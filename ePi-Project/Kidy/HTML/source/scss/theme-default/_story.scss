@@ -237,6 +237,10 @@
                 cursor: pointer;
                 background-color: $gray-lighter;
                 @include breakpoint(md) {
+                    width: 30px;
+                    height: 30px;
+                }
+                @include breakpoint(lg) {
                     width: 40px;
                     height: 40px;
                 }
@@ -300,11 +304,12 @@
             margin-bottom: 15px;
         }
         @include Element(ulti) {
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             @include clearfix();
             li {
                 float: left;
                 margin-right: 10px;
+                margin-bottom: 10px;
                 border-radius: 3px;
                 border: 1px solid #ddd;
                 font-size: 14px;
