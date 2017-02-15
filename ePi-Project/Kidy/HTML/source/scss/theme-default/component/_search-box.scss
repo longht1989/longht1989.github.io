@@ -122,8 +122,8 @@
         }
     }
     &__suggestion {
-        background-color: #f0f0f0;
-        border-top: 1px solid #ddd;
+        background-color: #f7f7f7;
+        border: 1px solid #ddd;
         position: absolute;
         top: 100%;
         right: 0;
@@ -133,7 +133,7 @@
         padding: 0;
         opacity: 0;
         &.show {
-            padding: 10px 0;
+            padding: 20px 0 10px;
             height: initial;
             opacity: 1;
         }
@@ -142,7 +142,7 @@
 
 .suggestion {
     &__header {
-        padding: 0 10px;
+        padding: 10px 10px 0;
         margin-bottom: 10px;
         @include font-size(14, 19);
         color: #777;

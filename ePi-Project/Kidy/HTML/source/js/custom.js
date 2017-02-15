@@ -95,6 +95,11 @@ $(function() {
         $(this).siblings('.search-box__suggestion').toggleClass('show');
     });
 
+    // show suggestion in filter-change listing.html
+    $('#filter-change__input-bar').click(function() {
+        $(this).siblings('.search-box__suggestion').toggleClass('show');
+    });
+
     // toggle filter change
     $('#filter-change-btn').click(function() {
         $('.filter-result').hide();
