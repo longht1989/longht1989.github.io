@@ -122,7 +122,7 @@
         }
     }
     &__suggestion {
-        background-color: #f7f7f7;
+        background-color: #fff;
         border: 1px solid #ddd;
         position: absolute;
         top: 100%;
@@ -136,6 +136,8 @@
             padding: 20px 0 10px;
             height: initial;
             opacity: 1;
+            -webkikt-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.16);
         }
     }
 }
@@ -174,5 +176,11 @@
         a {
             display: block;
         }
+    }
+}
+
+.pac {
+    &-school {
+        background-color: #f2f7ff;
     }
 }
