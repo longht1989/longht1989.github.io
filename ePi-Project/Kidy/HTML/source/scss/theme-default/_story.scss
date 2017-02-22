@@ -225,6 +225,9 @@
             position: absolute;
             left: 5px;
             bottom: 5px;
+            @include breakpoint(xs){
+                display: none;
+            }
             li {
                 // overflow: hidden;
                 float: left;

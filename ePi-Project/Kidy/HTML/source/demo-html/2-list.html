@@ -71,7 +71,7 @@
     <!-- site content -->
     <div class="site-content">
         <div class="container">
-            <div class="big-map">
+            <div class="big-map" style="display: none;">
                 <div class="wrapper">
                     <img src="fig-image/map.png" height="auto" width="100%" alt="">
                 </div>
@@ -246,8 +246,10 @@
                     <div class="filter-change">
                         <div class="row">
                             <div class="col-xs-12">
-                                <div class="search-box__bar-wrap">
+                                <!-- add class has-error here when user doesn't fill this input -->
+                                <div class="search-box__bar-wrap has-error">
                                     <input id="filter-change__input-bar" class="form-control" type="text" placeholder="Địa chỉ tìm kiếm">
+                                    <span class="fa fa-map-marker"></span>
                                     <!-- suggestion schools -->
                                     <div class="search-box__suggestion">
                                         <h4 class="suggestion__header">Cơ sở giáo dục</h4>
@@ -319,8 +321,18 @@
                             <ul>
                                 <li class="sorting-bar__label">Sắp xếp theo</li>
                                 <li class="sorting-bar__filter is-active"><a href="#">Đề xuất của Kidy</a></li>
-                                <li class="sorting-bar__filter"><a href="#">Giá <span class="fa fa-angle-down"></span></a></li>
-                                <li class="sorting-bar__filter"><a href="#">Tiêu chuẩn <span class="fa fa-angle-down"></span></a></li>
+                                <li class="sorting-bar__filter dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Giá <span class="fa fa-angle-down"></span></a>
+                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="#">Tăng dần</a></li>
+                                        <li><a href="#">Giảm dần</a></li>
+                                    </ul>
+                                </li>
+                                <li class="sorting-bar__filter dropdown"><a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tiêu chuẩn <span class="fa fa-angle-down"></span></a>
+                                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                        <li><a href="#">Cao cấp</a></li>
+                                        <li><a href="#">Trung bình</a></li>
+                                    </ul>
+                                </li>
                                 <li class="sorting-bar__filter"><a href="#">Đánh giá <span class="fa fa-angle-up"></span></a></li>
                             </ul>
                         </div>
@@ -377,8 +389,7 @@
                                 </div>
                                 <div class="item__meta">
                                     <a class="item__meta-link" href="#"><span class="fa fa-map-marker"></span>Xem trên bản đồ</a>
-                                    <a href="#" class="item__meta-link"><span class="fa fa-home"></span>Địa chỉ</a>
-                                    <a href="#" class="item__meta-link"><span class="fa fa-info-circle"></span>Xem chi tiết</a>
+                                    <a href="#" class="item__meta-link"><span class="fa fa-home"></span>Địa chỉ: Số 65A, Hai Bà Trưng, Quận Hoàn Kiếm, Hà Nội</a>
                                 </div>
                                 <ul class="item__ulti">
                                     <li><span class="fa fa-wifi" data-toggle="tooltip" data-placement="bottom" title="Wifi"></span></li>
@@ -430,7 +441,6 @@
                                 <div class="item__meta">
                                     <a class="item__meta-link" href="#"><span class="fa fa-map-marker"></span>Xem trên bản đồ</a>
                                     <a href="#" class="item__meta-link"><span class="fa fa-home"></span>Địa chỉ</a>
-                                    <a href="#" class="item__meta-link"><span class="fa fa-info-circle"></span>Xem chi tiết</a>
                                 </div>
                                 <ul class="item__ulti">
                                     <li><span class="fa fa-wifi"></span></li>
