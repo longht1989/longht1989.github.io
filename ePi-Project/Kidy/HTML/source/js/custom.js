@@ -135,6 +135,16 @@ $(function() {
         $(this).hide();
         $(this).parent('.event__content').css('max-height', 'initial');
     });
+
+    //toggle register box ( email or social network)
+    $('#email-register .note .a-link').click(function(){
+        $('#email-register').slideUp();
+        $('#social-register').delay(500).slideDown();
+    });
+     $('#social-register .note .a-link').click(function(){
+        $('#social-register').slideUp();
+        $('#email-register').delay(500).slideDown();
+    });
 });
 
 /*  ===
@@ -187,13 +197,13 @@ $('.l-slider .slider').bxSlider({
 /*  ===
     slider for lesson
     === */
+$('#linkto-kidexam').click(function() {});
 $('#forkid-lesson').bxSlider({
     minSlides: 1,
     maxSlides: 5,
     slideWidth: 143,
     slideMargin: 20,
     pager: false,
-    adaptiveHeight: true,
     prevText: '',
     nextText: '',
     nextSelector: '#forkid-lesson-next',

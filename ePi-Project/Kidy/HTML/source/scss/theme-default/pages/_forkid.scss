@@ -101,7 +101,7 @@
                     display: block;
                     margin-bottom: 5px;
                     color: #079391;
-                    &:hover{
+                    &:hover {
                         color: $brand-info;
                     }
                 }
@@ -339,6 +339,9 @@
             background-color: #f9f9f9;
             border-top-color: #fdedd2;
         }
+        &.is-active {
+            border-top-color: $brand-primary;
+        }
     }
     &__score {
         position: absolute;
@@ -379,6 +382,7 @@
     }
     &__slider {
         position: relative;
+        padding: 0 5%;
         .slider-control {
             .fa {
                 font-size: 24px;

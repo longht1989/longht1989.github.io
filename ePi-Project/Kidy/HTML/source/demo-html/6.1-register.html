@@ -71,23 +71,60 @@
     <!-- site content -->
     <div class="site-content">
         <div class="container">
-            <div class="register__box">
-                <h3 class="register__box__header">Điền thông tin email của bạn để đăng nhập hoặc tạo tài khoản trên Kidy.vn</h3>
+            <!-- register with email -->
+            <form class="register__box" id="email-register">
+                <h3 class="register__box__header">Điền thông tin email của bạn để tạo tài khoản trên Kidy.vn</h3>
                 <div class="register__box__content">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nhập email của bạn">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group has-error">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password của bạn">
+                    </div>
+                    <div class="form-group">
+                        <p><b>Bạn là:</b></p>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="radio-box">
+                                    <input id="user-parent" type="radio" name="userkind" value="user-parent">
+                                    <label for="user-parent">Phụ huynh</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="radio-box">
+                                    <input id="user-teacher" type="radio" name="userkind" value="user-teacher">
+                                    <label for="user-teacher">Giáo viên</label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <p class="note text-center">
                         <a href="#" class="a-link">Hoặc đăng nhập bằng Facebook hay Google</a>
                     </p>
                     <div class="text-center">
-                        <button class="btn btn-primary btn-round"><span class="fa fa-sign-in"></span>Đăng nhập</button>
+                        <button class="btn btn-primary btn-round">Đăng ký</button>
                     </div>
+                </div>
+            </form>
+            <!-- register with social network -->
+            <div class="register__box" id="social-register" style="display:none;">
+                <h3 class="register__box__header"><a href="1-index.html" title="Kidy.vn"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a></h3>
+                <div class="register__box__content">
+                    <h4>Đăng nhập vào Kidy để có thể theo dõi được sự phát triển của con hay tiếp xúc với các bài học/ bài test</h4>
+                    <a href="#" class="social-login social-login--facebook">
+                        <span class="fa fa-facebook"></span>
+                        <span href="#"> Đăng nhập bằng Facebook</span>
+                    </a>
+                    <a href="#" class="social-login social-login--googleplus">
+                        <span class="fa fa-google-plus"></span>
+                        <span href="#"> Đăng nhập bằng Google</span>
+                    </a>
+                    <p class="note text-center">
+                        <a href="#" class="a-link">Hoặc đăng nhập bằng Email</a>
+                    </p>
+                    <p class="text-muted">Để sử dụng Kidy bạn phải bật cookies. Nếu bạn đăng ký bằng Facebook hoặc Google chúng tôi sẽ tự động lấy thông tin của bạn trong profile đã đăng ký với Facebook hoặc Google và chúng tôi sẽ không post bài trên Facebook hay Google nếu chưa có sự đồng ý của bạn. Để biết thêm thông tin chi tiết bạn có thể truy cập vào FAQ.</p>
                 </div>
             </div>
         </div>

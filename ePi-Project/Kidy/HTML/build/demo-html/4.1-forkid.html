@@ -87,8 +87,8 @@
             <!-- for kid nab tab -->
             <div class="forkid__navtab">
                 <ul class="main-nav" role="tablist">
-                    <li class="forkid__navbar-item active" role="presentation"><a href="#chart" aria-controls="chart" role="tab" data-toggle="tab">Biểu đồ của con</a></li>
-                    <li class="forkid__navbar-item" role="presentation"><a href="#exam" aria-controls="exam" role="tab" data-toggle="tab">Bài học & Bài test</a></li>
+                    <li class="forkid__navbar-item " role="presentation"><a href="#chart" aria-controls="chart" role="tab" data-toggle="tab">Biểu đồ của con</a></li>
+                    <li class="forkid__navbar-item active" role="presentation"><a id="linkto-kidexam" href="#exam" aria-controls="exam" role="tab" data-toggle="tab">Bài học & Bài test</a></li>
                     <li class="forkid__navbar-item" role="presentation"><a href="#media" aria-controls="media" role="tab" data-toggle="tab">Media</a></li>
                 </ul>
                 <ul class="toolbar">
@@ -99,7 +99,7 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <!-- CHART FOR KID -->
-                <div role="tabpanel" class="tab-pane active" id="chart">
+                <div role="tabpanel" class="tab-pane " id="chart">
                     <div class="row">
                         <div class="col-xs-12 col-md-2">
                             <!-- kid listing -->
@@ -133,6 +133,16 @@
                             </ul>
                         </div>
                         <div class="col-xs-12 col-md-10">
+                            <!-- loading box -->
+                            <div class="loading-box is-child">
+                                <div class="loading-box__wrap">
+                                    <p class="text-muted">
+                                        <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+                                    </p>
+                                    <br>
+                                    <p>Xin vui lòng chờ trong giây lát, hệ thống đang xử lý...</p>
+                                </div>
+                            </div>
                             <!-- forkid content -->
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="kid01">
@@ -300,7 +310,7 @@
                     </div>
                 </div>
                 <!-- EXAM FOR KID -->
-                <div role="tabpanel" class="tab-pane " id="exam">
+                <div role="tabpanel" class="tab-pane active" id="exam">
                     <div class="row">
                         <div class="col-xs-12 col-md-2">
                             <!-- kid listing -->
@@ -345,17 +355,13 @@
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                                         </div>
                                         <!-- exam listing -->
-                                        <h4 class="forkid__box__header">
-                                            <ul class="pull-left nav nav-tabs" role="tablist">
-                                                <li role="presentation" class="active"><a href="#kidlesson" aria-controls="kidlesson" role="tab" data-toggle="tab">Danh sách bài học</a></li>
-                                                <li role="presentation" class=""><a id="reload-slider" href="#kidtest" aria-controls="kidtest" role="tab" data-toggle="tab">Danh sách bài test</a></li>
-                                            </ul>
-                                             <a href="#" class="pull-right a-link">Xem thêm</a>
+                                        <h4 class="forkid__box__header text-center">
+                                            Danh sách Bài học / Bài test <a href="#" class="pull-right a-link">Xem tất cả</a>
                                         </h4>
                                         <div class="tab-content forkid__box__content">
-                                            <div id="kidlesson" class="tab-pane lesson__slider active" role="tabpanel">
+                                            <div id="kidlesson" class="lesson__slider">
                                                 <ul class="lesson__listing" id="forkid-lesson">
-                                                    <li class="lesson__item">
+                                                    <li class="lesson__item is-active">
                                                         <p>Từ <b>19</b> tháng <b>0</b> ngày</p>
                                                         <p>đến</p>
                                                         <p><b>20</b> tháng <b>30</b> ngày</p>
@@ -406,9 +412,6 @@
                                                     <span class="fa fa-angle-left" id="forkid-lesson-prev"></span>
                                                     <span class="fa fa-angle-right" id="forkid-lesson-next"></span>
                                                 </div>
-                                            </div>
-                                            <div id="kidtest" class="tab-pane lesson__slider" role="tabpanel">
-                                                lesson__listing has-test
                                             </div>
                                         </div>
                                         <!-- exam question -->
