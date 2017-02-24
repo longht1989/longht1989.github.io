@@ -26,7 +26,7 @@
             float: right;
             margin-top: 0;
         }
-        li {
+        > li {
             float: left;
             margin-left: 30px;
             text-transform: uppercase;
@@ -156,8 +156,7 @@
                 display: block;
             }
         }
-        @include breakpoint(md) {
-        }
+        @include breakpoint(md) {}
         .fa {
             padding: 0 10px;
         }
@@ -176,6 +175,19 @@
         // display in modal
         .modal & {
             display: block;
+        }
+    }
+    &__user {
+        @include clearfix;
+        padding-left: 30px;
+        border-left: 1px solid #eee;
+        text-transform: none !important;
+        .user__account {
+            float: left;
+            margin-right: 10px;
+        }
+        .user__avatar {
+            float: left;
         }
     }
 }

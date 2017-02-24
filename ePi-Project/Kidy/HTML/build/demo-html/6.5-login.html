@@ -71,7 +71,7 @@
     <!-- site content -->
     <div class="site-content">
         <div class="container">
-            <!-- register with email -->
+            <!-- login with email -->
             <form class="register__box" id="email-register">
                 <h3 class="register__box__header">Điền thông tin email của bạn để tạo tài khoản trên Kidy.vn</h3>
                 <div class="register__box__content">
@@ -83,32 +83,25 @@
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password của bạn">
                     </div>
-                    <div class="form-group">
-                        <p><b>Bạn là:</b></p>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6">
-                                <div class="radio-box">
-                                    <input id="user-parent" type="radio" name="userkind" value="user-parent">
-                                    <label for="user-parent">Phụ huynh</label>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6">
-                                <div class="radio-box">
-                                    <input id="user-teacher" type="radio" name="userkind" value="user-teacher">
-                                    <label for="user-teacher">Giáo viên</label>
-                                </div>
-                            </div>
+                    <div class="form-group clearfix">
+                        <div class="check-box pull-left">
+                            <input id="user-parent" type="checkbox" name="" value="">
+                            <label for="user-parent">Nhớ mật khẩu</label>
+                        </div>
+                        <div class="pull-right">
+                            <a href="#" class="a-link">Đăng ký ngay!</a> &nbsp; &nbsp;
+                            <a href="#" class="a-link">Quên mật khẩu?</a>
                         </div>
                     </div>
                     <p class="note text-center">
                         <a href="#" class="a-link">Hoặc đăng nhập bằng Facebook hay Google</a>
                     </p>
                     <div class="text-center">
-                        <button class="btn btn-primary btn-round">Đăng ký</button>
+                        <button class="btn btn-primary btn-round">Đăng nhập</button>
                     </div>
                 </div>
             </form>
-            <!-- register with social network -->
+            <!-- login with social network -->
             <div class="register__box" id="social-register" style="display:none;">
                 <h3 class="register__box__header"><a href="1-index.html" title="Kidy.vn"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a></h3>
                 <div class="register__box__content">

@@ -113,14 +113,17 @@
                 <h3 class="register__box__header"><a href="1-index.html" title="Kidy.vn"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a></h3>
                 <div class="register__box__content">
                     <h4>Đăng nhập vào Kidy để có thể theo dõi được sự phát triển của con hay tiếp xúc với các bài học/ bài test</h4>
-                    <a href="#" class="social-login social-login--facebook">
-                        <span class="fa fa-facebook"></span>
-                        <span href="#"> Đăng nhập bằng Facebook</span>
-                    </a>
-                    <a href="#" class="social-login social-login--googleplus">
-                        <span class="fa fa-google-plus"></span>
-                        <span href="#"> Đăng nhập bằng Google</span>
-                    </a>
+                    <form action="/account/login?ReturnUrl=https%3A%2F%2Fkidy.vn%2F" method="post" class="ng-pristine ng-valid">
+                        <input name="__RequestVerificationToken" type="hidden" value="0tpTXo6rSv26WlXlZk8-F1kQJGC54OJ96D4zQ766Saq0Bac0obUgqREdbkrjckM36RWIk7w5RfI2_MHrsjSngpvfe2g1" autocomplete="off">
+                        <button type="submit" class="social-login social-login--googleplus" id="Google" name="provider" value="Google" title="Log in using your Google account">
+                            <span class="fa fa-google-plus"></span>
+                            <span href="#"> Đăng nhập bằng Google</span>
+                        </button>
+                        <button type="submit" class="social-login social-login--facebook" id="Facebook" name="provider" value="Facebook" title="Log in using your Facebook account">
+                            <span class="fa fa-facebook"></span>
+                            <span href="#"> Đăng nhập bằng Facebook</span>
+                        </button>
+                    </form>
                     <p class="note text-center">
                         <a href="#" class="a-link">Hoặc đăng nhập bằng Email</a>
                     </p>

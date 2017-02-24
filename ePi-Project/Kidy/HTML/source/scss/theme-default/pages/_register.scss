@@ -54,6 +54,7 @@
     }
 }
 
+
 .social-login {
     display: block;
     border-radius: 4px;
@@ -61,6 +62,9 @@
     height: 50px;
     line-height: 50px;
     margin-bottom: 20px;
+    border: none;
+    padding: 0;
+    width: 100%;
     @include clearfix();
     @include transition();
     span {
