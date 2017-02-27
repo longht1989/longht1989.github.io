@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>Kidy - User update info</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../App_Themes/img/favicon.ico">
+    <!-- CSS Implementing Plugins -->
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../App_Themes/css/kidy.min.css">
+    <!-- JS modernizr -->
+    <script src="../Jscripts/kidy.min.js"></script>
+</head>
+
+<body>
+    <!-- site header normal -->
+    <div class="site-header site-header--detail" data-spy="affix" data-offset-top="95" data-offset-bottom="200">
+        <div class="container">
+            <div class="site-header__top-bar">
+                <nav class="navbar">
+                    <h1 class="logo">
+                        <a href="#"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a>
+                    </h1>
+                    <ul class="site-header__related-links">
+                        <li class="visible-md visible-lg"><a href="">Trang chủ</a></li>
+                        <li class="visible-md visible-lg"><a href="">Cho con</a></li>
+                        <li class="visible-md visible-lg"><a href="">Tìm trường</a></li>
+                        <li class="visible-md visible-lg"><a href="">Dịch vụ</a></li>
+                        <li class="visible-md visible-lg"><a href="">Tài liệu giáo dục sớm</a></li>
+                        <li class="site-header__btn-wrap wrap-search">
+                            <div class="btn btn-default" href="#qs-input">
+                                <span class="fa fa-search"></span>
+                            </div>
+                            <div class="site-header__quick-search" id="quick-search">
+                                <input id="qs-input" type="text" class="" placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)">
+                            </div>
+                        </li>
+                        <li class="site-header__btn-wrap wrap-menu">
+                            <div class="btn btn-info collapsed" role="button" data-toggle="collapse" href="#addition-related-links" aria-expanded="false" aria-controls="addition-related-links">
+                                <span class="fa fa-bars"></span>
+                            </div>
+                            <div class="site-header__related-addition collapse" id="addition-related-links">
+                                <ul>
+                                    <li class="visible-xs visible-sm"><a href="">Trang chủ</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Cho con</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Tìm trường</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Dịch vụ</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Tài liệu giáo dục sớm</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- site content -->
+    <div class="site-content">
+        <div class="container">
+            <!-- login with email -->
+            <form class="register__box" id="email-register">
+                <h3 class="register__box__header">
+                Chúc mừng bạn đã đăng ký thành công với Kidy.vn <br>
+                Vui lòng cập nhật thông tin tài khoản</h3>
+                <div class="register__box__content">
+                    <div class="form-group">
+                        <label for="fullname">Họ tên</label>
+                        <input type="txt" class="form-control" id="fullname" placeholder="Nhập họ tên của bạn">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email của bạn">
+                    </div>
+                    <div class="form-group">
+                        <p><b>Bạn là:</b></p>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="radio-box">
+                                    <input id="user-parent" type="radio" name="userkind" value="user-parent">
+                                    <label for="user-parent">Phụ huynh</label>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <div class="radio-box">
+                                    <input id="user-teacher" type="radio" name="userkind" value="user-teacher">
+                                    <label for="user-teacher">Giáo viên</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-round">Xác nhận</button>
+                    </div>
+                </div>
+            </form>
+            <!-- login with social network -->
+            <div class="register__box" id="social-register" style="display:none;">
+                <h3 class="register__box__header"><a href="1-index.html" title="Kidy.vn"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a></h3>
+                <div class="register__box__content">
+                    <h4>Đăng nhập vào Kidy để có thể theo dõi được sự phát triển của con hay tiếp xúc với các bài học/ bài test</h4>
+                    <form action="/account/login?ReturnUrl=https%3A%2F%2Fkidy.vn%2F" method="post" class="ng-pristine ng-valid">
+                        <input name="__RequestVerificationToken" type="hidden" value="0tpTXo6rSv26WlXlZk8-F1kQJGC54OJ96D4zQ766Saq0Bac0obUgqREdbkrjckM36RWIk7w5RfI2_MHrsjSngpvfe2g1" autocomplete="off">
+                        <button type="submit" class="social-login social-login--googleplus" id="Google" name="provider" value="Google" title="Log in using your Google account">
+                            <span class="fa fa-google-plus"></span>
+                            <span href="#"> Đăng nhập bằng Google</span>
+                        </button>
+                        <button type="submit" class="social-login social-login--facebook" id="Facebook" name="provider" value="Facebook" title="Log in using your Facebook account">
+                            <span class="fa fa-facebook"></span>
+                            <span href="#"> Đăng nhập bằng Facebook</span>
+                        </button>
+                    </form>
+                    <p class="note text-center">
+                        <a href="#" class="a-link">Hoặc đăng nhập bằng Email</a>
+                    </p>
+                    <p class="text-muted">Để sử dụng Kidy bạn phải bật cookies. Nếu bạn đăng ký bằng Facebook hoặc Google chúng tôi sẽ tự động lấy thông tin của bạn trong profile đã đăng ký với Facebook hoặc Google và chúng tôi sẽ không post bài trên Facebook hay Google nếu chưa có sự đồng ý của bạn. Để biết thêm thông tin chi tiết bạn có thể truy cập vào FAQ.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- site footer  -->
+    <footer class="site-footer">
+        <div class="site-footer__info">
+            <div class="container">
+                <div class="row">
+                    <div class="site-footer__col col-xs-12 col-sm-4">
+                        <h3 class="site-footer__title"><span>Bài hay</span></h3>
+                        <article class="site-footer__story">
+                            <h2 class="site-footer__story-title"><a href="#" class="site-footer__story-link">Exploring the food in the heart of the London</a></h2>
+                            <p class="site-footer__story-author">by Felecsia Wilson
+                                <time>25 Aug, 2016</time>
+                            </p>
+                        </article>
+                        <article class="site-footer__story">
+                            <h2 class="site-footer__story-title"><a href="#" class="site-footer__story-link">The history and architecture of England</a></h2>
+                            <p class="site-footer__story-author">by Felecia Wilson
+                                <time>25 Aug, 2016</time>
+                            </p>
+                        </article>
+                        <article class="site-footer__story">
+                            <h2 class="site-footer__story-title"><a href="#" class="site-footer__story-link">Exploring the food in the heart of the London</a></h2>
+                            <p class="site-footer__story-author">by Felecia Wilson
+                                <time>25 Aug, 2016</time>
+                            </p>
+                        </article>
+                    </div>
+                    <div class="site-footer__col col-xs-12 col-sm-4">
+                        <h3 class="site-footer__title"><span>Về Kidy</span></h3>
+                        <p class="site-footer__text">London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city.</p>
+                    </div>
+                    <div class="site-footer__col col-xs-12 col-sm-4">
+                        <h3 class="site-footer__title"><span>Newsletter</span></h3>
+                        <p class="site-footer__text">Get updates about new tours, travel tips, photo guides and more !</p>
+                        <input type="text" class="form-control site-footer__input" placeholder="Name">
+                        <input type="email" class="form-control site-footer__input" placeholder="E-mail">
+                        <button class="btn site-footer__btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer__copyright">
+            <p class="text-center">© Copyright 2016 by Kidy.vn</p>
+        </div>
+    </footer>
+    <!-- JS Global Compulsory -->
+    <script src=" ../Jscripts/custom.js "></script>
+    <!-- Js Dev plugin -->
+    <!--[if lt IE 9]>
+        <script src="Jscripts/vendor/respond.js "></script>
+        <script src="Jscripts/vendor/html5shiv.js "></script>
+        <script src="Jscripts/vendor/placeholder-IE-fixes.js "></script>
+    <![endif]-->
+</body>
+
+</html>
