@@ -1,0 +1,264 @@
+.trainer {
+    &__search {
+        margin-bottom: 50px;
+    }
+    &__quote {
+        margin-bottom: 20px;
+        text-align: center;
+        position: relative;
+        padding: 30px 50px;
+        &::before,
+        &::after {
+            display: block;
+            position: absolute;
+            font-family: 'fontawesome';
+            font-size: 40px;
+            line-height: 1em;
+            color: #d7d7d7;
+        }
+        &::before {
+            top: 0;
+            left: 0;
+            content: '';
+        }
+        &::after {
+            right: 0;
+            bottom: 0;
+            content: '';
+        }
+    }
+    &__search-box {
+        margin: 0 50px 20px;
+        padding: 20px 20px 40px;
+        background: white;
+        border-radius: 8px;
+        -webkikt-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.26);
+        box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.26);
+        position: relative;
+        @include breakpoint(xs) {
+            margin-left: 0;
+            margin-right: 0;
+        }
+        .box-title {
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+        .form-group,
+        .form-group-lg {
+            margin-bottom: 10px;
+        }
+        .btn {
+            font-size: 18px;
+            min-width: 140px;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translate( -50%, 50%);
+        }
+        .btn-primary {
+            -webkit-box-shadow: 0px 0px 10px 3px rgba(34, 124, 246, 0.6);
+            box-shadow: 0px 0px 10px 3px rgba(34, 124, 246, 0.6);
+            ;
+        }
+    }
+    &__card {
+        @include clearfix;
+        margin-bottom: 20px;
+        background: white;
+        position: relative;
+        border: 1px solid #eee;
+        @include transition;
+        &:hover {
+            -webkikt-box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.16);
+            box-shadow: 0px 3px 10px 1px rgba(0, 0, 0, 0.16);
+        }
+        .trainer__related-listing & {
+            padding: 10px 0 0;
+            margin-bottom: 10px;
+            &:hover {
+                -webkikt-box-shadow: none;
+                box-shadow: none;
+            }
+        }
+    }
+    &__avatar {
+        width: 20%;
+        padding: 20px;
+        float: left;
+        position: relative;
+        @include breakpoint(xs) {
+            width: 100%;
+            float: none;
+        }
+    }
+    &__img {
+        width: 60%;
+        margin: 0 auto 8px;
+        img {
+            border-radius: 100%;
+        }
+    }
+    &__level {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 2px 6px;
+        color: white;
+        background: $brand-warning;
+        font-size: 10px;
+        line-height: 1em;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 2px;
+    }
+    &__verify {
+        font-size: 10px;
+        text-align: center;
+        color: white;
+        span {
+            border-radius: 2px;
+            padding: 3px 5px;
+            background: $brand-primary;
+        }
+    }
+    &__info {
+        width: 80%;
+        float: right;
+        padding: 5px 0;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20%;
+            width: 1px;
+            background: #ddd;
+        }
+        @include breakpoint(xs) {
+            width: 100%;
+            float: none;
+            position: relative;
+            &::before {
+                left: initial;
+                top: 0;
+                left: 0;
+                right: 0;
+                width: 100%;
+                height: 1px;
+            }
+        }
+    }
+    &__name,
+    &__short-desc,
+    &__additional {
+        padding: 5px 15px;
+    }
+    &__name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    &__price {
+        font-size: 14px;
+        b {
+            color: $brand-info;
+        }
+    }
+    &__additional {
+        @include clearfix;
+        position: relative;
+        padding-top: 10px;
+        &::before {
+            display: block;
+            background: #ddd;
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            top: 0;
+        }
+        li {
+            float: left;
+            margin-right: 20px;
+            color: #777;
+            font-size: 13px;
+            .fa {
+                margin-right: 3px;
+            }
+            @include breakpoint(xs) {
+                margin-bottom: 5px;
+            }
+        }
+    }
+    &__message {
+        font-weight: bold;
+        font-size: 16px;
+    }
+    &__related-listing {
+        background-color: white;
+        padding: 20px;
+        .box-title {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            color: $brand-primary;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ddd;
+        }
+        .trainer__listing {
+            margin-bottom: 15px;
+        }
+    }
+    &__card--short {
+        border: none;
+        border-top: 1px solid #ddd;
+        &:first-child {
+            border-top: none;
+        }
+        @include breakpoint(xs) {
+            position: relative;
+        }
+        .trainer__avatar,
+        .trainer__info,
+        .trainer__name,
+        .trainer__short-desc {
+            padding: 0;
+        }
+        .trainer__avatar {
+            PADDING-right: 10px;
+        }
+        .trainer__img {
+            width: 100%;
+            margin: 0;
+            @include breakpoint(xs) {
+                margin: 0 auto;
+                width: 60%;
+            }
+        }
+        .trainer__name {
+            margin-bottom: 5px;
+        }
+        .trainer__info {
+            &::before {
+                display: table;
+            }
+            @include breakpoint(xs) {
+                margin-top: 8px;
+                position: static;
+                &::before {
+                    display: none;
+                }
+            }
+        }
+        .trainer__short-desc {
+            color: #777;
+            margin-bottom: 5px;
+        }
+        .trainer__verify {
+            text-align: left;
+        }
+    }
+}
