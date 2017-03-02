@@ -118,6 +118,7 @@
         text-align: center;
         color: white;
         span {
+            display: inline-block;
             border-radius: 2px;
             padding: 3px 5px;
             background: $brand-primary;
@@ -196,6 +197,11 @@
         font-weight: bold;
         font-size: 16px;
     }
+    &__priority {
+        padding: 3px 6px;
+        border-radius: 3px;
+        background: #f6f6f6;
+    }
     &__related-listing {
         background-color: white;
         padding: 20px;
@@ -259,6 +265,108 @@
         }
         .trainer__verify {
             text-align: left;
+        }
+    }
+    &__box {
+        border-radius: 8px;
+        background: white;
+        padding: 10px;
+        margin-bottom: 20px;
+        .box-title {
+            margin-bottom: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $brand-primary;
+            span {
+                display: inline-block;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 5px;
+            }
+        }
+        .box-content {
+            li {
+                @include clearfix;
+                margin-bottom: 20px;
+                padding-bottom: 15px;
+                border-bottom: 1px solid #ddd;
+                @include last-child-y;
+            }
+            .has-no-border li {
+                padding-bottom: 0;
+                margin-bottom: 0;
+                border: none;
+            }
+        }
+        .trainer__avatar {
+            width: 100%;
+        }
+        .trainer__verify {
+            margin-top: -15px;
+        }
+        .trainer__message {
+            font-size: 16px;
+            padding: 10px 0;
+        }
+        .trainer__name,
+        .trainer__short-desc,
+        .trainer__birthday,
+        .trainer__vote {
+            font-size: 12px;
+        }
+        .trainer__birthday {
+            padding: 8px 0;
+            margin-left: -10px;
+            margin-right: -10px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        .trainer__vote {
+            margin-left: -10px;
+            margin-right: -10px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            @include clearfix;
+            .column {
+                width: 50%;
+                float: left;
+                text-align: center;
+                padding: 10px;
+                &:first-child {
+                    border-right: 1px solid #ddd;
+                }
+                p:first-child {
+                    font-size: 14px;
+                }
+            }
+        }
+        .trainer__website {
+            font-size: 12px;
+            color: #777;
+            li {
+                margin-bottom: 5px;
+            }
+            a {
+                color: #777;
+                &:hover {
+                    color: $brand-primary;
+                }
+            }
+            .fa {
+                margin-right: 10px;
+            }
+        }
+        .school {
+            &__thumb {
+                width: 36px;
+                height: 36px;
+            }
+            &__title {
+                font-size: 16px;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
         }
     }
 }

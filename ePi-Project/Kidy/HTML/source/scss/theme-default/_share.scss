@@ -136,6 +136,24 @@ a.a-link {
 }
 
 
+/* progress bar */
+
+.progress {
+    height: 32px;
+    border-radius: 16px;
+    &-bar {
+        line-height: 32px;
+        text-align: left;
+        color: black;
+        padding-left: 15px;
+        .pull-right {
+            font-size: 1.1em;
+            padding-right: 10px;
+        }
+    }
+}
+
+
 /* sorting bar */
 
 @include Block(sorting-bar) {
