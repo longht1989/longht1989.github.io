@@ -273,7 +273,7 @@
         padding: 10px;
         margin-bottom: 20px;
         .box-title {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 14px;
             font-weight: bold;
             text-transform: uppercase;
@@ -298,6 +298,50 @@
                 border: none;
             }
         }
+        .box-tool {
+            float: right;
+            color: $brand-primary;
+            &:hover {
+                color: black;
+            }
+        }
+        .box-content-add {
+            margin-top: 15px;
+        }
+        .text {
+            position: relative;
+            max-height: 100px;
+            overflow: hidden;
+            position: relative;
+            padding-bottom: 40px;
+            @include transition(max-height, 3, linear);
+            &.show {
+                padding-bottom: 0;
+                max-height: 5000px;
+            }
+        }
+        .view-more {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            text-align: center;
+            height: 60px;
+            line-height: 20px;
+            padding-top: 45px;
+            margin-bottom: 0;
+            background-image: linear-gradient(to bottom, transparent, #fff);
+            cursor: pointer;
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+        .trainer__edit-avatar {
+            position: absolute;
+            top: 30px;
+            right: 10px;
+            color: $brand-primary;
+        }
         .trainer__avatar {
             width: 100%;
         }
@@ -308,7 +352,9 @@
             font-size: 16px;
             padding: 10px 0;
         }
-        .trainer__name,
+        .trainer__name {
+            font-size: 16px;
+        }
         .trainer__short-desc,
         .trainer__birthday,
         .trainer__vote {
@@ -346,6 +392,8 @@
             color: #777;
             li {
                 margin-bottom: 5px;
+                padding-bottom: 0;
+                border-bottom: none;
             }
             a {
                 color: #777;
@@ -357,16 +405,108 @@
                 margin-right: 10px;
             }
         }
-        .school {
-            &__thumb {
+        .trainer__skill {
+            height: 32px;
+            line-height: 32px;
+            padding: 0 40px 0px 15px;
+            font-size: 12px;
+            overflow: hidden;
+            border-radius: 16px;
+            background: $brand-danger;
+            margin-bottom: 10px;
+            position: relative;
+            @include breakpoint(xs) {
+                padding-right: 62px;
+            }
+            .name {
+                display: block;
+                cursor: pointer;
+            }
+            .edit-box {
+                background: #f0f0f0;
+                padding-right: 5px;
+                @include breakpoint(xs) {
+                    font-size: 18px;
+                }
+            }
+        }
+        .edit-box {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            .fa {
+                margin-left: 5px;
+                @include breakpoint(xs) {
+                    font-size: 18px;
+                    margin-right: 7px;
+                }
+            }
+        }
+        .school,
+        .kid,
+        .status {
+            &__thumb,
+            &__avatar {
                 width: 36px;
                 height: 36px;
+                margin-bottom: 5px;
+                &.pull-right {
+                    margin-left: 10px;
+                }
+                &.pull-left {
+                    margin-right: 10px;
+                }
             }
-            &__title {
+            &__title,
+            &__name {
                 font-size: 16px;
                 font-weight: bold;
                 margin-bottom: 5px;
+                position: relative;
+                cursor: pointer;
+                .name {
+                    display: block;
+                    padding-right: 40px;
+                }
             }
         }
+        .add-kid {
+            margin-bottom: 15px;
+        }
+    }
+}
+
+
+/* status */
+
+.status {
+    &__user {
+        @include clearfix;
+        margin-bottom: 13px;
+    }
+    &__avatar {
+        float: left;
+        margin-left: 0;
+        margin-right: 10px;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    &__comment {
+        margin-bottom: 10px;
+    }
+    &__desc {
+        font-style: italic;
+        color: #777;
+        font-size: 12px;
+    }
+    &__reply {
+        border: 1px solid #ddd;
+        background: #f5f5f5;
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    &__reply-input {
+        display: none;
     }
 }

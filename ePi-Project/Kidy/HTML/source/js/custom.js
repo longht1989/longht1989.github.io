@@ -90,6 +90,12 @@ $(function() {
         $(this).hide();
     });
 
+    // expand text in trainer info
+    $('.trainer__box .text .view-more').click(function() {
+        $(this).parent('.trainer__box .text').addClass('show');
+        $(this).hide();
+    });
+
     // show suggestion in search-box cover page
     $('.search-box__input-bar').click(function() {
         $(this).siblings('.search-box__suggestion').toggleClass('show');
@@ -137,13 +143,44 @@ $(function() {
     });
 
     //toggle register box ( email or social network)
-    $('#email-register .note .a-link').click(function(){
+    $('#email-register .note .a-link').click(function() {
         $('#email-register').slideUp();
         $('#social-register').delay(500).slideDown();
     });
-     $('#social-register .note .a-link').click(function(){
+    $('#social-register .note .a-link').click(function() {
         $('#social-register').slideUp();
         $('#email-register').delay(500).slideDown();
+    });
+
+    //show edit tool school detail
+    $('.trainer__box .school__title .name').click(function() {
+        $(this).siblings('.edit-box').toggle();
+    }); //show edit tool kid detail
+    $('.trainer__box .kid__name .name').click(function() {
+        $(this).siblings('.edit-box').toggle();
+    });
+    $('.trainer__skill .name').click(function() {
+        $(this).siblings('.edit-box').toggle();
+    });
+
+    // show popup for lesson item 
+    $(".lesson__item .lesson__content").click(function() {
+        $(this).siblings('.lesson__popup').fadeIn('fast');
+    });
+    $(".lesson__popup .btn-default").click(function() {
+        $(this).parents('.lesson__popup').fadeOut('fast');
+    });
+
+    // show full popup
+    $('#demo-fullpopup').click(function() {
+        $('#popup').fadeIn('fast');
+    });
+    $('#popup').click(function() {
+        $(this).fadeOut('fast');
+    });
+    //show input for reply status of trainer
+    $('.status__comment a').click(function() {
+        $(this).parent('.status__comment').siblings('.status__reply-input').slideDown('fast');
     });
 });
 
@@ -197,15 +234,15 @@ $('.l-slider .slider').bxSlider({
 /*  ===
     slider for lesson
     === */
-$('#linkto-kidexam').click(function() {});
-$('#forkid-lesson').bxSlider({
-    minSlides: 1,
-    maxSlides: 5,
-    slideWidth: 143,
-    slideMargin: 20,
-    pager: false,
-    prevText: '',
-    nextText: '',
-    nextSelector: '#forkid-lesson-next',
-    prevSelector: '#forkid-lesson-prev'
-});
+// $('#linkto-kidexam').click(function() {});
+// $('#forkid-lesson').bxSlider({
+//     minSlides: 1,
+//     maxSlides: 5,
+//     slideWidth: 143,
+//     slideMargin: 20,
+//     pager: false,
+//     prevText: '',
+//     nextText: '',
+//     nextSelector: '#forkid-lesson-next',
+//     prevSelector: '#forkid-lesson-prev'
+// });

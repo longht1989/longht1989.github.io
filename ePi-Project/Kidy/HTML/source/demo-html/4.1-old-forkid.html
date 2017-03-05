@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+    <title>Kidy - Cho Con</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../App_Themes/img/favicon.ico">
+    <!-- CSS Implementing Plugins -->
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="../App_Themes/css/kidy.min.css">
+    <!-- JS modernizr -->
+    <script src="../Jscripts/kidy.min.js"></script>
+</head>
+
+<body>
+    <!-- site header normal -->
+    <div class="site-header site-header--detail" data-spy="affix" data-offset-top="95" data-offset-bottom="200">
+        <div class="container">
+            <div class="site-header__top-bar">
+                <nav class="navbar">
+                    <h1 class="logo">
+                        <a href="#"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a>
+                    </h1>
+                    <ul class="site-header__related-links">
+                        <li class="visible-md visible-lg"><a href="">Trang chủ</a></li>
+                        <li class="visible-md visible-lg"><a href="">Cho con</a></li>
+                        <li class="visible-md visible-lg"><a href="">Tìm trường</a></li>
+                        <li class="visible-md visible-lg"><a href="">Dịch vụ</a></li>
+                        <li class="visible-md visible-lg"><a href="">Tài liệu giáo dục sớm</a></li>
+                        <li class="site-header__btn-wrap wrap-search">
+                            <div class="btn btn-default" href="#qs-input">
+                                <span class="fa fa-search"></span>
+                            </div>
+                            <div class="site-header__quick-search" id="quick-search">
+                                <input id="qs-input" type="text" class="" placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)">
+                            </div>
+                        </li>
+                        <li class="site-header__btn-wrap wrap-menu">
+                            <div class="btn btn-info collapsed" role="button" data-toggle="collapse" href="#addition-related-links" aria-expanded="false" aria-controls="addition-related-links">
+                                <span class="fa fa-bars"></span>
+                            </div>
+                            <div class="site-header__related-addition collapse" id="addition-related-links">
+                                <ul>
+                                    <li class="visible-xs visible-sm"><a href="">Trang chủ</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Cho con</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Tìm trường</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Dịch vụ</a></li>
+                                    <li class="visible-xs visible-sm"><a href="">Tài liệu giáo dục sớm</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- site content -->
+    <div class="site-content">
+        <div class="container">
+            <!-- breadcrumb bar -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-8">
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Cho con</a></li>
+                        <li class="active">Nhật ký của mẹ</li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4 text-right">
+                    <button class="btn btn-primary btn-round"><span class="fa fa-pencil-square-o"></span> Đăng ký thông tin con</button>
+                </div>
+            </div>
+            <!-- for kid nab tab -->
+            <div class="forkid__navtab">
+                <ul class="main-nav" role="tablist">
+                    <li class="forkid__navbar-item " role="presentation"><a href="#chart" aria-controls="chart" role="tab" data-toggle="tab">Biểu đồ của con</a></li>
+                    <li class="forkid__navbar-item active" role="presentation"><a id="linkto-kidexam" href="#exam" aria-controls="exam" role="tab" data-toggle="tab">Bài học & Bài test</a></li>
+                    <li class="forkid__navbar-item" role="presentation"><a href="#media" aria-controls="media" role="tab" data-toggle="tab">Media</a></li>
+                </ul>
+                <ul class="toolbar">
+                    <li class="forkid__navbar-item"><a href="#" title=""><span class="fa fa-address-card-o"></span> Cập nhật thông tin</a></li>
+                    <li class="forkid__navbar-item"><a href="#" title=""><span class="fa fa-inbox"></span> Tin nhắn</a></li>
+                </ul>
+            </div>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- CHART FOR KID -->
+                <div role="tabpanel" class="tab-pane " id="chart">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-2">
+                            <!-- kid listing -->
+                            <ul class="forkid__kid-listing" role="tablist">
+                                <li class="kid active" role="presentation">
+                                    <div class="kid__avatar">
+                                        <a href="#kid01" aria-controls="kid01" role="tab" data-toggle="tab">
+                                            <img src="fig-image/1x1.png" class="img-responsive" alt="">
+                                        </a>
+                                    </div>
+                                    <h3 class="kid__name"><a href="#kid01" aria-controls="kid01" role="tab" data-toggle="tab">Trần Lê Bảo Trang</a></h3>
+                                    <p class="kid_age">6 tuổi 5 tháng</p>
+                                    <div class="kid__action">
+                                        <a href="#" class="fa fa-remove"></a>
+                                        <a href="#" class="fa fa-pencil-square-o"></a>
+                                    </div>
+                                </li>
+                                <li class="kid" role="presentation">
+                                    <div class="kid__avatar" href="#kid02" aria-controls="kid02" role="tab" data-toggle="tab">
+                                        <a href="#kid02" aria-controls="kid02" role="tab" data-toggle="tab">
+                                            <img src="fig-image/1x1-1.png" class="img-responsive" alt="">
+                                        </a>
+                                    </div>
+                                    <h3 class="kid__name"><a href="#kid02" aria-controls="kid02" role="tab" data-toggle="tab">Trần Lê Bảo Linh</a></h3>
+                                    <p class="kid_age">6 tuổi 5 tháng</p>
+                                    <div class="kid__action">
+                                        <a href="#" class="fa fa-remove"></a>
+                                        <a href="#" class="fa fa-pencil-square-o"></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-md-10">
+                            <!-- loading box -->
+                            <div class="loading-box is-child">
+                                <div class="loading-box__wrap">
+                                    <p class="text-muted">
+                                        <span class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+                                    </p>
+                                    <br>
+                                    <p>Xin vui lòng chờ trong giây lát, hệ thống đang xử lý...</p>
+                                </div>
+                            </div>
+                            <!-- forkid content -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="kid01">
+                                    <div class="forkid__box">
+                                        <!-- chart & info -->
+                                        <div class="row">
+                                            <!-- .kid info -->
+                                            <div class="col-xs-12 col-md-4 col-md-push-8">
+                                                <div class="kid__info">
+                                                    <h4 class="kid__info__header">Thông tin cho con</h4>
+                                                    <div class="kid__info__content">
+                                                        <ul class="kid__info__listing">
+                                                            <li><span>Họ và tên: </span><b>Phillip Beck</b></li>
+                                                            <li><span>Nickname: </span><b>Vincent</b></li>
+                                                            <li><span>Ngày sinh: </span><b>7/1/2017</b></li>
+                                                            <li><span>Giới tính: </span><b>Nữ</b></li>
+                                                            <li><span>Trường đang học: </span><b><a href="#" class="a-link" title="">Newton</a></b></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .chart -->
+                                            <div class="col-xs-12 col-md-8 col-md-pull-4">
+                                                <div class="kid__chart">
+                                                    <img src="fig-image/chart.png" alt="demo chart" class="img-responsive">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- addition info -->
+                                        <div class="row">
+                                            <!-- .teachers listing -->
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="teacher__listing">
+                                                    <div class="teacher__listing__header">
+                                                        <h3 class="pull-left">Giáo viên cho bé</h3>
+                                                        <a href="#" class="pull-right a-link">Xem danh sách giáo viên</a>
+                                                    </div>
+                                                    <div class="teacher__listing__content">
+                                                        <ul>
+                                                            <li class="teacher">
+                                                                <div class="teacher__avatar" href="#chart" aria-controls="chart" role="tab" data-toggle="tab">
+                                                                    <a href="#" class="">
+                                                                        <img src="fig-image/1x1.png" class="img-responsive" alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <h3 href="#" class="teacher__name"><a href="#">Trần Lê Bảo Trang</a></h3>
+                                                                <p class="teacher__desc">10 năm kinh nghiệm với chứng chỉ Montessori</p>
+                                                            </li>
+                                                            <li class="teacher">
+                                                                <div class="teacher__avatar" href="#chart" aria-controls="chart" role="tab" data-toggle="tab">
+                                                                    <a href="#" class="">
+                                                                        <img src="fig-image/1x1.png" class="img-responsive" alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <h3 href="#" class="teacher__name"><a href="#">Trần Lê Bảo Trang</a></h3>
+                                                                <p class="teacher__desc">10 năm kinh nghiệm với chứng chỉ Montessori</p>
+                                                            </li>
+                                                            <li class="teacher">
+                                                                <div class="teacher__avatar" href="#chart" aria-controls="chart" role="tab" data-toggle="tab">
+                                                                    <a href="#" class="">
+                                                                        <img src="fig-image/1x1.png" class="img-responsive" alt="">
+                                                                    </a>
+                                                                </div>
+                                                                <h3 href="#" class="teacher__name"><a href="#">Trần Lê Bảo Trang</a></h3>
+                                                                <p class="teacher__desc">10 năm Lorem ipsum dolor sit. kinh nghiệm với chứng chỉ Montessori</p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .tips listing -->
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="tip">
+                                                    <div class="tip__header">
+                                                        <h3>Các tips cho bé</h3>
+                                                    </div>
+                                                    <div class="tip__content">
+                                                        <ul class="tip__listing">
+                                                            <li><a href="#">Lorem ipsum dolor.</a></li>
+                                                            <li><a href="#">Odit, quia, aspernatur.</a></li>
+                                                            <li><a href="#">Aliquid, nemo, vitae.</a></li>
+                                                            <li><a href="#">Vel, cumque, aliquid!</a></li>
+                                                            <li><a href="#">Blanditiis, eaque aliquid.</a></li>
+                                                            <li><a href="#">Repudiandae, totam nemo.</a></li>
+                                                            <li><a href="#">Tempora doloremque, animi.</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="kid02">
+                                    ... kid 02
+                                </div>
+                            </div>
+                            <div class="forkid__box">
+                                <div class="row">
+                                    <!-- mother's diary -->
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="forkid__timeline">
+                                            <h4 class="forkid__timeline__header">Nhật ký của mẹ</h4>
+                                            <div class="forkid__timeline__content">
+                                                <!-- listing status -->
+                                                <ul class="timeline__listing">
+                                                    <li class="timeline__event">
+                                                        <div class="event__header-wrap">
+                                                            <div class="avatar">
+                                                                <a href="#"><img src="fig-image/1x1.png" class="img-responsive"></a>
+                                                            </div>
+                                                            <div class="event__header">
+                                                                <h5>Trần Lê Bảo Trang</h5>
+                                                                <time>2 ngày trước</time>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event__content">I am upset. At this moment, as I sit here typing this up, I am truly upset. Something happened a little while ago. I got into an argument and I am now reaping the results of that. It’s a true bounty of results, I can tell you. Let’s see…anger, frustration, shame, disgust…then more anger and guilt at the fact that I have allowed myself to get angry and frustrated. All of this is confusing. It’s a form of madness (no offence intended). I think what’s worse is that it is quite normal for most people. So, as I sit here and stew, let us see if we can work this all out. Where does all this negative emotion come from? Well, obviously from the thing that was said to me. The person I had the “conversation” with spoke words. These words were taken by my mind, analysed, and a proper “reaction” was produced based on the result of the analysis. No matter how deep we go into human psychology and the workings of the mind; that really is the simple description of what happened. That’s all we need to concern ourselves with. We can keep it simple, and then try a simple approach to addressing the problem. The problem is whatever the person said. Words…Just words. How can words have such a powerful effect? The answer is that they don’t. What has the effect is the power we give those words…our rating of them…our belief in them. So if someone calls you an idiot, you might be offended. Why? I mean you know you are not an idiot. Most likely the person knows it too. Why the negative response? Why can’t you ignore it? Well, because you are wired that way. You can’t stand to see that anyone would say you were an idiot. It is not enough that you know you’re not an idiot. You need this person to acknowledge that as well. And what’s wrong with that? I think it’s natural for us to want other people recognize the message we are trying to convey by our words or actions (whether or not the message is true or false). Sadly, no matter what we do, there are people who will always interpret things how they choose. Basically, no matter how much you show James how much of a genius you are, James (Sorry if your name is James) will still call you an idiot, and probably feel he is better than you. It’s absurd! James isn’t better than you are. No one is. You have to remember that. Know thyself. Derive your strength from that. What do you do about those who refuse to accept your side of the story? Leave them. Ignore them. Walk away after putting your point across. But don’t get drawn in. I am not going to get overly religious on you, but I want to make a point. Jesus Christ said “Turn the other cheek”. I think people misinterpret that as a sign of passivity; of a desire to avoid confrontation; even of weakness. I disagree. I think it is an act of someone who is so powerfully aware of their own inner strength and value that they there is nothing you could do to take that away. Abuse me, torture me and kill me, yes. But you will never change the truth. People who can deal with the hurtful utterances of others go very far because they don’t allow these words get to them. Put in another way, sticks and stones may break my bones, but words will never hurt me. There’s a bit missing there. That bit is “…unless I allow them”. It’s in your power to choose your reaction to what others say or do. Believe in yourself, first and foremost. You will be able to withstand negativity from others without being unnecessarily hurt by it. Just remembering this principle of faith in oneself is enough to make my anger and frustration start to dissipate. I can feel it evaporating slowly as I finish this article. Happy days! I shall leave you with a quote made by Marcus Aurelius almost 2000 years ago…”If you are distressed by anything external, the pain is not due to the thing itself but to your own estimate of it; and this you have the power to revoke at any moment”.<a class="text-muted" title="">Xem thêm</a></div>
+                                                        <div class="event__meta">
+                                                            <a href="#">10 bình luận</a>
+                                                        </div>
+                                                    </li>
+                                                    <li class="timeline__event">
+                                                        <div class="event__header-wrap">
+                                                            <div class="avatar">
+                                                                <a href="#"><img src="fig-image/1x1.png" class="img-responsive"></a>
+                                                            </div>
+                                                            <div class="event__header">
+                                                                <h5>Trần Lê Bảo Trang</h5>
+                                                                <time>2 ngày trước</time>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event__content">I am upset. At this moment, as I sit here typing this up, I am truly upset. Something happened a little while ago. I got into an argument and I am now reaping the results of that. It’s a true bounty of results, I can tell you.</div>
+                                                        <div class="event__meta">
+                                                            <a href="#">10 bình luận</a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- community -->
+                                    <div class="col-xs-12 col-md-6">
+                                        <div class="forkid__timeline">
+                                            <h4 class="forkid__timeline__header">Cộng đồng</h4>
+                                            <div class="forkid__timeline__content">
+                                                <ul class="timeline__listing">
+                                                    <li class="timeline__event"><a href="#" class="a-link">Trần Lê Bảo Trang</a> đã bình luận trong <a href="#" class="a-link">Nhật ký của mẹ</a> -
+                                                        <time class="text-muted">2 days</time>
+                                                    </li>
+                                                    <li class="timeline__event"><a href="#" class="a-link">Trần Lê Bảo Trang</a> đã bình luận trong <a href="#" class="a-link">Nhật ký của mẹ</a> -
+                                                        <time class="text-muted">2 days</time>
+                                                    </li>
+                                                    <li class="timeline__event"><a href="#" class="a-link">Trần Lê Bảo Trang</a> đã bình luận trong <a href="#" class="a-link">Nhật ký của mẹ</a> -
+                                                        <time class="text-muted">2 days</time>
+                                                    </li>
+                                                    <li class="timeline__event"><a href="#" class="a-link">Trần Lê Bảo Trang</a> đã bình luận trong <a href="#" class="a-link">Nhật ký của mẹ</a> -
+                                                        <time class="text-muted">2 days</time>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- EXAM FOR KID -->
+                <div role="tabpanel" class="tab-pane active" id="exam">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-2">
+                            <!-- kid listing -->
+                            <ul class="forkid__kid-listing" role="tablist">
+                                <li class="kid active" role="presentation">
+                                    <div class="kid__avatar">
+                                        <a href="#kidExam01" aria-controls="kidExam01" role="tab" data-toggle="tab">
+                                            <img src="fig-image/1x1.png" class="img-responsive" alt="">
+                                        </a>
+                                    </div>
+                                    <h3 class="kid__name"><a href="#kidExam01" aria-controls="kidExam01" role="tab" data-toggle="tab">Trần Lê Bảo Trang</a></h3>
+                                    <p class="kid_age">6 tuổi 5 tháng</p>
+                                    <div class="kid__action">
+                                        <a href="#" class="fa fa-remove"></a>
+                                        <a href="#" class="fa fa-pencil-square-o"></a>
+                                    </div>
+                                </li>
+                                <li class="kid" role="presentation">
+                                    <div class="kid__avatar" href="#kidExam02" aria-controls="kidExam02" role="tab" data-toggle="tab">
+                                        <a href="#kidExam02" aria-controls="kidExam02" role="tab" data-toggle="tab">
+                                            <img src="fig-image/1x1-1.png" class="img-responsive" alt="">
+                                        </a>
+                                    </div>
+                                    <h3 class="kid__name"><a href="#kidExam02" aria-controls="kidExam02" role="tab" data-toggle="tab">Trần Lê Bảo Linh</a></h3>
+                                    <p class="kid_age">6 tuổi 5 tháng</p>
+                                    <div class="kid__action">
+                                        <a href="#" class="fa fa-remove"></a>
+                                        <a href="#" class="fa fa-pencil-square-o"></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-md-10">
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="kidExam01">
+                                    <div class="forkid__box">
+                                        <!-- exam detail -->
+                                        <h4 class="forkid__box__header">đặc điểm phát triển của trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</h4>
+                                        <div class="forkid__box__content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus laboriosam harum omnis temporibus quisquam, iure, ullam deleniti, sunt quos labore beatae dicta sequi fugiat ea. Ipsa, quo incidunt. Rem, error.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus dolorem voluptate, quam quo aliquid officiis? Voluptate iure vitae laudantium voluptatibus quisquam sint labore fugiat dolores porro eveniet. Rem nemo, quia.</p>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                        </div>
+                                        <!-- exam listing -->
+                                        <h4 class="forkid__box__header text-center">
+                                            Danh sách Bài học / Bài test <a href="#" class="pull-right a-link">Xem tất cả</a>
+                                        </h4>
+                                        <div class="tab-content forkid__box__content">
+                                            <div id="kidlesson" class="lesson__slider">
+                                                <ul class="lesson__listing" id="forkid-lesson">
+                                                    <li class="lesson__item is-active">
+                                                        <p>Từ <b>19</b> tháng <b>0</b> ngày</p>
+                                                        <p>đến</p>
+                                                        <p><b>20</b> tháng <b>30</b> ngày</p>
+                                                    </li>
+                                                    <li class="lesson__item is-done">
+                                                        <p>Từ <b>20</b> tháng <b>0</b> ngày</p>
+                                                        <p>đến</p>
+                                                        <p><b>20</b> tháng <b>30</b> ngày</p>
+                                                        <div class="lesson__score">
+                                                            <p>
+                                                                <b>167</b>
+                                                                <br>điểm
+                                                            </p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="lesson__item">
+                                                        <p>Từ <b>21</b> tháng <b>0</b> ngày</p>
+                                                        <p>đến</p>
+                                                        <p><b>20</b> tháng <b>30</b> ngày</p>
+                                                    </li>
+                                                    <li class="lesson__item">
+                                                        <p>Từ <b>22</b> tháng <b>0</b> ngày</p>
+                                                        <p>đến</p>
+                                                        <p><b>20</b> tháng <b>30</b> ngày</p>
+                                                    </li>
+                                                    <li class="lesson__item">
+                                                        <p>Từ <b>23</b> tháng <b>0</b> ngày</p>
+                                                        <p>đến</p>
+                                                        <p><b>20</b> tháng <b>30</b> ngày</p>
+                                                    </li>
+                                                    <li class="lesson__item">
+                                                        <p>Từ <b>24</b> tháng <b>0</b> ngày</p>
+                                                        <p>đến</p>
+                                                        <p><b>20</b> tháng <b>30</b> ngày</p>
+                                                    </li>
+                                                    <li class="lesson__item">
+                                                        <p>Từ <b>25</b> tháng <b>0</b> ngày</p>
+                                                        <p>đến</p>
+                                                        <p><b>20</b> tháng <b>30</b> ngày</p>
+                                                    </li>
+                                                    <li class="lesson__item">
+                                                        <p>Từ <b>26</b> tháng <b>0</b> ngày</p>
+                                                        <p>đến</p>
+                                                        <p><b>20</b> tháng <b>30</b> ngày</p>
+                                                    </li>
+                                                </ul>
+                                                <div class="slider-control lesson__listing__control">
+                                                    <span class="fa fa-angle-left" id="forkid-lesson-prev"></span>
+                                                    <span class="fa fa-angle-right" id="forkid-lesson-next"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- exam question -->
+                                        <h4 class="forkid__box__header">bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</h4>
+                                        <div class="forkid__box__content">
+                                            <!-- destkop table -->
+                                            <div class="lesson__table__nav">
+                                                <ul role="tablist">
+                                                    <li class="active" role="presentation">
+                                                        <a href="#language" aria-controls="language" role="tab" data-toggle="tab">Ngôn ngữ và giao tiếp</a>
+                                                    </li>
+                                                    <li class="" role="presentation">
+                                                        <a href="#BasicAction" aria-controls="BasicAction" role="tab" data-toggle="tab">Vận động thô</a>
+                                                    </li>
+                                                    <li class="" role="presentation">
+                                                        <a href="#AdvanceAction" aria-controls="AdvanceAction" role="tab" data-toggle="tab">Vận động tinh</a>
+                                                    </li>
+                                                    <li class="" role="presentation">
+                                                        <a href="#Awareness" aria-controls="Awareness" role="tab" data-toggle="tab">Nhận thức</a>
+                                                    </li>
+                                                    <li class="" role="presentation">
+                                                        <a href="#SocialeMotional" aria-controls="SocialeMotional" role="tab" data-toggle="tab">Tình cảm xã hội</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <table class="table tab-content lesson__table">
+                                                <tbody class="tab-pane active" role="tabpanel" id="language">
+                                                    <tr>
+                                                        <th rowspan="2">STT</th>
+                                                        <th rowspan="2">Câu hỏi</th>
+                                                        <th colspan="3">Câu trả lời <span class="text-warning">(15 điểm)</span></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="score score--high">Có (10đ)</th>
+                                                        <th class="score score--medium">Thi thoảng (5đ)</th>
+                                                        <th class="score score--low">Không (0đ)</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>Khi bạn chỉ tay vào một bức tranh quả bóng (hoặc con mèo, cái mũ...) và hỏi bé "Cái gì đây?", bé có trả nói được tên của ít nhất một thứ không?</td>
+                                                        <td class="score score--high">
+                                                            <div class="radio-box">
+                                                                <input id="check1" type="radio" name="check" value="check1" checked>
+                                                                <label for="check1"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="score score--medium">
+                                                            <div class="radio-box">
+                                                                <input id="check2" type="radio" name="check" value="check2">
+                                                                <label for="check2"></label>
+                                                            </div>
+                                                        </td>
+                                                        <td class="score score--low">
+                                                            <div class="radio-box">
+                                                                <input id="check3" type="radio" name="check" value="check3">
+                                                                <label for="check3"></label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody class="tab-pane" role="tabpanel" id="BasicAction">
+                                                    <tr>
+                                                        <td>BasicAction</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody class="tab-pane" role="tabpanel" id="AdvanceAction">
+                                                    <tr>
+                                                        <td>AdvanceAction</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody class="tab-pane" role="tabpanel" id="Awareness">
+                                                    <tr>
+                                                        <td>Awareness</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tbody class="tab-pane" role="tabpanel" id="SocialeMotional">
+                                                    <tr>
+                                                        <td>SocialeMotional</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <div class="lesson__table__total">
+                                                <h4>Tổng điểm</h4>
+                                                <div class="lesson__table__score">135</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="forkid__timeline">
+                                                    <h4 class="forkid__timeline__header">bài tập gợi ý</h4>
+                                                    <div class="forkid__timeline__content">
+                                                        <ul class="timeline__listing">
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-md-6">
+                                                <div class="forkid__timeline">
+                                                    <h4 class="forkid__timeline__header">ĐẶc điểm tâm lý của trẻ</h4>
+                                                    <div class="forkid__timeline__content">
+                                                        <ul class="timeline__listing">
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                            <li class="timeline__event"><a href="#">Bài test dành cho trẻ từ 21 tháng 0 ngày đến 22 tháng 30 ngày</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="kidExam02">
+                                    ... kid exam 02
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Media gallery -->
+                <div role="tabpanel" class="tab-pane" id="media">
+                    <ul class="gallery">
+                        <li class="gallery__item">
+                            <img class="img-responsive" src="fig-image/portrait.jpg" alt="">
+                        </li>
+                        <li class="gallery__item landscape">
+                            <img class="img-responsive" src="fig-image/16x9-1.png" alt="">
+                        </li>
+                        <li class="gallery__item">
+                            <img class="img-responsive" src="fig-image/portrait.jpg" alt="">
+                        </li>
+                        <li class="gallery__item landscape has-video">
+                            <img class="img-responsive" src="fig-image/16x9-1.png" alt="">
+                        </li>
+                        <li class="gallery__item">
+                            <img class="img-responsive" src="fig-image/portrait.jpg" alt="">
+                        </li>
+                        <li class="gallery__item">
+                            <img class="img-responsive" src="fig-image/portrait.jpg" alt="">
+                        </li>
+                        <li class="gallery__item">
+                            <img class="img-responsive" src="fig-image/portrait.jpg" alt="">
+                        </li>
+                        <li class="gallery__item landscape">
+                            <img class="img-responsive" src="fig-image/16x9-1.png" alt="">
+                        </li>
+                        <li class="gallery__item">
+                            <img class="img-responsive" src="fig-image/portrait.jpg" alt="">
+                        </li>
+                        <li class="gallery__item landscape">
+                            <img class="img-responsive" src="fig-image/16x9-1.png" alt="">
+                        </li>
+                        <li class="gallery__item">
+                            <img class="img-responsive" src="fig-image/portrait.jpg" alt="">
+                        </li>
+                        <li class="gallery__item">
+                            <img class="img-responsive" src="fig-image/portrait.jpg" alt="">
+                        </li>
+                    </ul>
+                    <p class="text-center"><a href="#" class="a-link">Xem tiếp</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- site footer  -->
+    <footer class="site-footer">
+        <div class="site-footer__info">
+            <div class="container">
+                <div class="row">
+                    <div class="site-footer__col col-xs-12 col-sm-4">
+                        <h3 class="site-footer__title"><span>Bài hay</span></h3>
+                        <article class="site-footer__story">
+                            <h2 class="site-footer__story-title"><a href="#" class="site-footer__story-link">Exploring the food in the heart of the London</a></h2>
+                            <p class="site-footer__story-author">by Felecsia Wilson
+                                <time>25 Aug, 2016</time>
+                            </p>
+                        </article>
+                        <article class="site-footer__story">
+                            <h2 class="site-footer__story-title"><a href="#" class="site-footer__story-link">The history and architecture of England</a></h2>
+                            <p class="site-footer__story-author">by Felecia Wilson
+                                <time>25 Aug, 2016</time>
+                            </p>
+                        </article>
+                        <article class="site-footer__story">
+                            <h2 class="site-footer__story-title"><a href="#" class="site-footer__story-link">Exploring the food in the heart of the London</a></h2>
+                            <p class="site-footer__story-author">by Felecia Wilson
+                                <time>25 Aug, 2016</time>
+                            </p>
+                        </article>
+                    </div>
+                    <div class="site-footer__col col-xs-12 col-sm-4">
+                        <h3 class="site-footer__title"><span>Về Kidy</span></h3>
+                        <p class="site-footer__text">London, the capital of England and the United Kingdom, is a 21st-century city with history stretching back to Roman times. At its centre stand the imposing Houses of Parliament, the iconic ‘Big Ben’ clock tower and Westminster Abbey, site of British monarch coronations. Across the Thames River, the London Eye observation wheel provides panoramic views of the South Bank cultural complex, and the entire city.</p>
+                    </div>
+                    <div class="site-footer__col col-xs-12 col-sm-4">
+                        <h3 class="site-footer__title"><span>Newsletter</span></h3>
+                        <p class="site-footer__text">Get updates about new tours, travel tips, photo guides and more !</p>
+                        <input type="text" class="form-control site-footer__input" placeholder="Name">
+                        <input type="email" class="form-control site-footer__input" placeholder="E-mail">
+                        <button class="btn site-footer__btn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer__copyright">
+            <p class="text-center">© Copyright 2016 by Kidy.vn</p>
+        </div>
+    </footer>
+    <!-- JS Global Compulsory -->
+    <script src=" ../Jscripts/custom.js "></script>
+    <!-- Js Dev plugin -->
+    <!--[if lt IE 9]>
+        <script src="Jscripts/vendor/respond.js "></script>
+        <script src="Jscripts/vendor/html5shiv.js "></script>
+        <script src="Jscripts/vendor/placeholder-IE-fixes.js "></script>
+    <![endif]-->
+</body>
+
+</html>
