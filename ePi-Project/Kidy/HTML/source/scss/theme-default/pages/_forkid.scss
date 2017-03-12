@@ -68,6 +68,38 @@
             float: left;
         }
     }
+    &__subnav {
+        @include clearfix;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $brand-info;
+    }
+    &__subnav-item {
+        float: left;
+        @include transition();
+        a {
+            display: block;
+            @include font-size(14, 30);
+            padding: 0 17px;
+            @include transition();
+            border-bottom: 1px solid transparent;
+            font-weight: bold;
+        }
+        &:first-child {
+            a {
+                @include breakpoint(sm) {
+                    padding-left: 0;
+                }
+            }
+        }
+        &:hover,
+        &.active {
+            a {
+                color: $brand-info;
+                border-bottom-color: $brand-info;
+            }
+        }
+        @include breakpoint(sm) {}
+    }
     &__kid-listing {
         @include clearfix();
         li {

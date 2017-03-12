@@ -225,7 +225,7 @@
             position: absolute;
             left: 5px;
             bottom: 5px;
-            @include breakpoint(xs){
+            @include breakpoint(xs) {
                 display: none;
             }
             li {
@@ -501,6 +501,11 @@
             a {
                 // color: $brand-primary;
             }
+        }
+    }
+    .forkid__album & {
+        @include breakpoint(md) {
+            margin-bottom: 20px;
         }
     }
 }

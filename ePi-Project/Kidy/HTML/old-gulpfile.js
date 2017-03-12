@@ -15,13 +15,13 @@ var sourcemaps = require('gulp-sourcemaps');
 
 //define paths of folder, project name
 var paths = {
-    project_name: "kidy",
     js_dev: './source/js',
     js: './build/Jscripts',
     scss_dev: './source/scss',
     css: './build/App_Themes/css',
     html_dev: "./source/demo-html",
-    html: "./build/Demo-html",
+    html: "./build/demo-html",
+    project_name: "kidy",
     plugins_dev: "./source/plugins",
     plugins: "./build/plugins",
     root_folder: "./build",
@@ -35,13 +35,13 @@ var paths = {
 gulp.task('scripts', function() {
     return gulp.src([
             // import plugin
-            paths.js_dev + '/vendor/modernizr.js',
-            paths.js_dev + '/vendor/jquery.min.js',
-            paths.js_dev + '/vendor/jquery-migrate.js',
-            paths.js_dev + '/vendor/bootstrap.min.js',
-            paths.js_dev + '/vendor/jquery.bxslider.min.js',
-            paths.js_dev + '/vendor/jquery.matchHeight-min.js',
-            paths.js_dev + '/vendor/jquery-ui.min.js' // jquery ui for sliderbar
+                paths.js_dev + '/vendor/modernizr.js',
+                paths.js_dev + '/vendor/jquery.min.js',
+                paths.js_dev + '/vendor/jquery-migrate.js',
+                paths.js_dev + '/vendor/bootstrap.min.js',
+                paths.js_dev + '/vendor/jquery.bxslider.min.js',
+                paths.js_dev + '/vendor/jquery.matchHeight-min.js',
+                paths.js_dev + '/vendor/jquery-ui.min.js' // jquery ui for sliderbar
             // end import plugin
         ])
         .pipe(concat(paths.project_name + '.js'))
@@ -64,49 +64,31 @@ gulp.task('styles', function() {
             }
         }))
         .pipe(sourcemaps.init())
-        .pipe(sass())
-        // .pipe(gulp.dest(paths.css)) // make normal css for debug
-        .pipe(cssmin())
-        .pipe(rename({
-            basename: paths.project_name,
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest(paths.css))
+            .pipe(sass())
+            // .pipe(gulp.dest(paths.css)) // make normal css for debug
+            .pipe(cssmin())
+            .pipe(rename({
+                basename: paths.project_name,
+                suffix: '.min'
+            }))
+            .pipe(gulp.dest(paths.css))
         .pipe(sourcemaps.write('../maps'))
         .pipe(gulp.dest(paths.css))
         .pipe(browserSync.stream());
 });
 
-// copy only custom.js file
-gulp.task('copyJs-UI', function() {
-    gulp.src(paths.js_dev + '/custom.js')
-        .pipe(gulp.dest(paths.js)).pipe(browserSync.stream({ once: true }));
 
-});
-
-gulp.task('copyJs', function() {
+//copy folder plugin + fonts
+gulp.task('copy', function() {
     gulp.src(paths.js_dev + '/**/*')
-        .pipe(gulp.dest(paths.js)).pipe(browserSync.stream({ once: true }));
-
-});
-
-gulp.task('copyHtml', function() {
+        .pipe(gulp.dest(paths.js));
     gulp.src(paths.html_dev + '/**/*')
-        .pipe(gulp.dest(paths.html)).pipe(browserSync.stream({ once: true }));
-});
-
-gulp.task('copyFonts', function() {
+        .pipe(gulp.dest(paths.html + '/'));
     gulp.src(paths.fonts_dev + '/**/*')
         .pipe(gulp.dest(paths.fonts));
-});
-
-gulp.task('copyImg', function() {
     gulp.src(paths.img_dev + '/**/*')
-        .pipe(gulp.dest(paths.img)).pipe(browserSync.stream({ once: true }));
+        .pipe(gulp.dest(paths.img));
 });
-
-// copy all
-gulp.task('copy', ['copyJs-UI', 'copyHtml', 'copyFonts', 'copyImg']);
 
 //delete folder root
 gulp.task('delete', function() {
@@ -114,20 +96,22 @@ gulp.task('delete', function() {
         .pipe(clean());
 });
 
-// > taskrunner
-gulp.task('default', ['copy', 'scripts', 'styles'],
-    function() {
-        browserSync.init({
-            server: {
-                baseDir: "./"
-            },
-            open: false,
-            ghostMode: {
-                scroll: true
-            }
-        });
-        gulp.watch(paths.js_dev + '/**/*.js', ['copyJs-UI', 'scripts']);
-        gulp.watch(paths.scss_dev + '/**/*.scss', ['styles']);
-        gulp.watch(paths.html_dev + '/**/*.html', ['copyHtml']);
-    }
-);
+// Static server
+gulp.task('serve', ['scripts', 'styles'], function() {
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        },
+        open: false,
+        ghostMode: {
+            scroll: true
+        }
+    });
+    gulp.watch('./source/js/**/*.js', ['copy']);
+    gulp.watch('./source/scss/**/*.scss', ['styles']);
+    gulp.watch(paths.html_dev + '/**/*.html', ['copy']);
+    gulp.watch(paths.html + '/**/*.html').on('change', browserSync.reload);
+});
+
+
+gulp.task('default', ['copy', 'serve']);
