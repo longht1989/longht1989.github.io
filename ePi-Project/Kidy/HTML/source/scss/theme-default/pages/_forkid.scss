@@ -592,3 +592,50 @@
         }
     }
 }
+
+
+/* album */
+
+.album {
+    &__info {
+        background: white;
+        border-radius: 8px;
+        padding: 15px 10px;
+        margin-bottom: 20px;
+        h4 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+    }
+    &__image {
+        position: relative;
+        margin-bottom: 20px;
+        @include breakpoint(sm) {
+            float: left;
+            width: 48%;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        @include breakpoint(md) {
+            width: 23%;
+        }
+        .fa-close {
+            cursor: pointer;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            padding: 5px;
+            font-size: 16px;
+            color: white;
+            text-shadow: 0px 1px 1px rgba(0, 0, 0, .5);
+        }
+    }
+    &__upload-img {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}

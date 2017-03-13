@@ -101,11 +101,11 @@
                 <!-- Media gallery -->
                 <div role="tabpanel" class="tab-pane active" id="media">
                     <ul class="forkid__subnav" role="tablist">
-                        <li role="presentation" class="forkid__subnav-item active"><a href="#full-image" aria-controls="full-image" role="tab" data-toggle="tab">Ảnh</a></li>
-                        <li role="presentation" class="forkid__subnav-item"><a href="#album-listing" aria-controls="album-listing" role="tab" data-toggle="tab">Album</a></li>
+                        <li role="presentation" class="forkid__subnav-item"><a href="#full-image" aria-controls="full-image" role="tab" data-toggle="tab">Ảnh</a></li>
+                        <li role="presentation" class="forkid__subnav-item active"><a href="#album-listing" aria-controls="album-listing" role="tab" data-toggle="tab">Album</a></li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active" role="tabpanel" id="full-image">
+                        <div class="tab-pane" role="tabpanel" id="full-image">
                             <ul class="gallery">
                                 <li class="gallery__item">
                                     <img class="img-responsive" src="fig-image/portrait.jpg" alt="">
@@ -146,7 +146,8 @@
                             </ul>
                             <p class="text-center"><a href="#" class="a-link">Xem tiếp</a></p>
                         </div>
-                        <div class="tab-pane" id="album-listing" role="tabpanel">
+                        <div class="tab-pane active" id="album-listing" role="tabpanel">
+                            <!-- album-listing -->
                             <div class="row forkid__album">
                                 <div class="col-xs-12 col-sm-6 col-md-3">
                                     <!-- item with fixed ratio16x9 -->
@@ -157,9 +158,12 @@
                                             </a>
                                         </div>
                                         <div class="item__info">
-                                            <div class="item__title"><a href="#" class="item__link">Estelle  Newton Newton Newton Newton</a></div>
+                                            <div class="item__title"><a href="#" class="item__link">Estelle   Newton Newton</a></div>
                                             <div class="item__summary">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                            </div>
+                                            <div class="item__viewmore">
+                                                <a href="#" class="btn btn-info btn-round">Chỉnh sửa album</a>
                                             </div>
                                         </div>
                                     </div>
@@ -177,6 +181,9 @@
                                             <div class="item__summary">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere deserunt perspiciatis omnis voluptatibus nisi distinctio.</p>
                                             </div>
+                                            <div class="item__viewmore">
+                                                <a href="#" class="btn btn-info btn-round">Chỉnh sửa album</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -193,6 +200,9 @@
                                             <div class="item__summary">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus sit voluptatum repellat iste dolore labore.</p>
                                             </div>
+                                            <div class="item__viewmore">
+                                                <a href="#" class="btn btn-info btn-round">Chỉnh sửa album</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -208,6 +218,9 @@
                                             <div class="item__title"><a href="#" class="item__link">Estelle  Newton Newton Newton Newton</a></div>
                                             <div class="item__summary">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam officiis unde, deserunt sapiente nesciunt optio?</p>
+                                            </div>
+                                            <div class="item__viewmore">
+                                                <a href="#" class="btn btn-info btn-round">Chỉnh sửa album</a>
                                             </div>
                                         </div>
                                     </div>
@@ -225,6 +238,9 @@
                                             <div class="item__summary">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nemo, repudiandae, laborum hic aliquid dolores.</p>
                                             </div>
+                                            <div class="item__viewmore">
+                                                <a href="#" class="btn btn-info btn-round">Chỉnh sửa album</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -240,6 +256,9 @@
                                             <div class="item__title"><a href="#" class="item__link">Estelle  Newton Newton Newton Newton</a></div>
                                             <div class="item__summary">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere deserunt perspiciatis omnis voluptatibus nisi distinctio.</p>
+                                            </div>
+                                            <div class="item__viewmore">
+                                                <a href="#" class="btn btn-info btn-round">Chỉnh sửa album</a>
                                             </div>
                                         </div>
                                     </div>
@@ -257,6 +276,9 @@
                                             <div class="item__summary">
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus sit voluptatum repellat iste dolore labore.</p>
                                             </div>
+                                            <div class="item__viewmore">
+                                                <a href="#" class="btn btn-info btn-round">Chỉnh sửa album</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -271,7 +293,96 @@
                                         <div class="item__info">
                                             <div class="item__title"><a href="#" class="item__link">Estelle  Newton Newton Newton Newton</a></div>
                                             <div class="item__summary">
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam officiis unde, deserunt sapiente nesciunt optio?</p>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus sit voluptatum repellat iste dolore labore.</p>
+                                            </div>
+                                            <div class="item__viewmore">
+                                                <a href="#" class="btn btn-info btn-round">Chỉnh sửa album</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="item item--new" data-mh="album">
+                                        <div class="item__info">
+                                            <div class="item__create"><span class="fa fa-plus"></span></div>
+                                            <div class="item__summary">Tạo album mới</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- create album  -->
+                            <div class="row">
+                                <!-- album info -->
+                                <div class="col-xs-12 col-md-3">
+                                    <div class="album__info">
+                                        <div class="form-group">
+                                            <h4 class="text-primary text-uppercase">Tạo album</h4>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="albumname">Tên album</label>
+                                            <input class="form-control" type="text" id="albumname" placeholder="Tên album của bạn">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="albumdesc">Mô tả</label>
+                                            <input class="form-control" type="text" id="albumdesc" placeholder="Mô tả album của bạn">
+                                        </div>
+                                        <div class="form-group text-right">
+                                            <button class="btn btn-default">Hủy</button>
+                                            <button class="btn btn-primary">Xác nhận</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- album image -->
+                                <div class="col-xs-12 col-md-9">
+                                    <div class="album__image-listing">
+                                        <!-- set image with ratio 1x1 -->
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="album__image" data-mh="album-image">
+                                            <img class="img-responsive" src="fig-image/1x1.png" alt="">
+                                            <span class="fa fa-close"></span>
+                                        </div>
+                                        <div class="item item--new album__image" data-mh="album-image">
+                                            <div class="item__info">
+                                                <div class="item__create"><span class="fa fa-plus"></span></div>
+                                                <div class="item__summary">Thêm ảnh mới</div>
+                                                <label  for="image-upload" class="album__upload-img">
+                                                    <input id="image-upload" type="file" class="hidden">
+                                                </label>
                                             </div>
                                         </div>
                                     </div>
