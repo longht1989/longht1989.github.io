@@ -185,6 +185,17 @@
         .user__account {
             float: left;
             margin-right: 10px;
+            span {
+                &:first-child {
+                    max-width: 100px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: inline-block;
+                    float: left;
+                    margin-right: 5px;
+                }
+            }
         }
         .user__avatar {
             float: left;

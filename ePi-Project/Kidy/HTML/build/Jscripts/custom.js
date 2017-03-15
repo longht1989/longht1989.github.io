@@ -246,3 +246,18 @@ $('.l-slider .slider').bxSlider({
 //     nextSelector: '#forkid-lesson-next',
 //     prevSelector: '#forkid-lesson-prev'
 // });
+
+$('.forkid__navbar-item a[data-href').click(function() {
+    event.preventDefault();
+    var tabshow = "#" + $(this).attr("data-href");
+    var tabcontent = $("div[data-tabcontent]");
+    $(this).parent().addClass("active");
+    $(this).parent().siblings().removeClass("active");
+    $(tabcontent).hide();
+    $(tabshow).fadeIn();
+    if ($(this).attr("data-href") == "media") {
+        $(".forkid__kid-listing").hide();
+    } else {
+        $(".forkid__kid-listing").fadeIn();
+    }
+});
