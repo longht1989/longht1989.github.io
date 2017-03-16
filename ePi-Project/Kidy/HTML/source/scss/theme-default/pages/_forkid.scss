@@ -118,6 +118,22 @@
             &:hover {
                 background-color: white;
             }
+            &.active {
+                &::before {
+                    display: block;
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: -20px;
+                    margin-top: -10px;
+                    width: 20px;
+                    height: 20px;
+                    border: 10px solid #fff;
+                    border-right: 10px solid transparent;
+                    border-top: 10px solid transparent;
+                    border-bottom: 10px solid transparent;
+                }
+            }
             @include breakpoint(md) {
                 float: none;
                 width: initial;
