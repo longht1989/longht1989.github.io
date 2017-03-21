@@ -397,6 +397,9 @@
         &.is-active {
             border-top-color: $brand-primary;
         }
+        &.is-selected {
+            background: #ffebca;
+        }
         @include breakpoint(xs) {
             margin-bottom: 10px;
         }

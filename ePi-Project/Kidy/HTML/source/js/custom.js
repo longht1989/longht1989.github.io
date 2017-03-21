@@ -22,6 +22,7 @@ $(function() {
             $(this).children('.fa').toggleClass('fa-heart');
         });
     });
+    $('.filter__content').draggable();
 
     // jquery ui slider range with fixed minimum 
     $("#filter-distance").slider({
@@ -71,6 +72,22 @@ $(function() {
         }
     });
     $(".amount-score").val($("#filter-score").slider("value") + ' điểm');
+
+
+    // jquery ui slider range with fixed minimum 
+    $("#filter-age").slider({
+        range: true,
+        min: 0,
+        max: 36,
+        values: [1, 12],
+        slide: function(event, ui) {
+            $(".amount-age").val(ui.values[0] + " tháng - " + ui.values[1] + " tháng");
+        }
+    });
+    $(".amount-age").val($("#filter-age").slider("values", 0) + " tháng - " + $("#filter-age").slider("values", 1) + " tháng");
+
+
+
 
     // create image shadow
     $('.item--img-shadow').each(function() {
