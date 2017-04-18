@@ -17,7 +17,13 @@
         font-weight: bold;
     }
     &__meta {
+        margin-top: 5px;
         color: #a2a2a2;
+        @include clearfix;
+    }
+    &__share {
+        float: right;
+        text-align: right;
     }
     &__content {
         > div,
@@ -45,7 +51,7 @@
             color: #777;
         }
     }
-    img{
+    img {
         max-width: 100%;
         height: auto;
     }

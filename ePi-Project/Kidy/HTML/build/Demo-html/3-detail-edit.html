@@ -7,7 +7,7 @@
 <!--<![endif]-->
 
 <head>
-    <title>Kidy - Detail</title>
+    <title>Kidy - Detail - Edit</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -223,36 +223,124 @@
                                 <div class="detail__block__content">
                                     <ul>
                                         <li>
-                                            <h5 class="detail__department"><a class="a-link" href="#">Chi nhánh Hoàn Kiếm</a></h5>
-                                            <span class="fa fa-home"></span>
-                                            <p>Số 56 Mã Mây, Hoàn Kiếm, Hà Nội
-                                                <br>Tel: +84 04 83332432
-                                            </p>
-                                        </li>
-                                        <li>
+                                            <a class="a-link fa fa-edit" href="#" title=""></a>
                                             <h5 class="detail__department"><a class="a-link" href="#">Chi nhánh Ba Đình</a></h5>
                                             <span class="fa fa-home"></span>
                                             <p>Số 132 Kim Mã, Ba Đình, Hà Nội
                                                 <br>Tel: +84 04 83332432
                                             </p>
                                         </li>
+                                        <li>
+                                            <div class="form-group">
+                                                <label for="demoname">Tên chi nhánh</label>
+                                                <input type="txt" class="form-control" id="demoname01" placeholder="Chi nhánh Hoàn Kiếm">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="demodesc">Địa chỉ</label>
+                                                <input type="txt" class="form-control" id="demoaddress01" placeholder="Số 56 Mã Mây, Hoàn Kiếm, Hà Nội">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="demodesc">Số điện thoại</label>
+                                                <input type="txt" class="form-control" id="demotel01" placeholder="Tel: +84 04 83332432">
+                                            </div>
+                                            <div class="form-group text-right">
+                                                <button class="btn btn-default">Hủy</button>
+                                                <button class="btn btn-success">Xóa chi nhánh</button>
+                                                <button class="btn btn-primary">Cập nhật</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="add-field"><a href="#" id="add-field-01" class="a-link"><span class="fa fa-plus-circle"></span> Thêm chi nhánh</a></div>
+                                        </li>
                                     </ul>
+                                    <form class="box-content-add" id="box-field-01" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="demoname">Tên chi nhánh</label>
+                                            <input type="txt" class="form-control" id="demoname" placeholder="Tên chi nhánh">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="demodesc">Địa chỉ</label>
+                                            <input type="txt" class="form-control" id="demodesc" placeholder="Địa chỉ chi nhánh">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="demodesc">Số điện thoại</label>
+                                            <input type="txt" class="form-control" id="demotel" placeholder="Điện thoại chi nhánh">
+                                        </div>
+                                        <div class="form-group text-right">
+                                            <button class="btn btn-default" id="cancel-box-field-01">Hủy</button>
+                                            <button class="btn btn-primary">Thêm</button>
+                                        </div>
+                                    </form>
                                 </div>
+                                <script>
+                                $('#add-field-01').click(function() {
+                                    event.preventDefault();
+                                    $('#box-field-01').slideDown();
+                                });
+                                $('#cancel-box-field-01').click(function() {
+                                    event.preventDefault();
+                                    $('#box-field-01').slideUp();
+                                });
+                                </script>
                             </div>
                             <!-- addition block -->
                             <div class="detail__block detail__general-content">
                                 <h3 class="detail__block__title">Thông tin chung</h3>
                                 <div class="detail__block__content">
                                     <ul>
-                                        <li><span class="fa fa-circle"></span>Email: <a href="mailto:truonghoami@gmail.com">truonghoami@gmail.com</a></li>
+                                        <li>
+                                            <a class="a-link fa fa-edit" href="#" title="" id="edit-box-field-4"></a>
+                                            <span class="fa fa-circle"></span>Email: <a href="mailto:truonghoami@gmail.com">truonghoami@gmail.com</a>
+                                            <form class="box-content-add" id="box-field-4" style="display: none;">
+                                                <div class="form-group">
+                                                    <input type="txt" class="form-control" id="demoservice" placeholder="truonghoami@gmail.com">
+                                                </div>
+                                                <div class="form-group text-right">
+                                                    <button class="btn btn-default" id="cancel-box-field-4">Hủy</button>
+                                                    <button class="btn btn-success">Xóa thông tin</button>
+                                                    <button class="btn btn-primary">Thêm</button>
+                                                </div>
+                                            </form>
+                                        </li>
                                         <li><span class="fa fa-circle"></span>Diện tích: <b>Diện tích: 1200 m2</b></li>
                                         <li><span class="fa fa-circle"></span>Tổng số học sinh/1 giáo viên:<b> 5</b></li>
                                         <li><span class="fa fa-circle"></span>Diện tích trung bình 1 phòng: <b>32 m2</b></li>
                                         <li><span class="fa fa-circle"></span>Tổng số trẻ / 1 lớp: <b>24</b></li>
                                         <li><span class="fa fa-circle"></span>Loại giáo dục sớm: XXX</li>
+                                        <li>
+                                            <div class="add-field"><a href="#" id="add-field-3" class="a-link"><span class="fa fa-plus-circle"></span> Thêm thông tin khác</a></div>
+                                        </li>
                                     </ul>
+                                    <form class="box-content-add" id="box-field-3" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="demodesc">Tên thông tin</label>
+                                            <input type="txt" class="form-control" id="demoservice" placeholder="Tên dịch vụ">
+                                        </div>
+                                        <div class="form-group text-right">
+                                            <button class="btn btn-default" id="cancel-box-field-3">Hủy</button>
+                                            <button class="btn btn-primary">Thêm</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
+                            <script>
+                            $('#add-field-3').click(function() {
+                                event.preventDefault();
+                                $('#box-field-3').slideDown();
+                            });
+                            $('#cancel-box-field-3').click(function() {
+                                event.preventDefault();
+                                $('#box-field-3').slideUp();
+                            });
+                            $('#edit-box-field-4').click(function() {
+                                event.preventDefault();
+                                $('#box-field-4').slideDown();
+                            });
+                            $('#cancel-box-field-4').click(function() {
+                                event.preventDefault();
+                                $('#box-field-4').slideUp();
+                            });
+                            </script>
                             <!-- addition block -->
                             <div class="detail__block">
                                 <h3 class="detail__block__title"><span class="fa fa-info-circle"></span>Tiện ích</h3>
@@ -292,7 +380,39 @@
                                             <span class="fa fa-magic"></span> Dịch vụ giá trị gia tăng khác
                                         </li>
                                     </ul>
+                                    <div class="add-field"><a href="#" id="add-field-2" class="a-link"><span class="fa fa-plus-circle"></span> Thêm dịch vụ khác</a></div>
+                                    <form class="box-content-add" id="box-field-2" style="display: none;">
+                                        <div class="form-group">
+                                            <label for="demoname">Loại dịch vụ</label>
+                                            <select type="txt" class="form-control" id="demoname02" placeholder="Tên chi nhánh">
+                                                <option value=""> Không gian</option>
+                                                <option value="">Phương tiện</option>
+                                                <option value=""> Thời gian</option>
+                                                <option value="">Dịch vụ y tế</option>
+                                                <option value=""> Chương trình giáo dục</option>
+                                                <option value="">Chương trình thực nghiệm</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="demodesc">Tên dịch vụ</label>
+                                            <input type="txt" class="form-control" id="demoservice" placeholder="Tên dịch vụ">
+                                        </div>
+                                        <div class="form-group text-right">
+                                            <button class="btn btn-default" id="cancel-box-field-2">Hủy</button>
+                                            <button class="btn btn-primary">Thêm</button>
+                                        </div>
+                                    </form>
                                 </div>
+                                <script>
+                                $('#add-field-2').click(function() {
+                                    event.preventDefault();
+                                    $('#box-field-2').slideDown();
+                                });
+                                $('#cancel-box-field-2').click(function() {
+                                    event.preventDefault();
+                                    $('#box-field-2').slideUp();
+                                });
+                                </script>
                             </div>
                             <!-- addition block -->
                             <div class="detail__block">
