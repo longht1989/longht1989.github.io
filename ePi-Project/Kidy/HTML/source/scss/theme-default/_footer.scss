@@ -4,8 +4,19 @@
 
 .site-footer {
     &__col {
-        @include respond-to-xs() {
-            margin-bottom: 20px;
+        margin-bottom: 20px;
+        @include last-child-y;
+        @include breakpoint(sm) {
+            margin-bottom: 0;
+            display: inline-block;
+            margin-left: 60px;
+            text-align: right;
+            float: left;
+        }
+    }
+    &__col-listing {
+        @include breakpoint(sm) {
+            float: right;
         }
     }
     &__info {
@@ -25,22 +36,17 @@
         color: #919191;
         font-size: 24px;
         height: 30px;
-        margin-bottom: 35px;
-        &::before {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 1px;
-            top: 50%;
-            left: 0;
-            background-color: #919191;
-            position: absolute;
-        }
-        span {
+        margin-bottom: 20px;
+        span,
+        a {
             display: inline-block;
-            padding-right: 10px;
+            // padding-right: 10px;
             background-color: #313851;
-            position: absolute;
+            color: #aaa;
+            // position: absolute;
+            &:hover {
+                color: white;
+            }
         }
     }
     &__story,
@@ -72,13 +78,19 @@
                 height: 14px;
                 position: absolute;
                 left: 0;
-                background-color: #979797;
+                background-color: #aaa;
                 top: 0;
             }
         }
     }
     &__text {
-        @include font-size(14, 23);
+        // @include font-size(14, 23);
+        a {
+            color: #979797;
+            &:hover {
+                color: white;
+            }
+        }
     }
     &__input {
         color: white;

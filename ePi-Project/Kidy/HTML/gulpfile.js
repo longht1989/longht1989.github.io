@@ -124,7 +124,7 @@ gulp.task('default', ['copy', 'scripts', 'styles'],
             },
             open: false,
             ghostMode: {
-                scroll: true
+                // scroll: true
             }
         });
         gulp.watch(paths.js_dev + '/**/*.js', ['copyJs-UI', 'scripts']);

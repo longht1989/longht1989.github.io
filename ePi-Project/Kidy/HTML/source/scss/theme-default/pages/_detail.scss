@@ -7,12 +7,9 @@
     }
     @include Element(title) {
         margin-bottom: 5px;
-        @include breakpoint(sm) {
-            float: left;
-            margin-bottom: 0;
-        }
+        @include breakpoint(sm) {}
         h1 {
-            @include font-size(18, 22);
+            @include font-size(24, 28);
             font-weight: bold;
             margin-bottom: 5px;
         }
@@ -33,7 +30,7 @@
         font-size: 12px;
         margin-left: 10px;
         border-radius: 10px;
-        background-color: #e2e2e2;
+        background-color: #fff;
         white-space: nowrap;
     }
     @include Element(price) {
@@ -51,7 +48,7 @@
     }
     @include Element(share) {
         margin-top: 3px;
-        text-align: right;
+        // text-align: right;
     }
     @include Element(nav-tab) {
         margin-bottom: 20px;
@@ -83,14 +80,17 @@
     }
     @include Element(main-content) {
         @include clearfix();
-        max-height: 205px;
+        height: 205px;
         overflow: hidden;
         position: relative;
         padding-bottom: 40px;
-        @include transition(max-height, 5, linear);
+        @include transition(max-height, 1, ease);
         &.show {
             padding-bottom: 0;
-            max-height: 5000px;
+            height: initial;
+            .view-less {
+                display: block;
+            }
         }
         p,
         h3,
@@ -116,6 +116,15 @@
             margin-bottom: 0;
             background-image: linear-gradient(to bottom, transparent, #f0f0f0);
             cursor: pointer;
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+        .view-less {
+            cursor: pointer;
+            text-align: center;
+            display: none;
+            margin: 10px 0 0;
             &:hover {
                 color: $brand-primary;
             }

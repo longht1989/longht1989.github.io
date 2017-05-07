@@ -104,6 +104,13 @@ $(function() {
     // expand main__content in detail page
     $('.detail__main-content .view-more').click(function() {
         $(this).parent('.detail__main-content').addClass('show');
+        $('.detail__main-content .view-less').show();
+        $(this).hide();
+    });
+    // collapse main__content in detail page
+    $('.detail__main-content .view-less').click(function() {
+        $(this).parent('.detail__main-content').removeClass('show');
+        $('.detail__main-content .view-more').show();
         $(this).hide();
     });
 
