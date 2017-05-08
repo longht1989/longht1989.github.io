@@ -139,6 +139,20 @@
             }
         }
     }
+    &__status {
+        &.is-green {
+            color: $brand-danger;
+        }
+        &.is-blue {
+            color: $brand-primary;
+        }
+        &.is-yellow {
+            color: $brand-info;
+        }
+        &.is-red {
+            color: $brand-success;
+        }
+    }
     &__viewmore {
         position: absolute;
         top: -15px;

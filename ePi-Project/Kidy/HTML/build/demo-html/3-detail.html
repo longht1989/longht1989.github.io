@@ -78,7 +78,7 @@
                             <div class="detail__title">
                                 <h1>
                                     Trường mầm non bầu trời bé thơ
-                                    <div class="detail__kind text-danger">Trường Dân Lập</div>
+                                    <div class="detail__kind is-blue">Trường Dân Lập</div>
                                     <!-- replace text-danger by text-warning,text-success,text-primary  -->
                                 </h1>
                                 <div class="detail__share">
@@ -156,7 +156,7 @@
                                 <!-- input comment block -->
                                 <div class="detail__block detail__review">
                                     <div class="row">
-                                        <div class="col-xs-12 col-sm-8">
+                                        <div class="col-xs-12 col-sm-9">
                                             <h3 class="detail__block__title">
                                                 Nhận xét
                                                <div class="login-box pull-right dropdown">
@@ -174,14 +174,69 @@
                                                 <button class="btn btn-primary btn-round">Gửi đi</button>
                                             </div>
                                         </div>
-                                        <div class="col-xs-12 col-sm-4">
-                                            <h3 class="detail__block__title">Đánh giá  <input type="text" class="filter__amount amount-score" readonly></h3>
+                                        <div class="col-xs-12 col-sm-3">
+                                            <!-- Old review -->
+                                            <!-- <h3 class="detail__block__title">đánh giá  <input type="text" class="filter__amount amount-score" readonly></h3>
                                             <div class="detail__block__content">
                                                 <div class="filter__block">
                                                     <div class="filter__content">
                                                         <div id="filter-score"></div>
                                                     </div>
-                                                    <p class="note">Thang điểm đánh giá từ 1-10</p>
+                                                    <p class="note">thang điểm đánh giá từ 1-10</p>
+                                                </div>
+                                            </div> -->
+                                            <!-- Review with star -->
+                                            <h3 class="detail__block__title">Đánh giá</h3>
+                                            <div class="detail__block__content">
+                                                <div class="filter__row">
+                                                    <div class="radio-box">
+                                                        <input id="check5" type="radio" name="check" value="check5" checked="">
+                                                        <label for="check5">
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="filter__row">
+                                                    <div class="radio-box">
+                                                        <input id="check4" type="radio" name="check" value="check4">
+                                                        <label for="check4">
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="filter__row">
+                                                    <div class="radio-box">
+                                                        <input id="check3" type="radio" name="check" value="check3">
+                                                        <label for="check3">
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="filter__row">
+                                                    <div class="radio-box">
+                                                        <input id="check2" type="radio" name="check" value="check2">
+                                                        <label for="check2">
+                                                            <span class="fa fa-star text-info"></span>
+                                                            <span class="fa fa-star text-info"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="filter__row">
+                                                    <div class="radio-box">
+                                                        <input id="check1" type="radio" name="check" value="check1">
+                                                        <label for="check1">
+                                                            <span class="fa fa-star text-info"></span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

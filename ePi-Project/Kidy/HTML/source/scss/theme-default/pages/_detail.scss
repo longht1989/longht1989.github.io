@@ -32,6 +32,18 @@
         border-radius: 10px;
         background-color: #fff;
         white-space: nowrap;
+        &.is-green {
+            color: $brand-danger;
+        }
+        &.is-blue {
+            color: $brand-primary;
+        }
+        &.is-yellow {
+            color: $brand-info;
+        }
+        &.is-red {
+            color: $brand-success;
+        }
     }
     @include Element(price) {
         font-size: 14px;
