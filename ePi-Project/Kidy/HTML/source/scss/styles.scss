@@ -15,10 +15,8 @@
 
 @import "../fonts/font-awesome-4.7.0/css/font-awesome.min.css";
 @import "theme-default/fonts";
-@import "theme-default/mixins";
+@import "theme-default/mixins/mixins";
 @import "theme-default/mixins/bem";
-
-
 
 /* ====================================
    COMPONENT, BOOTSTARP REPLACE
@@ -32,14 +30,18 @@
 @import "theme-default/component/filter";
 @import "theme-default/component/circularprogress";
 
+/* ====================================
+   = Layout                       =
+   ==================================== */
+
+@import "theme-default/layout/layout";
+@import "theme-default/layout/header";
+@import "theme-default/layout/footer";
 
 /* ====================================
    = Main Style                       =
    ==================================== */
 
-@import "theme-default/layout";
-@import "theme-default/header";
-@import "theme-default/footer";
 @import "theme-default/region";
 @import "theme-default/story";
 @import "theme-default/pagination";
@@ -55,3 +57,10 @@
 @import "theme-default/pages/register";
 @import "theme-default/pages/gds-athome";
 @import "theme-default/pages/pagenotfound";
+@import "theme-default/pages/about";
+
+/* ====================================
+   = Helper class                            =
+   ==================================== */
+
+@import "theme-default/helper/helper";

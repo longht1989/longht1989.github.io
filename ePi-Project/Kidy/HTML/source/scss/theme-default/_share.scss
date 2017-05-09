@@ -20,6 +20,11 @@ a.a-link {
     .fa {
         margin-right: 5px;
     }
+    &:focus,
+    &:active,
+    &:active:focus {
+        outline: none;
+    }
 }
 
 .btn-border {
