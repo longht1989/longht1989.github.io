@@ -5,6 +5,20 @@
         @include clearfix();
         margin-bottom: 15px;
     }
+    @include Element(logo) {
+        width: 25%;
+        float: left;
+        background: white;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 3px solid #fff;
+        @include breakpoint(sm) {
+            width: 20%;
+        }
+        @include breakpoint(md) {
+            width: 15%;
+        }
+    }
     @include Element(title) {
         margin-bottom: 5px;
         @include breakpoint(sm) {}
@@ -351,6 +365,66 @@
             margin: 0 0 0 10px;
             max-width: 60px;
             float: none;
+        }
+    }
+    @include Element(menu) {
+        margin-bottom: 20px;
+        background: $brand-primary;
+        @include clearfix;
+        li {
+            float: left;
+            @include font-size(16, 35);
+            @include transition(all, 0.2, ease);
+            + li {
+                margin-left: 1px;
+            }
+            a {
+                padding: 0 15px;
+                display: block;
+                color: white;
+            }
+            &.is-active,
+            &:hover,
+            &:active,
+            &:focus {
+                background: darken($brand-primary, 10%);
+            }
+        }
+        &.is-red {
+            background: $brand-success;
+            li {
+                &.is-active,
+                &:hover,
+                &:active,
+                &:focus {
+                    background: darken($brand-success, 10%);
+                }
+            }
+        }
+        &.is-yellow {
+            background: $brand-info;
+            li {
+                &.is-active,
+                &:hover,
+                &:active,
+                &:focus {
+                    background: darken($brand-info, 10%);
+                }
+            }
+        }
+        &.is-green {
+            background: $brand-danger;
+            li {
+                &.is-active,
+                &:hover,
+                &:active,
+                &:focus {
+                    background: darken($brand-danger, 10%);
+                }
+                a {
+                    color: #111;
+                }
+            }
         }
     }
 }

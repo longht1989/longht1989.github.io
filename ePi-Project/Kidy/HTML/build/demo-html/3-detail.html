@@ -24,42 +24,91 @@
 
 <body>
     <!-- site header normal -->
-    <div class="site-header site-header--detail" data-spy="affix" data-offset-top="95" data-offset-bottom="200">
+    <div class="site-header site-header--detail">
         <div class="container">
             <div class="site-header__top-bar">
                 <nav class="navbar">
                     <h1 class="logo">
-                        <a href="#"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a>
-                    </h1>
+                            <a href="#"><img src="../App_Themes/img/logo.png" height="45" width="92" alt="Kidy.vn"></a>
+                        </h1>
                     <ul class="site-header__related-links">
-                        <li class="visible-md visible-lg"><a href="">Trang chủ</a></li>
-                        <li class="visible-md visible-lg"><a href="">Cho con</a></li>
                         <li class="visible-md visible-lg"><a href="">Tìm trường</a></li>
-                        <li class="visible-md visible-lg"><a href="">Dịch vụ</a></li>
-                        <li class="visible-md visible-lg"><a href="">Tài liệu giáo dục sớm</a></li>
-                        <li class="site-header__btn-wrap wrap-search">
-                            <div class="btn btn-default" href="#qs-input">
-                                <span class="fa fa-search"></span>
-                            </div>
-                            <div class="site-header__quick-search" id="quick-search">
-                                <input id="qs-input" type="text" class="" placeholder="Địa điểm muốn tìm (Đường / Phố / Quận)">
-                            </div>
+                        <li class="visible-md visible-lg">
+                            <a href="">Tài liệu</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="2-category.html">Bài học</a>
+                                </li>
+                                <li>
+                                    <a href="2-category.html">Bài Test</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="site-header__btn-wrap wrap-menu">
+                        <li class="visible-md visible-lg">
+                            <a href="">Giới thiệu</a>
+                            <ul class="sub-menu">
+                                <li>
+                                    <a href="2-category.html">Giới thiệu về dự án</a>
+                                </li>
+                                <li>
+                                    <a href="2-category.html">Các phương pháp Giáo dục sớm</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="site-header__user visible-md visible-lg">
+                            <div class="user__account dropdown">
+                                <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Antonio</span> <span class="fa fa-caret-down"></span></a>
+                                <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                    <li><a href="#">Đổi mật khẩu</a></li>
+                                    <li><a href="#">Something else</a></li>
+                                    <li><a href="#">Another</a></li>
+                                    <li><a href="#">Đăng xuất</a></li>
+                                </ul>
+                            </div>
+                            <p class="user__avatar"><img src="fig-image/1x1.png" class="img-circle" width="32" height="32" alt=""></p>
+                        </li>
+                        <li class="site-header__btn-wrap visible-xs visible-sm">
                             <div class="btn btn-info collapsed" role="button" data-toggle="collapse" href="#addition-related-links" aria-expanded="false" aria-controls="addition-related-links">
                                 <span class="fa fa-bars"></span>
+                                <!-- <span class="badge">4</span> -->
                             </div>
                             <div class="site-header__related-addition collapse" id="addition-related-links">
                                 <ul>
-                                    <li class="visible-xs visible-sm"><a href="">Trang chủ</a></li>
-                                    <li class="visible-xs visible-sm"><a href="">Cho con</a></li>
-                                    <li class="visible-xs visible-sm"><a href="">Tìm trường</a></li>
-                                    <li class="visible-xs visible-sm"><a href="">Dịch vụ</a></li>
-                                    <li class="visible-xs visible-sm"><a href="">Tài liệu giáo dục sớm</a></li>
-                                    <li><a href="">Lorem ipsum dolor.</a></li>
-                                    <li><a href="">Lorem ipsum dolor.</a></li>
-                                    <li><a href="">Lorem ipsum dolor.</a></li>
-                                    <li><a href="">Lorem ipsum dolor.</a></li>
+                                    <li class=""><a href="1-index.html">Tìm trường</a></li>
+                                    <li class="">
+                                        <a href="">Tài liệu</a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="2-category.html">Bài học</a>
+                                            </li>
+                                            <li>
+                                                <a href="2-category.html">Bài Test</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="">
+                                        <a href="">Giới thiệu</a>
+                                        <ul class="sub-menu">
+                                            <li>
+                                                <a href="2-category.html">Giới thiệu về dự án</a>
+                                            </li>
+                                            <li>
+                                                <a href="2-category.html">Giới thiệu các phương pháp Giáo dục sớm</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="site-header__user">
+                                        <div class="user__account dropdown">
+                                            <a href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Antonio</span> <span class="fa fa-caret-down"></span></a>
+                                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                                <li><a href="#">Đổi mật khẩu</a></li>
+                                                <li><a href="#">Something else</a></li>
+                                                <li><a href="#">Another</a></li>
+                                                <li><a href="#">Đăng xuất</a></li>
+                                            </ul>
+                                        </div>
+                                        <p class="user__avatar"><img src="fig-image/1x1.png" class="img-circle" width="32" height="32" alt=""></p>
+                                    </li>
                                 </ul>
                             </div>
                         </li>
@@ -75,11 +124,12 @@
                 <div class="detail__header">
                     <div class="row">
                         <div class="col-xs-12 col-md-9">
+                            <div class="detail__logo"><img src="fig-image/1x1.png" alt="" class="img-circle img-responsive"></div>
                             <div class="detail__title">
                                 <h1>
                                     Trường mầm non bầu trời bé thơ
                                     <div class="detail__kind is-blue">Trường Dân Lập</div>
-                                    <!-- replace text-danger by text-warning,text-success,text-primary  -->
+                                    <!-- replace is-blue by is-red, is-green, is-yellow -->
                                 </h1>
                                 <div class="detail__share">
                                     <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=154&layout=button_count&action=like&size=small&show_faces=true&share=true&height=24&appId" width="154" height="24" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
@@ -94,6 +144,17 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-9">
                         <!-- detail content -->
+                        <div class="detail__menu is-red">
+                            <nav>
+                                <ul>
+                                    <li class="is-active"><a href="#">Thông tin chung</a></li>
+                                    <li class=""><a href="#">Chương trình đào tạo</a></li>
+                                    <li class=""><a href="#">Tuyển sinh</a></li>
+                                    <li class=""><a href="#">Thư viện</a></li>
+                                    <li class=""><a href="#">Liên hệ</a></li>
+                                </ul>
+                            </nav>
+                        </div>
                         <div class="detail__content">
                             <div class="detail__content-wrap">
                                 <div class="detail__main-content">

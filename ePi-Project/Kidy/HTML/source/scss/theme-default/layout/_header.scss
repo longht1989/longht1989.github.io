@@ -115,7 +115,7 @@
     &__btn-wrap {
         position: static !important;
         @include breakpoint(sm) {}
-        .btn {
+        > .btn {
             width: 35px;
             height: 35px;
             position: relative;
@@ -229,6 +229,10 @@
         .user__account {
             float: left;
             margin-right: 10px;
+            .site-header__btn-wrap & {
+                float: none;
+                display: inline-block;
+            }
             span {
                 &:first-child {
                     max-width: 100px;
@@ -243,6 +247,10 @@
         }
         .user__avatar {
             float: left;
+            .site-header__btn-wrap & {
+                float: none;
+                display: inline-block;
+            }
         }
     }
 }
@@ -261,6 +269,19 @@
             .sub-menu {
                 background-color: #fff!important;
                 border: 1px solid #ccc!important;
+            }
+            .site-header__btn-wrap {
+                .sub-menu {
+                    background-color: #191919 !important;
+                    border: none !important;
+                }
+                .site-header__user {
+                    text-align: right;
+                    border-left: none;
+                }
+                .dropdown-menu {
+                    background: #191919;
+                }
             }
         }
     }
