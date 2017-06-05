@@ -1,0 +1,39 @@
+/* style for edit page */
+
+.edit {
+    &__navbar {
+        padding: 15px;
+        background: white;
+        border-radius: 5px;
+        li {
+            & + li {
+                margin-top: 10px;
+            }
+            &.is-active {
+                a {
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+    &__hdr {
+        margin-bottom: 20px;
+    }
+    &__block {
+        margin-bottom: 30px;
+    }
+    &__block-title {
+        @include font-size(22, 28);
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    &__block-hdr {
+        margin-bottom: 10px;
+        h3 {
+            @include font-size(18, 24);
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    }
+}

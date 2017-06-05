@@ -103,6 +103,8 @@
         @include clearfix();
         margin-bottom: 20px;
         line-height: 1.5em;
+        background: white;
+        padding: 15px 20px;
     }
     @include Element(main-content) {
         @include clearfix();
@@ -140,7 +142,7 @@
             line-height: 20px;
             padding-top: 45px;
             margin-bottom: 0;
-            background-image: linear-gradient(to bottom, transparent, #f0f0f0);
+            background: linear-gradient(to bottom, transparent, #fff);
             cursor: pointer;
             &:hover {
                 color: $brand-primary;
