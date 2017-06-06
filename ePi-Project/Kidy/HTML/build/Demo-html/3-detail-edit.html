@@ -125,7 +125,7 @@
                     <h2 class="edit__hdr"><b>Cập nhật bổ sung thông tin trường của bạn</b></h2>
                 </div>
                 <!-- desktop navbar -->
-                <div class="hidden-xs hidden-sm col-md-3">
+                <div class="col-xs-12 col-md-3">
                     <ul class="edit__navbar">
                         <li class="is-active"><a href="#block01">Giới thiệu</a></li>
                         <li><a href="#block02">Thông tin chung</a></li>
@@ -140,16 +140,16 @@
                 <!-- edit info -->
                 <div class="col-xs-12 col-md-9">
                     <!-- giới thiệu trường -->
-                    <div class="edit__about" id="block01">
-                        <h2 class="edit__block-title">Giới thiệu</h2>
+                    <div class="edit__wrap" id="block01">
+                        <h2 class="edit__wrap-title">Giới thiệu</h2>
                         <!-- block udpate, required -->
                         <div class="edit__block is-required">
                             <div class="edit__block-hdr">
-                                <h3 title="Thông tin bắt buộc">Tên trường của bạn <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                <h3 title="Thông tin bắt buộc">Tên trường <small class="text-success">Thông tin bắt buộc*</small></h3>
                                 <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, in!</p>
                             </div>
                             <div class="edit__block-content">
-                                <textarea type="text" class="form-control form-lg" rows="1" placeholder=" Trường mầm non Sao Việt "></textarea>
+                                <textarea type="text" class="form-control" rows="1" placeholder=" Trường mầm non Sao Việt "></textarea>
                             </div>
                         </div>
                         <!-- block -->
@@ -159,13 +159,22 @@
                                 <p class="text-muted">Thông tin cơ bản giúp phụ huynh hiểu thêm về trường.</p>
                             </div>
                             <div class="edit__block-content">
-                                <textarea type="text" class="form-control form-lg" rows="5" placeholder="Ví dụ: Trường mầm non Great Preschool, thành lập từ năm 2005 bởi chuyên gia giáo dục Tiến sỹ A - Người trực tiếp điều hành, soạn thảo chương trình học và đào tạo giáo viên theo theo tiêu chuẩn quốc tế..."></textarea>
+                                <textarea type="text" class="form-control" rows="5" placeholder="Ví dụ: Trường mầm non Great Preschool, thành lập từ năm 2005 bởi chuyên gia giáo dục Tiến sỹ A - Người trực tiếp điều hành, soạn thảo chương trình học và đào tạo giáo viên theo theo tiêu chuẩn quốc tế..."></textarea>
                             </div>
                         </div>
+                        <!-- submit block -->
+                        <div class="edit__submit text-right">
+                            <button class="btn btn-default">Hủy</button>
+                            <button class="btn btn-primary">Xác nhận & Lưu</button>
+                        </div>
+                    </div>
+                    <!-- Thông tin chung -->
+                    <div class="edit__wrap" id="block02">
+                        <h2 class="edit__wrap-title">Thông tin chung</h2>
                         <!-- block -->
                         <div class="edit__block is-required">
                             <div class="edit__block-hdr">
-                                <h3 title="Thông tin bắt buộc">Trường của bạn là trường tư thúc, bán công hay công lập? <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                <h3 title="Thông tin bắt buộc">Phân loại trường <small class="text-success">Thông tin bắt buộc*</small></h3>
                                 <p class="text-muted">Thông tin cơ bản giúp phụ huynh hiểu thêm về trường.</p>
                             </div>
                             <div class="edit__block-content">
@@ -184,7 +193,7 @@
                                 <!-- block -->
                                 <div class="edit__block is-required">
                                     <div class="edit__block-hdr">
-                                        <h3 title="Thông tin bắt buộc">Số điện thoại liên lạc của trường bạn? <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                        <h3 title="Thông tin bắt buộc">Số điện thoại liên lạc <small class="text-success">Thông tin bắt buộc*</small></h3>
                                     </div>
                                     <div class="edit__block-content">
                                         <input type="text" class="form-control" placeholder="Ví dụ: (043) 944-0178">
@@ -195,7 +204,7 @@
                                 <!-- block -->
                                 <div class="edit__block is-required">
                                     <div class="edit__block-hdr">
-                                        <h3 title="Thông tin bắt buộc">Địa chỉ email của trường bạn? <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                        <h3 title="Thông tin bắt buộc">Địa chỉ email <small class="text-success">Thông tin bắt buộc*</small></h3>
                                     </div>
                                     <div class="edit__block-content">
                                         <input type="email" class="form-control" placeholder="Ví dụ: saoviet@gmail.com">
@@ -206,7 +215,7 @@
                         <!-- block -->
                         <div class="edit__block">
                             <div class="edit__block-hdr">
-                                <h3 title="Thông tin bắt buộc">Facebook của trường bạn? </h3>
+                                <h3 title="Thông tin bắt buộc">Facebook của trường </h3>
                             </div>
                             <div class="edit__block-content">
                                 <input type="text" class="form-control" placeholder="Ví dụ: https://www.facebook.com/saoviet">
@@ -217,7 +226,7 @@
                                 <!-- block -->
                                 <div class="edit__block is-required">
                                     <div class="edit__block-hdr">
-                                        <h3 title="Thông tin bắt buộc">Trường của bạn thuộc tỉnh/thành phố nào? <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                        <h3 title="Thông tin bắt buộc">Tỉnh/thành phố <small class="text-success">Thông tin bắt buộc*</small></h3>
                                     </div>
                                     <div class="edit__block-content">
                                         <select name="city_id" class="form-control">
@@ -232,7 +241,7 @@
                                 <!-- block -->
                                 <div class="edit__block is-required">
                                     <div class="edit__block-hdr">
-                                        <h3 title="Thông tin bắt buộc">Trường của bạn thuộc quận/huyện nào? <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                        <h3 title="Thông tin bắt buộc">Quận/huyện <small class="text-success">Thông tin bắt buộc*</small></h3>
                                     </div>
                                     <div class="edit__block-content">
                                         <select name="district_id" id="district_id" class="form-control" data-disabled-in-review="">
@@ -248,7 +257,7 @@
                         <!-- block -->
                         <div class="edit__block is-required">
                             <div class="edit__block-hdr">
-                                <h3 title="Thông tin bắt buộc">Địa chỉ trường của bạn? <span class="text-success">*</span></h3>
+                                <h3 title="Thông tin bắt buộc">Địa chỉ cụ thể trường <span class="text-success">*</span></h3>
                                 <p class="text-muted">Thông tin cơ bản giúp phụ huynh hiểu thêm về trường.</p>
                             </div>
                             <div class="edit__block-content">
@@ -258,109 +267,316 @@
                         <!-- block -->
                         <div class="edit__block is-required">
                             <div class="edit__block-hdr">
-                                <h3 title="Thông tin bắt buộc">Xác thực vị trí của trường bạn trên bản đồ? <span class="text-success">*</span></h3>
+                                <h3 title="Thông tin bắt buộc">Xác thực vị trí của trường trên bản đồ <span class="text-success">*</span></h3>
                                 <p class="text-muted">Thông tin cơ bản giúp phụ huynh hiểu thêm về trường.</p>
                             </div>
                             <div class="edit__block-content">
                                 <img src="fig-image/map.png" class="img-responsive" alt="">
                             </div>
                         </div>
+                        <!-- submit block -->
+                        <div class="edit__submit text-right">
+                            <button class="btn btn-default">Hủy</button>
+                            <button class="btn btn-primary">Xác nhận & Lưu</button>
+                        </div>
                     </div>
-                    <!-- thông tin chung -->
-                    <div class="edit__about" id="block02">
-                        <h2 class="edit__block-title">Thông tin chung</h2>
+                    <!-- Chương trình đào tạo -->
+                    <div class="edit__wrap" id="block03">
+                        <h2 class="edit__wrap-title">Chương trình đào tạo</h2>
+                        <!-- block -->
                         <div class="edit__block">
                             <div class="edit__block-hdr">
-                                <h3 title="Thông tin bắt buộc"></h3>
+                                <h3 title="Thông tin bắt buộc">Chương trình đào tạo trẻ của trường</h3>
                                 <p class="text-muted">Thông tin cơ bản giúp phụ huynh hiểu thêm về trường.</p>
                             </div>
                             <div class="edit__block-content">
-                                <textarea type="text" class="form-control form-lg" rows="5" placeholder="Ví dụ: Trường mầm non Great Preschool, thành lập từ năm 2005 bởi chuyên gia giáo dục Tiến sỹ A - Người trực tiếp điều hành, soạn thảo chương trình học và đào tạo giáo viên theo theo tiêu chuẩn quốc tế..."></textarea>
+                                <textarea type="text" class="form-control" rows="7" placeholder="Thực hành Montessori do GVNN, GVBN & GVVN hướng dẫn.Chương trình giảng dạy, các hoạt động chủ điểm, dụng cụ, giáo cụ chuyên dụng tập trung hướng trẻ phát triển về các kỹ năng tự thân trong cuộc sống hàng ngày; Cảm quan, giác quan; Ngôn ngữ, Toán học, Địa lý, Khoa học, Nghệ thuật, Âm nhạc..."></textarea>
                             </div>
                         </div>
-                    </div>
-                    <div class="edit__block" id="block08">
-                        <h2 class="edit__block-title" title="Thông tin bắt buộc">Tiện ích <span class="text-success">*</span></h2>
-                        <div class="edit__block-hdr">
-                            <p class="text-muted">Thông tin cơ bản giúp phụ huynh hiểu thêm về trường.</p>
+                        <!-- submit block -->
+                        <div class="edit__submit text-right">
+                            <button class="btn btn-default">Hủy</button>
+                            <button class="btn btn-primary">Xác nhận & Lưu</button>
                         </div>
-                        <div class="edit__block-content">
-                            <ul class="detail__listing-utility">
-                                <div class="check-box">
+                    </div>
+                    <!-- Tuyển sinh -->
+                    <div class="edit__wrap" id="block04">
+                        <h2 class="edit__wrap-title">Tuyển sinh</h2>
+                        <!-- block -->
+                        <div class="edit__block">
+                            <div class="edit__block-hdr">
+                                <h3 title="Thông tin bắt buộc">Độ tuổi nhận trẻ của trường</h3>
+                                <p class="text-muted">Thông tin cơ bản giúp phụ huynh hiểu thêm về trường.</p>
+                            </div>
+                            <div class="edit__block-content">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <!-- block -->
+                                        <div class="edit__block-hdr">
+                                            <h3 title="Thông tin bắt buộc">Từ (tháng tuổi) <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                        </div>
+                                        <div class="edit__block-content">
+                                            <input type="text" id="from_month" class="form-control" placeholder="18">
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <!-- block -->
+                                        <div class="edit__block-hdr">
+                                            <h3 title="Thông tin bắt buộc">Đến (tháng tuổi) <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                        </div>
+                                        <div class="edit__block-content">
+                                            <input type="text" class="form-control" placeholder="60">
+                                        </div>
+                                    </div>
                                 </div>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check1" type="checkbox" name="check" value="check1">
-                                        <label for="check1"><span class="fa fa-cube"></span> Sân chơi</label>
+                            </div>
+                        </div>
+                        <!-- block -->
+                        <div class="edit__block">
+                            <div class="edit__block-hdr">
+                                <h3 title="Thông tin bắt buộc">Mức học phí</h3>
+                                <p class="text-muted">Thông tin cơ bản giúp phụ huynh hiểu thêm về trường.</p>
+                            </div>
+                            <div class="edit__block-content">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <!-- block -->
+                                        <div class="edit__block-hdr">
+                                            <h3 title="Thông tin bắt buộc">Mức tối thiểu <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                        </div>
+                                        <div class="edit__block-content">
+                                            <input type="text" id="from_month" class="form-control" placeholder="1.500.000">
+                                        </div>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check2" type="checkbox" name="check" value="check2">
-                                        <label for="check2"><span class="fa fa-bus"></span> Xe đưa đón</label>
+                                    <div class="col-xs-12 col-md-6">
+                                        <!-- block -->
+                                        <div class="edit__block-hdr">
+                                            <h3 title="Thông tin bắt buộc">Mức tối đa <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                        </div>
+                                        <div class="edit__block-content">
+                                            <input type="text" class="form-control" placeholder="4.500.000">
+                                        </div>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check3" type="checkbox" name="check" value="check3">
-                                        <label for="check3"><span class="fa fa-graduation-cap"></span> Giác dục sớm</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- submit block -->
+                        <div class="edit__submit text-right">
+                            <button class="btn btn-default">Hủy</button>
+                            <button class="btn btn-primary">Xác nhận & Lưu</button>
+                        </div>
+                    </div>
+                    <!-- Thư viện -->
+                    <div class="edit__wrap" id="block05">
+                        <h2 class="edit__wrap-title">Thư viện</h2>
+                        <div class="edit__block">
+                            <div class="edit__block-hdr">
+                                <p class="text-muted">Chiều rộng nhỏ nhất: 640px. Kích thước mỗi file lớn nhất: 10 Mb. Định dạng file: .jpg, .png</p>
+                            </div>
+                            <div class="edit__block-content">
+                                <div class="album__image-listing">
+                                    <!-- set image with ratio 16x9 -->
+                                    <div class="album__image" data-mh="album-image">
+                                        <img class="img-responsive" src="https://source.unsplash.com/random/768x432?sig=1" alt="">
+                                        <span class="fa fa-close"></span>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check12" type="checkbox" name="check" value="check12">
-                                        <label for="check12"><span class="fa fa-clone"></span> Song ngữ</label>
+                                    <div class="album__image" data-mh="album-image">
+                                        <img class="img-responsive" src="https://source.unsplash.com/random/768x432?sig=2" alt="">
+                                        <span class="fa fa-close"></span>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check4" type="checkbox" name="check" value="check4">
-                                        <label for="check4"><span class="fa fa-wechat"></span> Thực nghiệm</label>
+                                    <div class="album__image" data-mh="album-image">
+                                        <img class="img-responsive" src="https://source.unsplash.com/random/768x432?sig=3" alt="">
+                                        <span class="fa fa-close"></span>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check5" type="checkbox" name="check" value="check5">
-                                        <label for="check5"><span class="fa fa-code-fork"></span> Liên thông</label>
+                                    <div class="album__image" data-mh="album-image">
+                                        <img class="img-responsive" src="https://source.unsplash.com/random/768x432?sig=4" alt="">
+                                        <span class="fa fa-close"></span>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check6" type="checkbox" name="check" value="check6">
-                                        <label for="check6"><span class="fa fa-user-md"></span> Chăm sóc y tế</label>
+                                    <div class="album__image" data-mh="album-image">
+                                        <img class="img-responsive" src="https://source.unsplash.com/random/768x432?sig=5" alt="">
+                                        <span class="fa fa-close"></span>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check7" type="checkbox" name="check" value="check7">
-                                        <label for="check7"><span class="fa fa-hourglass"></span> Học vào thứ 7</label>
+                                    <div class="item item--new album__image" data-mh="album-image">
+                                        <div class="item__info">
+                                            <div class="item__create"><span class="fa fa-plus"></span></div>
+                                            <div class="item__summary">Thêm ảnh mới</div>
+                                            <label for="image-upload" class="album__upload-img">
+                                                <input id="image-upload" type="file" class="hidden">
+                                            </label>
+                                        </div>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check8" type="checkbox" name="check" value="check8">
-                                        <label for="check8"><span class="fa fa-medkit"></span> Khám sức khỏe định kỳ</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- submit block -->
+                        <div class="edit__submit text-right">
+                            <button class="btn btn-default">Hủy</button>
+                            <button class="btn btn-primary">Xác nhận & Lưu</button>
+                        </div>
+                    </div>
+                    <!-- Liên hệ -->
+                    <div class="edit__wrap" id="block06">
+                        <h2 class="edit__wrap-title">Liên hệ</h2>
+                        <!-- block udpate, required -->
+                        <div class="edit__block is-required">
+                            <div class="edit__block-hdr">
+                                <h3 title="Thông tin bắt buộc">Trường mầm non Sao Việt <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, in!</p>
+                            </div>
+                            <div class="edit__block-content">
+                                <textarea type="text" class="form-control" rows="5" placeholder="Địa chỉ: Lô TH1 KĐT mới Cầu Giấy, phố Thọ Tháp, P. Dịch Vọng, Q. Cầu Giấy, Hà Nội. Tel: 04.6684.8558/04.6328.2675, Hotline: 0975.985.235, Email: contact@sakuramontessori.edu.vn, Website: www.sakuramontessori.edu.vn"></textarea>
+                            </div>
+                        </div>
+                        <!-- submit block -->
+                        <div class="edit__submit text-right">
+                            <button class="btn btn-default">Hủy</button>
+                            <button class="btn btn-primary">Xác nhận & Lưu</button>
+                        </div>
+                        <!-- block -->
+                    </div>
+                    <!-- Các chi nhánh khác -->
+                    <div class="edit__wrap" id="block07">
+                        <h2 class="edit__wrap-title">Các chi nhánh khác</h2>
+                        <!-- block udpate, required -->
+                        <div class="edit__block">
+                            <div class="edit__block-hdr">
+                                <h3 title="Thông tin bắt buộc">Các chi nhánh khác</h3>
+                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, in!</p>
+                            </div>
+                            <div class="edit__block-content">
+                                <!-- block -->
+                                <div class="edit__block is-required">
+                                    <div class="edit__block-hdr">
+                                        <h3 title="Thông tin bắt buộc">Tên chi nhánh <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, in!</p>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check9" type="checkbox" name="check" value="check9">
-                                        <label for="check9"><span class="fa fa-clock-o"></span> Trông trẻ muộn</label>
+                                    <div class="edit__block-content">
+                                        <textarea type="text" class="form-control" rows="1" placeholder=" Trường mầm non Sao Việt "></textarea>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check10" type="checkbox" name="check" value="check10">
-                                        <label for="check10"><span class="fa fa-magic"></span> Dịch vụ giá trị gia tăng khác</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <!-- block -->
+                                        <div class="edit__block is-required">
+                                            <div class="edit__block-hdr">
+                                                <h3 title="Thông tin bắt buộc">Số điện thoại liên lạc <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                            </div>
+                                            <div class="edit__block-content">
+                                                <input type="text" class="form-control" placeholder="Ví dụ: (043) 944-0178">
+                                            </div>
+                                        </div>
                                     </div>
-                                </li>
-                                <li class="detail__utility">
-                                    <div class="check-box">
-                                        <input id="check11" type="checkbox" name="check" value="check11">
-                                        <label for="check11"><span class="fa fa-camera"></span> Camera theo dõi</label>
+                                    <div class="col-xs-12 col-md-6">
+                                        <!-- block -->
+                                        <div class="edit__block is-required">
+                                            <div class="edit__block-hdr">
+                                                <h3 title="Thông tin bắt buộc">Địa chỉ email <small class="text-success">Thông tin bắt buộc*</small></h3>
+                                            </div>
+                                            <div class="edit__block-content">
+                                                <input type="email" class="form-control" placeholder="Ví dụ: saoviet@gmail.com">
+                                            </div>
+                                        </div>
                                     </div>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- submit block -->
+                        <div class="edit__submit text-right">
+                            <button class="btn btn-default">Hủy</button>
+                            <button class="btn btn-primary">Xác nhận & Lưu</button>
+                        </div>
+                        <!-- block -->
+                    </div>
+                    <!-- Tiện ích -->
+                    <div class="edit__wrap" id="block08">
+                        <h2 class="edit__wrap-title" title="Thông tin bắt buộc">Tiện ích <span class="text-success">*</span></h2>
+                        <div class="edit__block">
+                            <div class="edit__block-hdr">
+                                <p class="text-muted">Thông tin cơ bản giúp phụ huynh hiểu thêm về trường.</p>
+                            </div>
+                            <div class="edit__block-content">
+                                <ul class="detail__listing-utility">
+                                    <div class="check-box">
+                                    </div>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check1" type="checkbox" name="check" value="check1">
+                                            <label for="check1"><span class="fa fa-cube"></span> Sân chơi</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check2" type="checkbox" name="check" value="check2">
+                                            <label for="check2"><span class="fa fa-bus"></span> Xe đưa đón</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check3" type="checkbox" name="check" value="check3">
+                                            <label for="check3"><span class="fa fa-graduation-cap"></span> Giác dục sớm</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check12" type="checkbox" name="check" value="check12">
+                                            <label for="check12"><span class="fa fa-clone"></span> Song ngữ</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check4" type="checkbox" name="check" value="check4">
+                                            <label for="check4"><span class="fa fa-wechat"></span> Thực nghiệm</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check5" type="checkbox" name="check" value="check5">
+                                            <label for="check5"><span class="fa fa-code-fork"></span> Liên thông</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check6" type="checkbox" name="check" value="check6">
+                                            <label for="check6"><span class="fa fa-user-md"></span> Chăm sóc y tế</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check7" type="checkbox" name="check" value="check7">
+                                            <label for="check7"><span class="fa fa-hourglass"></span> Học vào thứ 7</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check8" type="checkbox" name="check" value="check8">
+                                            <label for="check8"><span class="fa fa-medkit"></span> Khám sức khỏe định kỳ</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check9" type="checkbox" name="check" value="check9">
+                                            <label for="check9"><span class="fa fa-clock-o"></span> Trông trẻ muộn</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check10" type="checkbox" name="check" value="check10">
+                                            <label for="check10"><span class="fa fa-magic"></span> Dịch vụ giá trị gia tăng khác</label>
+                                        </div>
+                                    </li>
+                                    <li class="detail__utility">
+                                        <div class="check-box">
+                                            <input id="check11" type="checkbox" name="check" value="check11">
+                                            <label for="check11"><span class="fa fa-camera"></span> Camera theo dõi</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- submit block -->
+                        <div class="edit__submit text-right">
+                            <button class="btn btn-default">Hủy</button>
+                            <button class="btn btn-primary">Xác nhận & Lưu</button>
                         </div>
                     </div>
                 </div>

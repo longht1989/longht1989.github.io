@@ -5,6 +5,7 @@
         padding: 15px;
         background: white;
         border-radius: 5px;
+        margin-bottom: 10px;
         li {
             & + li {
                 margin-top: 10px;
@@ -20,13 +21,29 @@
         margin-bottom: 20px;
     }
     &__block {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
+        @include clearfix;
+        .item--new {
+            @include breakpoint(sm) {
+                min-height: initial;
+            }
+        }
     }
-    &__block-title {
+    &__wrap {
+        border-radius: 5px;
+        padding: 15px;
+        background: white;
+        margin-bottom: 30px;
+        @include clearfix;
+    }
+    &__wrap-title {
         @include font-size(22, 28);
         margin-bottom: 10px;
         font-weight: bold;
         text-transform: uppercase;
+        padding-bottom: 7px;
+        border-bottom: 1px solid #eee;
+        color: $brand-primary;
     }
     &__block-hdr {
         margin-bottom: 10px;
