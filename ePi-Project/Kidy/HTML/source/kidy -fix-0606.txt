@@ -1,0 +1,8 @@
+﻿1. Sửa thanh menu trên siteheader ( áp dụng cho toàn trang ): phần này cấu trúc HTML có thay đổi 1 chút, các phần bố trí lại để có thêm vị trí cho user login login out.
+2. Trang 3-detail.html: 
+	- Thêm thanh menu trong bài chi tiết ( phần này có thể cho các trường chọn các màu có sẵn, thay đổi class: is-red, is-blue, is-green, is-yellow kèm theo class "detail__menu")
+	- Bổ sung nút quay lại danh sách ( xem cấu trúc giống bản HTML tĩnh, hiện tại bản online chưa có)
+3. Trang mới 3-edit-detail.html: 
+	- Các thông tin yêu cầu nhập bắt buộc "edit__block is-required", các thông tin ko bắt buộc bỏ is-required
+	- Phần textarea cho sử dụng 1 box dạng editor nhẹ thì đẹp ( tham khảo https://goo.gl/lt0H0u)
+	
