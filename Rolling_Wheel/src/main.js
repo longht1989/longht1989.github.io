@@ -19,7 +19,7 @@ let animationFrameId;
  */
 async function init() {
   try {
-    const response = await fetch('/clubs.json');
+    const response = await fetch('clubs.json');
     if (!response.ok) {
       throw new Error(`Failed to fetch JSON: ${response.status}`);
     }
