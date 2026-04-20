@@ -1,0 +1,193 @@
+{
+    "chinhTinh": [{
+            "id": "tu_vi",
+            "name": "Tử Vi",
+            "type": "chính",
+            "element": "thổ",
+            "yinYang": "dương",
+            "category": "đế vương",
+            "description": "Chủ về quyền lực, địa vị"
+        },
+        {
+            "id": "thien_co",
+            "name": "Thiên Cơ",
+            "type": "chính",
+            "element": "mộc",
+            "yinYang": "âm",
+            "category": "trí tuệ",
+            "description": "Chủ về trí tuệ, suy nghĩ"
+        },
+        {
+            "id": "thai_duong",
+            "name": "Thái Dương",
+            "type": "chính",
+            "element": "hỏa",
+            "yinYang": "dương",
+            "category": "quý nhân",
+            "description": "Chủ về quang minh, quý nhân nam"
+        },
+        {
+            "id": "vu_khuc",
+            "name": "Vũ Khúc",
+            "type": "chính",
+            "element": "kim",
+            "yinYang": "dương",
+            "category": "tài lộc",
+            "description": "Chủ về tài lộc, tài chính"
+        },
+        {
+            "id": "thien_dong",
+            "name": "Thiên Đồng",
+            "type": "chính",
+            "element": "thủy",
+            "yinYang": "dương",
+            "category": "phúc đức",
+            "description": "Chủ về phúc đức, an nhàn"
+        },
+        {
+            "id": "liem_trinh",
+            "name": "Liêm Trinh",
+            "type": "chính",
+            "element": "hỏa",
+            "yinYang": "âm",
+            "category": "tình ái",
+            "description": "Chủ về tình cảm, nghệ thuật"
+        },
+        {
+            "id": "thien_phu",
+            "name": "Thiên Phủ",
+            "type": "chính",
+            "element": "thổ",
+            "yinYang": "dương",
+            "category": "tài kho",
+            "description": "Chủ về tài sản, kho báu"
+        },
+        {
+            "id": "thai_am",
+            "name": "Thái Âm",
+            "type": "chính",
+            "element": "thủy",
+            "yinYang": "âm",
+            "category": "quý nhân",
+            "description": "Chủ về quý nhân nữ, tinh tế"
+        },
+        {
+            "id": "tham_lang",
+            "name": "Tham Lang",
+            "type": "chính",
+            "element": "mộc",
+            "yinYang": "dương",
+            "category": "dục vọng",
+            "description": "Chủ về ham muốn, nghệ thuật"
+        },
+        {
+            "id": "cu_mon",
+            "name": "Cự Môn",
+            "type": "chính",
+            "element": "thủy",
+            "yinYang": "âm",
+            "category": "thị phi",
+            "description": "Chủ về lời nói, thị phi"
+        },
+        {
+            "id": "thien_tuong",
+            "name": "Thiên Tướng",
+            "type": "chính",
+            "element": "thủy",
+            "yinYang": "dương",
+            "category": "ấn tín",
+            "description": "Chủ về quyền lực hành chính"
+        },
+        {
+            "id": "thien_luong",
+            "name": "Thiên Lương",
+            "type": "chính",
+            "element": "thổ",
+            "yinYang": "dương",
+            "category": "y dược",
+            "description": "Chủ về y dược, giải ách"
+        },
+        {
+            "id": "that_sat",
+            "name": "Thất Sát",
+            "type": "chính",
+            "element": "kim",
+            "yinYang": "âm",
+            "category": "quyền uy",
+            "description": "Chủ về quyền lực, quân sự"
+        },
+        {
+            "id": "pha_quan",
+            "name": "Phá Quân",
+            "type": "chính",
+            "element": "thủy",
+            "yinYang": "âm",
+            "category": "phá hoại",
+            "description": "Chủ về biến động, phá cách"
+        }
+    ],
+    "phuTinh": [{
+            "id": "van_xuong",
+            "name": "Văn Xương",
+            "type": "phụ",
+            "category": "văn tinh",
+            "description": "Chủ về văn chương, học vấn"
+        },
+        {
+            "id": "van_khuc",
+            "name": "Văn Khúc",
+            "type": "phụ",
+            "category": "văn tinh",
+            "description": "Chủ về văn chương, nghệ thuật"
+        },
+        {
+            "id": "tieu_hao",
+            "name": "Tiêu Hao",
+            "type": "phụ",
+            "category": "hung tinh",
+            "description": "Chủ về tiêu tán, hao hụt"
+        },
+        {
+            "id": "dia_kiep",
+            "name": "Địa Kiếp",
+            "type": "phụ",
+            "category": "hung tinh",
+            "description": "Chủ về kiếp nạn, trắc trở"
+        },
+        {
+            "id": "dia_khong",
+            "name": "Địa Không",
+            "type": "phụ",
+            "category": "hung tinh",
+            "description": "Chủ về rỗng không, thất bại"
+        },
+        {
+            "id": "hoa_ky",
+            "name": "Hóa Kỵ",
+            "type": "phụ",
+            "category": "tứ hóa",
+            "description": "Chủ về tai ương, trở ngại"
+        },
+        {
+            "id": "hoa_loc",
+            "name": "Hóa Lộc",
+            "type": "phụ",
+            "category": "tứ hóa",
+            "description": "Chủ về tài lộc, phát đạt"
+        },
+        {
+            "id": "hoa_quyen",
+            "name": "Hóa Quyền",
+            "type": "phụ",
+            "category": "tứ hóa",
+            "description": "Chủ về quyền lực, uy thế"
+        },
+        {
+            "id": "hoa_khoa",
+            "name": "Hóa Khoa",
+            "type": "phụ",
+            "category": "tứ hóa",
+            "description": "Chủ về danh vọng, học vấn"
+        }
+    ]
+}

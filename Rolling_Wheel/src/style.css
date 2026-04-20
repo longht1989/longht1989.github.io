@@ -1,0 +1,220 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --primary: #ff6b00;
+  --border-color: #000000;
+  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  letter-spacing: -2px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.wheel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+canvas {
+  border: 4px solid var(--border-color);
+  border-radius: 50%;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+/* Pointer logic */
+.pointer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 40px solid var(--primary);
+  z-index: 10;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 3px solid var(--border-color);
+  padding: 1rem 4rem;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0s;
+  letter-spacing: -1px;
+}
+
+button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+/* Modal styling */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+
+.modal.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-content {
+  background-color: var(--bg-color);
+  border: 4px solid var(--border-color);
+  padding: 4rem;
+  text-align: center;
+  min-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.winning-logo {
+  max-width: 150px;
+  max-height: 150px;
+  margin-bottom: 2rem;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.winning-logo:hover {
+  filter: grayscale(0%);
+}
+
+.winning-logo.hidden {
+  display: none;
+}
+
+.speed-controls {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  align-items: center;
+}
+
+.speed-label {
+  margin-right: 1rem;
+}
+
+.speed-controls label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+input[type="radio"] {
+  accent-color: var(--text-color);
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.winning-club {
+  font-size: 4rem;
+  font-weight: 900;
+  letter-spacing: -3px;
+  margin-bottom: 3rem;
+  word-wrap: break-word;
+}
+
+#close-modal {
+  font-size: 1.5rem;
+  padding: 0.5rem 3rem;
+  border-width: 2px;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .winning-club {
+    font-size: 2.5rem;
+  }
+
+  button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+
+  .modal-content {
+    padding: 2rem;
+    min-width: 90vw;
+  }
+}

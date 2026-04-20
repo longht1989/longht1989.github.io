@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOOTBALL CLUBS</title>
+    <!-- We will use a standard grotesque sans font via Google Fonts or system fonts. Here we use Helvetica Neue/Arial system fonts for true plain brutalism. -->
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>FOOTBALL CLUB SELECTOR</h1>
+      </header>
+
+      <main class="wheel-container">
+        <canvas id="wheel" width="600" height="600"></canvas>
+        <div class="pointer"></div>
+      </main>
+
+      <div class="controls">
+        <button id="spin-btn">SPIN</button>
+      </div>
+      <div class="speed-controls">
+        <span class="speed-label">TỐC ĐỘ:</span>
+        <label><input type="radio" name="speed" value="slow"> CHẬM</label>
+        <label><input type="radio" name="speed" value="normal" checked> TRUNG BÌNH</label>
+        <label><input type="radio" name="speed" value="fast"> NHANH</label>
+      </div>
+
+      <div id="result-modal" class="modal hidden">
+        <div class="modal-content">
+          <h2>SELECTED</h2>
+          <img id="result-logo" src="" alt="Club Logo" class="winning-logo hidden" />
+          <div id="result-text" class="winning-club"></div>
+          <button id="close-modal">CLOSE</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

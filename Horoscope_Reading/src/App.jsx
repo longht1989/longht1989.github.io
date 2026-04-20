@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import TuViCreator from './pages/TuVi';
+import PhongThuy from './pages/PhongThuy';
 import Tarot from './pages/Tarot';
 import { Blog, Admin } from './pages/Placeholders';
 
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="tu-vi" element={<TuViCreator />} />
+          <Route path="phong-thuy" element={<PhongThuy />} />
           <Route path="tarot" element={<Tarot />} />
           <Route path="blog" element={<Blog />} />
           <Route path="admin" element={<Admin />} />

@@ -1,66 +1,108 @@
-:root {
-    --bg-color: #0f0c29;
-    --bg-gradient: linear-gradient(to right, #24243e, #302b63, #0f0c29);
-    --primary-color: #a78bfa;
-    /* Light Violet */
-    --accent-color: #f472b6;
-    /* Pinkish */
-    --text-color: #ffffff;
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --font-heading: 'Style Script', serif;
-    --font-body: 'Inter', sans-serif;
+/* Global Utility Classes */
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    width: 100%;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-primary);
+    margin-top: 0;
 }
 
-body {
-    background: var(--bg-color);
-    background: var(--bg-gradient);
-    color: var(--text-color);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    overflow-x: hidden;
-    min-height: 100vh;
+p {
+    color: var(--text-secondary);
 }
 
-/* Background Animation */
-.stars,
-.twinkling {
+.text-gradient {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(167, 139, 250, 0.4);
+}
+
+/* Cards */
+.card-glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card-glass:hover {
+    border-color: var(--accent);
+}
+
+/* Loading/Center */
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 5px var(--accent);
+    }
+
+    50% {
+        box-shadow: 0 0 20px var(--accent);
+    }
+
+    100% {
+        box-shadow: 0 0 5px var(--accent);
+    }
+}
+
+.animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+}
+
+/* CSS-Only Stars */
+.stars {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display: block;
-    z-index: -1;
-    pointer-events: none;
-}
-
-.stars {
-    background: #000;
-}
-
-/* Star field without external image */
-.stars::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 2px;
-    background: transparent;
-    box-shadow:
-        100px 100px #fff, 200px 500px #fff, 300px 200px #fff, 400px 700px #fff, 500px 300px #fff,
-        600px 900px #fff, 700px 400px #fff, 800px 100px #fff, 900px 600px #fff, 1000px 200px #fff,
-        150px 800px #fff, 350px 150px #fff, 550px 950px #fff, 750px 50px #fff, 950px 450px #fff,
-        1100px 750px #fff, 1300px 100px #fff, 50px 400px #fff, 250px 650px #fff, 450px 50px #fff;
-    animation: anime-stars 50s linear infinite;
-    opacity: 0.5;
+    z-index: -2;
+    background: var(--bg-primary);
+    overflow: hidden;
 }
 
 .stars::before {
@@ -68,102 +110,60 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 3px;
-    height: 3px;
-    background: transparent;
+    width: 2px;
+    height: 2px;
+    background: white;
     box-shadow:
-        150px 300px #a78bfa, 400px 100px #a78bfa, 700px 600px #a78bfa, 1000px 900px #a78bfa,
-        1200px 200px #a78bfa, 50px 800px #a78bfa, 900px 50px #a78bfa, 300px 500px #a78bfa;
-    animation: anime-stars 100s linear infinite;
-    opacity: 0.7;
+        10vw 10vh 0 white,
+        20vw 80vh 1px white,
+        30vw 20vh 0 white,
+        40vw 40vh 1px white,
+        50vw 90vh 0 white,
+        60vw 10vh 1px white,
+        70vw 70vh 0 white,
+        80vw 30vh 1px white,
+        90vw 50vh 0 white,
+        15vw 60vh 1px white,
+        35vw 85vh 0 white,
+        65vw 25vh 1px white,
+        85vw 15vh 0 white;
+    opacity: 0.5;
+    animation: star-move 100s linear infinite;
 }
 
-@keyframes anime-stars {
+/* Add more stars with a different animation speed for depth */
+.stars::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    background: white;
+    box-shadow:
+        5vw 50vh 0 white,
+        25vw 10vh 0 white,
+        45vw 70vh 0 white,
+        75vw 20vh 0 white,
+        95vw 80vh 0 white,
+        10vw 90vh 0 white,
+        50vw 10vh 0 white,
+        80vw 60vh 0 white;
+    opacity: 0.8;
+    animation: star-move 150s linear infinite;
+}
+
+@keyframes star-move {
     from {
         transform: translateY(0);
     }
 
     to {
-        transform: translateY(-1000px);
+        transform: translateY(-100vh);
     }
 }
 
 .twinkling {
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 60%);
-    animation: pulse 5s ease-in-out infinite;
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 0.3;
-        transform: scale(1);
-    }
-
-    50% {
-        opacity: 0.5;
-        transform: scale(1.2);
-    }
-}
-
-/* Utilities */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.btn-primary {
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    color: white;
-    border: none;
-    padding: 10px 25px;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
-}
-
-.card-glass {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 2rem;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .container {
-        padding: 0 1rem;
-    }
-
-    .btn-primary {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-    }
-
-    /* Utility to hide on desktop/show on mobile or vice versa if needed */
-    .desktop-only {
-        display: none !important;
-    }
-}
-
-@media (min-width: 769px) {
-    .mobile-only {
-        display: none !important;
-    }
-}
-
-.text-gradient {
-    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    display: none;
+    /* Removed image based twinkling */
 }

@@ -2,36 +2,40 @@ import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Moon, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import styles from './Layout.module.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = React.useState(false);
 
+    const menuItems = ['Tử Vi', 'Tarot', 'Phong Thủy', 'Blog', 'Admin'];
+
     return (
-        <nav style={{
-            background: 'rgba(15, 12, 41, 0.95)',
-            backdropFilter: 'blur(10px)',
-            position: 'sticky',
-            top: 0,
-            zIndex: 1000,
-            borderBottom: '1px solid rgba(255,255,255,0.05)'
-        }}>
-            <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '70px' }}>
-                <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', textDecoration: 'none', color: '#a78bfa', fontSize: '1.5rem', fontFamily: 'Style Script, serif', fontWeight: 'bold' }}>
-                    <Moon size={24} /> Mystic
+        <nav className={styles.navbar}>
+            <div className={`container ${styles.navContainer}`}>
+                <Link to="/" className={styles.logo}>
+                    <Moon size={24} className={styles.logoIcon} /> Mystic
                 </Link>
 
                 {/* Desktop Links */}
-                <div className="nav-links desktop-only" style={{ display: 'flex', gap: '2rem' }}>
-                    {['Tử Vi', 'Tarot', 'Phong Thủy', 'Blog', 'Admin'].map((item) => (
-                        <Link key={item} to={`/${item.toLowerCase().replace(' ', '-')}`} style={{ color: 'white', textDecoration: 'none', fontWeight: 500, transition: 'color 0.3s' }}>
-                            {item}
-                        </Link>
-                    ))}
+                <div className={styles.desktopLinks}>
+                    {menuItems.map((item) => {
+                        const path = item
+                            .toLowerCase()
+                            .normalize("NFD")
+                            .replace(/[\u0300-\u036f]/g, "")
+                            .replace(/đ/g, "d")
+                            .replace(/\s+/g, "-");
+                        return (
+                            <Link key={item} to={`/${path}`} className={styles.navLink}>
+                                {item}
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 {/* Mobile Menu Toggle */}
-                <div className="mobile-only">
-                    <button onClick={() => setIsOpen(!isOpen)} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer' }}>
+                <div className={styles.mobileToggle}>
+                    <button onClick={() => setIsOpen(!isOpen)} className={styles.mobileToggle}>
                         {isOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
                 </div>
@@ -44,22 +48,28 @@ const Navbar = () => {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
-                        style={{ background: 'rgba(15, 12, 41, 0.98)', overflow: 'hidden', borderBottom: '1px solid #a78bfa' }}
+                        className={styles.mobileMenu}
                     >
-                        <div className="container" style={{ display: 'flex', flexDirection: 'column', padding: '1.5rem 0' }}>
-                            {['Tử Vi', 'Tarot', 'Phong Thủy', 'Blog', 'Admin'].map((item) => (
-                                <Link
-                                    key={item}
-                                    to={`/${item.toLowerCase().replace(' ', '-')}`}
-                                    onClick={() => setIsOpen(false)}
-                                    style={{
-                                        color: 'white', textDecoration: 'none', fontSize: '1.2rem', padding: '1rem',
-                                        borderBottom: '1px solid rgba(255,255,255,0.05)', textAlign: 'center'
-                                    }}
-                                >
-                                    {item}
-                                </Link>
-                            ))}
+                        <div className={`container ${styles.mobileLinksContainer}`}>
+                            {menuItems.map((item) => {
+                                const path = item
+                                    .toLowerCase()
+                                    .normalize("NFD")
+                                    .replace(/[\u0300-\u036f]/g, "")
+                                    .replace(/đ/g, "d")
+                                    .replace(/\s+/g, "-");
+
+                                return (
+                                    <Link
+                                        key={item}
+                                        to={`/${path}`}
+                                        onClick={() => setIsOpen(false)}
+                                        className={styles.mobileLink}
+                                    >
+                                        {item}
+                                    </Link>
+                                );
+                            })}
                         </div>
                     </motion.div>
                 )}
@@ -74,10 +84,10 @@ const Layout = () => {
             <div className="stars"></div>
             <div className="twinkling"></div>
             <Navbar />
-            <main style={{ minHeight: '80vh', padding: '2rem 0' }}>
+            <main className={styles.main}>
                 <Outlet />
             </main>
-            <footer style={{ textAlign: 'center', padding: '2rem', background: 'rgba(0,0,0,0.3)', color: '#64748b' }}>
+            <footer className={styles.footer}>
                 <p>&copy; {new Date().getFullYear()} Mystic Horoscope. AI Powered.</p>
             </footer>
         </>

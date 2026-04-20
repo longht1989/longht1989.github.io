@@ -1,0 +1,88 @@
+{
+  "palaces": [
+    {
+      "id": "menh",
+      "name": "Mệnh",
+      "position": 1,
+      "description": "Cung Mệnh - Bản chất, tính cách, vận mệnh",
+      "category": "chính"
+    },
+    {
+      "id": "phu_mau",
+      "name": "Phụ Mẫu",
+      "position": 2,
+      "description": "Cung Phụ Mẫu - Quan hệ với cha mẹ",
+      "category": "lục thân"
+    },
+    {
+      "id": "phuc_duc",
+      "name": "Phúc Đức",
+      "position": 3,
+      "description": "Cung Phúc Đức - Hưởng thụ, tinh thần",
+      "category": "chính"
+    },
+    {
+      "id": "dien_trach",
+      "name": "Điền Trạch",
+      "position": 4,
+      "description": "Cung Điền Trạch - Nhà cửa, bất động sản",
+      "category": "tài sản"
+    },
+    {
+      "id": "quan_loc",
+      "name": "Quan Lộc",
+      "position": 5,
+      "description": "Cung Quan Lộc - Sự nghiệp, công danh",
+      "category": "chính"
+    },
+    {
+      "id": "no_boc",
+      "name": "Nô Bộc",
+      "position": 6,
+      "description": "Cung Nô Bộc - Bạn bè, cấp dưới",
+      "category": "lục thân"
+    },
+    {
+      "id": "thien_di",
+      "name": "Thiên Di",
+      "position": 7,
+      "description": "Cung Thiên Di - Di chuyển, xa xứ",
+      "category": "phụ"
+    },
+    {
+      "id": "tat_ach",
+      "name": "Tật Ách",
+      "position": 8,
+      "description": "Cung Tật Ách - Sức khỏe, bệnh tật",
+      "category": "phụ"
+    },
+    {
+      "id": "tai_bach",
+      "name": "Tài Bạch",
+      "position": 9,
+      "description": "Cung Tài Bạch - Tài chính, tiền bạc",
+      "category": "chính"
+    },
+    {
+      "id": "tu_nu",
+      "name": "Tử Nữ",
+      "position": 10,
+      "description": "Cung Tử Nữ - Con cái, hậu duệ",
+      "category": "lục thân"
+    },
+    {
+      "id": "phu_the",
+      "name": "Phối Ngẫu",
+      "position": 11,
+      "description": "Cung Phối Ngẫu - Vợ chồng, hôn nhân",
+      "category": "chính"
+    },
+    {
+      "id": "huynh_de",
+      "name": "Huynh Đệ",
+      "position": 12,
+      "description": "Cung Huynh Đệ - Anh em, đồng nghiệp",
+      "category": "lục thân"
+    }
+  ]
+}

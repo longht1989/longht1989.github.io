@@ -33,9 +33,9 @@ const Tarot = () => {
 
     return (
         <div className={styles.container}>
-            <div style={{ textAlign: 'center' }}>
-                <h1 className="text-gradient" style={{ marginBottom: '0.5rem' }}>Bói Bài Tarot</h1>
-                <p style={{ color: '#94a3b8' }}>Đặt một câu hỏi trong tâm trí và rút 3 lá bài để soi sáng vận mệnh.</p>
+            <div className={styles.titleSection}>
+                <h1 className={`text-gradient ${styles.title}`}>Bói Bài Tarot</h1>
+                <p className={styles.subtitle}>Đặt một câu hỏi trong tâm trí và rút 3 lá bài để soi sáng vận mệnh.</p>
             </div>
 
             {/* Deck Area */}
@@ -51,7 +51,7 @@ const Tarot = () => {
                             whileHover={{ scale: 1.05 }}
                             transition={{ duration: 0.25 }}
                         >
-                            <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: '#a78bfa' }}>
+                            <div className={styles.deckIcon}>
                                 <Sparkles size={40} />
                             </div>
                         </motion.div>
@@ -79,11 +79,7 @@ const Tarot = () => {
                             <CardReveal card={drawnCards[index]} index={index} />
                         )}
                         {!drawnCards[index] && (
-                            <div style={{
-                                width: '100%', height: '100%',
-                                border: '2px dashed rgba(255,255,255,0.1)',
-                                borderRadius: '15px'
-                            }} />
+                            <div className={styles.emptySlot} />
                         )}
                     </div>
                 ))}
@@ -113,7 +109,7 @@ const CardReveal = ({ card, index }) => {
         >
             <div className={styles.cardBack}>
                 <Sparkles size={32} style={{ opacity: 0.5 }} />
-                <p style={{ marginTop: '1rem', fontSize: '0.8rem', opacity: 0.7 }}>Chạm để lật</p>
+                <p className={styles.cardBackInstruction}>Chạm để lật</p>
             </div>
             <div className={styles.cardFront}>
                 {/* Visuals for the card */}
@@ -121,10 +117,10 @@ const CardReveal = ({ card, index }) => {
                     {/* Simplified iconography based on ID or Name could go here */}
                     🔮
                 </div>
-                <h3 style={{ marginBottom: '0.5rem', fontFamily: 'Cinzel, serif', color: '#b45309' }}>{card.name}</h3>
-                <p style={{ fontSize: '0.85rem', marginBottom: '0.5rem', fontWeight: 'bold' }}>{card.keywords}</p>
-                <div style={{ width: '30px', height: '2px', background: '#cbd5e1', margin: '0.5rem 0' }}></div>
-                <p style={{ fontSize: '0.9rem', lineHeight: '1.4', fontStyle: 'italic' }}>"{card.meaning}"</p>
+                <h3 className={styles.cardName}>{card.name}</h3>
+                <p className={styles.cardKeywords}>{card.keywords}</p>
+                <div className={styles.separator}></div>
+                <p className={styles.cardMeaning}>"{card.meaning}"</p>
             </div>
         </motion.div>
     );

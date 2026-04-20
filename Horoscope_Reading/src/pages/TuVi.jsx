@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { generateChart } from '../utils/tuviGenerator';
 import { solarToLunarSimple } from '../utils/lunisolar';
-import styles from './TuVi.module.css'; // Will create this
+import styles from './TuVi.module.css';
 
 const TuViCreator = () => {
     const [formData, setFormData] = useState({
@@ -24,44 +24,44 @@ const TuViCreator = () => {
             <h1 className="text-gradient" style={{ textAlign: 'center', margin: '2rem 0' }}>Lập Lá Số Tử Vi</h1>
 
             {!chart ? (
-                <div className="card-glass" style={{ maxWidth: '500px', margin: '0 auto' }}>
-                    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                        <div>
-                            <label style={{ display: 'block', marginBottom: '0.5rem' }}>Họ tên</label>
+                <div className={`card-glass ${styles.formContainer}`}>
+                    <form onSubmit={handleSubmit} className={styles.form}>
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>Họ tên</label>
                             <input
                                 type="text" required
                                 value={formData.name}
                                 onChange={e => setFormData({ ...formData, name: e.target.value })}
-                                style={{ width: '100%', padding: '0.8rem', borderRadius: '5px', background: 'rgba(255,255,255,0.1)', border: '1px solid #a78bfa', color: 'white' }}
+                                className={styles.input}
                             />
                         </div>
 
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
-                            <div style={{ flex: '1 1 150px' }}>
-                                <label style={{ display: 'block', marginBottom: '0.5rem' }}>Ngày sinh (DL)</label>
+                        <div className={styles.row}>
+                            <div className={styles.col}>
+                                <label className={styles.label}>Ngày sinh (DL)</label>
                                 <input
                                     type="date" required
                                     value={formData.date}
                                     onChange={e => setFormData({ ...formData, date: e.target.value })}
-                                    style={{ width: '100%', padding: '0.8rem', borderRadius: '5px', background: 'rgba(255,255,255,0.1)', border: '1px solid #a78bfa', color: 'white' }}
+                                    className={styles.input}
                                 />
                             </div>
-                            <div style={{ flex: '1 1 150px' }}>
-                                <label style={{ display: 'block', marginBottom: '0.5rem' }}>Giờ sinh</label>
+                            <div className={styles.col}>
+                                <label className={styles.label}>Giờ sinh</label>
                                 <input
                                     type="time" required
                                     value={formData.time}
                                     onChange={e => setFormData({ ...formData, time: e.target.value })}
-                                    style={{ width: '100%', padding: '0.8rem', borderRadius: '5px', background: 'rgba(255,255,255,0.1)', border: '1px solid #a78bfa', color: 'white' }}
+                                    className={styles.input}
                                 />
                             </div>
                         </div>
-                        <div>
-                            <label style={{ display: 'block', marginBottom: '0.5rem' }}>Giới tính</label>
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>Giới tính</label>
                             <select
                                 value={formData.gender}
                                 onChange={e => setFormData({ ...formData, gender: e.target.value })}
-                                style={{ width: '100%', padding: '0.8rem', borderRadius: '5px', background: 'rgba(255,255,255,0.1)', border: '1px solid #a78bfa', color: 'white' }}
+                                className={styles.select}
                             >
                                 <option value="male">Nam</option>
                                 <option value="female">Nữ</option>
@@ -73,7 +73,7 @@ const TuViCreator = () => {
             ) : (
                 <div className={styles.chartContainer}>
                     <div className={styles.centerInfo}>
-                        <h2 style={{ color: '#a78bfa' }}>{chart.info.name}</h2>
+                        <h2>{chart.info.name}</h2>
                         <p>{chart.info.lunarDate.canChiYear} - {chart.info.gender === 'male' ? 'Nam Mạng' : 'Nữ Mạng'}</p>
                         <button onClick={() => setChart(null)} className="btn-primary" style={{ marginTop: '1rem' }}>Lập Lá Số Khác</button>
                     </div>
@@ -92,7 +92,7 @@ const TuViCreator = () => {
                                 <div className={styles.palaceName}>{palace.palaceName}</div>
                                 <div className={styles.stars}>
                                     {palace.stars.map((s, i) => (
-                                        <div key={i} style={{ color: s.type === 'good' ? '#f472b6' : '#94a3b8', fontSize: '0.8rem' }}>{s.name}</div>
+                                        <div key={i} className={s.type === 'good' ? styles.starGood : styles.starBad}>{s.name}</div>
                                     ))}
                                 </div>
                             </div>

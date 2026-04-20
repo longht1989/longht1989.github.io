@@ -1,9 +1,26 @@
+/* Tarot.module.css */
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3rem;
     padding-bottom: 4rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+}
+
+.titleSection {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-muted);
 }
 
 .deckContainer {
@@ -20,17 +37,17 @@
 .deck {
     width: 150px;
     height: 250px;
-    background: linear-gradient(135deg, #302b63 0%, #0f0c29 100%);
-    border: 2px solid #a78bfa;
-    border-radius: 15px;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    border: 2px solid var(--accent);
+    border-radius: var(--border-radius-lg);
     position: relative;
     cursor: pointer;
     box-shadow:
-        1px 1px 0 #1e1b4b,
-        2px 2px 0 #1e1b4b,
-        3px 3px 0 #1e1b4b,
-        4px 4px 0 #1e1b4b,
-        5px 5px 0 #1e1b4b,
+        1px 1px 0 var(--bg-tertiary),
+        2px 2px 0 var(--bg-tertiary),
+        3px 3px 0 var(--bg-tertiary),
+        4px 4px 0 var(--bg-tertiary),
+        5px 5px 0 var(--bg-tertiary),
         0 0 20px rgba(167, 139, 250, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
     background-image: radial-gradient(circle, rgba(167, 139, 250, 0.2) 2px, transparent 2.5px);
@@ -40,42 +57,26 @@
 .deck:hover {
     transform: translateY(-5px) scale(1.05);
     box-shadow:
-        1px 1px 0 #1e1b4b,
-        2px 2px 0 #1e1b4b,
-        3px 3px 0 #1e1b4b,
-        4px 4px 0 #1e1b4b,
-        5px 5px 0 #1e1b4b,
+        1px 1px 0 var(--bg-tertiary),
+        2px 2px 0 var(--bg-tertiary),
+        3px 3px 0 var(--bg-tertiary),
+        4px 4px 0 var(--bg-tertiary),
+        5px 5px 0 var(--bg-tertiary),
         0 10px 40px rgba(167, 139, 250, 0.6);
 }
 
-.shuffleGlow {
-    animation: glowPulse 0.5s infinite alternate;
-}
-
-@keyframes glowPulse {
-    from {
-        box-shadow: 0 0 20px #a78bfa;
-    }
-
-    to {
-        box-shadow: 0 0 50px #f472b6, 0 0 20px #a78bfa;
-    }
-}
-
-/* Helper class for fanning cards */
-.fanCard {
+.deckIcon {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 15px;
-    background: inherit;
-    border: inherit;
-    box-shadow: inherit;
-    background-image: inherit;
-    background-size: inherit;
-    pointer-events: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--accent);
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 .spread {
@@ -98,11 +99,18 @@
 
 .cardLabel {
     text-align: center;
-    color: #94a3b8;
+    color: var(--text-muted);
     margin-bottom: 1rem;
-    font-family: 'Style Script', serif;
+    font-family: var(--font-display);
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.emptySlot {
+    width: 100%;
+    height: 100%;
+    border: 2px dashed var(--border-light);
+    border-radius: var(--border-radius-lg);
 }
 
 .cardInner {
@@ -126,35 +134,80 @@
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    border-radius: 15px;
+    border-radius: var(--border-radius-lg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow-md);
 }
 
 .cardBack {
-    background: linear-gradient(135deg, #1e1b4b 0%, #0f0c29 100%);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%);
     border: 2px solid #6366f1;
+    /* Indigo-500 */
     background-image: radial-gradient(circle, rgba(99, 102, 241, 0.3) 2px, transparent 2.5px);
     background-size: 15px 15px;
     color: white;
 }
 
+.cardBackInstruction {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
 .cardFront {
     background: linear-gradient(to bottom right, #e2e8f0, #cbd5e1);
     color: #1e293b;
+    /* Slate-800 */
     transform: rotateY(180deg);
     border: 4px solid #F59E0B;
-    /* Gold border */
+    /* Amber-500 (Gold) */
+}
+
+.cardFront p {
+    color: #334155;
+    /* Ensure all p tags in cardFront are dark */
 }
 
 .cardImagePlaceholder {
     font-size: 3rem;
     margin-bottom: 1rem;
     color: #334155;
+}
+
+.cardName {
+    margin-bottom: 0.5rem;
+    font-family: var(--font-display);
+    color: #b45309;
+    /* Amber-700 */
+    font-size: 1.5rem;
+}
+
+.cardKeywords {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #1e293b;
+    /* Slate-800 */
+}
+
+.separator {
+    width: 30px;
+    height: 2px;
+    background: #94a3b8;
+    /* Slate-400 - darker for visibility */
+    margin: 0.5rem 0;
+}
+
+.cardMeaning {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    font-style: italic;
+    color: #334155;
+    /* Slate-700 */
 }
 
 /* Responsive */
@@ -168,13 +221,13 @@
         height: 240px;
     }
 
-    .cardFront h3 {
+    .cardName {
         font-size: 1rem;
     }
 
-    .cardFront p {
+    .cardMeaning {
         font-size: 0.8rem;
         display: none;
-        /* Hide full text on small screens, click to view details maybe? */
+        /* Hide full text on small screens */
     }
 }
