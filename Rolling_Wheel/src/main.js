@@ -1,5 +1,3 @@
-import './style.css';
-
 const canvas = document.getElementById('wheel');
 const ctx = canvas.getContext('2d');
 const spinBtn = document.getElementById('spin-btn');
@@ -19,7 +17,7 @@ let animationFrameId;
  */
 async function init() {
   try {
-    const response = await fetch('clubs.json');
+    const response = await fetch('./public/clubs.json');
     if (!response.ok) {
       throw new Error(`Failed to fetch JSON: ${response.status}`);
     }
