@@ -88,7 +88,7 @@ function spinWheel() {
 
   // Get speed
   const speedElement = document.querySelector('input[name="speed"]:checked');
-  const speedValue = speedElement ? speedElement.value : 'normal';
+  const speedValue = speedElement ? speedElement.value : 'fast';
   
   let baseSpins = 5;
   let duration = 5000; // 5 seconds spin
@@ -101,9 +101,38 @@ function spinWheel() {
     duration = 3000;
   }
 
-  // Random spin amount (+ some extra rotations)
-  const randomAdditionalAngle = Math.random() * Math.PI * 2;
-  const totalAngleToRotate = (baseSpins * Math.PI * 2) + randomAdditionalAngle;
+  // Select winner based on weighted probability (priority 1..4)
+  let totalWeight = 0;
+  clubs.forEach(club => {
+    let level = club.priority || 4; // default to 4 if missing
+    // probability ratio: level 1=8, 2=4, 3=2, 4=1
+    club.weight = Math.pow(2, 4 - level);
+    totalWeight += club.weight;
+  });
+
+  let randomWeight = Math.random() * totalWeight;
+  let currentWeight = 0;
+  let winningIndex = 0;
+  for (let i = 0; i < clubs.length; i++) {
+    currentWeight += clubs[i].weight;
+    if (randomWeight <= currentWeight) {
+      winningIndex = i;
+      break;
+    }
+  }
+
+  // Calculate target angle so the pointer (270deg) lands on winningIndex
+  const numSegments = clubs.length;
+  const anglePerSegment = (2 * Math.PI) / numSegments;
+  
+  // Random offset inside the segment (from 5% to 95% to avoid edges)
+  const randomOffset = (0.05 + Math.random() * 0.9) * anglePerSegment;
+  
+  // Target angle needed to place the selected segment under the pointer (3 * Math.PI / 2)
+  const targetAngle = (3 * Math.PI / 2) - (winningIndex * anglePerSegment) - randomOffset;
+  const normalizedTargetAngle = ((targetAngle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
+  
+  const totalAngleToRotate = (baseSpins * Math.PI * 2) + normalizedTargetAngle;
   
   // Animation variables
   let startTime = null;
