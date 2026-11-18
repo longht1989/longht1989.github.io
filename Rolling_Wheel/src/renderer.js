@@ -1,5 +1,5 @@
 /**
- * renderer.js - Canvas rendering engine for Gacha Machine & Modern Match Balls
+ * renderer.js - Canvas rendering engine for Gacha Machine & UEFA Starball
  */
 
 export class Renderer {
@@ -42,7 +42,7 @@ export class Renderer {
     // 1. Draw Jar Interior Background
     this.drawJarInterior(ctx, w, h, chuteWidth, state);
 
-    // 2. Draw Balls (Modern Pro Tournament Match Balls)
+    // 2. Draw Balls (UEFA Champions League Starballs)
     for (const ball of balls) {
       this.drawBall(ctx, ball);
     }
@@ -58,37 +58,40 @@ export class Renderer {
     this.createJarPath(ctx, w, h, chuteWidth);
     ctx.clip();
 
-    // Radial gradient for deep capsule background
-    const bgGrad = ctx.createRadialGradient(w / 2, h * 0.4, 30, w / 2, h * 0.5, w * 0.7);
-    bgGrad.addColorStop(0, '#1f2a44');
-    bgGrad.addColorStop(0.7, '#13192b');
-    bgGrad.addColorStop(1, '#0c101c');
+    // Radial gradient for deep capsule background (Midnight Blue / Deep Navy)
+    const bgGrad = ctx.createRadialGradient(w / 2, h * 0.38, 25, w / 2, h * 0.52, w * 0.72);
+    bgGrad.addColorStop(0, '#151e36');
+    bgGrad.addColorStop(0.55, '#0b1122');
+    bgGrad.addColorStop(1, '#050813');
     ctx.fillStyle = bgGrad;
     ctx.fill();
 
     // Inner subtle glow border
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+    ctx.strokeStyle = 'rgba(0, 242, 254, 0.12)';
     ctx.lineWidth = 4;
     ctx.stroke();
 
-    // Draw bottom chute guides
+    // Draw bottom chute guides with electric cyan glow
     const chuteX = w / 2;
     const chuteHalf = chuteWidth / 2;
-    ctx.strokeStyle = 'rgba(255, 71, 87, 0.45)';
-    ctx.lineWidth = 3;
+    ctx.strokeStyle = '#00f2fe';
+    ctx.lineWidth = 2.5;
+    ctx.shadowColor = '#00f2fe';
+    ctx.shadowBlur = 8;
     ctx.beginPath();
     ctx.moveTo(chuteX - chuteHalf - 4, h - 8);
     ctx.lineTo(chuteX - chuteHalf, h);
     ctx.moveTo(chuteX + chuteHalf + 4, h - 8);
     ctx.lineTo(chuteX + chuteHalf, h);
     ctx.stroke();
+    ctx.shadowBlur = 0;
 
     ctx.restore();
   }
 
   /**
-   * Draws a modern pro tournament match ball vector directly on Canvas
-   * Vibrant, high-end 3D metallic pearl finish with dynamic aerodynamic ribbons
+   * Draws a UEFA Champions League Midnight Cyan Starball
+   * 3D Metallic Pearl base with interlocking Cyan-Indigo stars and chrome silver seams
    */
   drawBall(ctx, ball) {
     ctx.save();
@@ -100,22 +103,24 @@ export class Renderer {
     // 1. Soft Drop Shadow underneath
     ctx.save();
     ctx.beginPath();
-    ctx.arc(0, r * 0.32, r * 0.95, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+    ctx.arc(0, r * 0.3, r * 0.95, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.42)';
     ctx.filter = 'blur(6px)';
     ctx.fill();
     ctx.filter = 'none';
     ctx.restore();
 
-    // 2. Winner Golden Aura when dropping
+    // 2. Winner Golden-Cyan Aura when dropping
     if (ball.isWinner && ball.isDropping) {
       ctx.save();
       ctx.beginPath();
       ctx.arc(0, 0, r * 1.35, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 215, 0, 0.4)';
+      ctx.fillStyle = 'rgba(0, 242, 254, 0.35)';
       ctx.fill();
-      ctx.strokeStyle = 'rgba(255, 225, 80, 0.85)';
-      ctx.lineWidth = 3;
+      ctx.strokeStyle = '#00f2fe';
+      ctx.lineWidth = 2.5;
+      ctx.shadowColor = '#00f2fe';
+      ctx.shadowBlur = 14;
       ctx.stroke();
       ctx.restore();
     }
@@ -127,17 +132,17 @@ export class Renderer {
     ctx.clip();
 
     // 3.1 Base Sphere 3D Metallic Pearl Gradient
-    const sphereGrad = ctx.createRadialGradient(-r * 0.35, -r * 0.38, r * 0.08, 0, 0, r);
+    const sphereGrad = ctx.createRadialGradient(-r * 0.35, -r * 0.4, r * 0.08, 0, 0, r);
     sphereGrad.addColorStop(0, '#ffffff');
-    sphereGrad.addColorStop(0.5, '#f1f5f9');
-    sphereGrad.addColorStop(0.85, '#cbd5e1');
+    sphereGrad.addColorStop(0.45, '#f1f5f9');
+    sphereGrad.addColorStop(0.8, '#cbd5e1');
     sphereGrad.addColorStop(1, '#64748b');
     ctx.fillStyle = sphereGrad;
     ctx.fill();
 
-    // Ambient bounce light on underside (reflecting neon glow of the jar)
-    const ambientGrad = ctx.createRadialGradient(r * 0.3, r * 0.5, 0, r * 0.3, r * 0.5, r * 0.7);
-    ambientGrad.addColorStop(0, 'rgba(56, 189, 248, 0.22)');
+    // Underside ambient cyan rim bounce reflection
+    const ambientGrad = ctx.createRadialGradient(r * 0.35, r * 0.45, 0, r * 0.35, r * 0.45, r * 0.65);
+    ambientGrad.addColorStop(0, 'rgba(0, 242, 254, 0.28)');
     ambientGrad.addColorStop(1, 'transparent');
     ctx.fillStyle = ambientGrad;
     ctx.fill();
@@ -145,87 +150,88 @@ export class Renderer {
     // Apply rotation for ball roll & tumble
     ctx.rotate(ball.rotation);
 
-    // 3.2 Dynamic Aerodynamic Chevron Ribbons (Modern Pro Match Ball Style)
-    const accent = ball.accentColor || '#ff4757';
-    for (let k = 0; k < 5; k++) {
-      const angle = -Math.PI / 2 + k * ((2 * Math.PI) / 5);
-
-      ctx.save();
-      ctx.rotate(angle);
-
-      // Curved ribbon panel wrapping to outer sphere
+    // 3.2 UEFA Champions League Starball Pattern
+    // Function to draw a 5-pointed star path
+    const drawStarPath = (cx, cy, outerR, innerR, rot = 0) => {
       ctx.beginPath();
-      ctx.moveTo(r * 0.28, -r * 0.1);
-      ctx.bezierCurveTo(r * 0.55, -r * 0.18, r * 0.82, -r * 0.05, r * 0.96, r * 0.22);
-      ctx.lineTo(r * 0.78, r * 0.35);
-      ctx.bezierCurveTo(r * 0.65, r * 0.15, r * 0.45, 0.05, r * 0.28, 0.08);
+      for (let k = 0; k < 10; k++) {
+        const rad = k % 2 === 0 ? outerR : innerR;
+        const angle = -Math.PI / 2 + rot + k * (Math.PI / 5);
+        const px = cx + Math.cos(angle) * rad;
+        const py = cy + Math.sin(angle) * rad;
+        if (k === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
       ctx.closePath();
+    };
 
-      // Metallic Accent Gradient on ribbon
-      const ribbonGrad = ctx.createLinearGradient(r * 0.2, 0, r * 0.9, 0);
-      ribbonGrad.addColorStop(0, '#111827');
-      ribbonGrad.addColorStop(0.55, accent);
-      ribbonGrad.addColorStop(1, '#0f172a');
-      ctx.fillStyle = ribbonGrad;
-      ctx.fill();
+    // Style for the Midnight Cyan Star Gradient
+    const createStarGrad = (cx, cy, size) => {
+      const g = ctx.createLinearGradient(cx - size * 0.8, cy - size * 0.8, cx + size * 0.8, cy + size * 0.8);
+      g.addColorStop(0, '#040d21');
+      g.addColorStop(0.45, '#0a235c');
+      g.addColorStop(0.82, '#00d2ff');
+      g.addColorStop(1, '#00f2fe');
+      return g;
+    };
 
-      // Sleek ribbon edge stroke
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
+    // A) Central Star
+    const centerStarR = r * 0.46;
+    const centerStarInnerR = r * 0.21;
+    drawStarPath(0, 0, centerStarR, centerStarInnerR, 0);
 
-      ctx.restore();
-    }
-
-    // 3.3 Center Star Shield (Dark Chrome Core with Metallic Trim)
-    const r0 = r * 0.34;
-    ctx.beginPath();
-    for (let k = 0; k < 5; k++) {
-      const angle = -Math.PI / 2 + k * ((2 * Math.PI) / 5);
-      const px = Math.cos(angle) * r0;
-      const py = Math.sin(angle) * r0;
-      if (k === 0) ctx.moveTo(px, py);
-      else ctx.lineTo(px, py);
-    }
-    ctx.closePath();
-
-    const starGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, r0);
-    starGrad.addColorStop(0, '#1e293b');
-    starGrad.addColorStop(0.85, '#0f172a');
-    starGrad.addColorStop(1, '#020617');
-    ctx.fillStyle = starGrad;
+    ctx.fillStyle = createStarGrad(0, 0, centerStarR);
     ctx.fill();
-
-    ctx.strokeStyle = accent;
-    ctx.lineWidth = 1.6;
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 1.4;
     ctx.stroke();
 
-    // Center micro-star emblem
-    ctx.beginPath();
-    ctx.arc(0, 0, r0 * 0.35, 0, Math.PI * 2);
-    ctx.fillStyle = '#ffffff';
+    // Center star inner neon core
+    drawStarPath(0, 0, centerStarR * 0.45, centerStarInnerR * 0.45, 0);
+    ctx.fillStyle = 'rgba(0, 242, 254, 0.4)';
     ctx.fill();
+
+    // B) 5 Interlocking Surrounding Stars
+    const outerDist = r * 0.86;
+    const outerStarR = r * 0.48;
+    const outerStarInnerR = r * 0.22;
+
+    for (let m = 0; m < 5; m++) {
+      const starAngle = -Math.PI / 2 + Math.PI / 5 + m * ((2 * Math.PI) / 5);
+      const sx = Math.cos(starAngle) * outerDist;
+      const sy = Math.sin(starAngle) * outerDist;
+
+      // Inward orientation
+      const starRot = starAngle + Math.PI;
+      drawStarPath(sx, sy, outerStarR, outerStarInnerR, starRot);
+
+      ctx.fillStyle = createStarGrad(sx, sy, outerStarR);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
+      ctx.lineWidth = 1.4;
+      ctx.stroke();
+    }
 
     ctx.restore(); // unclip sphere
 
-    // 4. Ball Outer Rim Stroke (Fine metallic edge)
+    // 4. Ball Outer Rim Stroke (Fine silver-blue edge)
     ctx.beginPath();
     ctx.arc(0, 0, r, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(30, 41, 59, 0.45)';
-    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = 'rgba(15, 23, 42, 0.5)';
+    ctx.lineWidth = 1.6;
     ctx.stroke();
 
-    // 5. Dual 3D Specular Sheen (Curved glass highlight + soft secondary reflection)
-    // Primary Top-Left Highlight
+    // 5. Dual 3D Glass Specular Highlights
+    // Primary Curved Glass Highlight (Top-Left)
     ctx.beginPath();
-    ctx.ellipse(-r * 0.28, -r * 0.36, r * 0.36, r * 0.18, -Math.PI / 6, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.ellipse(-r * 0.28, -r * 0.35, r * 0.36, r * 0.18, -Math.PI / 6, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
     ctx.fill();
 
-    // Secondary Soft Rim Highlight
+    // Secondary Soft Rim Reflection (Bottom-Right)
     ctx.beginPath();
-    ctx.ellipse(r * 0.26, r * 0.34, r * 0.24, r * 0.08, -Math.PI / 6, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+    ctx.ellipse(r * 0.28, r * 0.35, r * 0.25, r * 0.09, -Math.PI / 6, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0, 242, 254, 0.3)';
     ctx.fill();
 
     ctx.restore();
@@ -234,9 +240,9 @@ export class Renderer {
   drawJarGlassOverlay(ctx, w, h, chuteWidth) {
     ctx.save();
 
-    // Glass Jar Border Outline
+    // Glass Jar Border Outline with chrome-silver glow
     this.createJarPath(ctx, w, h, chuteWidth);
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.22)';
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
     ctx.lineWidth = 4;
     ctx.stroke();
 
@@ -245,7 +251,7 @@ export class Renderer {
     ctx.roundRect(w * 0.1, 4, w * 0.8, 12, 6);
     ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
     ctx.fill();
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+    ctx.strokeStyle = 'rgba(0, 242, 254, 0.35)';
     ctx.lineWidth = 1.5;
     ctx.stroke();
 
@@ -259,7 +265,7 @@ export class Renderer {
     ctx.lineTo(w * 0.12, h);
     ctx.lineTo(w * 0.04, h);
     ctx.closePath();
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
     ctx.fill();
 
     ctx.beginPath();
@@ -268,7 +274,7 @@ export class Renderer {
     ctx.lineTo(w * 0.22, h);
     ctx.lineTo(w * 0.19, h);
     ctx.closePath();
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.025)';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.03)';
     ctx.fill();
 
     ctx.restore();

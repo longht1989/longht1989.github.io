@@ -164,11 +164,11 @@ export class GachaMachine {
       winnerBall.isDropping = true;
     }
 
-    // Show glowing soccer ball in the exit chute after slight physical delay
+    // Show glowing Champions Starball in the exit chute after slight physical delay
     if (this.chuteBallEl && winnerBall) {
-      this.chuteBallEl.innerHTML = '⚽';
-      this.chuteBallEl.style.fontSize = '22px';
-      this.chuteBallEl.style.background = '#ffffff';
+      this.chuteBallEl.innerHTML = '✪';
+      this.chuteBallEl.style.fontSize = '24px';
+      this.chuteBallEl.style.color = '#00f2fe';
 
       setTimeout(() => {
         if (this.chuteBallEl) {

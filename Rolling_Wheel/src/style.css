@@ -1,17 +1,20 @@
 :root {
-  --bg-primary: #0f121d;
-  --bg-card: rgba(22, 27, 46, 0.85);
-  --accent: #ff4757;
-  --accent-gradient: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
-  --accent-glow: rgba(255, 71, 87, 0.45);
+  --bg-primary: #060913;
+  --bg-card: rgba(15, 23, 42, 0.88);
+  --accent: #00f2fe;
+  --accent-cyan: #00f2fe;
+  --accent-blue: #4facfe;
+  --accent-deep: #050b1a;
+  --accent-gradient: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  --accent-glow: rgba(0, 242, 254, 0.45);
   --text-primary: #ffffff;
   --text-secondary: #94a3b8;
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(0, 242, 254, 0.16);
   --glass-shine: rgba(255, 255, 255, 0.18);
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --radius-jar: 32px;
-  --radius-btn: 18px;
+  --radius-btn: 20px;
 }
 
 * {
@@ -27,8 +30,9 @@ html, body {
   min-height: 100dvh;
   background-color: var(--bg-primary);
   background-image: 
-    radial-gradient(circle at 50% 15%, rgba(45, 55, 95, 0.45) 0%, transparent 60%),
-    radial-gradient(circle at 80% 85%, rgba(255, 71, 87, 0.12) 0%, transparent 45%);
+    radial-gradient(circle at 50% 12%, rgba(0, 114, 255, 0.22) 0%, transparent 60%),
+    radial-gradient(circle at 80% 85%, rgba(0, 242, 254, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 10% 70%, rgba(15, 23, 42, 0.8) 0%, transparent 40%);
   color: var(--text-primary);
   font-family: var(--font-family);
   overflow-x: hidden;
@@ -70,17 +74,18 @@ h1 {
   font-size: clamp(1.4rem, 4vw, 1.75rem);
   font-weight: 900;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #ffffff 30%, #cbd5e1 100%);
+  background: linear-gradient(135deg, #ffffff 40%, #00f2fe 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
+  filter: drop-shadow(0 2px 8px rgba(0, 242, 254, 0.25));
 }
 
 .subtitle {
   font-size: 0.75rem;
-  color: var(--text-secondary);
-  font-weight: 500;
-  letter-spacing: 1px;
+  color: #38bdf8;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
@@ -200,8 +205,8 @@ canvas#gacha-canvas {
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--accent);
-  box-shadow: 0 0 8px var(--accent-glow);
+  background: #00f2fe;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.85);
 }
 
 /* Winning ball dropping out through chute */
@@ -209,9 +214,11 @@ canvas#gacha-canvas {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: #ffffff;
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 14px rgba(255, 215, 0, 0.5);
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #e2e8f0 45%, #94a3b8 100%);
+  border: 2.5px solid #00f2fe;
+  box-shadow: 
+    0 4px 18px rgba(0, 0, 0, 0.7),
+    0 0 16px rgba(0, 242, 254, 0.65);
   transform: translateY(-80px) scale(0.6);
   opacity: 0;
   pointer-events: none;
@@ -219,6 +226,9 @@ canvas#gacha-canvas {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  color: #00f2fe;
+  font-size: 24px;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.8);
 }
 
 #chute-ball.ball-exit-anim {
@@ -264,58 +274,116 @@ canvas#gacha-canvas {
   padding: 0.5rem 0;
 }
 
-#spin-btn {
+.btn-wrapper {
+  position: relative;
   width: 100%;
   max-width: 380px;
-  min-height: 58px;
-  background: var(--accent-gradient);
+  min-height: 60px;
+  border-radius: var(--radius-btn);
+  padding: 2.5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 30px -8px rgba(0, 242, 254, 0.35);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease;
+}
+
+.btn-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(
+    from 0deg,
+    #00f2fe 0deg,
+    #4facfe 90deg,
+    #0b1a3d 180deg,
+    #00f2fe 270deg,
+    #4facfe 360deg
+  );
+  animation: rotateBorder 3.5s linear infinite;
+  z-index: 0;
+}
+
+.btn-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px -6px rgba(0, 242, 254, 0.5);
+}
+
+.btn-wrapper:has(#spin-btn:active) {
+  transform: translateY(1px) scale(0.985);
+}
+
+.btn-wrapper:has(#spin-btn:disabled) {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+#spin-btn {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 56px;
+  background: linear-gradient(145deg, #0d1527 0%, #060a14 100%);
   color: #ffffff;
   border: none;
-  border-radius: var(--radius-btn);
+  border-radius: calc(var(--radius-btn) - 2px);
   font-size: 1.15rem;
   font-weight: 800;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  box-shadow: 
-    0 10px 25px -5px var(--accent-glow),
-    inset 0 1px 2px rgba(255, 255, 255, 0.35);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
+  transition: background 0.2s ease;
+  user-select: none;
+}
+
+#spin-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, transparent 60%);
+  pointer-events: none;
 }
 
 #spin-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 14px 30px -4px var(--accent-glow),
-    inset 0 1px 2px rgba(255, 255, 255, 0.4);
-}
-
-#spin-btn:active:not(:disabled) {
-  transform: translateY(1px) scale(0.98);
+  background: linear-gradient(145deg, #131e38 0%, #090e1c 100%);
 }
 
 #spin-btn:disabled {
-  opacity: 0.65;
   cursor: not-allowed;
-  filter: grayscale(20%);
+  opacity: 0.85;
 }
 
 .btn-icon {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
+  line-height: 1;
+  color: #00f2fe;
   display: inline-block;
-  transition: transform 0.4s ease;
+  text-shadow: 0 0 12px rgba(0, 242, 254, 0.8);
+  transition: transform 0.3s ease;
 }
 
 #spin-btn:disabled .btn-icon {
-  animation: spinIcon 0.8s linear infinite;
+  animation: spinStarIcon 0.75s linear infinite;
 }
 
-@keyframes spinIcon {
+@keyframes rotateBorder {
+  0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+@keyframes spinStarIcon {
+  0% { transform: rotate(0deg) scale(1.1); }
+  50% { transform: rotate(180deg) scale(1.25); text-shadow: 0 0 20px #00f2fe; }
+  100% { transform: rotate(360deg) scale(1.1); }
 }
 
 /* Result Modal */
@@ -343,8 +411,8 @@ canvas#gacha-canvas {
 }
 
 .modal-content {
-  background: linear-gradient(145deg, rgba(30, 38, 64, 0.95), rgba(15, 20, 36, 0.98));
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(145deg, rgba(13, 21, 39, 0.96), rgba(6, 10, 20, 0.98));
+  border: 1px solid rgba(0, 242, 254, 0.3);
   border-radius: 28px;
   padding: 2.25rem 1.75rem;
   width: 100%;
@@ -354,8 +422,8 @@ canvas#gacha-canvas {
   flex-direction: column;
   align-items: center;
   box-shadow: 
-    0 25px 60px -15px rgba(0, 0, 0, 0.8),
-    0 0 40px rgba(255, 71, 87, 0.2);
+    0 25px 60px -15px rgba(0, 0, 0, 0.85),
+    0 0 45px rgba(0, 242, 254, 0.22);
   transform: scale(1);
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -368,9 +436,10 @@ canvas#gacha-canvas {
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 2px;
-  color: var(--accent);
-  background: rgba(255, 71, 87, 0.15);
-  border: 1px solid rgba(255, 71, 87, 0.3);
+  color: #00f2fe;
+  background: rgba(0, 242, 254, 0.12);
+  border: 1px solid rgba(0, 242, 254, 0.4);
+  box-shadow: 0 0 12px rgba(0, 242, 254, 0.2);
   padding: 4px 14px;
   border-radius: 20px;
   margin-bottom: 1.5rem;
@@ -388,8 +457,8 @@ canvas#gacha-canvas {
   padding: 18px;
   margin-bottom: 1.5rem;
   box-shadow: 
-    0 15px 30px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(255, 255, 255, 0.15);
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(0, 242, 254, 0.25);
   animation: logoPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -422,9 +491,9 @@ canvas#gacha-canvas {
 #close-modal {
   width: 100%;
   min-height: 52px;
-  background: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.15) 0%, rgba(79, 172, 254, 0.22) 100%);
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 242, 254, 0.45);
   border-radius: 14px;
   font-size: 1rem;
   font-weight: 700;
@@ -435,7 +504,8 @@ canvas#gacha-canvas {
 }
 
 #close-modal:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, rgba(0, 242, 254, 0.25) 0%, rgba(79, 172, 254, 0.35) 100%);
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.35);
   transform: translateY(-1px);
 }
 
