@@ -5,7 +5,11 @@
 export class SoundManager {
   constructor() {
     this.sounds = {};
-    this.isMuted = false;
+    let savedMute = false;
+    try {
+      savedMute = localStorage.getItem('football_gacha_muted') === 'true';
+    } catch (e) {}
+    this.isMuted = savedMute;
     this.audioCtx = null;
     this.lastBounceTime = 0;
     this.activeRumbleSource = null;
@@ -210,6 +214,9 @@ export class SoundManager {
 
   toggleMute() {
     this.isMuted = !this.isMuted;
+    try {
+      localStorage.setItem('football_gacha_muted', String(this.isMuted));
+    } catch (e) {}
     if (this.isMuted) {
       this.stop('rumble');
     }

@@ -32,6 +32,7 @@ html, body {
   color: var(--text-primary);
   font-family: var(--font-family);
   overflow-x: hidden;
+  overscroll-behavior-y: none;
 }
 
 body {
@@ -214,6 +215,10 @@ canvas#gacha-canvas {
   transform: translateY(-80px) scale(0.6);
   opacity: 0;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 #chute-ball.ball-exit-anim {

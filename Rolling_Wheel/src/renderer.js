@@ -13,9 +13,8 @@ export class Renderer {
 
   resize() {
     const rect = this.canvas.parentElement.getBoundingClientRect();
-    // Maintain a sleek aspect ratio (around 1:1.05)
     const displayWidth = Math.min(rect.width, 480);
-    const displayHeight = Math.min(displayWidth * 1.05, 500);
+    const displayHeight = rect.height > 0 ? rect.height : Math.min(displayWidth * 1.05, 500);
 
     this.width = displayWidth;
     this.height = displayHeight;

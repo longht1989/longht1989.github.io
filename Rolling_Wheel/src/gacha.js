@@ -97,10 +97,10 @@ export class GachaMachine {
       const club = this.clubs[i];
       const logoImg = loadedLogos[i] || null;
 
-      // Initial distributed positions in the upper/mid portion of the jar
-      const padding = baseRadius + 12;
+      // Spawn balls naturally in the lower 60% of the jar so they settle quickly at the bottom
+      const padding = baseRadius + 14;
       const x = padding + Math.random() * (width - padding * 2);
-      const y = padding + (i / numClubs) * (height * 0.65);
+      const y = height * 0.35 + (i / numClubs) * (height * 0.52);
 
       const ball = new Ball(x, y, baseRadius, club, logoImg);
       this.balls.push(ball);
@@ -160,10 +160,13 @@ export class GachaMachine {
     // Play rumble sound
     this.sound.play('rumble', { loop: true, volume: 0.7 });
 
+    // Initial energetic burst
+    this.physics.applyShakeForces();
+
     // Continual random shake force
     this.shakeInterval = setInterval(() => {
       this.physics.applyShakeForces();
-    }, 90);
+    }, 85);
 
     // Wait for shake duration (fast speed: 1350ms)
     await new Promise((r) => setTimeout(r, 1350));
@@ -184,17 +187,31 @@ export class GachaMachine {
     const winnerBall = this.balls.find((b) => b.isWinner);
     if (winnerBall) {
       // Guide winning ball towards bottom center chute
-      winnerBall.x = this.renderer.width / 2 + (Math.random() - 0.5) * 10;
+      winnerBall.x = this.renderer.width / 2 + (Math.random() - 0.5) * 8;
       winnerBall.y = this.renderer.height - winnerBall.radius * 2;
       winnerBall.vx = 0;
-      winnerBall.vy = 4;
+      winnerBall.vy = 5;
       winnerBall.isDropping = true;
     }
 
-    // Show chute ball drop visual
+    // Refinement 1 & 2: Show chute ball with winner logo after slight physical delay
     if (this.chuteBallEl && winnerBall) {
       this.chuteBallEl.style.backgroundColor = winnerBall.color;
-      this.chuteBallEl.classList.add('ball-exit-anim');
+      
+      // Render club logo or initials inside the chute ball
+      if (winnerBall.logoImg && winnerBall.logoImg.complete && winnerBall.logoImg.naturalWidth !== 0) {
+        this.chuteBallEl.innerHTML = `<img src="${winnerBall.logoImg.src}" alt="${winnerBall.club.name}" style="width: 22px; height: 22px; object-fit: contain; pointer-events: none;" />`;
+      } else {
+        const initials = (winnerBall.club.name || 'FC').split(' ').map(w => w[0]).slice(0, 3).join('');
+        this.chuteBallEl.innerHTML = `<span style="font-size: 11px; font-weight: 900; color: #111;">${initials}</span>`;
+      }
+
+      // Delay 190ms so the ball visibly exits the jar first
+      setTimeout(() => {
+        if (this.chuteBallEl) {
+          this.chuteBallEl.classList.add('ball-exit-anim');
+        }
+      }, 190);
     }
 
     // Wait for ball to drop through
@@ -220,16 +237,18 @@ export class GachaMachine {
 
     if (this.chuteBallEl) {
       this.chuteBallEl.classList.remove('ball-exit-anim');
+      this.chuteBallEl.innerHTML = '';
     }
 
     for (const b of this.balls) {
       b.isWinner = false;
       b.isDropping = false;
       b.opacity = 1.0;
-      // Gentle bounce back up if ball fell through
+      // Gentle drop back into the pile if ball fell through
       if (b.y > this.renderer.height) {
-        b.y = this.renderer.height * 0.4;
-        b.vy = -3;
+        b.y = this.renderer.height * 0.45;
+        b.vy = 2;
+        b.vx = (Math.random() - 0.5) * 2;
       }
     }
   }

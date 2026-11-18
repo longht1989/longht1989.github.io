@@ -8,12 +8,11 @@ export class Ball {
     this.y = y;
     this.radius = radius;
     this.vx = (Math.random() - 0.5) * 3;
-    this.vy = (Math.random() - 0.5) * 3;
+    this.vy = (Math.random() - 0.5) * 2;
     this.club = club;
     this.logoImg = logoImg || null;
     
     // Aesthetic capsule color:
-    // Clubs have a primary color in JSON, or fallback to fun gacha capsule colors
     this.color = club.color && club.color !== '#000000' && club.color !== '#111111' 
       ? club.color 
       : Ball.getRandomCapsuleColor();
@@ -44,12 +43,12 @@ export class PhysicsEngine {
     this.state = 'idle'; // 'idle' | 'shaking' | 'dropping' | 'settled'
     this.onBounce = options.onBounce || (() => {});
     
-    // Physics parameters
-    this.gravity = 0.22;
-    this.friction = 0.99;
-    this.restitution = 0.72; // bounce damping
-    this.ballRestitution = 0.82;
-    this.chuteWidth = 70;
+    // Physics parameters: realistic, solid gravity
+    this.gravity = 0.55;
+    this.friction = 0.985;
+    this.restitution = 0.65; // bounce damping on walls/ceiling
+    this.ballRestitution = 0.78;
+    this.chuteWidth = 72;
   }
 
   setBounds(width, height) {
@@ -66,14 +65,16 @@ export class PhysicsEngine {
   }
 
   /**
-   * Applies energetic random impulses during shaking phase
+   * Applies realistic mixing & churning forces during shaking phase.
+   * Agitates laterally and vertically without pinning balls against the top ceiling.
    */
   applyShakeForces() {
-    const speedMultiplier = 16;
     for (const ball of this.balls) {
-      ball.vx += (Math.random() - 0.5) * speedMultiplier;
-      ball.vy -= Math.random() * (speedMultiplier * 0.9) + 4; // lift upward
-      ball.vRotation += (Math.random() - 0.5) * 0.2;
+      // Strong lateral churn (left/right agitation)
+      ball.vx += (Math.random() - 0.5) * 14;
+      // Controlled vertical agitation (some hop upward, but gravity pulls them back actively)
+      ball.vy += (Math.random() - 0.5) * 10 - 2.5;
+      ball.vRotation += (Math.random() - 0.5) * 0.25;
     }
   }
 
@@ -82,16 +83,15 @@ export class PhysicsEngine {
    */
   update(dt = 1) {
     const chuteX = this.width / 2;
-    const chuteHalf = this.chuteWidth / 2;
 
     for (let i = 0; i < this.balls.length; i++) {
       const b = this.balls[i];
 
       if (b.isDropping) {
         // Winner ball dropping through the chute
-        b.vy += 0.45; // faster gravity down
-        b.vx *= 0.94; // dampen horizontal drift
-        b.x += (chuteX - b.x) * 0.08; // steer into center of chute
+        b.vy += 0.65; // fast gravity down
+        b.vx *= 0.92; // dampen horizontal drift
+        b.x += (chuteX - b.x) * 0.1; // steer into center of chute
         b.y += b.vy;
         b.rotation += b.vRotation;
         continue;
@@ -99,24 +99,25 @@ export class PhysicsEngine {
 
       // State-specific forces
       if (this.state === 'idle') {
-        b.vy += this.gravity * 0.7;
-        // Subtle ambient jitter to keep balls looking alive
-        if (Math.random() < 0.05) {
-          b.vx += (Math.random() - 0.5) * 0.5;
-          b.vy -= Math.random() * 0.4;
+        // Steady gravity to keep balls resting at the bottom
+        b.vy += this.gravity;
+        // Occasional micro-movement so the pile looks organic
+        if (Math.random() < 0.04) {
+          b.vx += (Math.random() - 0.5) * 0.4;
+          b.vy -= Math.random() * 0.3;
         }
       } else if (this.state === 'shaking') {
-        b.vy += this.gravity * 0.8;
-        // Chaos impulses during shaking
-        if (Math.random() < 0.3) {
-          b.vx += (Math.random() - 0.5) * 5;
-          b.vy -= Math.random() * 4;
+        // Strong gravity active so balls actively drop back after bouncing
+        b.vy += this.gravity;
+        // Chaotic turbulence
+        if (Math.random() < 0.25) {
+          b.vx += (Math.random() - 0.5) * 6;
+          b.vy += (Math.random() - 0.5) * 4;
         }
       } else if (this.state === 'dropping') {
-        // Other balls calm down
-        b.vy += this.gravity;
+        // Post-shake: balls fall down FAST to floor and settle cleanly
+        b.vy += this.gravity * 1.35;
         b.vx *= 0.95;
-        b.vy *= 0.95;
       } else {
         b.vy += this.gravity;
       }
@@ -129,7 +130,7 @@ export class PhysicsEngine {
       b.x += b.vx;
       b.y += b.vy;
       b.rotation += b.vRotation;
-      b.vRotation *= 0.99;
+      b.vRotation *= 0.98;
 
       // Boundary Collisions (Jar Walls)
       // Left wall
@@ -144,26 +145,19 @@ export class PhysicsEngine {
         b.vx = -b.vx * this.restitution;
         this.triggerBounce(Math.abs(b.vx));
       }
-      // Top ceiling
+      // Top ceiling (dampened so balls don't cling or get stuck)
       if (b.y - b.radius < 0) {
         b.y = b.radius;
-        b.vy = -b.vy * this.restitution;
+        b.vy = Math.abs(b.vy) * 0.5 + 1.0; // push immediately back downward
         this.triggerBounce(Math.abs(b.vy));
       }
 
-      // Bottom floor (with chute opening check if winner is ready to drop)
-      const isOverChute = Math.abs(b.x - chuteX) < chuteHalf;
-      if (b.isWinner && this.state === 'dropping' && isOverChute) {
-        // Dropping down the chute!
-        b.isDropping = true;
-        continue;
-      }
-
+      // Bottom floor
       if (b.y + b.radius > this.height) {
         b.y = this.height - b.radius;
         b.vy = -b.vy * this.restitution;
         // Floor friction
-        b.vx *= 0.93;
+        b.vx *= 0.9;
         this.triggerBounce(Math.abs(b.vy));
       }
     }
@@ -206,8 +200,8 @@ export class PhysicsEngine {
             b2.vy += p * ny * this.ballRestitution;
 
             // Trigger bounce sound if impact has significant speed
-            if (p > 1.2) {
-              this.triggerBounce(p * 0.1);
+            if (p > 1.4) {
+              this.triggerBounce(p * 0.12);
             }
           }
         }
@@ -217,7 +211,7 @@ export class PhysicsEngine {
 
   triggerBounce(intensity) {
     if (this.onBounce) {
-      const volume = Math.min(0.6, Math.max(0.15, intensity * 0.15));
+      const volume = Math.min(0.55, Math.max(0.12, intensity * 0.14));
       this.onBounce(volume);
     }
   }

@@ -75,6 +75,11 @@ async function init() {
   });
 
   await gacha.init();
+
+  // Set initial sound button state from persisted preference
+  soundToggleBtn.textContent = soundManager.isMuted ? '🔇' : '🔊';
+  soundToggleBtn.setAttribute('aria-label', soundManager.isMuted ? 'Bật âm thanh' : 'Tắt âm thanh');
+
   setupEventListeners();
 }
 
@@ -114,6 +119,8 @@ function showResult(winner) {
   }
 
   modal.classList.remove('hidden');
+  // A11y focus management
+  setTimeout(() => closeModalBtn.focus(), 50);
 }
 
 function closeModal() {
@@ -125,9 +132,17 @@ function closeModal() {
   spinBtn.disabled = false;
   const btnText = spinBtn.querySelector('.btn-text');
   if (btnText) btnText.textContent = 'QUAY MÁY';
+  // Return focus to spin button
+  spinBtn.focus();
 }
 
 function setupEventListeners() {
+  // Reset animation time when returning to active tab
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible' && gacha) {
+      gacha.lastTime = performance.now();
+    }
+  });
   // Spin button click
   spinBtn.addEventListener('click', async () => {
     if (spinBtn.disabled) return;
