@@ -1,5 +1,5 @@
 /**
- * renderer.js - Canvas rendering engine for Gacha Machine & Balls
+ * renderer.js - Canvas rendering engine for Gacha Machine & Soccer Balls
  */
 
 export class Renderer {
@@ -32,7 +32,7 @@ export class Renderer {
     return { width: this.width, height: this.height };
   }
 
-  render(balls, state, chuteWidth = 70) {
+  render(balls, state, chuteWidth = 86) {
     const ctx = this.ctx;
     const w = this.width;
     const h = this.height;
@@ -42,7 +42,7 @@ export class Renderer {
     // 1. Draw Jar Interior Background
     this.drawJarInterior(ctx, w, h, chuteWidth, state);
 
-    // 2. Draw Balls
+    // 2. Draw Balls (Classic 3D Soccer Balls)
     for (const ball of balls) {
       this.drawBall(ctx, ball);
     }
@@ -66,7 +66,7 @@ export class Renderer {
     ctx.fillStyle = bgGrad;
     ctx.fill();
 
-    // Inner shadow at the edges
+    // Inner subtle glow border
     ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
     ctx.lineWidth = 4;
     ctx.stroke();
@@ -74,7 +74,7 @@ export class Renderer {
     // Draw bottom chute guides
     const chuteX = w / 2;
     const chuteHalf = chuteWidth / 2;
-    ctx.strokeStyle = 'rgba(233, 69, 96, 0.4)';
+    ctx.strokeStyle = 'rgba(255, 71, 87, 0.45)';
     ctx.lineWidth = 3;
     ctx.beginPath();
     ctx.moveTo(chuteX - chuteHalf - 4, h - 8);
@@ -86,85 +86,120 @@ export class Renderer {
     ctx.restore();
   }
 
+  /**
+   * Draws a classic 3D soccer ball vector directly on Canvas
+   * Instant 0ms rendering, razor-sharp on any DPI
+   */
   drawBall(ctx, ball) {
     ctx.save();
     ctx.globalAlpha = ball.opacity;
     ctx.translate(ball.x, ball.y);
-    ctx.rotate(ball.rotation);
 
     const r = ball.radius;
 
-    // 1. Soft Shadow
+    // 1. Soft Drop Shadow underneath
     ctx.save();
-    ctx.rotate(-ball.rotation); // un-rotate shadow
     ctx.beginPath();
-    ctx.arc(0, r * 0.25, r * 0.95, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.35)';
-    ctx.filter = 'blur(4px)';
+    ctx.arc(0, r * 0.3, r * 0.95, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.38)';
+    ctx.filter = 'blur(5px)';
     ctx.fill();
     ctx.filter = 'none';
     ctx.restore();
 
-    // 2. Winner Glow if dropping
+    // 2. Winner Golden Aura when dropping
     if (ball.isWinner && ball.isDropping) {
       ctx.save();
       ctx.beginPath();
       ctx.arc(0, 0, r * 1.35, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(255, 215, 0, 0.35)';
+      ctx.fillStyle = 'rgba(255, 215, 0, 0.4)';
       ctx.fill();
+      ctx.strokeStyle = 'rgba(255, 225, 80, 0.8)';
+      ctx.lineWidth = 2.5;
+      ctx.stroke();
       ctx.restore();
     }
 
-    // 3. Base Ball Sphere with 3D Radial Gradient
+    // 3. Clip everything to the circular ball bounds
+    ctx.save();
     ctx.beginPath();
     ctx.arc(0, 0, r, 0, Math.PI * 2);
+    ctx.clip();
 
-    const sphereGrad = ctx.createRadialGradient(-r * 0.3, -r * 0.35, r * 0.1, 0, 0, r);
+    // Sphere 3D shading base (White to soft grey-blue)
+    const sphereGrad = ctx.createRadialGradient(-r * 0.35, -r * 0.4, r * 0.1, 0, 0, r);
     sphereGrad.addColorStop(0, '#ffffff');
-    sphereGrad.addColorStop(0.3, ball.color);
-    sphereGrad.addColorStop(1, '#090a0f');
+    sphereGrad.addColorStop(0.55, '#f0f3f8');
+    sphereGrad.addColorStop(0.85, '#d3d8e2');
+    sphereGrad.addColorStop(1, '#8b93a5');
     ctx.fillStyle = sphereGrad;
     ctx.fill();
 
-    // 4. White Center Circle for Crisp Logo Placement
-    const badgeR = r * 0.65;
+    // Apply rotation for ball roll & tumble
+    ctx.rotate(ball.rotation);
+
+    // 4. Center Black Pentagon
+    const r0 = r * 0.36;
     ctx.beginPath();
-    ctx.arc(0, 0, badgeR, 0, Math.PI * 2);
-    ctx.fillStyle = '#ffffff';
+    for (let k = 0; k < 5; k++) {
+      const angle = -Math.PI / 2 + k * ((2 * Math.PI) / 5);
+      const px = Math.cos(angle) * r0;
+      const py = Math.sin(angle) * r0;
+      if (k === 0) ctx.moveTo(px, py);
+      else ctx.lineTo(px, py);
+    }
+    ctx.closePath();
+    ctx.fillStyle = '#141720';
     ctx.fill();
-    ctx.strokeStyle = 'rgba(0, 0, 0, 0.15)';
-    ctx.lineWidth = 1;
+    ctx.strokeStyle = '#252a36';
+    ctx.lineWidth = 1.2;
     ctx.stroke();
 
-    // 5. Logo / Monogram
-    if (ball.logoImg && ball.logoImg.complete && ball.logoImg.naturalWidth !== 0) {
-      ctx.save();
-      // Clip to circular badge
-      ctx.beginPath();
-      ctx.arc(0, 0, badgeR - 1, 0, Math.PI * 2);
-      ctx.clip();
+    // 5. Outer Black Patches & Seam lines (5 surrounding patches)
+    for (let k = 0; k < 5; k++) {
+      const angleCenter = -Math.PI / 2 + k * ((2 * Math.PI) / 5);
+      const angleMid = angleCenter + Math.PI / 5;
 
-      const logoSize = badgeR * 1.55;
-      ctx.drawImage(ball.logoImg, -logoSize / 2, -logoSize / 2, logoSize, logoSize);
-      ctx.restore();
-    } else {
-      // Fallback: Club name initials
-      const initials = (ball.club.name || 'FC')
-        .split(' ')
-        .map(w => w[0])
-        .slice(0, 3)
-        .join('');
-      ctx.fillStyle = '#111111';
-      ctx.font = `bold ${Math.floor(badgeR * 0.7)}px "Helvetica Neue", sans-serif`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(initials, 0, 0);
+      // Seam line radiating from center pentagon vertex to outer panel
+      const vx = Math.cos(angleCenter) * r0;
+      const vy = Math.sin(angleCenter) * r0;
+      const ox = Math.cos(angleCenter) * (r * 0.72);
+      const oy = Math.sin(angleCenter) * (r * 0.72);
+
+      ctx.beginPath();
+      ctx.moveTo(vx, vy);
+      ctx.lineTo(ox, oy);
+      ctx.strokeStyle = '#373e50';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      // Outer patch at angleMid
+      const patchR = r * 0.92;
+      const px = Math.cos(angleMid) * patchR;
+      const py = Math.sin(angleMid) * patchR;
+
+      ctx.beginPath();
+      ctx.arc(px, py, r * 0.34, 0, Math.PI * 2);
+      ctx.fillStyle = '#141720';
+      ctx.fill();
+      ctx.strokeStyle = '#252a36';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
     }
 
-    // 6. Gloss Specular Highlight (Curved 3D sheen)
+    ctx.restore(); // unclip sphere
+
+    // 6. Ball Perimeter Rim Stroke
     ctx.beginPath();
-    ctx.ellipse(-r * 0.28, -r * 0.35, r * 0.38, r * 0.2, -Math.PI / 6, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.55)';
+    ctx.arc(0, 0, r, 0, Math.PI * 2);
+    ctx.strokeStyle = 'rgba(20, 25, 40, 0.4)';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+
+    // 7. 3D Specular Highlight (Curved glossy sheen)
+    ctx.beginPath();
+    ctx.ellipse(-r * 0.3, -r * 0.36, r * 0.38, r * 0.22, -Math.PI / 6, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
     ctx.fill();
 
     ctx.restore();
@@ -220,29 +255,18 @@ export class Renderer {
     const radiusBottom = 32;
 
     ctx.beginPath();
-    // Top-left
     ctx.moveTo(radiusTop, 6);
-    // Top line
     ctx.lineTo(w - radiusTop, 6);
-    // Top-right corner
     ctx.arcTo(w - 6, 6, w - 6, 6 + radiusTop, radiusTop);
-    // Right wall
     ctx.lineTo(w - 6, h - radiusBottom);
-    // Bottom-right corner
     ctx.arcTo(w - 6, h - 6, w - radiusBottom, h - 6, radiusBottom);
-    // Bottom right floor
     ctx.lineTo(chuteX + chuteHalf, h - 6);
-    // Chute dip opening
     ctx.lineTo(chuteX + chuteHalf, h);
     ctx.lineTo(chuteX - chuteHalf, h);
     ctx.lineTo(chuteX - chuteHalf, h - 6);
-    // Bottom left floor
     ctx.lineTo(radiusBottom, h - 6);
-    // Bottom-left corner
     ctx.arcTo(6, h - 6, 6, h - radiusBottom, radiusBottom);
-    // Left wall
     ctx.lineTo(6, 6 + radiusTop);
-    // Top-left corner
     ctx.arcTo(6, 6, 6 + radiusTop, 6, radiusTop);
     ctx.closePath();
   }

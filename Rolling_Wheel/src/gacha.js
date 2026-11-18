@@ -27,20 +27,17 @@ export class GachaMachine {
   }
 
   /**
-   * Initializes the machine, preloads images, and starts the physics loop
+   * Initializes the machine immediately (0ms wait, no heavy preloading)
    */
   async init() {
     const { width, height } = this.renderer.resize();
     this.physics.setBounds(width, height);
 
-    // Preload logos
-    const loadedLogos = await this.preloadLogos(this.clubs);
-
-    // Create balls for each club
-    this.createBalls(width, height, loadedLogos);
+    // Create 10 chunky classic soccer balls
+    this.createBalls(width, height);
     this.physics.setBalls(this.balls);
 
-    // Start animation loop
+    // Start physics animation loop
     this.startLoop();
   }
 
@@ -49,60 +46,19 @@ export class GachaMachine {
     this.physics.setBounds(width, height);
   }
 
-  async preloadLogos(clubs) {
-    const promises = clubs.map((club) => {
-      return new Promise((resolve) => {
-        if (!club.logo) {
-          resolve(null);
-          return;
-        }
-
-        const candidates = [];
-        const raw = club.logo;
-        if (raw.startsWith('public/')) {
-          candidates.push('./' + raw.replace(/^public\//, ''));
-          candidates.push('./' + raw);
-        } else {
-          candidates.push('./' + raw);
-          candidates.push('./public/' + raw);
-        }
-
-        let idx = 0;
-        const tryNext = () => {
-          if (idx >= candidates.length) {
-            resolve(null);
-            return;
-          }
-          const src = candidates[idx++];
-          const img = new Image();
-          img.onload = () => resolve(img);
-          img.onerror = tryNext;
-          img.src = src;
-        };
-
-        tryNext();
-      });
-    });
-
-    return Promise.all(promises);
-  }
-
-  createBalls(width, height, loadedLogos) {
+  createBalls(width, height) {
     this.balls = [];
-    const numClubs = this.clubs.length;
-    // Calculate ball radius dynamically based on jar width
-    const baseRadius = Math.max(16, Math.min(22, (width / 16)));
+    // 10 prominent, large soccer balls
+    const NUM_BALLS = 10;
+    const baseRadius = Math.max(30, Math.min(36, width / 11));
 
-    for (let i = 0; i < numClubs; i++) {
-      const club = this.clubs[i];
-      const logoImg = loadedLogos[i] || null;
-
-      // Spawn balls naturally in the lower 60% of the jar so they settle quickly at the bottom
-      const padding = baseRadius + 14;
+    for (let i = 0; i < NUM_BALLS; i++) {
+      const padding = baseRadius + 16;
       const x = padding + Math.random() * (width - padding * 2);
-      const y = height * 0.35 + (i / numClubs) * (height * 0.52);
+      // Settle in the lower portion of the jar
+      const y = height * 0.42 + (i / NUM_BALLS) * (height * 0.46);
 
-      const ball = new Ball(x, y, baseRadius, club, logoImg);
+      const ball = new Ball(x, y, baseRadius, null, null);
       this.balls.push(ball);
     }
   }
@@ -136,14 +92,17 @@ export class GachaMachine {
   async start() {
     if (this.state !== 'idle') return false;
 
-    // 1. Pick winner in secret backend logic
+    // 1. Pick winner in secret backend logic from all 23 clubs
     const winnerIdx = this.selectWeightedWinner();
     const winningClub = this.clubs[winnerIdx];
     this.winnerClub = winningClub;
 
-    // Reset ball states
-    for (const b of this.balls) {
-      b.isWinner = (b.club.name === winningClub.name);
+    // Reset ball states, designate one ball as the chosen carrier
+    const winnerBallIndex = Math.floor(Math.random() * this.balls.length);
+    for (let i = 0; i < this.balls.length; i++) {
+      const b = this.balls[i];
+      b.isWinner = (i === winnerBallIndex);
+      b.club = b.isWinner ? winningClub : null;
       b.isDropping = false;
       b.opacity = 1.0;
     }
@@ -187,26 +146,19 @@ export class GachaMachine {
     const winnerBall = this.balls.find((b) => b.isWinner);
     if (winnerBall) {
       // Guide winning ball towards bottom center chute
-      winnerBall.x = this.renderer.width / 2 + (Math.random() - 0.5) * 8;
+      winnerBall.x = this.renderer.width / 2 + (Math.random() - 0.5) * 6;
       winnerBall.y = this.renderer.height - winnerBall.radius * 2;
       winnerBall.vx = 0;
-      winnerBall.vy = 5;
+      winnerBall.vy = 5.5;
       winnerBall.isDropping = true;
     }
 
-    // Refinement 1 & 2: Show chute ball with winner logo after slight physical delay
+    // Show glowing soccer ball in the exit chute after slight physical delay
     if (this.chuteBallEl && winnerBall) {
-      this.chuteBallEl.style.backgroundColor = winnerBall.color;
-      
-      // Render club logo or initials inside the chute ball
-      if (winnerBall.logoImg && winnerBall.logoImg.complete && winnerBall.logoImg.naturalWidth !== 0) {
-        this.chuteBallEl.innerHTML = `<img src="${winnerBall.logoImg.src}" alt="${winnerBall.club.name}" style="width: 22px; height: 22px; object-fit: contain; pointer-events: none;" />`;
-      } else {
-        const initials = (winnerBall.club.name || 'FC').split(' ').map(w => w[0]).slice(0, 3).join('');
-        this.chuteBallEl.innerHTML = `<span style="font-size: 11px; font-weight: 900; color: #111;">${initials}</span>`;
-      }
+      this.chuteBallEl.innerHTML = '⚽';
+      this.chuteBallEl.style.fontSize = '22px';
+      this.chuteBallEl.style.background = '#ffffff';
 
-      // Delay 190ms so the ball visibly exits the jar first
       setTimeout(() => {
         if (this.chuteBallEl) {
           this.chuteBallEl.classList.add('ball-exit-anim');
@@ -247,7 +199,7 @@ export class GachaMachine {
       // Gentle drop back into the pile if ball fell through
       if (b.y > this.renderer.height) {
         b.y = this.renderer.height * 0.45;
-        b.vy = 2;
+        b.vy = 2.5;
         b.vx = (Math.random() - 0.5) * 2;
       }
     }

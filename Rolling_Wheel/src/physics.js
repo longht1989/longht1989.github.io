@@ -48,7 +48,7 @@ export class PhysicsEngine {
     this.friction = 0.985;
     this.restitution = 0.65; // bounce damping on walls/ceiling
     this.ballRestitution = 0.78;
-    this.chuteWidth = 72;
+    this.chuteWidth = 86;
   }
 
   setBounds(width, height) {

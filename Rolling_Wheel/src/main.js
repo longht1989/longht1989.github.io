@@ -59,13 +59,13 @@ async function init() {
     ];
   }
 
-  // Preload sound assets (with relative path fallbacks)
-  await Promise.all([
+  // Preload sound assets non-blockingly (Web Audio fallback is always ready)
+  Promise.all([
     soundManager.load('bounce', ['./public/sounds/bounce.wav', './sounds/bounce.wav', 'public/sounds/bounce.wav']),
     soundManager.load('rumble', ['./public/sounds/rumble.wav', './sounds/rumble.wav', 'public/sounds/rumble.wav']),
     soundManager.load('drop',   ['./public/sounds/drop.wav',   './sounds/drop.wav',   'public/sounds/drop.wav']),
     soundManager.load('reveal', ['./public/sounds/reveal.wav', './sounds/reveal.wav', 'public/sounds/reveal.wav']),
-  ]);
+  ]).catch(() => {});
 
   // Instantiate Gacha Machine
   gacha = new GachaMachine(canvas, clubs, soundManager, {
