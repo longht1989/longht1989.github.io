@@ -68,13 +68,17 @@ async function init() {
   ]).catch(() => {});
 
   // Instantiate Gacha Machine
-  gacha = new GachaMachine(canvas, clubs, soundManager, {
-    onReveal: (winner) => {
-      showResult(winner);
-    }
-  });
+  try {
+    gacha = new GachaMachine(canvas, clubs, soundManager, {
+      onReveal: (winner) => {
+        showResult(winner);
+      }
+    });
 
-  await gacha.init();
+    await gacha.init();
+  } catch (err) {
+    console.error('Failed to init GachaMachine:', err);
+  }
 
   // Set initial sound button state from persisted preference
   soundToggleBtn.textContent = soundManager.isMuted ? '🔇' : '🔊';

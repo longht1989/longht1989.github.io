@@ -3,7 +3,7 @@
  */
 
 export class Ball {
-  constructor(x, y, radius, club, logoImg) {
+  constructor(x, y, radius, club = null, logoImg = null) {
     this.x = x;
     this.y = y;
     this.radius = radius;
@@ -12,8 +12,8 @@ export class Ball {
     this.club = club;
     this.logoImg = logoImg || null;
     
-    // Aesthetic capsule color:
-    this.color = club.color && club.color !== '#000000' && club.color !== '#111111' 
+    // Aesthetic capsule color with safe navigation:
+    this.color = (club && club.color && club.color !== '#000000' && club.color !== '#111111')
       ? club.color 
       : Ball.getRandomCapsuleColor();
 
