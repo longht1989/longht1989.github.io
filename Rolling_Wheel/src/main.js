@@ -61,10 +61,17 @@ async function init() {
 
   // Preload sound assets non-blockingly (Web Audio fallback is always ready)
   Promise.all([
-    soundManager.load('bounce', ['./public/sounds/bounce.wav', './sounds/bounce.wav', 'public/sounds/bounce.wav']),
-    soundManager.load('rumble', ['./public/sounds/rumble.wav', './sounds/rumble.wav', 'public/sounds/rumble.wav']),
-    soundManager.load('drop',   ['./public/sounds/drop.wav',   './sounds/drop.wav',   'public/sounds/drop.wav']),
-    soundManager.load('reveal', ['./public/sounds/reveal.wav', './sounds/reveal.wav', 'public/sounds/reveal.wav']),
+    soundManager.load('bgm', [
+      './sounds/champions_league.mp3',
+      './public/sounds/champions_league.mp3',
+      'sounds/champions_league.mp3',
+      './sounds/champions_league.ogg',
+      './public/sounds/champions_league.ogg'
+    ]),
+    soundManager.load('bounce', ['./sounds/bounce.wav', './public/sounds/bounce.wav', 'sounds/bounce.wav']),
+    soundManager.load('rumble', ['./sounds/rumble.wav', './public/sounds/rumble.wav', 'sounds/rumble.wav']),
+    soundManager.load('drop',   ['./sounds/drop.wav',   './public/sounds/drop.wav',   'sounds/drop.wav']),
+    soundManager.load('reveal', ['./sounds/reveal.wav', './public/sounds/reveal.wav', 'sounds/reveal.wav']),
   ]).catch(() => {});
 
   // Instantiate Gacha Machine
@@ -150,18 +157,39 @@ function closeModal() {
 }
 
 function setupEventListeners() {
-  // Reset animation time when returning to active tab
+  // Unlock audio & auto-start Champions League background music on first user interaction anywhere
+  const startBGMOnFirstTouch = () => {
+    soundManager.ensureAudioContext();
+    if (!soundManager.isMuted) {
+      soundManager.playBGM();
+    }
+  };
+  document.addEventListener('pointerdown', startBGMOnFirstTouch, { once: true });
+  document.addEventListener('keydown', startBGMOnFirstTouch, { once: true });
+
+  // Handle visibility change: pause BGM when tab is hidden, resume when active
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && gacha) {
-      gacha.lastTime = performance.now();
+    if (document.visibilityState === 'visible') {
+      if (gacha) {
+        gacha.lastTime = performance.now();
+      }
+      if (!soundManager.isMuted) {
+        soundManager.playBGM();
+      }
+    } else if (document.visibilityState === 'hidden') {
+      soundManager.pauseBGM();
     }
   });
+
   // Spin button click
   spinBtn.addEventListener('click', async () => {
     if (spinBtn.disabled) return;
 
-    // Unlock Web Audio context on user gesture
+    // Unlock Web Audio context and ensure BGM is active
     soundManager.ensureAudioContext();
+    if (!soundManager.isMuted) {
+      soundManager.playBGM();
+    }
 
     spinBtn.disabled = true;
     const btnText = spinBtn.querySelector('.btn-text');

@@ -13,6 +13,8 @@ export class SoundManager {
     this.audioCtx = null;
     this.lastBounceTime = 0;
     this.activeRumbleSource = null;
+    this.bgmAudio = null;
+    this.sfxEnabled = true;
   }
 
   /**
@@ -41,15 +43,21 @@ export class SoundManager {
         audio.preload = 'auto';
         audio.src = url;
         
-        await new Promise((resolve, reject) => {
+        await new Promise((resolve) => {
           audio.oncanplaythrough = resolve;
-          audio.onerror = reject;
-          // Timeout after 1.5s to avoid blocking
-          setTimeout(resolve, 1500);
+          audio.onerror = resolve;
+          // Timeout after 1.8s to avoid blocking
+          setTimeout(resolve, 1800);
         });
 
-        this.sounds[name] = audio;
-        return;
+        if (audio.readyState >= 2 || audio.duration > 0 || audio.src) {
+          this.sounds[name] = audio;
+          if (name === 'bgm') {
+            this.bgmAudio = audio;
+            this.bgmAudio.loop = true;
+          }
+          return;
+        }
       } catch (e) {
         // Continue to next URL candidate
       }
@@ -57,10 +65,66 @@ export class SoundManager {
   }
 
   /**
+   * Plays Champions League Background Music (looped)
+   */
+  playBGM(volume = 0.42) {
+    if (this.isMuted) return;
+    this.ensureAudioContext();
+
+    const bgm = this.bgmAudio || this.sounds['bgm'];
+    if (bgm) {
+      bgm.loop = true;
+      bgm.volume = Math.max(0, Math.min(1, volume));
+      if (bgm.paused) {
+        bgm.play().catch(() => {});
+      }
+    }
+  }
+
+  /**
+   * Pauses Background Music
+   */
+  pauseBGM() {
+    const bgm = this.bgmAudio || this.sounds['bgm'];
+    if (bgm && !bgm.paused) {
+      bgm.pause();
+    }
+  }
+
+  /**
+   * Stops Background Music completely
+   */
+  stopBGM() {
+    const bgm = this.bgmAudio || this.sounds['bgm'];
+    if (bgm) {
+      bgm.pause();
+      bgm.currentTime = 0;
+    }
+  }
+
+  /**
+   * Enables sound effects for a spin session
+   */
+  enableSFX() {
+    this.sfxEnabled = true;
+  }
+
+  /**
+   * Silences/stops all ball spinning and interaction SFX after result is out
+   */
+  silenceSFX() {
+    this.sfxEnabled = false;
+    this.stop('rumble');
+    this.stop('drop');
+    this.stop('bounce');
+  }
+
+  /**
    * Plays a sound effect
    */
   play(name, options = {}) {
     if (this.isMuted) return;
+    if (name !== 'bgm' && !this.sfxEnabled) return;
     this.ensureAudioContext();
 
     const { loop = false, volume = 1.0 } = options;
@@ -110,7 +174,7 @@ export class SoundManager {
    * Throttled bounce sound so rapid ball collisions don't sound harsh
    */
   playBounce(volume = 0.35) {
-    if (this.isMuted) return;
+    if (this.isMuted || !this.sfxEnabled) return;
     const now = performance.now();
     if (now - this.lastBounceTime > 75) {
       this.lastBounceTime = now;
@@ -218,7 +282,12 @@ export class SoundManager {
       localStorage.setItem('football_gacha_muted', String(this.isMuted));
     } catch (e) {}
     if (this.isMuted) {
-      this.stop('rumble');
+      this.pauseBGM();
+      this.silenceSFX();
+    } else {
+      this.ensureAudioContext();
+      this.playBGM();
+      this.enableSFX();
     }
     return this.isMuted;
   }

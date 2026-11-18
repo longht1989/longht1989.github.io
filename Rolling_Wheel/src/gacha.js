@@ -14,7 +14,12 @@ export class GachaMachine {
 
     this.renderer = new Renderer(canvas);
     this.physics = new PhysicsEngine(400, 420, {
-      onBounce: (vol) => this.sound.playBounce(vol)
+      onBounce: (vol) => {
+        // Only trigger bounce sounds when actively spinning/dropping
+        if (this.state === 'shaking' || this.state === 'dropping') {
+          this.sound.playBounce(vol);
+        }
+      }
     });
 
     this.balls = [];
@@ -97,6 +102,11 @@ export class GachaMachine {
    */
   async start() {
     if (this.state !== 'idle') return false;
+
+    // Enable sound effects for this new spin session
+    this.sound.enableSFX();
+    // Ensure Champions League BGM is playing on loop
+    this.sound.playBGM();
 
     // 1. Pick winner in secret backend logic from all 23 clubs
     const winnerIdx = this.selectWeightedWinner();
@@ -201,6 +211,12 @@ export class GachaMachine {
       this.onReveal(winningClub, loadedLogo);
     }
 
+    // End and silence all spinning & interaction SFX once result is out
+    // (BGM stays playing and looping continuously)
+    setTimeout(() => {
+      this.sound.silenceSFX();
+    }, 1200);
+
     return true;
   }
 
@@ -210,6 +226,7 @@ export class GachaMachine {
   reset() {
     this.state = 'idle';
     this.physics.setState('idle');
+    this.sound.silenceSFX();
 
     if (this.chuteBallEl) {
       this.chuteBallEl.classList.remove('ball-exit-anim');
