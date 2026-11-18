@@ -12,10 +12,11 @@ export class Ball {
     this.club = club;
     this.logoImg = logoImg || null;
     
+    this.accentColor = Ball.getRandomCapsuleColor();
     // Aesthetic capsule color with safe navigation:
     this.color = (club && club.color && club.color !== '#000000' && club.color !== '#111111')
       ? club.color 
-      : Ball.getRandomCapsuleColor();
+      : this.accentColor;
 
     this.isWinner = false;
     this.isDropping = false;
@@ -27,9 +28,16 @@ export class Ball {
 
   static getRandomCapsuleColor() {
     const palette = [
-      '#e63946', '#f4a261', '#2a9d8f', '#457b9d', 
-      '#1d3557', '#9b5de5', '#f15bb5', '#00bbf9', 
-      '#00f5d4', '#fee440', '#d62828', '#3a86ff'
+      '#ff4757', // Coral Crimson
+      '#1e90ff', // Royal Sapphire
+      '#2ed573', // Neon Emerald
+      '#ffa502', // Cyber Amber / Gold
+      '#9b5de5', // Violet Amethyst
+      '#00d2d3', // Electric Cyan
+      '#ff6b81', // Rose Pink
+      '#70a1ff', // Sky Blue
+      '#eccc68', // Metallic Gold
+      '#5352ed'  // Indigo
     ];
     return palette[Math.floor(Math.random() * palette.length)];
   }

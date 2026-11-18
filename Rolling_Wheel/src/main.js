@@ -70,8 +70,9 @@ async function init() {
   // Instantiate Gacha Machine
   try {
     gacha = new GachaMachine(canvas, clubs, soundManager, {
-      onReveal: (winner) => {
-        showResult(winner);
+      preloadLogo: preloadWinnerLogo,
+      onReveal: (winner, loadedLogo) => {
+        showResult(winner, loadedLogo);
       }
     });
 
@@ -87,36 +88,44 @@ async function init() {
   setupEventListeners();
 }
 
-function showResult(winner) {
+/**
+ * Preloads the winning club's logo safely with candidates fallback
+ */
+async function preloadWinnerLogo(winner) {
+  if (!winner || !winner.logo) return null;
+  const candidates = [];
+  const raw = winner.logo;
+  if (raw.startsWith('public/')) {
+    candidates.push('./' + raw.replace(/^public\//, ''));
+    candidates.push('./' + raw);
+  } else {
+    candidates.push('./' + raw);
+    candidates.push('./public/' + raw);
+  }
+
+  for (const src of candidates) {
+    const loadedImg = await new Promise((resolve) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(null);
+      img.src = src;
+      // Safety timeout so it never blocks forever
+      setTimeout(() => resolve(null), 1800);
+    });
+    if (loadedImg) return loadedImg;
+  }
+  return null;
+}
+
+function showResult(winner, loadedLogo) {
   resultText.textContent = winner.name;
 
-  if (winner.logo) {
-    const candidates = [];
-    const raw = winner.logo;
-    if (raw.startsWith('public/')) {
-      candidates.push('./' + raw.replace(/^public\//, ''));
-      candidates.push('./' + raw);
-    } else {
-      candidates.push('./' + raw);
-      candidates.push('./public/' + raw);
-    }
-
-    let idx = 0;
-    const tryNext = () => {
-      if (idx >= candidates.length) {
-        resultLogo.src = '';
-        resultLogo.classList.add('hidden');
-        return;
-      }
-      resultLogo.src = candidates[idx++];
-    };
-
-    resultLogo.onload = () => {
-      resultLogo.classList.remove('hidden');
-    };
-    resultLogo.onerror = tryNext;
-
-    tryNext();
+  if (loadedLogo && loadedLogo.src) {
+    resultLogo.src = loadedLogo.src;
+    resultLogo.classList.remove('hidden');
+  } else if (winner.logo) {
+    resultLogo.src = winner.logo.startsWith('./') ? winner.logo : './' + winner.logo;
+    resultLogo.classList.remove('hidden');
   } else {
     resultLogo.src = '';
     resultLogo.classList.add('hidden');

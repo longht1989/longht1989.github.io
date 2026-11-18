@@ -10,6 +10,7 @@ export class GachaMachine {
     this.clubs = clubs;
     this.sound = soundManager;
     this.onReveal = options.onReveal || (() => {});
+    this.preloadLogo = options.preloadLogo || null;
 
     this.renderer = new Renderer(canvas);
     this.physics = new PhysicsEngine(400, 420, {
@@ -48,9 +49,13 @@ export class GachaMachine {
 
   createBalls(width, height) {
     this.balls = [];
-    // 10 prominent, large soccer balls
+    // 10 prominent, large soccer balls with vibrant tournament accent colors
     const NUM_BALLS = 10;
     const baseRadius = Math.max(30, Math.min(36, width / 11));
+    const palette = [
+      '#ff4757', '#1e90ff', '#2ed573', '#ffa502', '#9b5de5',
+      '#00d2d3', '#ff6b81', '#70a1ff', '#eccc68', '#5352ed'
+    ];
 
     for (let i = 0; i < NUM_BALLS; i++) {
       const padding = baseRadius + 16;
@@ -59,6 +64,7 @@ export class GachaMachine {
       const y = height * 0.42 + (i / NUM_BALLS) * (height * 0.46);
 
       const ball = new Ball(x, y, baseRadius, null, null);
+      ball.accentColor = palette[i % palette.length];
       this.balls.push(ball);
     }
   }
@@ -96,6 +102,11 @@ export class GachaMachine {
     const winnerIdx = this.selectWeightedWinner();
     const winningClub = this.clubs[winnerIdx];
     this.winnerClub = winningClub;
+
+    // Asynchronously begin preloading winning club's logo right now in parallel
+    const logoPromise = (this.preloadLogo && winningClub)
+      ? this.preloadLogo(winningClub)
+      : Promise.resolve(null);
 
     // Reset ball states, designate one ball as the chosen carrier
     const winnerBallIndex = Math.floor(Math.random() * this.balls.length);
@@ -169,12 +180,23 @@ export class GachaMachine {
     // Wait for ball to drop through
     await new Promise((r) => setTimeout(r, 750));
 
+    // Delay reveal until the winner club's logo is completely loaded
+    let loadedLogo = null;
+    try {
+      loadedLogo = await Promise.race([
+        logoPromise,
+        new Promise((resolve) => setTimeout(() => resolve(null), 2500)) // fallback safeguard
+      ]);
+    } catch (e) {
+      loadedLogo = null;
+    }
+
     // 4. REVEAL PHASE
     this.state = 'reveal';
     this.sound.play('reveal', { volume: 0.9 });
 
     if (this.onReveal) {
-      this.onReveal(winningClub);
+      this.onReveal(winningClub, loadedLogo);
     }
 
     return true;

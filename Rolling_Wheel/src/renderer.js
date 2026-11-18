@@ -1,5 +1,5 @@
 /**
- * renderer.js - Canvas rendering engine for Gacha Machine & Soccer Balls
+ * renderer.js - Canvas rendering engine for Gacha Machine & Modern Match Balls
  */
 
 export class Renderer {
@@ -42,7 +42,7 @@ export class Renderer {
     // 1. Draw Jar Interior Background
     this.drawJarInterior(ctx, w, h, chuteWidth, state);
 
-    // 2. Draw Balls (Classic 3D Soccer Balls)
+    // 2. Draw Balls (Modern Pro Tournament Match Balls)
     for (const ball of balls) {
       this.drawBall(ctx, ball);
     }
@@ -87,8 +87,8 @@ export class Renderer {
   }
 
   /**
-   * Draws a classic 3D soccer ball vector directly on Canvas
-   * Instant 0ms rendering, razor-sharp on any DPI
+   * Draws a modern pro tournament match ball vector directly on Canvas
+   * Vibrant, high-end 3D metallic pearl finish with dynamic aerodynamic ribbons
    */
   drawBall(ctx, ball) {
     ctx.save();
@@ -100,9 +100,9 @@ export class Renderer {
     // 1. Soft Drop Shadow underneath
     ctx.save();
     ctx.beginPath();
-    ctx.arc(0, r * 0.3, r * 0.95, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.38)';
-    ctx.filter = 'blur(5px)';
+    ctx.arc(0, r * 0.32, r * 0.95, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+    ctx.filter = 'blur(6px)';
     ctx.fill();
     ctx.filter = 'none';
     ctx.restore();
@@ -114,8 +114,8 @@ export class Renderer {
       ctx.arc(0, 0, r * 1.35, 0, Math.PI * 2);
       ctx.fillStyle = 'rgba(255, 215, 0, 0.4)';
       ctx.fill();
-      ctx.strokeStyle = 'rgba(255, 225, 80, 0.8)';
-      ctx.lineWidth = 2.5;
+      ctx.strokeStyle = 'rgba(255, 225, 80, 0.85)';
+      ctx.lineWidth = 3;
       ctx.stroke();
       ctx.restore();
     }
@@ -126,20 +126,59 @@ export class Renderer {
     ctx.arc(0, 0, r, 0, Math.PI * 2);
     ctx.clip();
 
-    // Sphere 3D shading base (White to soft grey-blue)
-    const sphereGrad = ctx.createRadialGradient(-r * 0.35, -r * 0.4, r * 0.1, 0, 0, r);
+    // 3.1 Base Sphere 3D Metallic Pearl Gradient
+    const sphereGrad = ctx.createRadialGradient(-r * 0.35, -r * 0.38, r * 0.08, 0, 0, r);
     sphereGrad.addColorStop(0, '#ffffff');
-    sphereGrad.addColorStop(0.55, '#f0f3f8');
-    sphereGrad.addColorStop(0.85, '#d3d8e2');
-    sphereGrad.addColorStop(1, '#8b93a5');
+    sphereGrad.addColorStop(0.5, '#f1f5f9');
+    sphereGrad.addColorStop(0.85, '#cbd5e1');
+    sphereGrad.addColorStop(1, '#64748b');
     ctx.fillStyle = sphereGrad;
+    ctx.fill();
+
+    // Ambient bounce light on underside (reflecting neon glow of the jar)
+    const ambientGrad = ctx.createRadialGradient(r * 0.3, r * 0.5, 0, r * 0.3, r * 0.5, r * 0.7);
+    ambientGrad.addColorStop(0, 'rgba(56, 189, 248, 0.22)');
+    ambientGrad.addColorStop(1, 'transparent');
+    ctx.fillStyle = ambientGrad;
     ctx.fill();
 
     // Apply rotation for ball roll & tumble
     ctx.rotate(ball.rotation);
 
-    // 4. Center Black Pentagon
-    const r0 = r * 0.36;
+    // 3.2 Dynamic Aerodynamic Chevron Ribbons (Modern Pro Match Ball Style)
+    const accent = ball.accentColor || '#ff4757';
+    for (let k = 0; k < 5; k++) {
+      const angle = -Math.PI / 2 + k * ((2 * Math.PI) / 5);
+
+      ctx.save();
+      ctx.rotate(angle);
+
+      // Curved ribbon panel wrapping to outer sphere
+      ctx.beginPath();
+      ctx.moveTo(r * 0.28, -r * 0.1);
+      ctx.bezierCurveTo(r * 0.55, -r * 0.18, r * 0.82, -r * 0.05, r * 0.96, r * 0.22);
+      ctx.lineTo(r * 0.78, r * 0.35);
+      ctx.bezierCurveTo(r * 0.65, r * 0.15, r * 0.45, 0.05, r * 0.28, 0.08);
+      ctx.closePath();
+
+      // Metallic Accent Gradient on ribbon
+      const ribbonGrad = ctx.createLinearGradient(r * 0.2, 0, r * 0.9, 0);
+      ribbonGrad.addColorStop(0, '#111827');
+      ribbonGrad.addColorStop(0.55, accent);
+      ribbonGrad.addColorStop(1, '#0f172a');
+      ctx.fillStyle = ribbonGrad;
+      ctx.fill();
+
+      // Sleek ribbon edge stroke
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+
+      ctx.restore();
+    }
+
+    // 3.3 Center Star Shield (Dark Chrome Core with Metallic Trim)
+    const r0 = r * 0.34;
     ctx.beginPath();
     for (let k = 0; k < 5; k++) {
       const angle = -Math.PI / 2 + k * ((2 * Math.PI) / 5);
@@ -149,57 +188,44 @@ export class Renderer {
       else ctx.lineTo(px, py);
     }
     ctx.closePath();
-    ctx.fillStyle = '#141720';
+
+    const starGrad = ctx.createRadialGradient(0, 0, 0, 0, 0, r0);
+    starGrad.addColorStop(0, '#1e293b');
+    starGrad.addColorStop(0.85, '#0f172a');
+    starGrad.addColorStop(1, '#020617');
+    ctx.fillStyle = starGrad;
     ctx.fill();
-    ctx.strokeStyle = '#252a36';
-    ctx.lineWidth = 1.2;
+
+    ctx.strokeStyle = accent;
+    ctx.lineWidth = 1.6;
     ctx.stroke();
 
-    // 5. Outer Black Patches & Seam lines (5 surrounding patches)
-    for (let k = 0; k < 5; k++) {
-      const angleCenter = -Math.PI / 2 + k * ((2 * Math.PI) / 5);
-      const angleMid = angleCenter + Math.PI / 5;
-
-      // Seam line radiating from center pentagon vertex to outer panel
-      const vx = Math.cos(angleCenter) * r0;
-      const vy = Math.sin(angleCenter) * r0;
-      const ox = Math.cos(angleCenter) * (r * 0.72);
-      const oy = Math.sin(angleCenter) * (r * 0.72);
-
-      ctx.beginPath();
-      ctx.moveTo(vx, vy);
-      ctx.lineTo(ox, oy);
-      ctx.strokeStyle = '#373e50';
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
-
-      // Outer patch at angleMid
-      const patchR = r * 0.92;
-      const px = Math.cos(angleMid) * patchR;
-      const py = Math.sin(angleMid) * patchR;
-
-      ctx.beginPath();
-      ctx.arc(px, py, r * 0.34, 0, Math.PI * 2);
-      ctx.fillStyle = '#141720';
-      ctx.fill();
-      ctx.strokeStyle = '#252a36';
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
-    }
+    // Center micro-star emblem
+    ctx.beginPath();
+    ctx.arc(0, 0, r0 * 0.35, 0, Math.PI * 2);
+    ctx.fillStyle = '#ffffff';
+    ctx.fill();
 
     ctx.restore(); // unclip sphere
 
-    // 6. Ball Perimeter Rim Stroke
+    // 4. Ball Outer Rim Stroke (Fine metallic edge)
     ctx.beginPath();
     ctx.arc(0, 0, r, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(20, 25, 40, 0.4)';
+    ctx.strokeStyle = 'rgba(30, 41, 59, 0.45)';
     ctx.lineWidth = 1.5;
     ctx.stroke();
 
-    // 7. 3D Specular Highlight (Curved glossy sheen)
+    // 5. Dual 3D Specular Sheen (Curved glass highlight + soft secondary reflection)
+    // Primary Top-Left Highlight
     ctx.beginPath();
-    ctx.ellipse(-r * 0.3, -r * 0.36, r * 0.38, r * 0.22, -Math.PI / 6, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    ctx.ellipse(-r * 0.28, -r * 0.36, r * 0.36, r * 0.18, -Math.PI / 6, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+    ctx.fill();
+
+    // Secondary Soft Rim Highlight
+    ctx.beginPath();
+    ctx.ellipse(r * 0.26, r * 0.34, r * 0.24, r * 0.08, -Math.PI / 6, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
     ctx.fill();
 
     ctx.restore();
