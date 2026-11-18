@@ -164,11 +164,13 @@ export class GachaMachine {
       winnerBall.isDropping = true;
     }
 
-    // Show glowing Champions Starball in the exit chute after slight physical delay
+    // Show glowing Casino Jackpot Orb in the exit chute after slight physical delay
     if (this.chuteBallEl && winnerBall) {
-      this.chuteBallEl.innerHTML = '✪';
+      this.chuteBallEl.innerHTML = '7';
       this.chuteBallEl.style.fontSize = '24px';
-      this.chuteBallEl.style.color = '#00f2fe';
+      this.chuteBallEl.style.fontWeight = '900';
+      this.chuteBallEl.style.color = '#ffe680';
+      this.chuteBallEl.style.textShadow = '0 0 10px #ffd700, 0 2px 4px #000';
 
       setTimeout(() => {
         if (this.chuteBallEl) {

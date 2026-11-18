@@ -144,7 +144,7 @@ function closeModal() {
   // Re-enable spin button
   spinBtn.disabled = false;
   const btnText = spinBtn.querySelector('.btn-text');
-  if (btnText) btnText.textContent = 'QUAY MÁY';
+  if (btnText) btnText.textContent = 'QUAY THƯỞNG';
   // Return focus to spin button
   spinBtn.focus();
 }
@@ -170,7 +170,7 @@ function setupEventListeners() {
     const started = await gacha.start();
     if (!started) {
       spinBtn.disabled = false;
-      if (btnText) btnText.textContent = 'QUAY MÁY';
+      if (btnText) btnText.textContent = 'QUAY THƯỞNG';
     }
   });
 

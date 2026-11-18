@@ -58,26 +58,26 @@ export class Renderer {
     this.createJarPath(ctx, w, h, chuteWidth);
     ctx.clip();
 
-    // Radial gradient for deep capsule background (Midnight Blue / Deep Navy)
-    const bgGrad = ctx.createRadialGradient(w / 2, h * 0.38, 25, w / 2, h * 0.52, w * 0.72);
-    bgGrad.addColorStop(0, '#151e36');
-    bgGrad.addColorStop(0.55, '#0b1122');
-    bgGrad.addColorStop(1, '#050813');
+    // Radial gradient for deep capsule background (Vegas Casino Velvet & Noir)
+    const bgGrad = ctx.createRadialGradient(w / 2, h * 0.38, 20, w / 2, h * 0.52, w * 0.72);
+    bgGrad.addColorStop(0, '#380715');
+    bgGrad.addColorStop(0.5, '#1e030b');
+    bgGrad.addColorStop(1, '#090104');
     ctx.fillStyle = bgGrad;
     ctx.fill();
 
-    // Inner subtle glow border
-    ctx.strokeStyle = 'rgba(0, 242, 254, 0.12)';
+    // Inner warm gold glow border
+    ctx.strokeStyle = 'rgba(255, 215, 0, 0.2)';
     ctx.lineWidth = 4;
     ctx.stroke();
 
-    // Draw bottom chute guides with electric cyan glow
+    // Draw bottom chute guides with glowing polished brass/gold
     const chuteX = w / 2;
     const chuteHalf = chuteWidth / 2;
-    ctx.strokeStyle = '#00f2fe';
-    ctx.lineWidth = 2.5;
-    ctx.shadowColor = '#00f2fe';
-    ctx.shadowBlur = 8;
+    ctx.strokeStyle = '#ffd700';
+    ctx.lineWidth = 3;
+    ctx.shadowColor = '#ffd700';
+    ctx.shadowBlur = 10;
     ctx.beginPath();
     ctx.moveTo(chuteX - chuteHalf - 4, h - 8);
     ctx.lineTo(chuteX - chuteHalf, h);
@@ -90,8 +90,8 @@ export class Renderer {
   }
 
   /**
-   * Draws a UEFA Champions League Midnight Cyan Starball
-   * 3D Metallic Pearl base with interlocking Cyan-Indigo stars and chrome silver seams
+   * Draws a 24K Gold Casino Jackpot Orb
+   * Deep 3D gold luster, royal ruby center medallion, golden Lucky 7, and diamond star glints
    */
   drawBall(ctx, ball) {
     ctx.save();
@@ -104,23 +104,23 @@ export class Renderer {
     ctx.save();
     ctx.beginPath();
     ctx.arc(0, r * 0.3, r * 0.95, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.42)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.48)';
     ctx.filter = 'blur(6px)';
     ctx.fill();
     ctx.filter = 'none';
     ctx.restore();
 
-    // 2. Winner Golden-Cyan Aura when dropping
+    // 2. Winner Golden Jackpot Aura when dropping
     if (ball.isWinner && ball.isDropping) {
       ctx.save();
       ctx.beginPath();
-      ctx.arc(0, 0, r * 1.35, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0, 242, 254, 0.35)';
+      ctx.arc(0, 0, r * 1.4, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(255, 215, 0, 0.35)';
       ctx.fill();
-      ctx.strokeStyle = '#00f2fe';
-      ctx.lineWidth = 2.5;
-      ctx.shadowColor = '#00f2fe';
-      ctx.shadowBlur = 14;
+      ctx.strokeStyle = '#ffd700';
+      ctx.lineWidth = 3;
+      ctx.shadowColor = '#ffd700';
+      ctx.shadowBlur = 18;
       ctx.stroke();
       ctx.restore();
     }
@@ -131,18 +131,19 @@ export class Renderer {
     ctx.arc(0, 0, r, 0, Math.PI * 2);
     ctx.clip();
 
-    // 3.1 Base Sphere 3D Metallic Pearl Gradient
-    const sphereGrad = ctx.createRadialGradient(-r * 0.35, -r * 0.4, r * 0.08, 0, 0, r);
+    // 3.1 Base Sphere 3D 24K Polished Gold Gradient
+    const sphereGrad = ctx.createRadialGradient(-r * 0.35, -r * 0.4, r * 0.05, 0, 0, r);
     sphereGrad.addColorStop(0, '#ffffff');
-    sphereGrad.addColorStop(0.45, '#f1f5f9');
-    sphereGrad.addColorStop(0.8, '#cbd5e1');
-    sphereGrad.addColorStop(1, '#64748b');
+    sphereGrad.addColorStop(0.18, '#fff4b8');
+    sphereGrad.addColorStop(0.45, '#ffd700');
+    sphereGrad.addColorStop(0.75, '#c68a0c');
+    sphereGrad.addColorStop(1, '#5a3b02');
     ctx.fillStyle = sphereGrad;
     ctx.fill();
 
-    // Underside ambient cyan rim bounce reflection
+    // Underside warm ruby-crimson bounce reflection
     const ambientGrad = ctx.createRadialGradient(r * 0.35, r * 0.45, 0, r * 0.35, r * 0.45, r * 0.65);
-    ambientGrad.addColorStop(0, 'rgba(0, 242, 254, 0.28)');
+    ambientGrad.addColorStop(0, 'rgba(255, 51, 85, 0.35)');
     ambientGrad.addColorStop(1, 'transparent');
     ctx.fillStyle = ambientGrad;
     ctx.fill();
@@ -150,88 +151,101 @@ export class Renderer {
     // Apply rotation for ball roll & tumble
     ctx.rotate(ball.rotation);
 
-    // 3.2 UEFA Champions League Starball Pattern
-    // Function to draw a 5-pointed star path
-    const drawStarPath = (cx, cy, outerR, innerR, rot = 0) => {
+    // 3.2 Casino Roulette / Token Facets (8 radial alternating sheens)
+    for (let i = 0; i < 8; i++) {
       ctx.beginPath();
-      for (let k = 0; k < 10; k++) {
-        const rad = k % 2 === 0 ? outerR : innerR;
-        const angle = -Math.PI / 2 + rot + k * (Math.PI / 5);
-        const px = cx + Math.cos(angle) * rad;
-        const py = cy + Math.sin(angle) * rad;
-        if (k === 0) ctx.moveTo(px, py);
-        else ctx.lineTo(px, py);
-      }
+      ctx.moveTo(0, 0);
+      ctx.arc(0, 0, r * 0.95, (i * Math.PI) / 4, ((i + 1) * Math.PI) / 4);
       ctx.closePath();
-    };
-
-    // Style for the Midnight Cyan Star Gradient
-    const createStarGrad = (cx, cy, size) => {
-      const g = ctx.createLinearGradient(cx - size * 0.8, cy - size * 0.8, cx + size * 0.8, cy + size * 0.8);
-      g.addColorStop(0, '#040d21');
-      g.addColorStop(0.45, '#0a235c');
-      g.addColorStop(0.82, '#00d2ff');
-      g.addColorStop(1, '#00f2fe');
-      return g;
-    };
-
-    // A) Central Star
-    const centerStarR = r * 0.46;
-    const centerStarInnerR = r * 0.21;
-    drawStarPath(0, 0, centerStarR, centerStarInnerR, 0);
-
-    ctx.fillStyle = createStarGrad(0, 0, centerStarR);
-    ctx.fill();
-    ctx.strokeStyle = '#ffffff';
-    ctx.lineWidth = 1.4;
-    ctx.stroke();
-
-    // Center star inner neon core
-    drawStarPath(0, 0, centerStarR * 0.45, centerStarInnerR * 0.45, 0);
-    ctx.fillStyle = 'rgba(0, 242, 254, 0.4)';
-    ctx.fill();
-
-    // B) 5 Interlocking Surrounding Stars
-    const outerDist = r * 0.86;
-    const outerStarR = r * 0.48;
-    const outerStarInnerR = r * 0.22;
-
-    for (let m = 0; m < 5; m++) {
-      const starAngle = -Math.PI / 2 + Math.PI / 5 + m * ((2 * Math.PI) / 5);
-      const sx = Math.cos(starAngle) * outerDist;
-      const sy = Math.sin(starAngle) * outerDist;
-
-      // Inward orientation
-      const starRot = starAngle + Math.PI;
-      drawStarPath(sx, sy, outerStarR, outerStarInnerR, starRot);
-
-      ctx.fillStyle = createStarGrad(sx, sy, outerStarR);
+      ctx.fillStyle = i % 2 === 0 ? 'rgba(255, 255, 255, 0.12)' : 'rgba(0, 0, 0, 0.1)';
       ctx.fill();
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.85)';
-      ctx.lineWidth = 1.4;
-      ctx.stroke();
     }
+
+    // 3.3 Golden Coin Rim Dots / Beaded Border
+    ctx.save();
+    ctx.fillStyle = '#fff4b8';
+    ctx.shadowColor = '#3a2501';
+    ctx.shadowBlur = 2;
+    for (let k = 0; k < 12; k++) {
+      const dotAngle = (k * Math.PI) / 6;
+      const dx = Math.cos(dotAngle) * (r * 0.76);
+      const dy = Math.sin(dotAngle) * (r * 0.76);
+      ctx.beginPath();
+      ctx.arc(dx, dy, r * 0.045, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
+
+    // 3.4 Inner Medallion: Royal Velvet Ruby Jewel
+    ctx.beginPath();
+    ctx.arc(0, 0, r * 0.54, 0, Math.PI * 2);
+    const rubyGrad = ctx.createRadialGradient(-r * 0.15, -r * 0.15, r * 0.05, 0, 0, r * 0.54);
+    rubyGrad.addColorStop(0, '#ff4766');
+    rubyGrad.addColorStop(0.5, '#b80f2d');
+    rubyGrad.addColorStop(0.85, '#5e0413');
+    rubyGrad.addColorStop(1, '#2b0107');
+    ctx.fillStyle = rubyGrad;
+    ctx.fill();
+
+    // Heavy Gold Bezel Ring around ruby medallion
+    ctx.strokeStyle = '#ffd700';
+    ctx.lineWidth = 2.2;
+    ctx.shadowColor = '#ffd700';
+    ctx.shadowBlur = 5;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // 3.5 Center Gold Symbol: Lucky "7"
+    ctx.fillStyle = '#ffe680';
+    ctx.font = `900 ${Math.round(r * 0.56)}px "Arial Black", Impact, sans-serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.shadowColor = 'rgba(0, 0, 0, 0.75)';
+    ctx.shadowBlur = 4;
+    ctx.shadowOffsetX = 1;
+    ctx.shadowOffsetY = 2;
+    ctx.fillText('7', 0, r * 0.02);
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 0;
 
     ctx.restore(); // unclip sphere
 
-    // 4. Ball Outer Rim Stroke (Fine silver-blue edge)
+    // 4. Ball Outer Rim Stroke (Polished Gold Edge)
     ctx.beginPath();
     ctx.arc(0, 0, r, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(15, 23, 42, 0.5)';
-    ctx.lineWidth = 1.6;
+    ctx.strokeStyle = 'rgba(255, 215, 0, 0.85)';
+    ctx.lineWidth = 1.8;
     ctx.stroke();
 
-    // 5. Dual 3D Glass Specular Highlights
+    // 5. 3D Glass Specular Highlights
     // Primary Curved Glass Highlight (Top-Left)
     ctx.beginPath();
-    ctx.ellipse(-r * 0.28, -r * 0.35, r * 0.36, r * 0.18, -Math.PI / 6, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.75)';
+    ctx.ellipse(-r * 0.28, -r * 0.35, r * 0.34, r * 0.16, -Math.PI / 6, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.78)';
     ctx.fill();
+
+    // Diamond 4-Point Star Glint on high shine
+    const glintX = -r * 0.36;
+    const glintY = -r * 0.38;
+    const glintR = r * 0.28;
+    ctx.save();
+    ctx.beginPath();
+    ctx.moveTo(glintX, glintY - glintR);
+    ctx.quadraticCurveTo(glintX, glintY, glintX + glintR, glintY);
+    ctx.quadraticCurveTo(glintX, glintY, glintX, glintY + glintR);
+    ctx.quadraticCurveTo(glintX, glintY, glintX - glintR, glintY);
+    ctx.quadraticCurveTo(glintX, glintY, glintX, glintY - glintR);
+    ctx.fillStyle = '#ffffff';
+    ctx.shadowColor = '#ffd700';
+    ctx.shadowBlur = 8;
+    ctx.fill();
+    ctx.restore();
 
     // Secondary Soft Rim Reflection (Bottom-Right)
     ctx.beginPath();
-    ctx.ellipse(r * 0.28, r * 0.35, r * 0.25, r * 0.09, -Math.PI / 6, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0, 242, 254, 0.3)';
+    ctx.ellipse(r * 0.28, r * 0.35, r * 0.24, r * 0.08, -Math.PI / 6, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 215, 0, 0.35)';
     ctx.fill();
 
     ctx.restore();
@@ -249,9 +263,9 @@ export class Renderer {
     // Top Rim Collar
     ctx.beginPath();
     ctx.roundRect(w * 0.1, 4, w * 0.8, 12, 6);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+    ctx.fillStyle = 'rgba(255, 215, 0, 0.15)';
     ctx.fill();
-    ctx.strokeStyle = 'rgba(0, 242, 254, 0.35)';
+    ctx.strokeStyle = 'rgba(255, 215, 0, 0.55)';
     ctx.lineWidth = 1.5;
     ctx.stroke();
 
