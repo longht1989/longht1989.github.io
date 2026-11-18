@@ -1,39 +1,56 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FOOTBALL CLUBS</title>
-    <!-- We will use a standard grotesque sans font via Google Fonts or system fonts. Here we use Helvetica Neue/Arial system fonts for true plain brutalism. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f121d" />
+    <title>FOOTBALL GACHA</title>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
   <body>
     <div id="app">
       <header>
-        <h1>FOOTBALL CLUB SELECTOR</h1>
+        <div class="brand">
+          <h1>FOOTBALL GACHA</h1>
+          <span class="subtitle">Club Selector</span>
+        </div>
+        <button id="sound-toggle" class="sound-toggle-btn" aria-label="Bật/Tắt âm thanh" title="Âm thanh">
+          🔊
+        </button>
       </header>
 
-      <main class="wheel-container">
-        <canvas id="wheel" width="600" height="600"></canvas>
-        <div class="pointer"></div>
+      <main class="machine-container">
+        <!-- Bình thủy tinh chứa bóng gacha -->
+        <div class="jar">
+          <canvas id="gacha-canvas"></canvas>
+          <div class="jar-shine"></div>
+        </div>
+
+        <!-- Ống & khay thoát bóng phía dưới -->
+        <div class="machine-chute-base">
+          <div class="chute-tunnel">
+            <div class="chute-gate"></div>
+            <div id="chute-ball"></div>
+          </div>
+        </div>
       </main>
 
       <div class="controls">
-        <button id="spin-btn">SPIN</button>
-      </div>
-      <div class="speed-controls">
-        <span class="speed-label">TỐC ĐỘ:</span>
-        <label><input type="radio" name="speed" value="slow"> CHẬM</label>
-        <label><input type="radio" name="speed" value="normal"> TRUNG BÌNH</label>
-        <label><input type="radio" name="speed" value="fast" checked> NHANH</label>
+        <button id="spin-btn" aria-label="Quay máy gacha">
+          <span class="btn-icon">⚡</span>
+          <span class="btn-text">QUAY MÁY</span>
+        </button>
       </div>
 
-      <div id="result-modal" class="modal hidden">
+      <!-- Modal hiển thị kết quả -->
+      <div id="result-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="result-text">
         <div class="modal-content">
-          <h2>SELECTED</h2>
-          <img id="result-logo" src="" alt="Club Logo" class="winning-logo hidden" />
+          <div class="result-badge">SELECTED CLUB</div>
+          <div class="logo-container">
+            <img id="result-logo" src="" alt="Club Logo" class="winning-logo hidden" />
+          </div>
           <div id="result-text" class="winning-club"></div>
-          <button id="close-modal">CLOSE</button>
+          <button id="close-modal" aria-label="Đóng kết quả và tiếp tục">TIẾP TỤC</button>
         </div>
       </div>
     </div>

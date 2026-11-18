@@ -1,224 +1,187 @@
-const canvas = document.getElementById('wheel');
-const ctx = canvas.getContext('2d');
+/**
+ * main.js - Application entry point
+ */
+import { GachaMachine } from './gacha.js';
+import { SoundManager } from './sound.js';
+
+const canvas = document.getElementById('gacha-canvas');
 const spinBtn = document.getElementById('spin-btn');
+const soundToggleBtn = document.getElementById('sound-toggle');
 const modal = document.getElementById('result-modal');
 const resultText = document.getElementById('result-text');
 const resultLogo = document.getElementById('result-logo');
 const closeModalBtn = document.getElementById('close-modal');
 
+const soundManager = new SoundManager();
+let gacha = null;
 let clubs = [];
-let currentAngle = 0;
-let isSpinning = false;
-let spinVelocity = 0;
-let animationFrameId;
 
 /**
- * Initializes the app
+ * Robust JSON fetcher handling relative paths for both dev and prod GitHub Pages
+ */
+async function fetchClubsData() {
+  const candidateUrls = [
+    './public/clubs.json',
+    './clubs.json',
+    'public/clubs.json',
+    'clubs.json'
+  ];
+
+  for (const url of candidateUrls) {
+    try {
+      const res = await fetch(url);
+      if (res.ok) {
+        return await res.json();
+      }
+    } catch (e) {
+      // Continue to next candidate
+    }
+  }
+
+  throw new Error('Unable to load clubs.json');
+}
+
+/**
+ * Initializes the application
  */
 async function init() {
   try {
-    const response = await fetch('./public/clubs.json');
-    if (!response.ok) {
-      throw new Error(`Failed to fetch JSON: ${response.status}`);
-    }
-    clubs = await response.json();
-    drawWheel();
+    clubs = await fetchClubsData();
   } catch (err) {
-    console.error('Error initializing data: ', err);
-    // Fallback if fetch fails (e.g., local dev without server)
+    console.error('Error loading clubs data:', err);
+    // Fallback minimal data if fetch fails
     clubs = [
-      { name: "ERROR LOADING", color: "#000000" },
-      { name: "NO DATA", color: "#333333" }
+      { name: "REAL MADRID", color: "#000000", priority: 1 },
+      { name: "BARCELONA", color: "#1A1A1A", priority: 1 },
+      { name: "MANCHESTER UNITED", color: "#111111", priority: 1 },
+      { name: "ARSENAL", color: "#141414", priority: 1 },
+      { name: "LIVERPOOL", color: "#1F1F1F", priority: 1 }
     ];
-    drawWheel();
-  }
-}
-
-/**
- * Draws the spinning wheel
- */
-function drawWheel() {
-  if (!clubs || clubs.length === 0) return;
-
-  const numSegments = clubs.length;
-  const anglePerSegment = (2 * Math.PI) / numSegments;
-  const radius = canvas.width / 2;
-  const centerX = canvas.width / 2;
-  const centerY = canvas.height / 2;
-
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (let i = 0; i < numSegments; i++) {
-    const startAngle = currentAngle + i * anglePerSegment;
-    const endAngle = startAngle + anglePerSegment;
-
-    // Draw segment
-    ctx.beginPath();
-    ctx.moveTo(centerX, centerY);
-    ctx.arc(centerX, centerY, radius - 4, startAngle, endAngle);
-    ctx.closePath();
-    
-    ctx.fillStyle = clubs[i].color;
-    ctx.fill();
-
-    // Draw inner stroke
-    ctx.strokeStyle = '#ffffff';
-    ctx.lineWidth = 1;
-    ctx.stroke();
-
-    // Draw text
-    ctx.save();
-    ctx.translate(centerX, centerY);
-    ctx.rotate(startAngle + anglePerSegment / 2);
-    ctx.textAlign = 'right';
-    ctx.textBaseline = 'middle';
-    ctx.fillStyle = '#ffffff'; // White text on stark background
-    ctx.font = 'bold 20px "Helvetica Neue", Helvetica, sans-serif';
-    ctx.fillText(clubs[i].name, radius - 30, 0);
-    ctx.restore();
-  }
-}
-
-/**
- * Spins the wheel smoothly using ease-out
- */
-function spinWheel() {
-  if (isSpinning) return;
-  isSpinning = true;
-
-  // Get speed
-  const speedElement = document.querySelector('input[name="speed"]:checked');
-  const speedValue = speedElement ? speedElement.value : 'fast';
-  
-  let baseSpins = 5;
-  let duration = 5000; // 5 seconds spin
-  
-  if (speedValue === 'slow') {
-    baseSpins = 3;
-    duration = 8000;
-  } else if (speedValue === 'fast') {
-    baseSpins = 10;
-    duration = 3000;
   }
 
-  // Select winner based on weighted probability (priority 1..4)
-  let totalWeight = 0;
-  clubs.forEach(club => {
-    let level = club.priority || 4; // default to 4 if missing
-    // probability ratio: level 1=8, 2=4, 3=2, 4=1
-    club.weight = Math.pow(2, 4 - level);
-    totalWeight += club.weight;
+  // Preload sound assets (with relative path fallbacks)
+  await Promise.all([
+    soundManager.load('bounce', ['./public/sounds/bounce.wav', './sounds/bounce.wav', 'public/sounds/bounce.wav']),
+    soundManager.load('rumble', ['./public/sounds/rumble.wav', './sounds/rumble.wav', 'public/sounds/rumble.wav']),
+    soundManager.load('drop',   ['./public/sounds/drop.wav',   './sounds/drop.wav',   'public/sounds/drop.wav']),
+    soundManager.load('reveal', ['./public/sounds/reveal.wav', './sounds/reveal.wav', 'public/sounds/reveal.wav']),
+  ]);
+
+  // Instantiate Gacha Machine
+  gacha = new GachaMachine(canvas, clubs, soundManager, {
+    onReveal: (winner) => {
+      showResult(winner);
+    }
   });
 
-  let randomWeight = Math.random() * totalWeight;
-  let currentWeight = 0;
-  let winningIndex = 0;
-  for (let i = 0; i < clubs.length; i++) {
-    currentWeight += clubs[i].weight;
-    if (randomWeight <= currentWeight) {
-      winningIndex = i;
-      break;
-    }
-  }
-
-  // Calculate target angle so the pointer (270deg) lands on winningIndex
-  const numSegments = clubs.length;
-  const anglePerSegment = (2 * Math.PI) / numSegments;
-  
-  // Random offset inside the segment (from 5% to 95% to avoid edges)
-  const randomOffset = (0.05 + Math.random() * 0.9) * anglePerSegment;
-  
-  // Target angle needed to place the selected segment under the pointer (3 * Math.PI / 2)
-  const targetAngle = (3 * Math.PI / 2) - (winningIndex * anglePerSegment) - randomOffset;
-  const normalizedTargetAngle = ((targetAngle % (2 * Math.PI)) + 2 * Math.PI) % (2 * Math.PI);
-  
-  const totalAngleToRotate = (baseSpins * Math.PI * 2) + normalizedTargetAngle;
-  
-  // Animation variables
-  let startTime = null;
-
-  function animate(time) {
-    if (!startTime) startTime = time;
-    const progress = (time - startTime) / duration;
-
-    if (progress < 1) {
-      // Ease out cubic
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      currentAngle = totalAngleToRotate * easeOut;
-      drawWheel();
-      animationFrameId = requestAnimationFrame(animate);
-    } else {
-      isSpinning = false;
-      currentAngle = totalAngleToRotate % (Math.PI * 2);
-      drawWheel();
-      showResult();
-    }
-  }
-
-  requestAnimationFrame(animate);
+  await gacha.init();
+  setupEventListeners();
 }
 
-/**
- * Calculates the winner based on final angle
- */
-function showResult() {
-  const numSegments = clubs.length;
-  const anglePerSegment = (2 * Math.PI) / numSegments;
-  
-  // The pointer is at the very top, which corresponds to 270 degrees or -90 degrees in JS Canvas.
-  // We need to calculate which sector is under the pointer.
-  // In canvas, 0 is at 3 o'clock, growing clockwise. Top is -PI/2 or 3PI/2.
-  let normalizedAngle = currentAngle % (2 * Math.PI);
-  if (normalizedAngle < 0) {
-    normalizedAngle += 2 * Math.PI;
-  }
-  
-  const pointerAngle = (3 * Math.PI) / 2; // 270 degrees
-  
-  // We want to find i such that: 
-  // startAngle = (normalizedAngle + i * anglePerSegment) % 2PI
-  // endAngle = startAngle + anglePerSegment
-  // and the pointerAngle falls inside [startAngle, endAngle]
-
-  let winningIndex = 0;
-  for (let i = 0; i < numSegments; i++) {
-    let startAngle = (normalizedAngle + i * anglePerSegment) % (2 * Math.PI);
-    let endAngle = startAngle + anglePerSegment;
-    
-    // Adjust if endAngle crosses the 2PI boundary
-    if (endAngle > 2 * Math.PI) {
-      if (pointerAngle >= startAngle || pointerAngle < endAngle % (2 * Math.PI)) {
-        winningIndex = i;
-        break;
-      }
-    } else {
-      if (pointerAngle >= startAngle && pointerAngle < endAngle) {
-        winningIndex = i;
-        break;
-      }
-    }
-  }
-
-  const winner = clubs[winningIndex];
+function showResult(winner) {
   resultText.textContent = winner.name;
-  
+
   if (winner.logo) {
-    resultLogo.src = winner.logo;
-    resultLogo.classList.remove('hidden');
+    const candidates = [];
+    const raw = winner.logo;
+    if (raw.startsWith('public/')) {
+      candidates.push('./' + raw.replace(/^public\//, ''));
+      candidates.push('./' + raw);
+    } else {
+      candidates.push('./' + raw);
+      candidates.push('./public/' + raw);
+    }
+
+    let idx = 0;
+    const tryNext = () => {
+      if (idx >= candidates.length) {
+        resultLogo.src = '';
+        resultLogo.classList.add('hidden');
+        return;
+      }
+      resultLogo.src = candidates[idx++];
+    };
+
+    resultLogo.onload = () => {
+      resultLogo.classList.remove('hidden');
+    };
+    resultLogo.onerror = tryNext;
+
+    tryNext();
   } else {
-    resultLogo.src = "";
+    resultLogo.src = '';
     resultLogo.classList.add('hidden');
   }
 
   modal.classList.remove('hidden');
 }
 
-// Event Listeners
-spinBtn.addEventListener('click', spinWheel);
-
-closeModalBtn.addEventListener('click', () => {
+function closeModal() {
   modal.classList.add('hidden');
-});
+  if (gacha) {
+    gacha.reset();
+  }
+  // Re-enable spin button
+  spinBtn.disabled = false;
+  const btnText = spinBtn.querySelector('.btn-text');
+  if (btnText) btnText.textContent = 'QUAY MÁY';
+}
 
-// Start
+function setupEventListeners() {
+  // Spin button click
+  spinBtn.addEventListener('click', async () => {
+    if (spinBtn.disabled) return;
+
+    // Unlock Web Audio context on user gesture
+    soundManager.ensureAudioContext();
+
+    spinBtn.disabled = true;
+    const btnText = spinBtn.querySelector('.btn-text');
+    if (btnText) btnText.textContent = 'ĐANG QUAY...';
+
+    const started = await gacha.start();
+    if (!started) {
+      spinBtn.disabled = false;
+      if (btnText) btnText.textContent = 'QUAY MÁY';
+    }
+  });
+
+  // Sound toggle button
+  soundToggleBtn.addEventListener('click', () => {
+    soundManager.ensureAudioContext();
+    const isMuted = soundManager.toggleMute();
+    soundToggleBtn.textContent = isMuted ? '🔇' : '🔊';
+    soundToggleBtn.setAttribute('aria-label', isMuted ? 'Bật âm thanh' : 'Tắt âm thanh');
+  });
+
+  // Close modal button
+  closeModalBtn.addEventListener('click', closeModal);
+
+  // Close on modal background click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+
+  // Close on ESC key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Window resize handler
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (gacha) {
+        gacha.resize();
+      }
+    }, 150);
+  });
+}
+
+// Start application
 init();
