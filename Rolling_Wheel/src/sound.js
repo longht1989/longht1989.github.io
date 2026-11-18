@@ -15,6 +15,7 @@ export class SoundManager {
     this.activeRumbleSource = null;
     this.bgmAudio = null;
     this.sfxEnabled = true;
+    this.bgmRequested = false;
   }
 
   /**
@@ -33,7 +34,7 @@ export class SoundManager {
   }
 
   /**
-   * Preloads a sound effect from URL
+   * Preloads a sound effect or music track from candidates URLs
    */
   async load(name, urls) {
     const urlList = Array.isArray(urls) ? urls : [urls];
@@ -41,20 +42,52 @@ export class SoundManager {
       try {
         const audio = new Audio();
         audio.preload = 'auto';
-        audio.src = url;
-        
-        await new Promise((resolve) => {
-          audio.oncanplaythrough = resolve;
-          audio.onerror = resolve;
-          // Timeout after 1.8s to avoid blocking
-          setTimeout(resolve, 1800);
+
+        const isLoaded = await new Promise((resolve) => {
+          let finished = false;
+          const complete = (success) => {
+            if (finished) return;
+            finished = true;
+            cleanup();
+            resolve(success);
+          };
+
+          const onReady = () => complete(true);
+          const onError = () => complete(false);
+
+          const cleanup = () => {
+            audio.removeEventListener('canplaythrough', onReady);
+            audio.removeEventListener('canplay', onReady);
+            audio.removeEventListener('loadeddata', onReady);
+            audio.removeEventListener('error', onError);
+          };
+
+          audio.addEventListener('canplaythrough', onReady);
+          audio.addEventListener('canplay', onReady);
+          audio.addEventListener('loadeddata', onReady);
+          audio.addEventListener('error', onError);
+
+          audio.src = url;
+          audio.load();
+
+          // Safety timeout after 2.5s
+          setTimeout(() => {
+            if (audio.readyState >= 2 && !audio.error) {
+              complete(true);
+            } else {
+              complete(false);
+            }
+          }, 2500);
         });
 
-        if (audio.readyState >= 2 || audio.duration > 0 || audio.src) {
+        if (isLoaded && !audio.error) {
           this.sounds[name] = audio;
           if (name === 'bgm') {
             this.bgmAudio = audio;
             this.bgmAudio.loop = true;
+            if (this.bgmRequested && !this.isMuted) {
+              this.playBGM();
+            }
           }
           return;
         }
@@ -62,12 +95,14 @@ export class SoundManager {
         // Continue to next URL candidate
       }
     }
+    console.warn(`[SoundManager] Could not load ${name} from any candidate URL.`);
   }
 
   /**
    * Plays Champions League Background Music (looped)
    */
-  playBGM(volume = 0.42) {
+  playBGM(volume = 0.45) {
+    this.bgmRequested = true;
     if (this.isMuted) return;
     this.ensureAudioContext();
 
@@ -76,7 +111,12 @@ export class SoundManager {
       bgm.loop = true;
       bgm.volume = Math.max(0, Math.min(1, volume));
       if (bgm.paused) {
-        bgm.play().catch(() => {});
+        const p = bgm.play();
+        if (p) {
+          p.catch((err) => {
+            console.warn('[SoundManager] Autoplay deferred until user gesture:', err);
+          });
+        }
       }
     }
   }
@@ -124,7 +164,11 @@ export class SoundManager {
    */
   play(name, options = {}) {
     if (this.isMuted) return;
-    if (name !== 'bgm' && !this.sfxEnabled) return;
+    if (name === 'bgm') {
+      this.playBGM(options.volume);
+      return;
+    }
+    if (!this.sfxEnabled) return;
     this.ensureAudioContext();
 
     const { loop = false, volume = 1.0 } = options;

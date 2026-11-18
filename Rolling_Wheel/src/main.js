@@ -62,16 +62,17 @@ async function init() {
   // Preload sound assets non-blockingly (Web Audio fallback is always ready)
   Promise.all([
     soundManager.load('bgm', [
-      './sounds/champions_league.mp3',
       './public/sounds/champions_league.mp3',
+      './sounds/champions_league.mp3',
+      'public/sounds/champions_league.mp3',
       'sounds/champions_league.mp3',
-      './sounds/champions_league.ogg',
-      './public/sounds/champions_league.ogg'
+      './public/sounds/champions_league.ogg',
+      './sounds/champions_league.ogg'
     ]),
-    soundManager.load('bounce', ['./sounds/bounce.wav', './public/sounds/bounce.wav', 'sounds/bounce.wav']),
-    soundManager.load('rumble', ['./sounds/rumble.wav', './public/sounds/rumble.wav', 'sounds/rumble.wav']),
-    soundManager.load('drop',   ['./sounds/drop.wav',   './public/sounds/drop.wav',   'sounds/drop.wav']),
-    soundManager.load('reveal', ['./sounds/reveal.wav', './public/sounds/reveal.wav', 'sounds/reveal.wav']),
+    soundManager.load('bounce', ['./public/sounds/bounce.wav', './sounds/bounce.wav', 'public/sounds/bounce.wav', 'sounds/bounce.wav']),
+    soundManager.load('rumble', ['./public/sounds/rumble.wav', './sounds/rumble.wav', 'public/sounds/rumble.wav', 'sounds/rumble.wav']),
+    soundManager.load('drop',   ['./public/sounds/drop.wav',   './sounds/drop.wav',   'public/sounds/drop.wav',   'sounds/drop.wav']),
+    soundManager.load('reveal', ['./public/sounds/reveal.wav', './sounds/reveal.wav', 'public/sounds/reveal.wav', 'sounds/reveal.wav']),
   ]).catch(() => {});
 
   // Instantiate Gacha Machine
