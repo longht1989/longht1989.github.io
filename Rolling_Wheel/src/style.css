@@ -12,7 +12,8 @@
   --glass-bg: rgba(255, 215, 0, 0.04);
   --glass-border: rgba(255, 215, 0, 0.35);
   --glass-shine: rgba(255, 255, 255, 0.22);
-  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --radius-jar: 32px;
   --radius-btn: 22px;
 }
@@ -71,9 +72,12 @@ header {
 }
 
 h1 {
+  font-family: var(--font-heading);
   font-size: clamp(1.4rem, 4vw, 1.8rem);
   font-weight: 900;
   letter-spacing: 0.5px;
+  line-height: 1.25;
+  padding: 2px 0;
   background: linear-gradient(180deg, #ffffff 0%, #ffe066 35%, #ffd700 65%, #b8860b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -82,6 +86,7 @@ h1 {
 }
 
 .subtitle {
+  font-family: var(--font-heading);
   font-size: 0.75rem;
   color: #ffb700;
   font-weight: 700;
@@ -343,6 +348,7 @@ canvas#gacha-canvas {
   color: #ffffff;
   border: 2px solid rgba(255, 240, 160, 0.65);
   border-radius: calc(var(--radius-btn) - 2px);
+  font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: 1.5px;
@@ -454,17 +460,51 @@ canvas#gacha-canvas {
 }
 
 .result-badge {
-  font-size: 0.8rem;
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 2.5px;
   color: #ffd700;
   background: rgba(255, 215, 0, 0.15);
   border: 1.5px solid rgba(255, 215, 0, 0.6);
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.35);
-  padding: 5px 16px;
+  padding: 6px 18px;
   border-radius: 20px;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+/* Tier 1 & 4 (Grand Jackpot): Highest celebration glow */
+.result-badge.badge-tier-1 {
+  color: #fff9d6;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(230, 25, 60, 0.35) 100%);
+  border: 2px solid #ffd700;
+  box-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.6),
+    0 0 35px rgba(230, 25, 60, 0.45);
+  animation: badgeJackpotPulse 1.1s infinite alternate ease-in-out;
+}
+
+@keyframes badgeJackpotPulse {
+  0% { transform: scale(1); box-shadow: 0 0 16px rgba(255, 215, 0, 0.45); }
+  100% { transform: scale(1.06); box-shadow: 0 0 28px rgba(255, 215, 0, 0.85), 0 0 40px rgba(230, 25, 60, 0.6); }
+}
+
+/* Tier 2: Big Winner */
+.result-badge.badge-tier-2 {
+  color: #fff4b8;
+  background: rgba(255, 215, 0, 0.18);
+  border: 1.6px solid rgba(255, 215, 0, 0.75);
+  box-shadow: 0 0 18px rgba(255, 215, 0, 0.4);
+}
+
+/* Tier 3: Lucky Club */
+.result-badge.badge-tier-3 {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
 }
 
 .logo-container {
@@ -500,11 +540,13 @@ canvas#gacha-canvas {
 }
 
 .winning-club {
+  font-family: var(--font-heading);
   font-size: clamp(1.4rem, 5vw, 1.85rem);
   font-weight: 900;
   letter-spacing: 0.5px;
   margin-bottom: 2rem;
-  line-height: 1.2;
+  line-height: 1.3;
+  padding: 4px 6px;
   background: linear-gradient(180deg, #ffffff 10%, #ffe066 50%, #ffd700 80%, #b8860b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -514,6 +556,7 @@ canvas#gacha-canvas {
 }
 
 #close-modal {
+  font-family: var(--font-heading);
   width: 100%;
   min-height: 52px;
   background: linear-gradient(180deg, #ffe066 0%, #ffd700 40%, #c68a0c 100%);

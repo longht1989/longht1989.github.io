@@ -3,11 +3,13 @@
  */
 import { GachaMachine } from './gacha.js';
 import { SoundManager } from './sound.js';
+import { triggerConfettiByPriority, clearConfetti } from './confetti.js';
 
 const canvas = document.getElementById('gacha-canvas');
 const spinBtn = document.getElementById('spin-btn');
 const soundToggleBtn = document.getElementById('sound-toggle');
 const modal = document.getElementById('result-modal');
+const resultBadge = document.querySelector('.result-badge');
 const resultText = document.getElementById('result-text');
 const resultLogo = document.getElementById('result-logo');
 const closeModalBtn = document.getElementById('close-modal');
@@ -139,12 +141,33 @@ function showResult(winner, loadedLogo) {
     resultLogo.classList.add('hidden');
   }
 
+  // Update dynamic modal badge based on priority tier (without exposing priority number)
+  if (resultBadge) {
+    resultBadge.classList.remove('badge-tier-1', 'badge-tier-2', 'badge-tier-3');
+    const prio = Number(winner.priority);
+    if (prio === 1 || prio === 4) {
+      resultBadge.textContent = '★ GRAND JACKPOT ★';
+      resultBadge.classList.add('badge-tier-1');
+    } else if (prio === 2) {
+      resultBadge.textContent = '★ BIG WINNER ★';
+      resultBadge.classList.add('badge-tier-2');
+    } else {
+      resultBadge.textContent = '★ LUCKY CLUB ★';
+      resultBadge.classList.add('badge-tier-3');
+    }
+  }
+
   modal.classList.remove('hidden');
+
+  // Trigger tiered celebration confetti based on club priority
+  triggerConfettiByPriority(winner.priority);
+
   // A11y focus management
   setTimeout(() => closeModalBtn.focus(), 50);
 }
 
 function closeModal() {
+  clearConfetti();
   modal.classList.add('hidden');
   if (gacha) {
     gacha.reset();
